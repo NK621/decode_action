@@ -1,1029 +1,622 @@
-//Fri Nov 28 2025 16:32:37 GMT+0000 (Coordinated Universal Time)
+//Sun Nov 30 2025 17:23:18 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-(function (M) {
-  var u, s, C, g;
-  function k(Z, f) {
-    return Z << f;
-  }
-  function l(Z, f) {
-    return Z >> f;
-  }
-  function Z(Z, f) {
-    return Z <= f;
-  }
-  function d(Z, f) {
-    return Z % f;
-  }
-  function F(Z, f) {
-    return Z * f;
-  }
-  function U(Z, f) {
-    return Z + f;
-  }
-  function b(Z, f) {
-    return Z - f;
-  }
-  function G(Z, f) {
-    return Z / f;
-  }
-  function $(Z, f) {
-    return Z < f;
-  }
-  function t(Z, f) {
-    return Z > f;
-  }
-  function y(Z, f) {
-    return Z >= f;
-  }
-  function r(Z, f, s) {
-    Z[f] = s;
-    return Z;
-  }
-  s = r;
-  function c() {
-    return [5, 'object', 'ct', 'length'];
-  }
-  const q = c();
-  (g = Object.assign) && null || (C = M[q[0]]);
-  let i = ['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'],
-    T,
-    O = String.fromCharCode,
-    V = Uint8Array,
-    n = Uint16Array,
-    E = Uint32Array;
-  u = typeof window === 'object' && window || typeof self === 'object' && self || exports || typeof globalThis === q[1] && globalThis || typeof global === U('obje', q[2]) && global;
-  let f = (function (Z) {
-    var G, f, i, y, s;
-    (((f = r) && false || (s = U('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefg', 'hijklmnopqrstuvwxyz0123456789+/')) || '0') && (G = function (G) {
-      var s, O, Z;
-      let f = (() => 'length|At'.split('|'))();
-      for (((Z = {}) && 0 || (s = 0)) && 0 || (O = G[f[0]]); $(s, O); s++) Z[G[U('char', f[1])](s)] = s;
-      return Z;
-    }(s)) && 0 || (y = function (y) {
-      var E, i, Z, f;
-      let s = [0, 'At', 18, 1, 2, 'charAt', 3, 255, 'th', 'join', ''];
-      return (Z = y.length) && 0 || (i = d(Z, 4), E = (t(Z, 0) ? k(G[y[U('char', s[1])](s[0])], s[2]) : s[0]) | (t(Z, s[3]) ? k(G[y[U('char', s[1])](1)], 12) : 0) | (t(Z, s[4]) ? k(G[y[s[5]](s[4])], 6) : 0) | (t(Z, 3) ? G[y[s[5]](s[6])] : 0), f = [O(E >>> 16), O(E >>> 8 & 255), O(E & s[7])], f[U('leng', s[8])] -= [0, s[0], 2, s[3]][i], f[s[9]](s[10]));
-    }) || 5) && (i = function (Z) {
-      let G = (() => f({}, 'k', 'replace'))();
-      return Z[G.k](/\S{1,4}/g, y);
-    }) && 0 || f(Z, 'atob', function (Z) {
-      return i(String(Z).replace(/[^A-Za-z0-9\+\/]/g, ''));
-    });
-  }(u), function (q) {
-    var c, m, H, e, x, i, K, Q, z, J, M, v, R, Y, I, D, L, g, C, h, o, P, a, N, f;
-    let S = (() => [0, 'type', 1, 'K', 'I', 'J', 'p', 16, 18, 8, 6, 5, 4, 3, 2, 14, 13, 15, 35, 43, 59, 67, 83, 99, 131, 163, 227, 258, 9, 25, 49, 97, 257, 385, 513, 1537, 3073, 4097, 6145, 10, 11, 12, 255, 7, 'th'])();
-    ((K = 8) || 9) && (e = !0) && 0 || (i = S[0]);
-    function W(Z) {
-      throw Z;
-    }
-    function X(s, y) {
-      var O, Z, G, f;
-      f = r;
-      const t = (() => 'c|ex|method|err:|not|B|bufferType|resize'.split('|'))();
-      Z = this;
-      G = 0;
-      f(f(Z, 'input', s), t[0], 0);
-      if (y || !(y = {})) {
-        y[U('ind', t[1])] && (Z.c = y[U('ind', t[1])]) && 0 || y.verify && (Z.N = y.verify);
-      }
-      (O = s[Z[t[0]]++]) && 0 || (G = s[Z[t[0]]++]);
-      switch (O & 15) {
-        case K:
-          {
-            Z[t[2]] = K;
-          }
-      }
-      if (0 !== d(U(k(O, 8), G), 31) && W(Error(U(t[3], d(U(k(O, 8), G), 31)))) && 0 || G & 32 && W(Error(t[4])) || '1') {
-        f(Z, t[5], new A(s, f(f(f(f({}, 'index', Z.c), 'bufferSize', y.bufferSize), 'bufferType', y[t[6]]), 'resize', y[t[7]])));
-      }
-    }
-    if ((m = (X[U('proto', S[1])].p = function () {
-      var t, f, y, s, G;
-      s = r;
-      function Z() {
-        return 'c|N'.split('|');
-      }
-      const O = Z();
-      return ((G = this) || 1) && (f = G.input) && 0 || (t = 0, y = 0, t = G.B.p(), s(G, O[0], G.B.c), G[O[1]] && (y = (k(f[G.c++], 24) | k(f[G.c++], 16) | k(f[G.c++], 8) | f[G.c++]) >>> 0, y !== jb(t) && W(Error('i32c'))), t);
-    }, S[0])) || 6) {
-      Y = S[2];
-    }
-    function A(s, O) {
-      var Z, f;
-      Z = r;
-      const G = Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z(Z({}, 'k', 'l'), 'j', 32768), 'U', 'e'), 'O', 'c'), '$', 'n'), 'K', 'C'), 'L', 'buffer'), 'y', 'Size'), 'z', 'm'), 'V', 'bufferSize'), 'J', 'bufferType'), 'p', 'Type'), 'w', 'resize'), 'X', 'resi'), 's', 'ze'), 'G', 'b'), 'f', 'a'), 'C', 0), 'a', 'f'), 'b', 't'), 'v', 'o'), 'Z', 'J'), 'q', 'imd');
-      f = this;
-      Z(Z(Z(Z(Z(Z(Z(f, G.k, []), 'm', G.j), G.U, f.g = f[G.O] = f.q = 0), 'input', x ? new V(s) : s), 's', !1), G.$, Y), G.K, !1);
-      if (O || !(O = {})) {
-        if ((O.index && (f.c = O.index) && 0 || O[U(G.L, G.y)] && (f[G.z] = O[G.V]) || 7) && O[G.J] && (f.n = O[U('buffer', G.p)]) || '0') {
-          if (O[G.w]) {
-            f[G.K] = O[U(G.X, G.s)];
-          }
-        }
-      }
-      switch (f.n) {
-        case m:
-          {
-            f[G.G] = G.j;
-            f[G.f] = new (x ? V : Array)(U(U(32768, f.m), 258));
-            break;
-          }
-        case Y:
-          {
-            f[G.G] = G.C;
-            f.a = new (x ? V : Array)(f[G.z]);
-            f[G.a] = f.K;
-            f[G.b] = f.I;
-            f[G.v] = f[G.Z];
-            break;
-          }
-        default:
-          {
-            W(Error(G.q));
-          }
-      }
-    }
-    if ((A.prototype[S[3]] = function (E) {
-      var O, n, Z, y, u, i, f, C;
-      let s = 'length|c|a|number|G'.split('|');
-      return (O = this) && 0 || (y = U(G(O.input[s[0]], O[s[1]]), 1) | 0, Z = 0, C = 0, u = 0, f = O.input, i = O[s[2]], E && (s[3] === typeof E.v && (y = E.v), U('numb', 'er') === typeof E[s[4]] && (y += E.G)), t(2, y) ? (Z = G(b(f.length, O[s[1]]), O.u[2]), u = F(258, G(Z, 2)) | 0, $(u, i[s[0]]) ? C = U(i[U('leng', 'th')], u) : C = k(i.length, 1)) : C = F(i[s[0]], y), x ? (n = new V(C), n.set(i)) : n = i, O.a = n);
-    }) && 0 || (A[U('proto', S[1])][S[4]] = function () {
-      var f, O, Z;
-      const G = (() => s(s(s({}, 'k', 'b'), 'j', 'th'), 'U', 'a'))();
-      return (Z = this) && 0 || (O = Z[G.k], x ? Z.C ? (f = new V(O), f.set(Z.a[U('subar', 'ray')](0, O))) : f = Z.a.subarray(0, O) : (t(Z.a[U('leng', G.j)], O) && (Z[G.U].length = O), f = Z[G.U]), Z.buffer = f);
-    }) || 9) {
-      A.prototype[S[5]] = function (i, k) {
-        var E, V, T, s, u, G, O, n, M;
-        G = r;
-        function d() {
-          return ['a', 'u', 257, 0, 'f', 'length', 8, 'e', 'c', 'b'];
-        }
-        const q = d();
-        for (((((M = this) && 0 || (O = M[q[0]]) || 4) && (T = M.b) || 3) && G(M, q[1], i) || true) && (E = O.length); 256 !== (u = j(M, i));) if (t(256, u)) {
-          y(T, E) && (O = M[q[4]](), E = O[q[5]]) && null || (O[T++] = u);
-        } else {
-          for ((((((s = b(u, q[2])) && 0 || (n = C[s])) && 0 || $(0, J[s]) && (n += w(M, J[s])) || 2) && (u = j(M, k)) || '0') && (V = f[u]) || 6) && $(q[3], g[u]) && (V += w(M, g[u])) && 0 || t(U(T, n), E) && (O = M[q[4]](), E = O.length); n--;) O[T] = O[b(T++, V)];
-        }
-        for (; Z(q[6], M[q[7]]);) {
-          M[q[7]] -= 8;
-          M[q[8]]--;
-        }
-        G(M, q[9], T);
-      };
-    }
-    function u(O) {
-      var b, C, i, G, M, T, p, f, g, s, y, n, u;
-      const V = ['length', 0, 1];
-      ((C = O[V[0]]) || 3) && (G = 0) && 0 || (u = Number[U('POSITIVE_', 'INFINITY')]);
-      for (M = V[1]; $(M, C); ++M) {
-        t(O[M], G) && (G = O[M]);
-        $(O[M], u) && (u = O[M]);
-      }
-      for (i = (y = k(1, G), b = new (x ? E : Array)(y), s = V[2], g = V[1], 2); Z(s, G);) {
-        for (M = V[1]; $(M, C); ++M) if (O[M] === s) {
-          for (p = (n = 0, f = g, 0); $(p, s); ++p) {
-            n = k(n, V[2]) | f & V[2];
-            f >>= V[2];
-          }
-          for (p = (T = k(s, 16) | M, n); $(p, y); p += i) b[p] = T;
-          ++g;
-        }
-        (++s || '1') && (g <<= V[2]) && false || (i <<= 1);
-      }
-      return [b, G, u];
-    }
-    function j(n, E) {
-      var u, t, i, f, O, C, T, s, Z, G;
-      f = r;
-      let M = ['c', 'th', 0, 1, 8, 16];
-      for (((((G = n.g) && 0 || (C = n.e) || 3) && (s = n.input) || 6) && (T = n[M[0]]) && 0 || (Z = s[U('leng', M[1])]) || 4) && (t = E[M[2]]) && false || (u = E[M[3]]); $(C, u) && !y(T, Z);) {
-        G |= k(s[T++], C);
-        C += M[4];
-      }
-      i = t[G & b(k(1, u), 1)];
-      O = i >>> M[5];
-      f(f(f(n, 'g', l(G, O)), 'e', b(C, O)), 'c', T);
-      return i & 65535;
-    }
-    function T(i) {
-      var y, G, Z, k, E, s, O, C, f;
-      G = r;
-      let t = G(G(G(G(G({}, 'k', 5), 'j', 4), 'U', 0), 'O', 'z'), '$', 'call');
-      function n(E, i, O) {
-        var C, Z, y, s, f, G;
-        G = r;
-        const t = 'z'.split('|');
-        if ((s = this) || 2) {
-          Z = s[t[0]];
-        }
-        for (f = 0; $(f, E);) switch (y = j(s, i), y) {
-          case 16:
-            {
-              for (C = U(3, w(s, 2)); C--;) O[f++] = Z;
-              break;
-            }
-          case 17:
-            {
-              for (C = U(3, w(s, 3)); C--;) O[f++] = 0;
-              Z = 0;
-              break;
-            }
-          case 18:
-            {
-              for (C = U(11, w(s, 7)); C--;) O[f++] = 0;
-              Z = 0;
-              break;
-            }
-          default:
-            {
-              Z = O[f++] = y;
-            }
-        }
-        G(s, 'z', Z);
-        return O;
-      }
-      ((((O = U(w(i, t.k), 257)) || '0') && (Z = U(w(i, 5), 1)) && 0 || (E = U(w(i, t.j), 4))) && 0 || (k = new (x ? V : Array)(c[U('leng', 'th')])) || 5) && (y = 0) && 0 || (C = t.U);
-      for (s = 0; $(s, E); ++s) k[c[s]] = w(i, 3);
-      if (!x) {
-        for (E = (s = E, k.length); $(s, E); ++s) k[c[s]] = t.U;
-      }
-      (((f = u(k)) && false || (y = new (x ? V : Array)(O))) && 0 || (C = new (x ? V : Array)(Z)) || 3) && G(i, t.O, 0) && 0 || i.o(u(n[t.$](i, O, f, y)), u(n[t.$](i, Z, f, C)));
-    }
-    function w(t, E) {
-      var s, Z, G, i, C, f, O;
-      G = r;
-      let n = 'e|input|c'.split('|');
-      for (((((s = t.g) || 5) && (Z = t[n[0]]) || true) && (i = t[n[1]]) && 0 || (C = t.c)) && 0 || (f = i.length); $(Z, E);) {
-        y(C, f) && W(Error('bk'));
-        s |= k(i[C++], Z);
-        Z += 8;
-      }
-      O = s & b(k(1, E), 1);
-      G(G(G(t, 'g', s >>> E), n[0], b(Z, E)), n[2], C);
-      return O;
-    }
-    if ((((((D = (A[U('proto', S[1])][S[6]] = function () {
-      var O, u, C, n, E, g, G, f, Z, V, M;
-      let d = (() => [3, 1, 's', 'input', 'length', 'th', 'g', 0, 8, 'iN', 'ib', 'f', 'b', 'v', 'a'])();
-      for (O = this; !O.s;) {
-        if (((n = w(O, d[0])) || 7) && n & d[1] && (O[d[2]] = e) || 9) {
-          n >>>= 1;
-        }
-        switch (n) {
-          case d[7]:
-            {
-              V = O[d[3]];
-              E = O.c;
-              Z = O.a;
-              u = O.b;
-              g = V[d[4]];
-              f = i;
-              C = i;
-              M = Z[U('leng', d[5])];
-              G = i;
-              O.e = O[d[6]] = d[7];
-              if (y(U(E, d[1]), g)) {
-                W(Error('iL'));
-              }
-              f = V[E++] | k(V[E++], d[8]);
-              if (y(U(E, 1), g)) {
-                W(Error(d[9]));
-              }
-              C = V[E++] | k(V[E++], d[8]);
-              if (f === ~C) {
-                W(Error('ih'));
-              }
-              if (t(U(E, f), V[d[4]])) {
-                W(Error(d[10]));
-              }
-              switch (O.n) {
-                case m:
-                  {
-                    for (; t(U(u, f), Z.length);) {
-                      G = b(M, u);
-                      f -= G;
-                      if (x) {
-                        (Z.set(V.subarray(E, U(E, G)), u) || 5) && (u += G) && 0 || (E += G);
-                      } else {
-                        for (; G--;) Z[u++] = V[E++];
-                      }
-                      ((O.b = u) || 9) && (Z = O[d[11]]()) && 0 || (u = O[d[12]]);
-                    }
-                    break;
-                  }
-                case Y:
-                  {
-                    for (; t(U(u, f), Z.length);) Z = O.f(s({}, d[13], 2));
-                    break;
-                  }
-                default:
-                  {
-                    W(Error('im'));
-                  }
-              }
-              if (x) {
-                if (Z.set(V.subarray(E, U(E, f)), u) && 0 || (u += f) || 4) {
-                  E += f;
-                }
-              } else {
-                for (; f--;) Z[u++] = V[E++];
-              }
-              O.c = E;
-              O.b = u;
-              O[d[14]] = Z;
-              break;
-            }
-          case 1:
-            {
-              O.o(v, R);
-              break;
-            }
-          case 2:
-            {
-              T(O);
-              break;
-            }
-          default:
-            {
-              W(Error(U('e: ', n)));
-            }
-        }
-      }
-      return B(O.t());
-    }, 'undefined')) && 0 || (x = D !== typeof V && D !== typeof n && D !== typeof E && D !== typeof DataView)) && 0 || (c = (P = [S[7], 17, S[8], S[0], S[9], 7, 9, S[10], 10, S[11], 11, S[12], 12, S[13], 13, S[14], S[15], S[2], 15], x ? new n(P) : P)) || 4) && (C = (M = [3, 4, 5, 6, 7, S[9], 9, 10, 11, S[16], S[17], 17, 19, 23, 27, 31, S[18], S[19], 51, S[20], S[21], S[22], S[23], 115, S[24], S[25], 195, S[26], S[27], 258, 258], x ? new n(M) : M)) && 0 || (J = (I = [S[0], 0, S[0], 0, S[0], 0, 0, 0, S[2], 1, 1, 1, S[14], S[14], 2, 2, S[13], 3, 3, S[13], 4, 4, S[12], S[12], S[11], S[11], S[11], 5, S[0], 0, 0], x ? new V(I) : I)) || '1') && (f = (H = [1, 2, S[13], S[12], 5, 7, S[28], 13, 17, S[29], 33, S[30], 65, S[31], 129, 193, S[32], S[33], S[34], 769, 1025, S[35], 2049, S[36], S[37], S[38], 8193, 12289, 16385, 24577], x ? new n(H) : H)) || 2) && (g = (Q = [0, S[0], 0, 0, S[2], S[2], S[14], 2, S[13], 3, 4, 4, S[11], S[11], 6, 6, 7, 7, 8, S[9], S[28], 9, S[39], 10, S[40], 11, S[41], S[41], 13, S[16]], x ? new V(Q) : Q)) || 6) {
-      a = new (x ? V : Array)(288);
-    }
-    for (L = (L = 0, z = S[0], a[U('leng', 'th')]); $(z, L); ++z) y(143, z) ? a[z] = S[9] : y(S[42], z) ? a[z] = 9 : y(279, z) ? a[z] = S[43] : a[z] = S[9];
-    if ((v = u(a)) || 6) {
-      o = new (x ? V : Array)(30);
-    }
-    for (N = (N = S[0], h = 0, o[U('leng', S[44])]); $(h, N); ++h) o[h] = S[11];
-    R = u(o);
-    function B(s) {
-      var y, Z, i, G, f, E;
-      let t = (() => [0, '', 'length', 4, 5, 7, 12, 13, 15, 6, 63])();
-      (((y = t[0]) && 0 || (Z = t[1])) && 0 || (y = s[t[2]])) && 0 || (f = t[0]);
-      while ($(f, y)) {
-        i = s[f++];
-        switch (l(i, t[3])) {
-          case 0:
-            {}
-          case 1:
-            {}
-          case 2:
-            {}
-          case 3:
-            {}
-          case t[3]:
-            {}
-          case t[4]:
-            {}
-          case 6:
-            {}
-          case t[5]:
-            {
-              Z += O(i);
-              break;
-            }
-          case t[6]:
-            {}
-          case t[7]:
-            {
-              E = s[f++];
-              Z += O(k(i & 31, 6) | E & 63);
-              break;
-            }
-          case 14:
-            {
-              E = s[f++];
-              G = s[f++];
-              Z += O(k(i & t[8], 12) | k(E & 63, t[9]) | k(G & t[10], 0));
-            }
-        }
-      }
-      return Z;
-    }
-    q.d = function (f) {
-      const Z = 'map|atob'.split('|');
-      let s = new X(new V(q[Z[1]](f).split('')[Z[0]](Z => Z.charCodeAt(0))), {}),
-        G = s.p();
-      return G;
-    };
-  }(u), T = typeof globalThis === q[1] && globalThis || typeof window === q[1] && window || typeof self === U('obje', 'ct') && self || typeof global === 'object' && global, !0);
-  for (let Z of i) (Z = u.d(Z), Z = C(Z), f) ? g(T, Z) : (T.StringExtract = Z) && 0 || g(T, Z);
-  for (let Z = 0; $(Z, M[q[3]]); Z++) if (T[U('_$a', Z)]) {
-    g(T, s({}, T[U('_$a', Z)], M[Z]));
-  }
-})([Date.now, 31, console.log, Math.random, 'Uvb', JSON.parse, console.warn, true, null, Math.floor, 76, Math.min, Math.max, (H, F) => {
-  return H;
-}]);
-let QQ = '',
-  index = zfY,
-  AUTO_MSG = [];
-setData = function (u, G, ...b) {
-  QQ = u;
-  index = G;
-  AUTO_MSG = b;
+let QQ = "";
+let index = 0;
+let AUTO_MSG = [];
+setData = function (_0x75d667, _0x106c99, ..._0x5752e5) {
+  QQ = _0x75d667;
+  index = _0x106c99;
+  AUTO_MSG = _0x5752e5;
 };
 try {
-  ma == 0;
-} catch (error) {
-  ma = ufY;
+  ma == undefined;
+} catch (_0x452747) {
+  ma = "zaomima";
 }
 const chatPage = {
-  [$fY](G = []) {
-    const b = document[GfY](rfY) || document[GfY](gfY);
-    if (!b) {
+  findControlButton(_0x330be7 = []) {
+    const _0x598f65 = document.querySelector(".chat-bottom-bar") || document.querySelector("[data-v-94925904]");
+    if (!_0x598f65) {
       return null;
     }
-    const u = b[KfY](OfY);
-    for (const b of u) {
-      const text = (b[xfY] || b[IfY] || '')[wfY]();
-      if (!text) {
+    const _0x33e54c = _0x598f65.querySelectorAll("button, .partner-left-controls, .w-full, .chat-end-overlay span, .chat-end-overlay div");
+    for (const _0x3e564e of _0x33e54c) {
+      const _0x3c7afb = (_0x3e564e.innerText || _0x3e564e.textContent || "").trim();
+      if (!_0x3c7afb) {
         continue;
       }
-      if (G[jfY](b => text[JfY](b))) {
-        return b;
+      if (_0x330be7.some(_0x2b2fd6 => _0x3c7afb.includes(_0x2b2fd6))) {
+        return _0x3e564e;
       }
     }
     return null;
   },
-  [VfY]: !1,
-  [BfY]: afY,
-  [CfY]: !1,
-  [LfY]: tfY,
-  [vfY]: null,
-  [lfY]: null,
-  [FfY]: !1,
-  [RfY]: !0,
-  [kfY]: zfY,
-  [qfY]() {
-    return !0;
+  scriptRunning: false,
+  target: "女生",
+  alreadySent: false,
+  nextInterval: 600,
+  chat: null,
+  page: null,
+  findEl: false,
+  filterQingliu: true,
+  filterUnder18: false,
+  useDomSend: false,
+  loadFailnum: 0,
+  magic() {
+    return true;
   },
-  [MYY](u) {
-    this[vfY][ffY](_fY);
-    const G = AfY + QfY() + YfY(UfY * dfY());
-    messageAdded = {
-      [bfY]: G,
-      [TfY]: u,
-      [PfY]: new Date()[XfY](),
-      [SfY]: ZfY,
-      [hfY]: yfY,
-      [QYY]: WfY,
-      [YYY]: !1,
-      [dYY]: !1,
-      [HYY]: G
-    };
-    this[vfY][ffY](sYY, messageAdded);
-    const b = {
-      [TfY]: u,
-      [HYY]: G
-    };
-    this[vfY][ffY](DYY, b);
+  sendMsg(_0x4babfe) {
+    this.useDomSend ? this.sendMsgByDom(_0x4babfe) : this.sendMsgByEmit(_0x4babfe);
   },
-  [tYY]() {
-    var b = sfY,
-      d = GfY;
-    if (this[vfY] && typeof this[vfY][ffY] === mYY) {
-      try {
-        this[vfY][ffY](tYY);
-        if (this[lfY]) {
-          this[lfY][UYY] = NYY;
-        }
-        b(cYY);
-        return;
-      } catch (u) {
-        HfY(zYY, u);
-      }
-    }
-    const O = document[d](oYY) || this[$fY]([iYY, EYY]);
-    if (O) {
-      O[nYY]();
-      b(eYY);
-      return;
-    }
-    const j = document[d](pYY);
-    if (j) {
-      const G = j[d](uYY) || j[d](GYY) || j;
-      G[nYY]();
-      b(rYY);
-      return;
-    }
-    const G = document[d](gYY) || document[d](KYY) || this[$fY]([OYY, wYY]);
-    if (G) {
-      G[nYY]();
-      b(IYY);
-      setTimeout(() => {
-        const b = document[GfY](oYY);
-        if (b) {
-          b[nYY]();
-          sfY(jYY);
-        }
-      }, NfY);
+  sendMsgByEmit(_0xfa3479) {
+    const _0x4692d0 = this.findSendMessageComponent();
+    if (_0x4692d0 && typeof _0x4692d0.emit === "function") {
+      _0x4692d0.emit("typing");
+      const _0x170c2b = "tmp_" + Date.now() + Math.floor(1000 * Math.random());
+      const _0x29bc00 = {
+        id: _0x170c2b,
+        content: _0xfa3479,
+        time: new Date().toLocaleTimeString(),
+        type: "text",
+        user: "self",
+        status: "sending",
+        isRead: false,
+        isDelivered: false,
+        tmpId: _0x170c2b
+      };
+      _0x4692d0.emit("message-added", _0x29bc00);
+      _0x4692d0.emit("send", {
+        content: _0xfa3479,
+        tmpId: _0x170c2b
+      });
+      console.log("[脚本] 消息已发送(emit):", _0xfa3479);
     } else {
-      HfY(xYY);
+      console.warn("[脚本] emit发送失败，尝试DOM方式");
+      this.sendMsgByDom(_0xfa3479);
     }
   },
-  [RYY]() {
-    var u = sfY,
-      d = GfY;
-    if (this[vfY] && typeof this[vfY][ffY] === mYY) {
-      try {
-        this[vfY][ffY]($YY);
-        u(VYY);
-        return;
-      } catch (G) {
-        HfY(JYY, G);
-      }
-    }
-    const j = document[d](aYY);
-    if (j) {
-      j[nYY]();
-      u(BYY);
+  sendMsgByDom(_0x5be33d) {
+    const _0x4860ac = document.querySelector(".message-input textarea") || document.querySelector("textarea.uni-textarea-textarea");
+    if (!_0x4860ac) {
+      console.warn("[脚本] 未找到输入框");
       return;
     }
-    const O = document[d](pYY);
-    if (O) {
-      const b = O[d](uYY) || O[d](GYY);
-      if (b) {
-        b[nYY]();
-        u(CYY);
+    _0x4860ac.value = _0x5be33d;
+    _0x4860ac.dispatchEvent(new Event("input", {
+      bubbles: true
+    }));
+    _0x4860ac.dispatchEvent(new Event("compositionend", {
+      bubbles: true
+    }));
+    setTimeout(() => {
+      const _0x568da2 = document.querySelector(".send-btn");
+      _0x568da2 && (_0x568da2.dispatchEvent(new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      })), console.log("[脚本] 消息已发送(DOM):", _0x5be33d));
+    }, 100);
+  },
+  findSendMessageComponent() {
+    const _0x5adf71 = document.querySelector(".chat-bottom-bar");
+    if (!_0x5adf71) {
+      return null;
+    }
+    const _0x59febd = "custom-send-message";
+    const _0x271e75 = _0x5adf71.querySelectorAll("*");
+    for (const _0x57a815 of _0x271e75) {
+      if (_0x57a815.__vueParentComponent) {
+        let _0x1159cb = _0x57a815.__vueParentComponent;
+        let _0x16c953 = 0;
+        while (_0x1159cb && _0x16c953 < 15) {
+          const _0x487966 = _0x1159cb.type || {};
+          const _0x90a0b9 = _0x487966.name || _0x487966.__name || "";
+          if (_0x90a0b9 === _0x59febd && typeof _0x1159cb.emit === "function") {
+            return _0x1159cb;
+          }
+          _0x1159cb = _0x1159cb.parent;
+          _0x16c953++;
+        }
+      }
+    }
+    return null;
+  },
+  leave() {
+    if (this.chat && typeof this.chat.emit === "function") {
+      try {
+        this.chat.emit("leave");
+        this.page && (this.page.chatState = "SELF_LEFT");
+        console.log("已通过Vue emit离开");
+        return;
+      } catch (_0x21e6f7) {
+        console.warn("Vue emit leave失败:", _0x21e6f7);
+      }
+    }
+    const _0x4e7f9c = document.querySelector(".uni-modal__btn_primary") || this.findControlButton(["确认离开", "确定"]);
+    if (_0x4e7f9c) {
+      _0x4e7f9c.click();
+      console.log("已点击确认离开按钮");
+      return;
+    }
+    const _0x396352 = document.querySelector(".partner-left-controls");
+    if (_0x396352) {
+      const _0x13e38b = _0x396352.querySelector("[class*=\"bg-red\"]") || _0x396352.querySelector("uni-view") || _0x396352;
+      _0x13e38b.click();
+      console.log("已点击离开聊天按钮（对方已离开）");
+      return;
+    }
+    const _0x57c466 = document.querySelector(".leave-btn") || document.querySelector("[class*=\"bg-red-500\"]") || this.findControlButton(["离开", "离开聊天"]);
+    _0x57c466 ? (_0x57c466.click(), console.log("已点击离开按钮"), setTimeout(() => {
+      const _0x35c617 = document.querySelector(".uni-modal__btn_primary");
+      _0x35c617 && (_0x35c617.click(), console.log("已自动确认离开"));
+    }, 300)) : console.warn("leave 按钮未找到");
+  },
+  rematch() {
+    if (this.chat && typeof this.chat.emit === "function") {
+      try {
+        this.chat.emit("next-person");
+        console.log("已通过Vue emit重新匹配");
+        return;
+      } catch (_0x27cdfb) {
+        console.warn("Vue emit next-person失败:", _0x27cdfb);
+      }
+    }
+    const _0x1d1e12 = document.querySelector(".rematch-btn");
+    if (_0x1d1e12) {
+      _0x1d1e12.click();
+      console.log("已点击重新匹配按钮");
+      return;
+    }
+    const _0x149e23 = document.querySelector(".partner-left-controls");
+    if (_0x149e23) {
+      const _0xbf95e6 = _0x149e23.querySelector("[class*=\"bg-red\"]") || _0x149e23.querySelector("uni-view");
+      if (_0xbf95e6) {
+        _0xbf95e6.click();
+        console.log("已点击离开聊天按钮（准备重新匹配）");
         return;
       }
     }
-    const b = document[d](gYY) || this[$fY]([OYY, LYY, vYY]);
-    if (b) {
-      b[nYY]();
-      u(FYY);
-    } else {
-      HfY(lYY);
-    }
+    const _0x20743d = document.querySelector(".leave-btn") || this.findControlButton(["离开", "重新匹配", "下一个"]);
+    _0x20743d ? (_0x20743d.click(), console.log("已点击离开按钮（准备重新匹配）")) : console.warn("rematch 控件未找到");
   },
-  [YjY]() {
-    var O = JfY;
-    let b = kYY,
-      j = kYY,
-      u = '';
+  getPartnerInfo() {
+    let _0x30ce97 = "未知";
+    let _0x5d1411 = "未知";
+    let _0x900f58 = "";
     try {
-      const G = localStorage[fYY](_YY);
-      if (G) {
-        const u = DfY(G);
-        if (u[AYY] && u[AYY][bYY]) {
-          b = u[AYY][bYY];
-        }
+      const _0x1d7346 = localStorage.getItem("bottle_chat_state");
+      if (_0x1d7346) {
+        const _0x2634e1 = JSON.parse(_0x1d7346);
+        _0x2634e1.partnerInfo && _0x2634e1.partnerInfo.gender && (_0x30ce97 = _0x2634e1.partnerInfo.gender);
       }
-    } catch (d) {
-      HfY(qYY, d);
+    } catch (_0x7f100a) {
+      console.warn("解析 localStorage 失败:", _0x7f100a);
     }
-    const G = document[GfY](TYY) || document[GfY](XYY);
-    if (G) {
-      const text = G[xfY] || G[IfY] || '';
-      if (b === kYY) {
-        if (text[O](afY)) {
-          b = afY;
+    const _0x5797bd = document.querySelector(".chat-status-container") || document.querySelector("[data-v-70eaaeba]");
+    if (_0x5797bd) {
+      const _0x591c74 = _0x5797bd.innerText || _0x5797bd.textContent || "";
+      if (_0x30ce97 === "未知") {
+        if (_0x591c74.includes("女生")) {
+          _0x30ce97 = "女生";
         } else {
-          if (text[O](PYY)) {
-            b = PYY;
-          }
+          _0x591c74.includes("男生") && (_0x30ce97 = "男生");
         }
       }
-      if (text[O](ZYY)) {
-        j = ZYY;
+      if (_0x591c74.includes("18岁以下")) {
+        _0x5d1411 = "18岁以下";
       } else {
-        if (text[O](SYY)) {
-          j = SYY;
+        if (_0x591c74.includes("18-23岁")) {
+          _0x5d1411 = "18-23岁";
         } else {
-          if (text[O](yYY)) {
-            j = yYY;
-          }
+          _0x591c74.includes("23岁以上") && (_0x5d1411 = "23岁以上");
         }
       }
-      const d = text[hYY](/标签[::：]([^\n\r提示]+)/);
-      if (d) {
-        u = d[cfY][wfY]();
-      }
+      const _0x352db4 = _0x591c74.match(/标签[::：]([^\n\r提示]+)/);
+      _0x352db4 && (_0x900f58 = _0x352db4[1].trim());
     }
     return {
-      [bYY]: b,
-      [WYY]: j,
-      [QjY]: u
+      gender: _0x30ce97,
+      ageTag: _0x5d1411,
+      userTag: _0x900f58
     };
   },
-  [djY]() {
-    return this[YjY]()[bYY] == this[BfY];
+  isTarget() {
+    return this.getPartnerInfo().gender == this.target;
   },
-  [HjY]() {
-    const b = this[YjY]();
-    return b[WYY] === ZYY;
+  isUnder18() {
+    const _0x465e16 = this.getPartnerInfo();
+    return _0x465e16.ageTag === "18岁以下";
   },
-  [DjY]() {
-    const b = this[YjY]();
-    return (b[QjY] || '')[JfY](sjY);
+  hasQingliuTag() {
+    const _0x20ebe = this.getPartnerInfo();
+    return (_0x20ebe.userTag || "").includes("清流");
   },
-  [ijY]() {
-    var b = GfY;
+  getChatState() {
     try {
-      const b = localStorage[fYY](MjY);
-      if (b) {
-        const G = DfY(b);
-        if (G[mjY] === !0) {
-          return zjY;
+      const _0x545c7b = localStorage.getItem("bottle_partner_left_status");
+      if (_0x545c7b) {
+        const _0x37d7f8 = JSON.parse(_0x545c7b);
+        if (_0x37d7f8.data === true) {
+          return "PARTNER_LEFT";
         }
       }
-    } catch (G) {}
+    } catch (_0x5cdfe4) {}
     try {
-      const b = localStorage[fYY](_YY);
-      if (b) {
-        const G = DfY(b);
-        if (G[UYY]) {
-          return G[UYY];
+      const _0x47332c = localStorage.getItem("bottle_chat_state");
+      if (_0x47332c) {
+        const _0x3d4cfc = JSON.parse(_0x47332c);
+        if (_0x3d4cfc.chatState) {
+          return _0x3d4cfc.chatState;
         }
       }
-    } catch (O) {
-      HfY(qYY, O);
+    } catch (_0x5bb7a2) {
+      console.warn("解析 localStorage 失败:", _0x5bb7a2);
     }
-    const d = document[b](aYY);
-    if (d) {
-      return NYY;
+    const _0x2c6c0a = document.querySelector(".rematch-btn");
+    if (_0x2c6c0a) {
+      return "SELF_LEFT";
     }
-    const u = document[b](pYY);
-    if (u) {
-      const text = u[xfY] || '';
-      if (text[JfY](wYY)) {
-        return zjY;
+    const _0x1eca3f = document.querySelector(".partner-left-controls");
+    if (_0x1eca3f) {
+      const _0x2e56b5 = _0x1eca3f.innerText || "";
+      if (_0x2e56b5.includes("离开聊天")) {
+        return "PARTNER_LEFT";
       }
     }
-    const input = document[b](tjY) || document[b](UjY);
-    if (input && input[NjY] !== null) {
-      return cjY;
+    const _0x25a239 = document.querySelector(".uni-input-input") || document.querySelector("input:not([type=\"hidden\"])");
+    if (_0x25a239 && _0x25a239.offsetParent !== null) {
+      return "PAIRED";
     }
-    return ojY;
+    return "FIRST";
   },
-  [GjY](G) {
-    let d = zfY,
-      u = '',
-      b = [];
-    sfY(EjY + G + '"');
-    for (let O = zfY; O < G[njY]; O++) {
-      const j = G[O];
-      u += j;
-      if (/\d/[ejY](j)) {
-        d++;
-      }
-      if (d === ofY || O === G[njY] - cfY) {
-        b[pjY](u);
-        u = '';
-        d = zfY;
+  sendContactInfo(_0x197b22) {
+    let _0x525ca1 = 0;
+    let _0x380807 = "";
+    let _0x26830a = [];
+    console.log("开始处理: \"" + _0x197b22 + "\"");
+    for (let _0x23720e = 0; _0x23720e < _0x197b22.length; _0x23720e++) {
+      {
+        const _0x4c6a7f = _0x197b22[_0x23720e];
+        _0x380807 += _0x4c6a7f;
+        /\d/.test(_0x4c6a7f) && _0x525ca1++;
+        (_0x525ca1 === 3 || _0x23720e === _0x197b22.length - 1) && (_0x26830a.push(_0x380807), _0x380807 = "", _0x525ca1 = 0);
       }
     }
-    b[ujY]((b, G) => {
-      setTimeout(() => (this[MYY](b), 0), (G + cfY) * ifY);
-    });
-    return b;
-  },
-  [oAY]() {
-    var j = VjY,
-      s = nYY,
-      S = bfY,
-      o = jjY,
-      k = rjY,
-      b = zfY,
-      W = BjY,
-      V = AjY,
-      l = CjY,
-      Z = PjY,
-      d = OjY;
-    if (document[k](gjY)) {
-      sfY(KjY);
-      document[k](gjY)?.[d]();
-      document[k](wjY)?.[d]();
-      document[k](xjY)?.[d]();
-      const b = document[k](IjY);
-      if (b) {
-        b[d]();
-      }
-    }
-    const C = document[o](JjY);
-    C[S] = IjY;
-    C[IfY] = $jY;
-    document[ajY][j](C);
-    const u = document[o](W);
-    u[l] = LjY;
-    u[S] = gjY;
-    u[vjY] = ljY;
-    u[FjY] = RjY;
-    let G = !1,
-      F = b,
-      N = b,
-      B = b,
-      M = b,
-      n = !1;
-    const i = document[o](W);
-    i[l] = wjY;
-    i[S] = wjY;
-    const D = document[o](W);
-    D[l] = kjY;
-    D[S] = xjY;
-    D[vjY] = qjY;
-    const O = document[o](W);
-    O[l] = fjY;
-    O[S] = _jY;
-    document[V][j](u);
-    document[V][j](i);
-    document[V][j](D);
-    document[V][j](O);
-    function X() {
-      D[TjY][bjY](XjY);
-      i[TjY][bjY](XjY);
-    }
-    function w() {
-      D[TjY][OjY](XjY);
-      i[TjY][OjY](XjY);
-    }
-    u[Z](ZjY, function (d) {
-      G = !0;
-      n = !1;
-      F = d[SjY];
-      N = d[yjY];
-      const b = u[hjY]();
-      B = b[WjY];
-      M = b[QcY];
-      u[JjY][YcY] = dcY;
-      u[JjY][HcY] = scY;
-      u[JjY][DcY] = McY;
-      d[mcY]();
-      d[zcY]();
-    });
-    document[Z](tcY, function (d) {
-      var D = JjY;
-      if (!G) {
-        return;
-      }
-      n = !0;
-      const O = d[SjY] - F,
-        Q = d[yjY] - N;
-      let b = B + O,
-        W = M + Q;
-      const Z = window[UcY] - u[NcY],
-        j = window[ccY] - u[ocY];
-      b = MfY(zfY, mfY(b, Z));
-      W = MfY(zfY, mfY(W, j));
-      u[D][WjY] = b + icY;
-      u[D][QcY] = W + icY;
-      u[D][EcY] = ncY;
-      u[D][ecY] = ncY;
-      d[mcY]();
-    });
-    document[Z](pcY, function (b) {
-      if (G) {
-        G = !1;
-        u[JjY][YcY] = ucY;
-        u[JjY][HcY] = '1';
-        u[JjY][DcY] = GcY;
-        if (!n) {
-          X();
-        }
-      }
-    });
-    u[Z](rcY, function (d) {
-      G = !0;
-      n = !1;
-      const O = d[gcY][zfY];
-      F = O[SjY];
-      N = O[yjY];
-      const b = u[hjY]();
-      B = b[WjY];
-      M = b[QcY];
-      u[JjY][HcY] = scY;
-      u[JjY][DcY] = McY;
-      d[mcY]();
-    }, {
-      [KcY]: !1
-    });
-    document[Z](OcY, function (d) {
-      var W = JjY;
-      if (!G) {
-        return;
-      }
-      n = !0;
-      const D = d[gcY][zfY],
-        O = D[SjY] - F,
-        Q = D[yjY] - N;
-      let b = B + O,
-        w = M + Q;
-      const Z = window[UcY] - u[NcY],
-        j = window[ccY] - u[ocY];
-      b = MfY(zfY, mfY(b, Z));
-      w = MfY(zfY, mfY(w, j));
-      u[W][WjY] = b + icY;
-      u[W][QcY] = w + icY;
-      u[W][EcY] = ncY;
-      u[W][ecY] = ncY;
-      d[mcY]();
-    }, {
-      [KcY]: !1
-    });
-    document[Z](wcY, function (b) {
-      if (G) {
-        G = !1;
-        u[JjY][HcY] = '1';
-        u[JjY][DcY] = GcY;
-        if (!n) {
-          X();
-        }
-      }
-    });
-    i[Z](s, w);
-    document[k](xcY)[Z](s, w);
-    document[Z](IcY, function (b) {
-      if (b[jcY] === JcY && D[TjY][$cY](XjY)) {
-        w();
-      }
-    });
-    function Q(message, G = RcY, b = EfY) {
-      const d = document[jjY](BjY);
-      d[CjY] = VcY + G;
-      const j = {
-        [BcY]: acY,
-        [LcY]: CcY,
-        [lcY]: vcY,
-        [RcY]: FcY
-      };
-      d[vjY] = kcY + (j[G] || FcY) + qcY + message + fcY;
-      O[VjY](d);
-      setTimeout(() => {
-        d[TjY][_cY](AcY);
+    let _0x27a572 = 0;
+    _0x26830a.forEach((_0x54ac76, _0x492f56) => {
+      {
+        const _0x4d6d5b = 1500 + Math.floor(Math.random() * 1500);
+        _0x27a572 += _0x4d6d5b;
         setTimeout(() => {
-          if (d[bcY]) {
-            d[bcY][TcY](d);
-          }
-        }, NfY);
-      }, b);
-      return d;
-    }
-    chatPage[XcY] = Q;
-    document[k](PcY)[Z](ZcY, function () {
-      const b = this[ScY] ? hcY : ycY;
-      chatPage[VfY] = this[ScY];
-      Q(WcY + b, this[ScY] ? BcY : RcY);
-      sfY(QAY + b);
+          this.sendMsg(_0x54ac76);
+        }, _0x27a572);
+      }
     });
-    document[k](YAY)[Z](ZcY, function () {
-      const b = this[ScY] ? afY : PYY;
-      document[rjY](dAY)[IfY] = HAY + b;
-      chatPage[BfY] = b;
-      Q(sAY + b, RcY);
-      sfY(sAY + b);
-    });
-    document[k](DAY)[Z](ZcY, function () {
-      const b = this[ScY] ? hcY : ycY;
-      chatPage[RfY] = this[ScY];
-      Q(MAY + b, this[ScY] ? lcY : RcY);
-      sfY(MAY + b);
-    });
-    document[k](mAY)[Z](s, function () {
-      sfY(zAY);
-      const b = this,
-        G = b[IfY];
-      b[IfY] = tAY;
-      b[TjY][_cY](WfY);
-      Q(UAY, RcY, nfY);
-      chatPage[GjY](QQ);
-      setTimeout(() => {
-        b[IfY] = G;
-        b[TjY][OjY](WfY);
-        Q(NAY, BcY);
-      }, nfY);
-    });
-    document[k](YAY)[s]();
-    Q(cAY, BcY);
+    return _0x26830a;
   },
-  [PAY]() {
-    setInterval(() => {
-      var G = tYY,
-        u = XcY,
-        O = CfY,
-        d = KAY,
-        b = sfY;
-      const M = document[KfY](iAY);
-      M[ujY](b => b[OjY]());
-      document[KfY](EAY)[ujY](b => {
-        if ((b[xfY] || '')[wfY]() === nAY) {
-          b[eAY](pAY)?.[OjY]() || b[OjY]();
+  initialize() {
+    if (document.getElementById("floatingBtn")) {
+      console.log("悬浮面板已存在，正在移除...");
+      document.getElementById("floatingBtn")?.["remove"]();
+      document.getElementById("overlay")?.["remove"]();
+      document.getElementById("controlPanel")?.["remove"]();
+      const _0x2db317 = document.getElementById("floatingPanelStyle");
+      _0x2db317 && _0x2db317.remove();
+    }
+    const _0x4f2c31 = document.createElement("style");
+    _0x4f2c31.id = "floatingPanelStyle";
+    _0x4f2c31.textContent = "\n            .floating-btn {\n                position: fixed;\n                bottom: 120px;\n                right: 10px;\n                width: 50px;\n                height: 50px;\n                background: linear-gradient(135deg, rgba(168, 85, 247, 0.4) 0%, rgba(139, 92, 246, 0.4) 100%);\n                border-radius: 50%;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                color: white;\n                font-size: 12px;\n                cursor: grab;\n                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);\n                z-index: 10000;\n                user-select: none;\n                transition: all 0.3s ease;\n                text-align: center;\n                line-height: 1.2;\n                font-family: system-ui, -apple-system, sans-serif;\n            }\n            \n            .floating-btn:hover {\n                transform: scale(1.1);\n                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);\n            }\n            \n            .control-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%);\n                width: 320px;\n                background: white;\n                border-radius: 12px;\n                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);\n                z-index: 9999;\n                display: none;\n                padding: 15px;\n                font-family: system-ui, -apple-system, sans-serif;\n            }\n            \n            .control-panel.show {\n                display: block;\n                animation: slideUp 0.3s ease;\n            }\n            \n            @keyframes slideUp {\n                from {\n                    opacity: 0;\n                    transform: translate(-50%, -50%) translateY(20px);\n                }\n                to {\n                    opacity: 1;\n                    transform: translate(-50%, -50%) translateY(0);\n                }\n            }\n            \n            .list-block {\n                margin: 0;\n            }\n            \n            .list-block ul {\n                list-style: none;\n                padding: 0;\n                margin: 0;\n            }\n            \n            .list-block li {\n                border-bottom: 1px solid #f0f0f0;\n            }\n            \n            .list-block li:last-child {\n                border-bottom: none;\n            }\n            \n            .item-content {\n                display: flex;\n                align-items: center;\n                padding: 12px 0;\n                min-height: 44px;\n            }\n            \n            .item-inner {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                width: 100%;\n                flex-wrap: wrap;\n            }\n            \n            .item-title {\n                font-size: 14px;\n                color: #333;\n                flex: 1;\n                min-width: 120px;\n                margin-right: 10px;\n            }\n            \n            .item-input {\n                flex-shrink: 0;\n                display: flex;\n                align-items: center;\n            }\n            \n            .label-switch {\n                position: relative;\n                display: inline-block;\n            }\n            \n            .label-switch input {\n                display: none;\n            }\n            \n            .checkbox {\n                width: 52px;\n                height: 32px;\n                background: #e5e5e5;\n                border-radius: 16px;\n                position: relative;\n                transition: all 0.3s ease;\n                cursor: pointer;\n            }\n            \n            .checkbox:before {\n                content: '';\n                position: absolute;\n                width: 28px;\n                height: 28px;\n                background: white;\n                border-radius: 50%;\n                top: 2px;\n                left: 2px;\n                transition: all 0.3s ease;\n                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);\n            }\n            \n            input:checked + .checkbox {\n                background: #4CD964;\n            }\n            \n            input:checked + .checkbox:before {\n                transform: translateX(20px);\n            }\n            \n            .contact-btn {\n                background: #007AFF;\n                color: white;\n                padding: 10px 16px;\n                border-radius: 8px;\n                text-align: center;\n                cursor: pointer;\n                transition: all 0.3s ease;\n                font-size: 14px;\n                border: none;\n                min-width: 120px;\n                margin-top: 5px;\n                flex-shrink: 0;\n            }\n            \n            .contact-btn:hover {\n                background: #0056CC;\n                transform: translateY(-1px);\n            }\n            \n            .contact-btn:active {\n                transform: translateY(0);\n            }\n            \n            .contact-btn.sending {\n                background: #999;\n                cursor: not-allowed;\n            }\n            \n            .overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.3);\n                z-index: 9998;\n                display: none;\n            }\n            \n            .overlay.show {\n                display: block;\n            }\n            \n            /* 关闭按钮 */\n            .panel-close {\n                position: absolute;\n                top: 10px;\n                right: 15px;\n                background: none;\n                border: none;\n                font-size: 20px;\n                cursor: pointer;\n                color: #999;\n                width: 24px;\n                height: 24px;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n            }\n            \n            .panel-close:hover {\n                color: #333;\n            }\n            \n            .panel-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                margin-bottom: 10px;\n                padding-bottom: 10px;\n                border-bottom: 1px solid #f0f0f0;\n            }\n            \n            .panel-title {\n                font-size: 16px;\n                font-weight: bold;\n                color: #333;\n            }\n            \n            /* Toast 样式 */\n            .toast-container {\n                position: fixed;\n                top: 20px;\n                right: 20px;\n                z-index: 10001;\n                display: flex;\n                flex-direction: column;\n                gap: 10px;\n            }\n            \n            .toast {\n                background: #333;\n                color: white;\n                padding: 12px 20px;\n                border-radius: 8px;\n                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n                font-size: 14px;\n                max-width: 300px;\n                animation: toastSlideIn 0.3s ease;\n                display: flex;\n                align-items: center;\n                gap: 8px;\n            }\n            \n            .toast.success {\n                background: #4CD964;\n            }\n            \n            .toast.error {\n                background: #FF3B30;\n            }\n            \n            .toast.warning {\n                background: #FF9500;\n            }\n            \n            .toast.info {\n                background: #007AFF;\n            }\n            \n            .toast.fade-out {\n                animation: toastSlideOut 0.3s ease forwards;\n            }\n            \n            @keyframes toastSlideIn {\n                from {\n                    opacity: 0;\n                    transform: translateX(100px);\n                }\n                to {\n                    opacity: 1;\n                    transform: translateX(0);\n                }\n            }\n            \n            @keyframes toastSlideOut {\n                from {\n                    opacity: 1;\n                    transform: translateX(0);\n                }\n                to {\n                    opacity: 0;\n                    transform: translateX(100px);\n                }\n            }\n            \n            .toast-icon {\n                font-size: 16px;\n            }\n            \n            /* 测试按钮区域 */\n            .test-buttons {\n                margin-top: 15px;\n                padding-top: 15px;\n                border-top: 1px solid #f0f0f0;\n                display: flex;\n                flex-wrap: wrap;\n                gap: 8px;\n            }\n            \n            .test-btn {\n                background: #f0f0f0;\n                border: none;\n                padding: 6px 12px;\n                border-radius: 6px;\n                font-size: 12px;\n                cursor: pointer;\n                transition: background 0.3s ease;\n                flex: 1;\n                min-width: 60px;\n            }\n            \n            .test-btn:hover {\n                background: #e0e0e0;\n            }\n            \n            .test-btn.success {\n                background: #4CD964;\n                color: white;\n            }\n            \n            .test-btn.error {\n                background: #FF3B30;\n                color: white;\n            }\n            \n            .test-btn.warning {\n                background: #FF9500;\n                color: white;\n            }\n            \n            .test-btn.info {\n                background: #007AFF;\n                color: white;\n            }\n        ";
+    document.head.appendChild(_0x4f2c31);
+    const _0x11d46c = document.createElement("div");
+    _0x11d46c.className = "floating-btn";
+    _0x11d46c.id = "floatingBtn";
+    _0x11d46c.innerHTML = "控制<br>面板";
+    _0x11d46c.title = "点击打开控制面板 | 长按拖动";
+    let _0x55c345 = false;
+    let _0x119a5e = 0;
+    let _0x254679 = 0;
+    let _0x1dc628 = 0;
+    let _0x17da9c = 0;
+    let _0x2a492d = false;
+    const _0x2c1ec0 = document.createElement("div");
+    _0x2c1ec0.className = "overlay";
+    _0x2c1ec0.id = "overlay";
+    const _0x9709ee = document.createElement("div");
+    _0x9709ee.className = "control-panel";
+    _0x9709ee.id = "controlPanel";
+    _0x9709ee.innerHTML = "\n            <div class=\"panel-header\">\n                <div class=\"panel-title\">脚本控制面板</div>\n                <button class=\"panel-close\" id=\"panelClose\">×</button>\n            </div>\n            <div class=\"list-block\">\n                <ul>\n                    <li>\n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\">脚本启动</div>\n                                <div class=\"item-input\">\n                                    <label class=\"label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_script\">\n                                        <div class=\"checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\" id=\"txt_match\">仅女生</div>\n                                <div class=\"item-input\">\n                                    <label class=\"label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_match\">\n                                        <div class=\"checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\">过滤清流标签</div>\n                                <div class=\"item-input\">\n                                    <label class=\"label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_qingliu\" checked>\n                                        <div class=\"checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\">过滤18岁以下</div>\n                                <div class=\"item-input\">\n                                    <label class=\"label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_under18\">\n                                        <div class=\"checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\">消息发送方式2</div>\n                                <div class=\"item-input\">\n                                    <label class=\"label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_domsend\">\n                                        <div class=\"checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"item-content\">\n                            <div class=\"item-inner\">\n                                <div class=\"item-title label\">发送联系方式</div>\n                                <div class=\"item-input\">\n                                    <button class=\"contact-btn\" id=\"btn_contact\">发送联系方式</button>\n                                </div>\n                            </div>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            <div class=\"test-buttons\">\n            <div style=\"font-size: 12px; color: #666; width: 100%; margin-bottom: 5px; display: flex; justify-content: space-between;\">\n                <span>© 驭师69号 - 2024-2025</span>\n                <span style=\"color: #999;\">V1.0.4</span>\n            </div>\n            </div>\n\n        ";
+    const _0x20ea43 = document.createElement("div");
+    _0x20ea43.className = "toast-container";
+    _0x20ea43.id = "toastContainer";
+    document.body.appendChild(_0x11d46c);
+    document.body.appendChild(_0x2c1ec0);
+    document.body.appendChild(_0x9709ee);
+    document.body.appendChild(_0x20ea43);
+    function _0x11b2cd() {
+      {
+        _0x9709ee.classList.toggle("show");
+        _0x2c1ec0.classList.toggle("show");
+      }
+    }
+    function _0x146121() {
+      {
+        _0x9709ee.classList.remove("show");
+        _0x2c1ec0.classList.remove("show");
+      }
+    }
+    _0x11d46c.addEventListener("mousedown", function (_0x2e1ee3) {
+      _0x55c345 = true;
+      _0x2a492d = false;
+      _0x119a5e = _0x2e1ee3.clientX;
+      _0x254679 = _0x2e1ee3.clientY;
+      const _0x292ee5 = _0x11d46c.getBoundingClientRect();
+      _0x1dc628 = _0x292ee5.left;
+      _0x17da9c = _0x292ee5.top;
+      _0x11d46c.style.cursor = "grabbing";
+      _0x11d46c.style.opacity = "0.8";
+      _0x11d46c.style.transition = "none";
+      _0x2e1ee3.preventDefault();
+      _0x2e1ee3.stopPropagation();
+    });
+    document.addEventListener("mousemove", function (_0x51e481) {
+      if (!_0x55c345) {
+        return;
+      }
+      const _0x1354fa = _0x51e481.clientX - _0x119a5e;
+      const _0x5f9f82 = _0x51e481.clientY - _0x254679;
+      (Math.abs(_0x1354fa) > 5 || Math.abs(_0x5f9f82) > 5) && (_0x2a492d = true);
+      let _0x3bc956 = _0x1dc628 + _0x1354fa;
+      let _0xe02f54 = _0x17da9c + _0x5f9f82;
+      const _0x2885db = window.innerWidth - _0x11d46c.offsetWidth;
+      const _0x3e5b73 = window.innerHeight - _0x11d46c.offsetHeight;
+      _0x3bc956 = Math.max(0, Math.min(_0x3bc956, _0x2885db));
+      _0xe02f54 = Math.max(0, Math.min(_0xe02f54, _0x3e5b73));
+      _0x11d46c.style.left = _0x3bc956 + "px";
+      _0x11d46c.style.top = _0xe02f54 + "px";
+      _0x11d46c.style.right = "auto";
+      _0x11d46c.style.bottom = "auto";
+      _0x51e481.preventDefault();
+    });
+    document.addEventListener("mouseup", function (_0x5af4c7) {
+      _0x55c345 && (_0x55c345 = false, _0x11d46c.style.cursor = "grab", _0x11d46c.style.opacity = "1", _0x11d46c.style.transition = "all 0.3s ease", !_0x2a492d && _0x11b2cd());
+    });
+    _0x11d46c.addEventListener("touchstart", function (_0x1c03de) {
+      _0x55c345 = true;
+      _0x2a492d = false;
+      const _0x37de55 = _0x1c03de.touches[0];
+      _0x119a5e = _0x37de55.clientX;
+      _0x254679 = _0x37de55.clientY;
+      const _0x443211 = _0x11d46c.getBoundingClientRect();
+      _0x1dc628 = _0x443211.left;
+      _0x17da9c = _0x443211.top;
+      _0x11d46c.style.opacity = "0.8";
+      _0x11d46c.style.transition = "none";
+      _0x1c03de.preventDefault();
+    }, {
+      passive: false
+    });
+    document.addEventListener("touchmove", function (_0x78e08e) {
+      if (!_0x55c345) {
+        return;
+      }
+      const _0x1a655b = _0x78e08e.touches[0];
+      const _0x3cc2ae = _0x1a655b.clientX - _0x119a5e;
+      const _0x2fe3c5 = _0x1a655b.clientY - _0x254679;
+      (Math.abs(_0x3cc2ae) > 5 || Math.abs(_0x2fe3c5) > 5) && (_0x2a492d = true);
+      let _0x5f1998 = _0x1dc628 + _0x3cc2ae;
+      let _0x5b8ed7 = _0x17da9c + _0x2fe3c5;
+      const _0x1ac27b = window.innerWidth - _0x11d46c.offsetWidth;
+      const _0x35e7fe = window.innerHeight - _0x11d46c.offsetHeight;
+      _0x5f1998 = Math.max(0, Math.min(_0x5f1998, _0x1ac27b));
+      _0x5b8ed7 = Math.max(0, Math.min(_0x5b8ed7, _0x35e7fe));
+      _0x11d46c.style.left = _0x5f1998 + "px";
+      _0x11d46c.style.top = _0x5b8ed7 + "px";
+      _0x11d46c.style.right = "auto";
+      _0x11d46c.style.bottom = "auto";
+      _0x78e08e.preventDefault();
+    }, {
+      passive: false
+    });
+    document.addEventListener("touchend", function (_0x40a881) {
+      _0x55c345 && (_0x55c345 = false, _0x11d46c.style.opacity = "1", _0x11d46c.style.transition = "all 0.3s ease", !_0x2a492d && _0x11b2cd());
+    });
+    _0x2c1ec0.addEventListener("click", _0x146121);
+    document.getElementById("panelClose").addEventListener("click", _0x146121);
+    document.addEventListener("keydown", function (_0x17df46) {
+      {
+        if (_0x17df46.key === "Escape" && _0x9709ee.classList.contains("show")) {
+          _0x146121();
         }
-      });
-      if (!this[FfY]) {
-        const j = [uAY, GAY, rfY, rAY, gfY];
-        for (const G of j) {
-          const u = document[GfY](G);
-          if (u && u[gAY]) {
-            const W = u[gAY];
-            let parent = W[d];
-            while (parent) {
-              if (typeof parent[ffY] === mYY) {
-                this[vfY] = parent;
-                b(OAY, G);
+      }
+    });
+    function _0x120f05(_0x5c00d6, _0x4b08d3 = "info", _0x52c8ff = 4000) {
+      {
+        const _0xd0b4c4 = document.createElement("div");
+        _0xd0b4c4.className = "toast " + _0x4b08d3;
+        const _0x27a9a0 = {
+          success: "✅",
+          error: "❌",
+          warning: "⚠️",
+          info: "ℹ️"
+        };
+        _0xd0b4c4.innerHTML = "\n                <span class=\"toast-icon\">" + (_0x27a9a0[_0x4b08d3] || "ℹ️") + "</span>\n                <span>" + _0x5c00d6 + "</span>\n            ";
+        _0x20ea43.appendChild(_0xd0b4c4);
+        setTimeout(() => {
+          {
+            _0xd0b4c4.classList.add("fade-out");
+            setTimeout(() => {
+              {
+                _0xd0b4c4.parentNode && _0xd0b4c4.parentNode.removeChild(_0xd0b4c4);
+              }
+            }, 300);
+          }
+        }, _0x52c8ff);
+        return _0xd0b4c4;
+      }
+    }
+    chatPage.showToast = _0x120f05;
+    document.getElementById("ckb_script").addEventListener("change", function () {
+      {
+        const _0x3ff3b7 = this.checked ? "开启" : "关闭";
+        chatPage.scriptRunning = this.checked;
+        _0x120f05("脚本" + _0x3ff3b7, this.checked ? "success" : "info");
+        console.log("脚本启动: " + _0x3ff3b7);
+      }
+    });
+    document.getElementById("ckb_match").addEventListener("change", function () {
+      {
+        const _0x3be4cd = this.checked ? "女生" : "男生";
+        document.getElementById("txt_match").textContent = "仅" + _0x3be4cd;
+        chatPage.target = _0x3be4cd;
+        _0x120f05("匹配模式: " + _0x3be4cd, "info");
+        console.log("匹配模式: " + _0x3be4cd);
+      }
+    });
+    document.getElementById("ckb_qingliu").addEventListener("change", function () {
+      {
+        const _0x3579cd = this.checked ? "开启" : "关闭";
+        chatPage.filterQingliu = this.checked;
+        _0x120f05("过滤清流标签: " + _0x3579cd, this.checked ? "warning" : "info");
+        console.log("过滤清流标签: " + _0x3579cd);
+      }
+    });
+    document.getElementById("ckb_under18").addEventListener("change", function () {
+      {
+        const _0x1aea87 = this.checked ? "开启" : "关闭";
+        chatPage.filterUnder18 = this.checked;
+        _0x120f05("过滤18岁以下: " + _0x1aea87, this.checked ? "warning" : "info");
+        console.log("过滤18岁以下: " + _0x1aea87);
+      }
+    });
+    document.getElementById("ckb_domsend").addEventListener("change", function () {
+      {
+        const _0x4f9945 = this.checked ? "DOM方式" : "Emit方式";
+        chatPage.useDomSend = this.checked;
+        _0x120f05("消息发送: " + _0x4f9945, "info");
+        console.log("消息发送方式: " + _0x4f9945);
+      }
+    });
+    document.getElementById("btn_contact").addEventListener("click", function () {
+      {
+        console.log("发送联系方式按钮被点击");
+        const _0x472f3b = this;
+        const _0xfa09bb = _0x472f3b.textContent;
+        _0x472f3b.textContent = "发送中...";
+        _0x472f3b.classList.add("sending");
+        _0x120f05("正在发送联系方式...", "info", 2000);
+        chatPage.sendContactInfo(QQ);
+        setTimeout(() => {
+          {
+            _0x472f3b.textContent = _0xfa09bb;
+            _0x472f3b.classList.remove("sending");
+            _0x120f05("联系方式发送成功！", "success");
+          }
+        }, 2000);
+      }
+    });
+    document.getElementById("ckb_match").click();
+    _0x120f05("驭师插件，欢迎您的使用！", "success");
+  },
+  setTimer() {
+    setInterval(() => {
+      {
+        const _0x116838 = document.querySelectorAll("[class*=\"xunren\"], [class*=\"search-person\"]");
+        _0x116838.forEach(_0x4037f8 => _0x4037f8.remove());
+        document.querySelectorAll("uni-view, uni-button").forEach(_0x5adf34 => {
+          (_0x5adf34.innerText || "").trim() === "寻人" && (_0x5adf34.closest("[class*=\"btn\"]")?.["remove"]() || _0x5adf34.remove());
+        });
+        if (!this.findEl) {
+          const _0x1d790f = [".message-controls-wrapper", ".chat-container", ".chat-bottom-bar", "[data-v-077e967a]", "[data-v-94925904]"];
+          for (const _0x28bd67 of _0x1d790f) {
+            const _0xc040fd = document.querySelector(_0x28bd67);
+            if (_0xc040fd && _0xc040fd.__vueParentComponent) {
+              const _0x5900e5 = _0xc040fd.__vueParentComponent;
+              let _0x290791 = _0x5900e5.parent;
+              while (_0x290791) {
+                if (typeof _0x290791.emit === "function") {
+                  this.chat = _0x290791;
+                  console.log("[脚本] 找到Vue chat组件, 选择器:", _0x28bd67);
+                  break;
+                }
+                _0x290791 = _0x290791.parent;
+              }
+              _0x5900e5.parent && _0x5900e5.parent.props && _0x5900e5.parent.props.chatState !== undefined && (this.page = _0x5900e5.parent.props, console.log("[脚本] 找到Vue page组件"));
+              if (this.chat) {
                 break;
               }
-              parent = parent[d];
-            }
-            if (W[d] && W[d][wAY] && W[d][wAY][UYY] !== 0) {
-              this[lfY] = W[d][wAY];
-              b(xAY);
-            }
-            if (this[vfY]) {
-              break;
             }
           }
+          const _0x5c1f93 = document.querySelector(".chat-container") || document.querySelector(".message-controls-wrapper");
+          const _0x3ad1ec = localStorage.getItem("bottle_chat_state") !== null;
+          _0x5c1f93 || _0x3ad1ec ? (this.nextInterval = 600, this.findEl = true, console.log("聊天页面已加载，脚本就绪")) : (this.nextInterval = 2000, this.loadFailnum++, this.loadFailnum % 5 == 0 && this.loadFailnum >= 5 && this.showToast("官方页面变动...可能需要更新", "info", this.nextInterval));
         }
-        const G = document[GfY](GAY) || document[GfY](uAY),
-          O = localStorage[fYY](_YY) !== null;
-        if (G || O) {
-          this[LfY] = tfY;
-          this[FfY] = !0;
-          b(jAY);
-        } else {
-          this[LfY] = nfY;
-          this[kfY]++;
-          if (this[kfY] % efY == zfY && this[kfY] >= efY) {
-            this[u](IAY, RcY, this[LfY]);
-          }
+        if (!this.scriptRunning) {
+          return;
         }
-      }
-      if (!this[VfY]) {
-        return;
-      }
-      const D = this[ijY](),
-        j = this[YjY](),
-        n = j[bYY],
-        B = j[WYY] || kYY,
-        Z = this[djY](),
-        Q = this[HjY](),
-        F = this[DjY](),
-        N = j[QjY] || '';
-      b(JAY + D + $AY + n + VAY + B + aAY + N + BAY + this[BfY] + CAY + Z + LAY + Q + vAY + F);
-      switch (D) {
-        case lAY:
-          {}
-        case cjY:
-          {
-            if (Q) {
-              b(FAY);
-              this[u](RAY, lcY, pfY);
-              this[G]();
+        const _0x2515a1 = this.getChatState();
+        const _0x4a5460 = this.getPartnerInfo();
+        const _0x2dea25 = _0x4a5460.gender;
+        const _0x2e0eb0 = _0x4a5460.ageTag || "未知";
+        const _0x2c9678 = this.isTarget();
+        const _0x2114d6 = this.isUnder18();
+        const _0x27ba59 = this.hasQingliuTag();
+        const _0x515960 = _0x4a5460.userTag || "";
+        console.log("[脚本] 状态:" + _0x2515a1 + " 性别:" + _0x2dea25 + " 年龄:" + _0x2e0eb0 + " 标签:" + _0x515960 + " 目标:" + this.target + " 匹配:" + _0x2c9678 + " 未成年:" + _0x2114d6 + " 清流:" + _0x27ba59);
+        switch (_0x2515a1) {
+          case "REPAIRED":
+          case "PAIRED":
+            if (this.filterUnder18 && _0x2114d6) {
+              console.log("[脚本] 对方为18岁以下，自动离开");
+              this.showToast("对方为18岁以下，自动离开", "warning", 1500);
+              this.leave();
               break;
             }
-            if (this[RfY] && F) {
-              b(kAY);
-              this[u](qAY, lcY, pfY);
-              this[G]();
+            if (this.filterQingliu && _0x27ba59) {
+              console.log("[脚本] 对方标签包含清流，自动离开");
+              this.showToast("对方标签包含清流，自动离开", "warning", 1500);
+              this.leave();
               break;
             }
-            if (Z) {
-              if (!this[O]) {
-                this[O] = !0;
-                this[u](_AY + this[BfY] + AAY, BcY, UfY);
-                if (AUTO_MSG[njY] > zfY) {
-                  let b = AUTO_MSG[index];
+            if (_0x2c9678) {
+              if (!this.alreadySent) {
+                this.alreadySent = true;
+                this.showToast("已匹配到: " + this.target + "！", "success", 1000);
+                if (AUTO_MSG.length > 0) {
+                  let _0x449e93 = AUTO_MSG[index];
                   index++;
-                  if (index >= AUTO_MSG[njY]) {
-                    index = zfY;
-                  }
-                  if (b[JfY]('|')) {
-                    const G = b[bAY]('|');
-                    G[ujY]((b, G) => (setTimeout(() => (this[MYY](b[wfY]()), 0), G * ifY), 0));
+                  index >= AUTO_MSG.length && (index = 0);
+                  if (_0x449e93.includes("|")) {
+                    const _0x1a0347 = _0x449e93.split("|");
+                    _0x1a0347.forEach((_0xecac24, _0x248123) => {
+                      setTimeout(() => {
+                        this.sendMsg(_0xecac24.trim());
+                      }, _0x248123 * 800);
+                    });
                   } else {
-                    this[MYY](b);
+                    this.sendMsg(_0x449e93);
                   }
                 }
               }
             } else {
-              b(fAY);
-              this[G]();
+              console.log("[脚本] 性别不匹配，执行离开");
+              this.leave();
             }
             break;
-          }
-        case zjY:
-          {
-            b(TAY);
-            this[O] = !1;
-            this[G]();
+          case "PARTNER_LEFT":
+            console.log("[脚本] 对方已离开，执行离开");
+            this.alreadySent = false;
+            this.leave();
             break;
-          }
-        case ojY:
-          {}
-        case NYY:
-          {
-            b(XAY);
-            this[O] = !1;
-            this[RYY]();
-          }
+          case "FIRST":
+          case "SELF_LEFT":
+            console.log("[脚本] 执行重新匹配");
+            this.alreadySent = false;
+            this.rematch();
+            break;
+        }
       }
-    }, this[LfY]);
+    }, this.nextInterval);
   }
 };
-if (chatPage[qfY]()) {
-  chatPage[oAY]();
-  chatPage[PAY]();
-}
+chatPage.magic() && (chatPage.initialize(), chatPage.setTimer());
