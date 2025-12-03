@@ -1,833 +1,1322 @@
-//Wed Dec 03 2025 16:18:23 GMT+0000 (Coordinated Universal Time)
+//Wed Dec 03 2025 16:28:30 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-let QQ = "";
-let index = 0;
-let AUTO_MSG = [];
-let currentAutoIndex = 0;
-let filterQingliu = true;
-let filterUnder18 = false;
-let blacklistEnabled = true;
-let blacklist = [];
-function loadBlacklist() {
-  const _0x3454c5 = function () {
-    let _0x3ad2aa = true;
-    return function (_0x72d072, _0x48dfd9) {
-      const _0x43f548 = _0x3ad2aa ? function () {
-        if (_0x48dfd9) {
-          const _0xff2c11 = _0x48dfd9.apply(_0x72d072, arguments);
-          _0x48dfd9 = null;
-          return _0xff2c11;
+(function (O) {
+  var b, z, h, P, C, r;
+  P = i(() => {
+    var V;
+    return (V = {
+      a: 'b',
+      c: 35
+    }) && 0 || V;
+  }, 0)();
+  function X(V, B) {
+    switch (b) {
+      case 4:
+        {
+          return V + B;
         }
-      } : function () {};
-      _0x3ad2aa = false;
-      return _0x43f548;
+      case -34:
+        {
+          return V * B;
+        }
+      case 43:
+        {
+          return V - B;
+        }
+      case !(P.a.charCodeAt(0) == 98) ? -111 : 62:
+        {
+          return V / B;
+        }
+    }
+  }
+  function F(V) {
+    V = b + (b = V, 0);
+    return V;
+  }
+  function Y(V, B) {
+    return V << B;
+  }
+  function u(V, B) {
+    return V >> B;
+  }
+  function c(V, B) {
+    return V <= B;
+  }
+  function Z(V, B) {
+    return V % B;
+  }
+  function l(V, B) {
+    return X(V, B, F(-34));
+  }
+  function H(V, B) {
+    return X(V, B, F(4));
+  }
+  function R(V, B) {
+    return X(V, B, F(43));
+  }
+  function U(V, B) {
+    return X(V, B, b = 62);
+  }
+  function f(V, B) {
+    return V < B;
+  }
+  function o(V, B) {
+    return V > B;
+  }
+  function B(V, B) {
+    return V >= B;
+  }
+  function D(V, B, z) {
+    V[B] = z;
+    return V;
+  }
+  C = D;
+  let q = (() => [10, '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', 'fromCharCode', 'object', 'ct', 'd', 'StringExtract', 0, '_$a'])();
+  (z = Object.assign) && false || (r = O[q[0]]);
+  let x = [q[1]],
+    K,
+    k = String[q[2]],
+    v = Uint8Array,
+    a = Uint16Array,
+    L = Uint32Array;
+  h = typeof window === q[3] && window || typeof self === H('obje', 'ct') && self || exports || typeof globalThis === H('obje', q[4]) && globalThis || typeof global === 'object' && global;
+  let V = (i(V => {
+    var z, L, x, F, B;
+    x = D;
+    function u() {
+      return ['ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'];
+    }
+    let X = u();
+    ((((B = X[0]) || '1') && (z = i(k => {
+      var F, B, V;
+      const z = [0, 'th'];
+      for (((V = {}) && 0 || (B = z[0]) || '1') && (F = k[H('leng', z[1])]); f(B, F); B++) V[k[H('char', 'At')](B)] = B;
+      return V;
+    }, 1)(B)) || 6) && (F = i(u => {
+      var F, X, B, x;
+      function V() {
+        return [4, 0, 1, 12, 2, 6, 3, 'charAt', 16, 'length', ''];
+      }
+      const L = V();
+      return (B = u.length) && 0 || (X = Z(B, L[0]), x = (o(B, 0) ? Y(z[u.charAt(L[1])], 18) : 0) | (o(B, L[2]) ? Y(z[u.charAt(L[2])], L[3]) : L[1]) | (o(B, 2) ? Y(z[u.charAt(L[4])], L[5]) : L[1]) | (o(B, L[6]) ? z[u[L[7]](L[6])] : L[1]), F = [k(x >>> L[8]), k(x >>> 8 & 255), k(x & 255)], F[L[9]] -= [0, L[1], 2, 1][X], F.join(L[10]));
+    }, 1)) || 9) && (L = i(B => {
+      const V = x({}, 'V', 'replace');
+      return B[V.V](/\S{1,4}/g, F);
+    }, 1)) && 0 || x(V, 'atob', i(V => {
+      return L(String(V)[H('repl', 'ace')](/[^A-Za-z0-9\+\/]/g, ''));
+    }, 1));
+  }, 1)(h), function (h) {
+    var O, s, q, e, t, Q, F, G, d, A, VX, j, b, z, S, g, K, T, I, V, E, n, M, BX, r;
+    let W = [8, !0, 0, 'type', 1, 'prototype', 'I', 'J', 7, 9, 6, 5, 4, 13, 2, 14, 15, 10, 11, 17, 19, 23, 31, 43, 51, 59, 83, 99, 115, 163, 227, 258, 49, 65, 97, 385, 513, 3073, 0x2001, 0x6001, 3, 12, 288, 'length', 143, 255, 279, 30, 'd'];
+    if ((E = W[0]) && 0 || (G = W[1]) || '0') {
+      z = W[2];
+    }
+    function m(V) {
+      throw V;
+    }
+    function w(B, u) {
+      var z, F, V, X;
+      X = D;
+      let k = 'c|verify|N|err:|B|index|Size|bufferType|resize'.split('|');
+      V = this;
+      z = 0;
+      X(X(V, 'input', B), k[0], 0);
+      if (u || !(u = {})) {
+        u.index && (V.c = u.index) && 0 || u[k[1]] && (V[k[2]] = u[k[1]]);
+      }
+      (F = B[V[k[0]]++]) && 0 || (z = B[V[k[0]]++]);
+      switch (F & 15) {
+        case E:
+          {
+            V.method = E;
+          }
+      }
+      if (0 !== Z(H(Y(F, 8), z), 31) && m(Error(H(k[3], Z(H(Y(F, 8), z), 31)))) && 0 || z & 32 && m(Error('not')) || 1) {
+        X(V, k[4], new J(B, X(X(X(X({}, k[5], V[k[0]]), 'bufferSize', u[H('buffer', k[6])]), k[7], u.bufferType), k[8], u.resize)));
+      }
+    }
+    (M = (w[H('proto', W[3])].p = function () {
+      var k, z, V, u, B;
+      u = D;
+      function F() {
+        return ['ut', 0, 'B', 16];
+      }
+      const X = F();
+      return ((V = this) || true) && (B = V[H('inp', X[0])]) && 0 || (k = X[1], z = X[1], k = V[X[2]].p(), u(V, 'c', V.B.c), V.N && (z = (Y(B[V.c++], 24) | Y(B[V.c++], X[3]) | Y(B[V.c++], 8) | B[V.c++]) >>> X[1], z !== jb(k) && m(Error('i32c'))), k);
+    }, 0)) && 0 || (T = W[4]);
+    function J(z, k) {
+      var B, F;
+      F = D;
+      function u() {
+        return 'l|g|c|q|ut|s|n|ex|bufferSize|Type|bufferType|C|resize|m|f|I|J|imd'.split('|');
+      }
+      const V = u();
+      B = this;
+      F(F(F(F(F(F(F(B, V[0], []), 'm', 0x8000), 'e', B[V[1]] = B[V[2]] = B[V[3]] = 0), H('inp', V[4]), r ? new v(z) : z), V[5], !1), V[6], T), 'C', !1);
+      if (k || !(k = {})) {
+        ((k[H('ind', V[7])] && (B[V[2]] = k[H('ind', 'ex')]) && 0 || k.bufferSize && (B.m = k[V[8]])) && 0 || k[H('buffer', V[9])] && (B[V[6]] = k[V[10]])) && 0 || k.resize && (B[V[11]] = k[V[12]]);
+      }
+      switch (B.n) {
+        case M:
+          {
+            B.b = 0x8000;
+            B.a = new (r ? v : Array)(H(H(0x8000, B[V[13]]), 258));
+            break;
+          }
+        case T:
+          {
+            B.b = 0;
+            B.a = new (r ? v : Array)(B[V[13]]);
+            B[V[14]] = B.K;
+            B.t = B[V[15]];
+            B.o = B[V[16]];
+            break;
+          }
+        default:
+          {
+            m(Error(V[17]));
+          }
+      }
+    }
+    if (((J[W[5]].K = function (u) {
+      var V, Z, z, B, k, X, F, L;
+      const x = (() => 'input|c|ut|number|v|G|th|u|length|a'.split('|'))();
+      return (k = this) && 0 || (z = H(U(k[x[0]][H('leng', 'th')], k[x[1]]), 1) | 0, V = 0, X = 0, Z = 0, B = k[H('inp', x[2])], F = k.a, u && (x[3] === typeof u[x[4]] && (z = u.v), x[3] === typeof u.G && (z += u[x[5]])), o(2, z) ? (V = U(R(B.length, k.c), k[x[7]][2]), Z = l(258, U(V, 2)) | 0, f(Z, F[x[8]]) ? X = H(F[H('leng', x[6])], Z) : X = Y(F.length, 1)) : X = l(F[H('leng', x[6])], z), r ? (L = new v(X), L.set(F)) : L = F, k[x[9]] = L);
+    }) || 1) && (J[W[5]][W[6]] = function () {
+      var B, k, z;
+      function F() {
+        return ['length', 'a', 'th', 0];
+      }
+      let V = F();
+      return (B = this) && 0 || (k = B.b, r ? B.C ? (z = new v(k), z.set(B.a[H('subar', 'ray')](V[3], k))) : z = B.a.subarray(V[3], k) : (o(B[V[1]][V[0]], k) && (B.a[H('leng', V[2])] = k), z = B[V[1]]), B.buffer = z);
+    }) || true) {
+      J[H('proto', W[3])][W[7]] = function (l, U) {
+        var z, k, q, h, u, Z, x, a, X;
+        q = D;
+        const L = ['a', 'b', 'u', 256, 257, 0, 'length', 'f', 8, 'e'];
+        for (((((u = this) && 0 || (X = u[L[0]])) && 0 || (z = u[L[1]]) || 2) && q(u, L[2], l) || true) && (Z = X[H('leng', 'th')]); L[3] !== (h = $(u, l));) if (o(L[3], h)) {
+          B(z, Z) && (X = u[L[7]](), Z = X[L[6]]) && 0 || (X[z++] = h);
+        } else {
+          for (((((((k = R(h, L[4])) && 0 || (a = F[k])) && 0 || f(L[5], j[k]) && (a += y(u, j[k]))) && 0 || (h = $(u, U))) && 0 || (x = V[h]) || true) && f(0, b[h]) && (x += y(u, b[h])) || 1) && o(H(z, a), Z) && (X = u.f(), Z = X[L[6]]); a--;) X[z] = X[R(z++, x)];
+        }
+        for (; c(L[8], u[L[9]]);) {
+          u[L[9]] -= L[8];
+          u.c--;
+        }
+        q(u, 'b', z);
+      };
+    }
+    function X(k) {
+      var V, z, X, x, R, B, u, p, l, a, U, Z, F;
+      let q = 'POSITIVE_INFINITY'.split('|');
+      ((x = k.length) && 0 || (z = 0)) && 0 || (l = Number[q[0]]);
+      for (a = 0; f(a, x); ++a) {
+        o(k[a], z) && (z = k[a]);
+        f(k[a], l) && (l = k[a]);
+      }
+      for (u = (F = Y(1, z), R = new (r ? L : Array)(F), B = 1, U = 0, 2); c(B, z);) {
+        for (a = 0; f(a, x); ++a) if (k[a] === B) {
+          for (p = (X = 0, V = U, 0); f(p, B); ++p) {
+            X = Y(X, 1) | V & 1;
+            V >>= 1;
+          }
+          for (p = (Z = Y(B, 16) | a, X); f(p, F); p += u) R[p] = Z;
+          ++U;
+        }
+        (++B && 0 || (U <<= 1)) && null || (u <<= 1);
+      }
+      return [R, z, l];
+    }
+    function $(a, l) {
+      var X, q, V, U, Z, L, b, F, k, z;
+      b = D;
+      const x = ['e', 1, 16];
+      for ((((((k = a.g) || 6) && (Z = a[x[0]]) && 0 || (z = a[H('inp', 'ut')]) || 5) && (q = a.c) && 0 || (V = z[H('leng', 'th')])) && 0 || (X = l[0]) || 1) && (U = l[1]); f(Z, U) && !B(q, V);) {
+        k |= Y(z[q++], Z);
+        Z += 8;
+      }
+      L = X[k & R(Y(x[1], U), x[1])];
+      F = L >>> x[2];
+      b(b(b(a, 'g', u(k, F)), 'e', R(Z, F)), 'c', q);
+      return L & 0xffff;
+    }
+    function x(z) {
+      var R, l, Z, V, B, k, U, F, L;
+      U = D;
+      function x() {
+        return U(U(U(U(U(U(U(U({}, 'V', 5), 'T', 4), 'n', 'leng'), 'g', 'th'), 'z', 0), 'L', 'z'), '$', 'o'), 'N', 'call');
+      }
+      let a = x();
+      function u(X, u, k) {
+        var z, V, x, F, L, B;
+        if (((x = D) || 4) && (z = this) || 4) {
+          V = z.z;
+        }
+        for (B = 0; f(B, X);) switch (F = $(z, u), F) {
+          case 16:
+            {
+              for (L = H(3, y(z, 2)); L--;) k[B++] = V;
+              break;
+            }
+          case 17:
+            {
+              for (L = H(3, y(z, 3)); L--;) k[B++] = 0;
+              V = 0;
+              break;
+            }
+          case 18:
+            {
+              for (L = H(11, y(z, 7)); L--;) k[B++] = 0;
+              V = 0;
+              break;
+            }
+          default:
+            {
+              V = k[B++] = F;
+            }
+        }
+        x(z, 'z', V);
+        return k;
+      }
+      if ((((B = H(y(z, a.V), 257)) && 0 || (R = H(y(z, 5), 1)) || 7) && (k = H(y(z, a.T), 4)) && 0 || (L = new (r ? v : Array)(K[H(a.n, a.g)]))) && 0 || (Z = 0) || 4) {
+        F = a.z;
+      }
+      for (l = a.z; f(l, k); ++l) L[K[l]] = y(z, 3);
+      if (!r) {
+        for (k = (l = k, L[H('leng', 'th')]); f(l, k); ++l) L[K[l]] = a.z;
+      }
+      if ((((V = X(L)) && 0 || (Z = new (r ? v : Array)(B))) && 0 || (F = new (r ? v : Array)(R))) && false || U(z, a.L, a.z) || '0') {
+        z[a.$](X(u.call(z, B, V, Z)), X(u[a.N](z, R, V, F)));
+      }
+    }
+    function y(X, L) {
+      var z, l, Z, V, F, u, x;
+      l = D;
+      const k = 'g|input|th|e|c'.split('|');
+      for (((((F = X[k[0]]) || 8) && (V = X.e) && 0 || (x = X[k[1]]) || 7) && (Z = X.c) || 6) && (z = x[H('leng', k[2])]); f(V, L);) {
+        B(Z, z) && m(Error('bk'));
+        F |= Y(x[Z++], V);
+        V += 8;
+      }
+      u = F & R(Y(1, L), 1);
+      l(l(l(X, k[0], F >>> L), k[3], R(V, L)), k[4], Z);
+      return u;
+    }
+    ((((((O = (J[H('proto', 'type')].p = function () {
+      var Z, l, a, k, F, u, U, h, L, X, V;
+      const q = C(C(C(C(C(C(C(C(C(C(C(C(C(C({}, 'V', 3), 'T', 1), 'n', 's'), 'g', 'b'), 'z', 'leng'), 'L', 'th'), '$', 'length'), 'N', 0), 'r', 'subarray'), 'Z', 'f'), 'Q', 'v'), 'o', 'im'), '_', 'c'), 'l', 2);
+      for (u = this; !u.s;) {
+        ((l = y(u, q.V)) && null || l & q.T && (u[q.n] = G)) && 0 || (l >>>= q.T);
+        switch (l) {
+          case q.N:
+            {
+              U = u.input;
+              X = u.c;
+              V = u.a;
+              Z = u[q.g];
+              h = U[H(q.z, q.L)];
+              k = z;
+              L = z;
+              a = V[q.$];
+              F = z;
+              u.e = u.g = q.N;
+              if (B(H(X, 1), h)) {
+                m(Error('iL'));
+              }
+              k = U[X++] | Y(U[X++], 8);
+              if (B(H(X, 1), h)) {
+                m(Error('iN'));
+              }
+              L = U[X++] | Y(U[X++], 8);
+              if (k === ~L) {
+                m(Error('ih'));
+              }
+              if (o(H(X, k), U[H('leng', 'th')])) {
+                m(Error('ib'));
+              }
+              switch (u.n) {
+                case M:
+                  {
+                    for (; o(H(Z, k), V[H(q.z, 'th')]);) {
+                      F = R(a, Z);
+                      k -= F;
+                      if (r) {
+                        (V.set(U[q.r](X, H(X, F)), Z) && 0 || (Z += F)) && 0 || (X += F);
+                      } else {
+                        for (; F--;) V[Z++] = U[X++];
+                      }
+                      ((u[q.g] = Z) || '1') && (V = u[q.Z]()) && false || (Z = u.b);
+                    }
+                    break;
+                  }
+                case T:
+                  {
+                    for (; o(H(Z, k), V[q.$]);) V = u.f(C({}, q.Q, 2));
+                    break;
+                  }
+                default:
+                  {
+                    m(Error(q.o));
+                  }
+              }
+              if (r) {
+                (V.set(U.subarray(X, H(X, k)), Z) && null || (Z += k)) && 0 || (X += k);
+              } else {
+                for (; k--;) V[Z++] = U[X++];
+              }
+              u[q._] = X;
+              u[q.g] = Z;
+              u.a = V;
+              break;
+            }
+          case !(P.c > -74) ? null : q.T:
+            {
+              u.o(n, d);
+              break;
+            }
+          case q.l:
+            {
+              x(u);
+              break;
+            }
+          default:
+            {
+              m(Error(H('e: ', l)));
+            }
+        }
+      }
+      return N(u.t());
+    }, 'undefined')) || 1) && (r = O !== typeof v && O !== typeof a && O !== typeof L && O !== typeof DataView) && 0 || (K = (s = [16, 17, 18, 0, W[0], W[8], W[9], W[10], 10, W[11], 11, W[12], 12, 3, W[13], W[14], W[15], W[4], W[16]], r ? new a(s) : s))) && null || (F = (q = [3, W[12], W[11], 6, W[8], W[0], 9, W[17], W[18], 13, W[16], W[19], W[20], W[21], 27, W[22], 35, W[23], W[24], W[25], 67, W[26], W[27], W[28], 131, W[29], 195, W[30], 258, 258, W[31]], r ? new a(q) : q)) || 7) && (j = (g = [W[2], 0, 0, 0, W[2], 0, W[2], W[2], 1, W[4], 1, 1, 2, W[14], W[14], W[14], 3, 3, 3, 3, W[12], 4, W[12], 4, 5, 5, W[11], 5, W[2], 0, 0], r ? new v(g) : g)) && null || (V = (A = [1, 2, 3, 4, 5, 7, 9, W[13], W[19], 25, 33, W[32], W[33], W[34], 129, 193, 257, W[35], W[36], 769, 1025, 1537, 2049, W[37], 0x1001, 0x1801, W[38], 0x3001, 0x4001, W[39]], r ? new a(A) : A))) && 0 || (b = (VX = [0, 0, 0, W[2], 1, 1, 2, 2, W[40], 3, W[12], W[12], 5, W[11], 6, 6, 7, 7, W[0], W[0], 9, 9, W[17], W[17], 11, W[18], 12, W[41], W[13], W[13]], r ? new v(VX) : VX))) && 0 || (Q = new (r ? v : Array)(W[42]));
+    for (t = (t = W[2], e = 0, Q[W[43]]); f(e, t); ++e) B(W[44], e) ? Q[e] = 8 : B(W[45], e) ? Q[e] = W[9] : B(W[46], e) ? Q[e] = 7 : Q[e] = 8;
+    (n = X(Q)) && 0 || (BX = new (r ? v : Array)(W[47]));
+    for (I = (I = 0, S = 0, BX[W[43]]); f(S, I); ++S) BX[S] = W[11];
+    d = X(BX);
+    function N(z) {
+      var B, X, V, F, L, R;
+      let x = [0, 'th', 2, 31, 13, 63, 6, 4];
+      if (((X = x[0]) || 6) && (V = '') && 0 || (X = z[H('leng', x[1])]) || 7) {
+        B = x[0];
+      }
+      while (f(B, X)) {
+        L = z[B++];
+        switch (u(L, x[7])) {
+          case !(P.c > -74) ? 0 : x[0]:
+            {}
+          case 1:
+            {}
+          case x[2]:
+            {}
+          case 3:
+            {}
+          case P.c > -74 ? 4 : -209:
+            {}
+          case 5:
+            {}
+          case 6:
+            {}
+          case 7:
+            {
+              V += k(L);
+              break;
+            }
+          case P.c > -74 ? 12 : -18:
+            {}
+          case x[4]:
+            {
+              R = z[B++];
+              V += k(Y(L & x[3], 6) | R & 63);
+              break;
+            }
+          case 14:
+            {
+              R = z[B++];
+              F = z[B++];
+              V += k(Y(L & 15, 12) | Y(R & x[5], x[6]) | Y(F & x[5], x[0]));
+            }
+        }
+      }
+      return V;
+    }
+    h[W[48]] = i(V => {
+      let k = (() => C(C(C({}, 'V', 'map'), 'T', 'it'), 'n', 'atob'))(),
+        B = new w(new v(h[k.n](V)[H('spl', k.T)]('')[k.V](V => {
+          let B = ['charCodeAt', 0];
+          return V[B[0]](B[1]);
+        })), {}),
+        z = B.p();
+      return z;
+    }, 1);
+  }(h), K = typeof globalThis === 'object' && globalThis || typeof window === H('obje', q[4]) && window || typeof self === q[3] && self || typeof global === H('obje', q[4]) && global, !0);
+  for (let B of x) (B = h[q[5]](B), B = r(B), V) ? z(K, B) : (K[q[6]] = B) && 0 || z(K, B);
+  for (let V = q[7]; f(V, O.length) && P.c > -74; V++) if (K[H(q[8], V)]) {
+    z(K, C({}, K[H(q[8], V)], O[V]));
+  }
+  function i(z, B) {
+    var V = function () {
+      return z(...arguments);
     };
-  }();
-  const _0x1d055a = _0x3454c5(this, function () {
-    const _0x1167b0 = typeof window !== "undefined" ? window : typeof process === "object" && typeof require === "function" && typeof global === "object" ? global : this;
-    const _0x89e41c = function () {
-      const _0x4474c3 = new _0x1167b0.RegExp("^([^ ]+( +[^ ]+)+)+[^ ]}");
-      return !_0x4474c3.test(_0x1d055a);
-    };
-    return _0x89e41c();
-  });
-  _0x1d055a();
+    return Object['defineProperty'](V, 'length', {
+      'value': B,
+      'configurable': true
+    }) && 0 || V;
+  }
+})([(z, E) => {
+  return E;
+}, '', console.error, Date.now, () => {
+  return null;
+}, false, Math.abs, Math.min, Math.floor, 81, JSON.parse, Math.max, '', 41, console.log, 14, (C, t) => {
+  return t;
+}, JSON.stringify, parseInt, Math.random]);
+var Y, h;
+Y = M(() => {
+  var b;
+  b = {
+    a: 'b',
+    c: 'd',
+    f: [],
+    e: function (b = mIG) {
+      if (!Y.f[VIG]) {
+        Y.f.push(xIG);
+      }
+      return Y.f[b];
+    },
+    g: 'h',
+    i: 'j'
+  };
+  return b;
+}, 0)();
+function E(Y, b) {
+  switch (h) {
+    case -XIG:
+      {
+        return Y + b;
+      }
+    case HIG:
+      {
+        return Y * b;
+      }
+    case -rIG:
+      {
+        return Y - b;
+      }
+  }
+}
+function b(Y) {
+  Y = h + (h = Y, VIG);
+  return Y;
+}
+let QQ = '',
+  index = VIG,
+  AUTO_MSG = [],
+  currentAutoIndex = VIG,
+  filterQingliu = !0,
+  filterUnder18 = !1,
+  blacklistEnabled = !0,
+  blacklist = [];
+function loadBlacklist() {
   try {
-    const _0x217ec7 = localStorage.getItem("ssby_blacklist");
-    blacklist = _0x217ec7 ? JSON.parse(_0x217ec7) : [];
-  } catch (_0x49a2ef) {
-    console.error("[黑名单] 加载失败:", _0x49a2ef);
+    const Y = localStorage[RIG](QIG);
+    Y ? blacklist = YIG(Y) : blacklist = [];
+  } catch (Y) {
+    sIG(FIG, Y);
     blacklist = [];
   }
   return blacklist;
 }
 function saveBlacklist() {
   try {
-    localStorage.setItem("ssby_blacklist", JSON.stringify(blacklist));
-  } catch (_0x3d4681) {
-    console.error("[黑名单] 保存失败:", _0x3d4681);
+    localStorage[SIG](QIG, wIG(blacklist));
+  } catch (Y) {
+    sIG(IIG, Y);
   }
 }
-function addToBlacklist(_0x58687e, _0x41eacd = "", _0x4fb4dc = "", _0x35d22d = "") {
-  if (!_0x58687e) {
-    return false;
+function addToBlacklist(b, M = '', Y = '', E = '') {
+  if (!b) {
+    return !1;
   }
-  const _0x8695c5 = blacklist.find(_0x8bfb3d => _0x8bfb3d.id === _0x58687e);
-  if (_0x8695c5) {
-    return false;
+  const h = blacklist[$IG](Y => Y[bIG] === b);
+  if (h) {
+    return !1;
   }
-  blacklist.push({
-    id: _0x58687e,
-    remark: _0x41eacd,
-    gender: _0x4fb4dc,
-    age: _0x35d22d,
-    addTime: Date.now()
+  blacklist[DIG]({
+    [bIG]: b,
+    [MIG]: M,
+    [vIG]: Y,
+    [GIG]: E,
+    [eIG]: jIG()
   });
   saveBlacklist();
-  return true;
+  return !0;
 }
-function removeFromBlacklist(_0x425fdf) {
-  const _0x2585af = blacklist.findIndex(_0x2c74e1 => _0x2c74e1.id === _0x425fdf);
-  if (_0x2585af > -1) {
-    blacklist.splice(_0x2585af, 1);
+function removeFromBlacklist(Y) {
+  const index = blacklist[aIG](b => b[bIG] === Y);
+  if (index > -_IG) {
+    blacklist[fIG](index, _IG);
     saveBlacklist();
-    return true;
+    return !0;
   }
-  return false;
+  return !1;
 }
 function clearBlacklist() {
   blacklist = [];
   saveBlacklist();
 }
-function updateBlacklistRemark(_0x4dc300, _0x21a9a1) {
-  const _0x3e1c99 = blacklist.find(_0x409f7f => _0x409f7f.id === _0x4dc300);
-  if (_0x3e1c99) {
-    _0x3e1c99.remark = _0x21a9a1;
+function updateBlacklistRemark(h, b) {
+  const Y = blacklist[$IG](Y => Y[bIG] === h);
+  if (Y) {
+    Y[MIG] = b;
     saveBlacklist();
-    return true;
+    return !0;
   }
-  return false;
+  return !1;
 }
-function isInBlacklist(_0x2870e8) {
-  return blacklist.find(_0x2ee664 => _0x2ee664.id === _0x2870e8);
+function isInBlacklist(Y) {
+  return blacklist[$IG](b => b[bIG] === Y);
 }
 function exportBlacklist() {
-  const _0x7cdf1 = JSON.stringify(blacklist, null, 2);
-  const _0x424a2e = {
-    type: "application/json"
-  };
-  const _0x54bb11 = new Blob([_0x7cdf1], _0x424a2e);
-  const _0x2a4e8a = URL.createObjectURL(_0x54bb11);
-  const _0x58655a = document.createElement("a");
-  _0x58655a.href = _0x2a4e8a;
-  _0x58655a.download = "ssby_blacklist_" + new Date().toISOString().slice(0, 10) + ".json";
-  _0x58655a.click();
-  URL.revokeObjectURL(_0x2a4e8a);
+  const h = wIG(blacklist, null, LIG),
+    b = new Blob([h], {
+      [YGG]: sGG
+    }),
+    M = URL[wGG](b),
+    Y = document[jGG]('a');
+  Y[NGG] = M;
+  Y[zGG] = CGG + new Date()[qGG]()[AGG](VIG, JIG) + uGG;
+  Y[PGG]();
+  URL[xGG](M);
 }
-function importBlacklist(_0x4cb4d7) {
-  return new Promise((_0x1047c6, _0x3a9cf) => {
-    const _0x587c82 = new FileReader();
-    _0x587c82.onload = _0x2e7da9 => {
+function importBlacklist(Y) {
+  return new Promise((resolve, reject) => {
+    const b = new FileReader();
+    b[VGG] = Y => {
       try {
-        const _0x41b7f2 = JSON.parse(_0x2e7da9.target.result);
-        if (Array.isArray(_0x41b7f2)) {
-          let _0x4c199b = 0;
-          _0x41b7f2.forEach(_0x2d0e64 => {
-            _0x2d0e64.id && !blacklist.find(_0x9bfa95 => _0x9bfa95.id === _0x2d0e64.id) && (blacklist.push({
-              id: _0x2d0e64.id,
-              remark: _0x2d0e64.remark || "",
-              gender: _0x2d0e64.gender || "",
-              age: _0x2d0e64.age || "",
-              addTime: _0x2d0e64.addTime || Date.now()
-            }), _0x4c199b++);
+        const h = YIG(Y[HGG][XGG]);
+        if (Array[rGG](h)) {
+          let Y = VIG;
+          h[LGG](b => {
+            if (b[bIG] && !blacklist[$IG](Y => Y[bIG] === b[bIG])) {
+              blacklist[DIG]({
+                [bIG]: b[bIG],
+                [MIG]: b[MIG] || '',
+                [vIG]: b[vIG] || '',
+                [GIG]: b[GIG] || '',
+                [eIG]: b[eIG] || jIG()
+              });
+              Y++;
+            }
           });
           saveBlacklist();
-          _0x1047c6(_0x4c199b);
+          resolve(Y);
         } else {
-          _0x3a9cf(new Error("无效的黑名单格式"));
+          reject(new Error(_GG));
         }
-      } catch (_0x135bfb) {
-        _0x3a9cf(_0x135bfb);
+      } catch (b) {
+        reject(b);
       }
     };
-    _0x587c82.onerror = () => _0x3a9cf(new Error("读取文件失败"));
-    _0x587c82.readAsText(_0x4cb4d7);
+    b[JGG] = () => reject(new Error(BGG));
+    b[lGG](Y);
   });
 }
-loadBlacklist();
-setData = function (_0x227244, _0x5f3bbc, ..._0x1e5e3d) {
-  QQ = _0x227244;
-  index = _0x5f3bbc;
-  AUTO_MSG = _0x1e5e3d;
-};
-setData("123456789", 0, "你好|hello", "很高兴认识你|nice to meet you");
-let vipCardAllowed = false;
+let vipCardAllowed = (loadBlacklist(), setData = M((h, b, ...Y) => {
+  QQ = h;
+  index = b;
+  AUTO_MSG = Y;
+}, 2), setData(OGG, VIG, pGG, kGG), !1);
 function openVIPCardWallet() {
-  vipCardAllowed = true;
-  console.log("[脚本] 通过面板按钮打开VIP卡包");
-  window.popupVIPCardWallet && window.popupVIPCardWallet.fetchCards && window.popupVIPCardWallet.fetchCards();
-  typeof $ !== "undefined" && $.popup && $.popup("#popupVIPCardWallet");
-  setTimeout(() => {
-    vipCardAllowed = false;
-  }, 5000);
+  if ((vipCardAllowed = !0, NIG(gGG), window[KGG] && window[KGG][tGG]) && Y.a[iGG](lIG) == BIG) {
+    window[KGG][tGG]();
+  }
+  if (typeof $ !== WGG && $[UGG]) {
+    $[UGG](dGG);
+  }
+  setTimeout(() => (vipCardAllowed = !1, 0), OIG);
 }
-document.addEventListener("click", function (_0x2bb102) {
-  let _0x16f77a = _0x2bb102.target;
-  while (_0x16f77a && _0x16f77a !== document.body) {
-    const _0x274b6c = _0x16f77a.getAttribute("onclick") || "";
-    if (_0x274b6c.includes("popupVIPCardWallet") || _0x274b6c.includes("VIPCardWallet")) {
-      _0x2bb102.stopPropagation();
-      _0x2bb102.stopImmediatePropagation();
-      _0x2bb102.preventDefault();
-      console.log("[脚本] 已阻止网站VIP卡包按钮点击");
-      return false;
+{
+  document[yGG](PGG, M(b => {
+    let h = b[HGG];
+    while (h && h !== document[cGG]) {
+      const onclick = h[hGG](oGG) || '';
+      if ((onclick[TGG](KGG) || onclick[TGG](nGG)) && Y.c[iGG](lIG) == pIG) {
+        b[EGG]();
+        b[ZGG]();
+        b[mGG]();
+        NIG(FGG);
+        return !1;
+      }
+      h = h[RGG];
     }
-    _0x16f77a = _0x16f77a.parentElement;
-  }
-}, true);
-setInterval(function () {
-  const _0x393582 = document.querySelector("#popupVIPCardWallet");
-  if (!_0x393582) {
-    return;
-  }
-  const _0x5116a9 = _0x393582.classList.contains("modal-in");
-  if (_0x5116a9 && !vipCardAllowed) {
-    _0x393582.style.display = "none";
-    _0x393582.style.opacity = "0";
-    _0x393582.style.visibility = "hidden";
-    _0x393582.classList.remove("modal-in");
-    _0x393582.classList.add("modal-out");
-    const _0x4cbfeb = document.querySelector(".popup-overlay.modal-overlay-visible");
-    _0x4cbfeb && (_0x4cbfeb.classList.remove("modal-overlay-visible"), _0x4cbfeb.style.display = "none");
-  } else {
-    !_0x5116a9 && (_0x393582.style.display = "", _0x393582.style.opacity = "", _0x393582.style.visibility = "", vipCardAllowed = false);
-  }
-}, 100);
-MainFunc = () => {
-  function _0x3fa83a() {
-    function _0x18b56a() {
-      const _0x1780f3 = document.querySelector(".toasted-container");
-      if (_0x1780f3) {
-        const _0x451aab = _0x1780f3.querySelectorAll(".toasted");
-        _0x451aab.forEach(_0x533f0c => {
-          const _0x3b5e51 = _0x533f0c.innerText || _0x533f0c.textContent || "";
-          _0x3b5e51.includes("VIP") && _0x3b5e51.includes("激活") && (_0x533f0c.remove(), console.log("[脚本] 已移除VIP激活提示"));
-        });
+  }, 1), !0);
+  setInterval(M(() => {
+    const b = document[QGG](dGG);
+    if (!b && Y.c[iGG](lIG) == pIG) {
+      return;
+    }
+    const h = b[SGG][IGG]($GG);
+    if (h && !vipCardAllowed) {
+      const Y = (b[DGG][bGG] = GGG, b[DGG][MGG] = '0', b[DGG][vGG] = eGG, b[SGG][aGG]($GG), b[SGG][fGG](sQG), document[QGG](YQG));
+      if (Y) {
+        Y[SGG][aGG](wQG);
+        Y[DGG][bGG] = GGG;
+      }
+    } else {
+      if (!h) {
+        b[DGG][bGG] = '';
+        b[DGG][MGG] = '';
+        b[DGG][vGG] = '';
+        vipCardAllowed = !1;
       }
     }
-    const _0x35d904 = new MutationObserver(_0x3d5a2f => {
-      for (const _0x28aba9 of _0x3d5a2f) {
-        for (const _0x4e928b of _0x28aba9.addedNodes) {
-          if (_0x4e928b.nodeType === 1 && _0x4e928b.classList?.["contains"]("toasted")) {
-            const _0x14d325 = _0x4e928b.innerText || _0x4e928b.textContent || "";
-            _0x14d325.includes("VIP") && _0x14d325.includes("激活") && (_0x4e928b.remove(), console.log("[脚本] 已拦截VIP激活提示"));
-          }
+  }, 0), kIG);
+  MainFunc = () => {
+    function s() {
+      var T = aGG,
+        bH = bIG,
+        JH = cGG,
+        v = slG,
+        C = wlG,
+        a = yGG,
+        N = PGG,
+        A = fWG,
+        s = jGG,
+        V = HUG,
+        hH = SWG,
+        I = eWG,
+        n = VIG;
+      var P = M(() => {
+        const Y = document[QGG](jQG);
+        if (Y) {
+          const b = Y[NQG](zQG);
+          b[LGG](Y => {
+            const text = Y[AQG] || Y[qQG] || '';
+            if (text[TGG](CQG) && text[TGG](uQG)) {
+              Y[aGG]();
+              NIG(PQG);
+            }
+          });
         }
-      }
-    });
-    const _0x6638fd = setInterval(() => {
-      const _0x39379d = document.querySelector(".toasted-container");
-      if (_0x39379d) {
-        const _0x56adf3 = {
-          childList: true,
-          subtree: true
-        };
-        _0x35d904.observe(_0x39379d, _0x56adf3);
-        clearInterval(_0x6638fd);
-        console.log("[脚本] 已开始监听VIP激活提示");
-      }
-    }, 500);
-    setInterval(_0x18b56a, 300);
-    function _0x147f7d() {
-      let _0x4ec74b = "";
-      let _0x2ad081 = "";
-      const _0x304d54 = document.querySelector("#partnerInfoText");
-      if (_0x304d54) {
-        const _0x744da3 = _0x304d54.innerText || _0x304d54.textContent || "";
-        if (_0x744da3.includes("18岁以下")) {
-          _0x4ec74b = "18岁以下";
-        } else {
-          if (_0x744da3.includes("18-23岁")) {
-            _0x4ec74b = "18-23岁";
+      }, 0);
+      const k = new MutationObserver(Y => {
+          for (const b of Y) for (const Y of b[xQG]) if (Y[VQG] === _IG && Y[SGG]?.[IGG](XQG)) {
+            const text = Y[AQG] || Y[qQG] || '';
+            if (text[TGG](CQG) && text[TGG](uQG)) {
+              Y[aGG]();
+              NIG(HQG);
+            }
+          }
+        }),
+        $ = setInterval(() => {
+          const Y = document[QGG](jQG);
+          if (Y) {
+            k[rQG](Y, {
+              [_QG]: !0,
+              [LQG]: !0
+            });
+            clearInterval($);
+            NIG(JQG);
+          }
+        }, gIG);
+      setInterval(P, KIG);
+      function J() {
+        let M = '',
+          h = '';
+        const b = document[QGG](BQG);
+        if (b) {
+          const text = b[AQG] || b[qQG] || '';
+          if (text[TGG](lQG)) {
+            M = lQG;
           } else {
-            _0x744da3.includes("23岁以上") && (_0x4ec74b = "23岁以上");
+            if (text[TGG](OQG)) {
+              M = OQG;
+            } else {
+              if (text[TGG](pQG)) {
+                M = pQG;
+              }
+            }
           }
         }
-      }
-      const _0x1191ed = document.querySelector("#partnerLabelContainer");
-      _0x1191ed && (_0x2ad081 = _0x1191ed.innerText || _0x1191ed.textContent || "");
-      const _0x48e0f3 = {
-        ageTag: _0x4ec74b,
-        userTag: _0x2ad081
-      };
-      return _0x48e0f3;
-    }
-    function _0x4b6319() {
-      return _0x147f7d().ageTag === "18岁以下";
-    }
-    function _0x2a521b() {
-      return (_0x147f7d().userTag || "").includes("清流");
-    }
-    function _0x5188d9(_0x609920, _0x471ba5 = "ok") {
-      vue.toasted.show(_0x609920, {
-        action: {
-          text: _0x471ba5,
-          onClick: (_0xb596d2, _0x1b1137) => {
-            _0x1b1137.goAway(0);
-          }
+        const E = document[QGG](kQG);
+        if (E && Y.c[iGG](lIG) == pIG) {
+          h = E[AQG] || E[qQG] || '';
         }
-      });
-    }
-    function _0x503c0f(_0x50d391) {
-      chatPage.msgInput = _0x50d391;
-      chatPage.msgSend();
-    }
-    function _0x56123d() {
-      chatPage.sockets.emit("syscmd", {
-        msg: "end",
-        countReceive: false,
-        chatId: chatPage.chatId,
-        countTalked: false
-      });
-      chatPage.chatState = "SELF_LEFT";
-    }
-    function _0x55bea7() {
-      chatPage.sockets.emit("syscmd", {
-        msg: "new",
-        gender: chatPage.gender,
-        vipCode: chatPage.vipCode,
-        age: store.get("ageNew"),
-        ageWant: store.get("ageWant"),
-        secretCode: chatPage.secretCode,
-        province: chatPage.province,
-        provinceWant: store.get("provinceWant"),
-        savedId: chatPage.usrId,
-        isShowLocation: false,
-        fp: chatPage.fingerPrints,
-        phoneNumber: store.get(chatPage.Config.STORE_PHONE_NUMBER),
-        userPwdEncrypted: store.get(chatPage.Config.STORE_PASSWORD_ENCRYPTED)
-      });
-    }
-    let _0x50ac41 = true;
-    chatPage.scriptIsRun = false;
-    chatPage.MatchWho = "女生";
-    setInterval(function () {
-      try {
-        document.querySelectorAll("a[href=\"./lost-found\"]").forEach(_0x364e57 => _0x364e57.remove());
-        document.querySelectorAll("a.button.button-link.button-nav.pull-right").forEach(_0x82da13 => _0x82da13.remove());
-        document.querySelectorAll("header a, .bar-nav a").forEach(_0x376b88 => {
-          (_0x376b88.innerText || "").trim() === "寻人" && _0x376b88.remove();
-        });
-        document.querySelectorAll(".advert").forEach(_0x560362 => _0x560362.remove());
-        document.querySelectorAll(".message-text").forEach(_0x1ed322 => {
-          const _0x1a071f = _0x1ed322.innerText || "";
-          (_0x1a071f.includes("叔叔不约App") || _0x1a071f.includes("点击获取")) && _0x1ed322.remove();
-        });
-        document.querySelectorAll(".sys-msg-chat-end > div > div").forEach(_0xa0758a => {
-          const _0x575237 = _0xa0758a.innerText || "";
-          _0x575237.includes("分区") && _0xa0758a.remove();
-        });
-        document.querySelectorAll(".leave-footer").forEach(_0x5ee61f => _0x5ee61f.remove());
-      } catch (_0x384e9e) {}
-      if (!chatPage.scriptIsRun) {
-        return;
+        return {
+          [gQG]: M,
+          [KQG]: h
+        };
       }
-      switch (chatPage.chatState) {
-        case "REPAIRED":
-        case "PAIRED":
-          {
-            let _0x2079e5 = chatPage.partner.strGender;
-            if (blacklistEnabled && chatPage.partner.idEncrypted) {
-              const _0x265666 = isInBlacklist(chatPage.partner.idEncrypted);
-              if (_0x265666) {
-                console.log("[脚本] 对方在黑名单中，自动离开:", _0x265666.remark);
-                _0x138ecc("🚫 已自动跳过黑名单用户：" + _0x265666.remark, "warning", 2000);
-                _0x56123d();
-                _0x55bea7();
-                _0x50ac41 = true;
+      function O() {
+        return J()[gQG] === lQG;
+      }
+      function YH() {
+        return (J()[KQG] || '')[TGG](tQG);
+      }
+      function Z(message, Y = cQG) {
+        vue[XQG][iQG](message, {
+          [yQG]: {
+            [WQG]: Y,
+            [dQG]: (Y, b) => (b[UQG](VIG), 0)
+          }
+        });
+      }
+      function z(message) {
+        chatPage[hQG] = message;
+        chatPage[oQG]();
+      }
+      function mH() {
+        chatPage[nQG][TQG](EQG, {
+          [mQG]: ZQG,
+          [FQG]: !1,
+          [RQG]: chatPage[RQG],
+          [QQG]: !1
+        });
+        chatPage[IQG] = SQG;
+      }
+      function D() {
+        chatPage[nQG][TQG](EQG, {
+          [mQG]: $QG,
+          [vIG]: chatPage[vIG],
+          [bQG]: chatPage[bQG],
+          [GIG]: store.get(DQG),
+          [MQG]: store.get(MQG),
+          [vQG]: chatPage[vQG],
+          [GQG]: chatPage[GQG],
+          [eQG]: store.get(eQG),
+          [fQG]: chatPage[aQG],
+          [sWG]: !1,
+          [wWG]: chatPage[YWG],
+          [zWG]: store.get(chatPage[NWG][jWG]),
+          [qWG]: store.get(chatPage[NWG][AWG])
+        });
+      }
+      let f = !0;
+      chatPage[CWG] = !1;
+      chatPage[uWG] = PWG;
+      setInterval(M(() => {
+        try {
+          document[NQG](xWG)[LGG](Y => Y[aGG]());
+          document[NQG](VWG)[LGG](Y => Y[aGG]());
+          document[NQG](XWG)[LGG](b => {
+            if ((b[AQG] || '')[HWG]() === rWG && Y.c[iGG](lIG) == pIG) {
+              b[aGG]();
+            }
+          });
+          document[NQG](_WG)[LGG](Y => Y[aGG]());
+          document[NQG](LWG)[LGG](Y => {
+            const text = Y[AQG] || '';
+            if (text[TGG](JWG) || text[TGG](BWG)) {
+              Y[aGG]();
+            }
+          });
+          document[NQG](lWG)[LGG](Y => {
+            const text = Y[AQG] || '';
+            if (text[TGG](OWG)) {
+              Y[aGG]();
+            }
+          });
+          document[NQG](pWG)[LGG](Y => Y[aGG]());
+        } catch (h) {}
+        if (!chatPage[CWG]) {
+          return;
+        }
+        switch (chatPage[IQG]) {
+          case kWG:
+            {}
+          case mWG:
+            {
+              let h = chatPage[KWG][gWG];
+              if (blacklistEnabled && chatPage[KWG][tWG]) {
+                const Y = isInBlacklist(chatPage[KWG][tWG]);
+                if (Y) {
+                  NIG(iWG, Y[MIG]);
+                  y(WWG + Y[MIG], UWG, tIG);
+                  mH();
+                  D();
+                  f = !0;
+                  break;
+                }
+              }
+              if (filterUnder18 && O() && Y.c[iGG](lIG) == pIG) {
+                NIG(dWG);
+                y(yWG, UWG, iIG);
+                mH();
+                D();
+                f = !0;
                 break;
               }
-            }
-            if (filterUnder18 && _0x4b6319()) {
-              console.log("[脚本] 对方为18岁以下，自动离开");
-              _0x138ecc("对方为18岁以下，自动离开", "warning", 1500);
-              _0x56123d();
-              _0x55bea7();
-              _0x50ac41 = true;
-              break;
-            }
-            if (filterQingliu && _0x2a521b()) {
-              console.log("[脚本] 对方标签包含清流，自动离开");
-              _0x138ecc("对方标签包含清流，自动离开", "warning", 1500);
-              _0x56123d();
-              _0x55bea7();
-              _0x50ac41 = true;
-              break;
-            }
-            if (_0x2079e5 == chatPage.MatchWho) {
-              if (_0x50ac41) {
-                try {
-                  let _0x5e7089 = AUTO_MSG.length;
-                  if (_0x5e7089 > 1) {
-                    const _0x50de06 = Math.floor(Math.random() * _0x5e7089);
-                    let _0x337279 = AUTO_MSG[_0x50de06];
-                    let _0x69c51f = _0x337279.split("|").map(_0xea64c3 => _0xea64c3.trim());
-                    currentAutoIndex = 0;
-                    _0x2fb40e(_0x69c51f);
-                  } else {
-                    let _0x39655b = AUTO_MSG[index];
-                    let _0x3fa086 = _0x39655b.split("|").map(_0x2743f7 => _0x2743f7.trim());
-                    currentAutoIndex = 0;
-                    _0x2fb40e(_0x3fa086);
-                  }
-                } catch {}
-                _0x138ecc("已匹配到" + chatPage.MatchWho + "并发送信息！", "success", 800);
-                _0x50ac41 = false;
+              if (filterQingliu && YH()) {
+                NIG(cWG);
+                y(hWG, UWG, iIG);
+                mH();
+                D();
+                f = !0;
+                break;
               }
+              if (h == chatPage[uWG]) {
+                if (f) {
+                  try {
+                    let Y = AUTO_MSG[mIG];
+                    if (Y > _IG) {
+                      const s = zIG(E(AIG(), Y, b(HIG)));
+                      let h = AUTO_MSG[s],
+                        M = h[TWG]('|')[oWG](Y => Y[HWG]());
+                      currentAutoIndex = VIG;
+                      L(M);
+                    } else {
+                      let Y = AUTO_MSG[index],
+                        b = Y[TWG]('|')[oWG](Y => Y[HWG]());
+                      currentAutoIndex = VIG;
+                      L(b);
+                    }
+                  } catch {}
+                  y(E(nWG + chatPage[uWG], EWG, b(-XIG)), ZWG, WIG);
+                  f = !1;
+                }
+                break;
+              }
+              mH();
+              D();
+              f = !0;
               break;
             }
-            _0x56123d();
-            _0x55bea7();
-            _0x50ac41 = true;
-            break;
+          case SQG:
+            {}
+          case FWG:
+            {
+              D();
+              f = !0;
+            }
+        }
+      }, 0), UIG);
+      function L(Y) {
+        if (currentAutoIndex < Y[mIG]) {
+          z(Y[currentAutoIndex]);
+          currentAutoIndex++;
+          setTimeout(() => (L(Y), 0), tIG);
+        }
+      }
+      function i() {
+        try {
+          const qq = QQ[HWG]();
+          if (/^\d{5,12}$/[QWG](qq)) {
+            let Y = qq[mIG];
+            if (Y > dIG && Y <= JIG) {
+              if ((setTimeout(() => z(qq[IWG](VIG, yIG)), cIG), setTimeout(() => z(qq[IWG](yIG, yIG)), tIG), Y) == JIG) {
+                setTimeout(() => z(qq[IWG](dIG, yIG)), hIG);
+                setTimeout(() => z(qq[IWG](oIG)), TIG);
+              } else {
+                setTimeout(() => z(qq[IWG](dIG)), hIG);
+              }
+            } else {
+              z(qq);
+            }
+          } else {
+            z(qq);
           }
-        case "SELF_LEFT":
-        case "PARTNER_LEFT":
-          _0x55bea7();
-          _0x50ac41 = true;
-          break;
-      }
-    }, 450);
-    function _0x2fb40e(_0x242563) {
-      currentAutoIndex < _0x242563.length && (_0x503c0f(_0x242563[currentAutoIndex]), currentAutoIndex++, setTimeout(() => {
-        _0x2fb40e(_0x242563);
-      }, 2000));
-    }
-    function _0x5cec67() {
-      try {
-        const _0x4a521e = QQ.trim();
-        if (/^\d{5,12}$/.test(_0x4a521e)) {
-          let _0x51343a = _0x4a521e.length;
-          _0x51343a > 6 && _0x51343a <= 10 ? (setTimeout(() => _0x503c0f(_0x4a521e.substr(0, 3)), 1000), setTimeout(() => _0x503c0f(_0x4a521e.substr(3, 3)), 2000), _0x51343a == 10 ? (setTimeout(() => _0x503c0f(_0x4a521e.substr(6, 3)), 3000), setTimeout(() => _0x503c0f(_0x4a521e.substr(9)), 3500)) : setTimeout(() => _0x503c0f(_0x4a521e.substr(6)), 3000)) : _0x503c0f(_0x4a521e);
-        } else {
-          _0x503c0f(_0x4a521e);
-        }
-      } catch (_0x4a7970) {
-        console.error("发送QQ号码失败：", _0x4a7970);
-      }
-    }
-    if (document.getElementById("floatingBtn")) {
-      document.getElementById("floatingBtn")?.["remove"]();
-      document.getElementById("overlay")?.["remove"]();
-      document.getElementById("controlPanel")?.["remove"]();
-      document.getElementById("toastContainer")?.["remove"]();
-      const _0x31083f = document.getElementById("floatingPanelStyle");
-      if (_0x31083f) {
-        _0x31083f.remove();
-      }
-    }
-    const _0x495c9e = document.createElement("style");
-    _0x495c9e.id = "floatingPanelStyle";
-    _0x495c9e.textContent = "\n            /* 悬浮按钮 */\n            .floating-btn {\n                position: fixed;\n                bottom: 15%;\n                right: 20px;\n                width: 56px;\n                height: 56px;\n                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n                border-radius: 50%;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                color: white;\n                font-size: 13px;\n                cursor: pointer;\n                box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);\n                z-index: 10000;\n                user-select: none;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                text-align: center;\n                line-height: 1.2;\n                font-weight: 600;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n                border: 2px solid rgba(255, 255, 255, 0.2);\n            }\n            \n            .floating-btn:hover {\n                transform: translateY(-2px) scale(1.05);\n                box-shadow: 0 12px 25px rgba(118, 75, 162, 0.5);\n            }\n            \n            .floating-btn:active {\n                transform: translateY(1px) scale(0.95);\n            }\n            \n            /* 控制面板 */\n            .control-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 340px;\n                background: rgba(255, 255, 255, 0.98);\n                backdrop-filter: blur(20px);\n                border-radius: 24px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n                z-index: 9999;\n                display: none;\n                padding: 24px;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                border: 1px solid rgba(0, 0, 0, 0.05);\n            }\n            \n            .control-panel.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            /* 面板头部 */\n            .panel-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                margin-bottom: 24px;\n                border-bottom: 1px solid rgba(0,0,0,0.05);\n                padding-bottom: 16px;\n            }\n            \n            .panel-title {\n                font-size: 20px;\n                font-weight: 700;\n                color: #1a1a1a;\n                letter-spacing: -0.5px;\n                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n                -webkit-background-clip: text;\n                -webkit-text-fill-color: transparent;\n            }\n            \n            .panel-close {\n                width: 32px;\n                height: 32px;\n                border-radius: 50%;\n                background: #f5f5f7;\n                border: none;\n                color: #888;\n                font-size: 20px;\n                cursor: pointer;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .panel-close:hover {\n                background: #eee;\n                color: #333;\n                transform: rotate(90deg);\n            }\n            \n            /* 列表项 - 增加cp-前缀防止冲突 */\n            .cp-list-block ul {\n                list-style: none;\n                padding: 0;\n                margin: 0;\n            }\n            \n            .cp-item-content {\n                padding: 16px 0;\n                border-bottom: 1px solid rgba(0, 0, 0, 0.04);\n                display: block; /* 确保是块级元素 */\n            }\n            \n            .cp-item-content:last-child {\n                border-bottom: none;\n            }\n            \n            .cp-item-inner {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                width: 100%;\n                position: relative; /* 防止绝对定位元素跑偏 */\n            }\n            \n            .cp-item-title {\n                font-size: 15px;\n                font-weight: 500;\n                color: #333;\n                display: flex;\n                align-items: center;\n                gap: 8px;\n                flex: 1; /* 占据剩余空间 */\n                margin-right: 16px; /* 与右侧开关保持距离 */\n                white-space: nowrap;\n                overflow: hidden;\n                text-overflow: ellipsis;\n            }\n            \n            .cp-item-input {\n                flex-shrink: 0; /* 防止被压缩 */\n            }\n            \n            /* 开关样式优化 */\n            .cp-label-switch {\n                position: relative;\n                display: inline-block;\n                width: 52px; /* 稍微加宽 */\n                height: 30px;\n                vertical-align: middle;\n            }\n            \n            .cp-label-switch input {\n                display: none;\n            }\n            \n            .cp-checkbox {\n                width: 100%;\n                height: 100%;\n                background: #e9e9eb;\n                border-radius: 30px;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                position: relative;\n                cursor: pointer;\n                display: block;\n            }\n            \n            .cp-checkbox:before {\n                content: '';\n                position: absolute;\n                width: 26px;\n                height: 26px;\n                background: white;\n                border-radius: 50%;\n                top: 2px;\n                left: 2px;\n                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n            }\n            \n            input:checked + .cp-checkbox {\n                background: #34c759;\n            }\n            \n            input:checked + .cp-checkbox:before {\n                transform: translateX(22px);\n            }\n            \n            /* 按钮组 */\n            .btn-group {\n                display: grid;\n                grid-template-columns: 1fr 1fr;\n                gap: 12px;\n                margin-top: 20px;\n            }\n            \n            .contact-btn {\n                background: linear-gradient(135deg, #007AFF 0%, #0051D4 100%);\n                color: white;\n                border: none;\n                padding: 12px;\n                border-radius: 12px;\n                font-size: 14px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.2s;\n                width: 100%;\n                box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);\n            }\n            \n            .contact-btn:hover {\n                transform: translateY(-2px);\n                box-shadow: 0 6px 16px rgba(0, 122, 255, 0.3);\n            }\n            \n            .contact-btn:active {\n                transform: translateY(0);\n            }\n            \n            #btn_vip_card {\n                background: linear-gradient(135deg, #FF9500 0%, #FF5E3A 100%);\n                box-shadow: 0 4px 12px rgba(255, 94, 58, 0.2);\n            }\n            \n            #btn_vip_card:hover {\n                box-shadow: 0 6px 16px rgba(255, 94, 58, 0.3);\n            }\n            \n            /* 底部版权 */\n            .panel-footer {\n                margin-top: 24px;\n                padding-top: 16px;\n                border-top: 1px solid rgba(0, 0, 0, 0.04);\n                font-size: 12px;\n                color: #999;\n                display: flex;\n                justify-content: space-between;\n                font-weight: 500;\n            }\n            \n            /* 遮罩层 */\n            .overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.4);\n                backdrop-filter: blur(4px);\n                z-index: 9998;\n                display: none;\n                opacity: 0;\n                transition: opacity 0.3s;\n            }\n            \n            .overlay.show {\n                display: block;\n                opacity: 1;\n            }\n            \n            /* Toast 样式 */\n            .toast-container {\n                position: fixed;\n                top: 20px;\n                right: 20px;\n                z-index: 10001;\n                display: flex;\n                flex-direction: column;\n                gap: 10px;\n            }\n            \n            .toast {\n                background: rgba(0, 0, 0, 0.8);\n                backdrop-filter: blur(10px);\n                color: white;\n                padding: 12px 20px;\n                border-radius: 12px;\n                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);\n                font-size: 14px;\n                max-width: 300px;\n                animation: toastSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                display: flex;\n                align-items: center;\n                gap: 12px;\n                font-weight: 500;\n            }\n            \n            .toast.success { border-left: 4px solid #34c759; }\n            .toast.error { border-left: 4px solid #ff3b30; }\n            .toast.warning { border-left: 4px solid #ff9500; }\n            .toast.info { border-left: 4px solid #007aff; }\n            \n            .toast.fade-out {\n                animation: toastSlideOut 0.3s forwards;\n            }\n            \n            @keyframes toastSlideIn {\n                from { opacity: 0; transform: translateX(100px); }\n                to { opacity: 1; transform: translateX(0); }\n            }\n            \n            @keyframes toastSlideOut {\n                from { opacity: 1; transform: translateX(0); }\n                to { opacity: 0; transform: translateX(100px); }\n            }\n            \n            .toast-icon { font-size: 18px; }\n            \n            /* 黑名单弹窗样式 */\n            .blacklist-modal {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 360px;\n                max-height: 80vh;\n                background: rgba(255, 255, 255, 0.98);\n                backdrop-filter: blur(20px);\n                border-radius: 20px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);\n                z-index: 10002;\n                display: none;\n                flex-direction: column;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n            }\n            \n            .blacklist-modal.show {\n                display: flex;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            .bl-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                padding: 20px;\n                border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n            }\n            \n            .bl-title {\n                font-size: 18px;\n                font-weight: 700;\n                color: #1a1a1a;\n            }\n            \n            .bl-close {\n                width: 30px;\n                height: 30px;\n                border-radius: 50%;\n                background: #f5f5f7;\n                border: none;\n                color: #888;\n                font-size: 18px;\n                cursor: pointer;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .bl-close:hover {\n                background: #eee;\n                color: #333;\n            }\n            \n            .bl-list {\n                flex: 1;\n                overflow-y: auto;\n                padding: 10px 20px;\n                max-height: 350px;\n            }\n            \n            .bl-empty {\n                text-align: center;\n                color: #999;\n                padding: 40px 20px;\n                font-size: 14px;\n            }\n            \n            .bl-item {\n                background: #f8f8fa;\n                border-radius: 12px;\n                padding: 14px;\n                margin-bottom: 10px;\n                position: relative;\n            }\n            \n            .bl-item-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: flex-start;\n                margin-bottom: 6px;\n            }\n            \n            .bl-item-remark {\n                font-size: 15px;\n                font-weight: 600;\n                color: #333;\n                flex: 1;\n                word-break: break-all;\n            }\n            \n            .bl-item-actions {\n                display: flex;\n                gap: 8px;\n                flex-shrink: 0;\n            }\n            \n            .bl-item-btn {\n                width: 28px;\n                height: 28px;\n                border-radius: 8px;\n                border: none;\n                cursor: pointer;\n                font-size: 14px;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .bl-item-btn.edit {\n                background: #e3f2fd;\n                color: #1976d2;\n            }\n            \n            .bl-item-btn.delete {\n                background: #ffebee;\n                color: #d32f2f;\n            }\n            \n            .bl-item-btn:hover {\n                transform: scale(1.1);\n            }\n            \n            .bl-item-info {\n                font-size: 12px;\n                color: #888;\n                display: flex;\n                gap: 12px;\n            }\n            \n            .bl-footer {\n                padding: 16px 20px;\n                border-top: 1px solid rgba(0, 0, 0, 0.06);\n                display: flex;\n                flex-direction: column;\n                gap: 12px;\n            }\n            \n            .bl-count {\n                font-size: 13px;\n                color: #666;\n                text-align: center;\n            }\n            \n            .bl-actions {\n                display: flex;\n                gap: 10px;\n            }\n            \n            .bl-btn {\n                flex: 1;\n                padding: 10px;\n                border-radius: 10px;\n                border: none;\n                font-size: 13px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.2s;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n            }\n            \n            .bl-btn.export {\n                background: #e8f5e9;\n                color: #2e7d32;\n            }\n            \n            .bl-btn.import {\n                background: #e3f2fd;\n                color: #1565c0;\n            }\n            \n            .bl-btn.clear {\n                background: #ffebee;\n                color: #c62828;\n            }\n            \n            .bl-btn:hover {\n                transform: translateY(-1px);\n                filter: brightness(0.95);\n            }\n            \n            /* 拉黑确认弹窗 */\n            .blacklist-confirm {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 300px;\n                background: white;\n                border-radius: 16px;\n                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);\n                z-index: 10003;\n                display: none;\n                opacity: 0;\n                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n            }\n            \n            .blacklist-confirm.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            .bc-header {\n                padding: 20px 20px 12px;\n                text-align: center;\n            }\n            \n            .bc-title {\n                font-size: 17px;\n                font-weight: 700;\n                color: #1a1a1a;\n                margin-bottom: 8px;\n            }\n            \n            .bc-info {\n                font-size: 13px;\n                color: #666;\n            }\n            \n            .bc-body {\n                padding: 0 20px 16px;\n            }\n            \n            .bc-label {\n                font-size: 13px;\n                color: #888;\n                margin-bottom: 8px;\n            }\n            \n            .bc-input {\n                width: 100%;\n                padding: 12px;\n                border: 1px solid #e0e0e0;\n                border-radius: 10px;\n                font-size: 14px;\n                box-sizing: border-box;\n                transition: border-color 0.2s;\n            }\n            \n            .bc-input:focus {\n                outline: none;\n                border-color: #007aff;\n            }\n            \n            .bc-footer {\n                display: flex;\n                border-top: 1px solid #eee;\n            }\n            \n            .bc-btn {\n                flex: 1;\n                padding: 14px;\n                border: none;\n                background: none;\n                font-size: 15px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: background 0.2s;\n            }\n            \n            .bc-btn:first-child {\n                border-right: 1px solid #eee;\n                color: #666;\n            }\n            \n            .bc-btn:last-child {\n                color: #ff3b30;\n            }\n            \n            .bc-btn:hover {\n                background: #f5f5f5;\n            }\n            \n            /* 黑名单遮罩 */\n            .bl-overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.5);\n                z-index: 10001;\n                display: none;\n                opacity: 0;\n                transition: opacity 0.3s;\n            }\n            \n            .bl-overlay.show {\n                display: block;\n                opacity: 1;\n            }\n            \n            /* 隐藏的文件输入 */\n            #blacklistFileInput {\n                display: none;\n            }\n        ";
-    document.head.appendChild(_0x495c9e);
-    const _0x5a6205 = document.createElement("div");
-    _0x5a6205.className = "floating-btn";
-    _0x5a6205.id = "floatingBtn";
-    _0x5a6205.innerHTML = "控制<br>面板";
-    _0x5a6205.title = "点击打开控制面板 | 长按拖动";
-    let _0x5290a5 = false;
-    let _0x2c50d4 = 0;
-    let _0x3f3916 = 0;
-    let _0x4fdb3d = 0;
-    let _0x5f79ac = 0;
-    let _0x2d093a = false;
-    const _0x1eb0c8 = document.createElement("div");
-    _0x1eb0c8.className = "overlay";
-    _0x1eb0c8.id = "overlay";
-    const _0x5a049a = document.createElement("div");
-    _0x5a049a.className = "control-panel";
-    _0x5a049a.id = "controlPanel";
-    _0x5a049a.innerHTML = "\n            <div class=\"panel-header\">\n                <div class=\"panel-title\">脚本控制面板</div>\n                <button class=\"panel-close\" id=\"panelClose\">×</button>\n            </div>\n            \n            <div class=\"cp-list-block\">\n                <ul>\n                    <li>\n                        <div class=\"cp-item-content\">\n                            <div class=\"cp-item-inner\">\n                                <div class=\"cp-item-title\">⚡ 脚本启动</div>\n                                <div class=\"cp-item-input\">\n                                    <label class=\"cp-label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_script\">\n                                        <div class=\"cp-checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"cp-item-content\">\n                            <div class=\"cp-item-inner\">\n                                <div class=\"cp-item-title\" id=\"txt_match\">🚺 仅女生</div>\n                                <div class=\"cp-item-input\">\n                                    <label class=\"cp-label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_match\">\n                                        <div class=\"cp-checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"cp-item-content\">\n                            <div class=\"cp-item-inner\">\n                                <div class=\"cp-item-title\">🏷️ 过滤清流</div>\n                                <div class=\"cp-item-input\">\n                                    <label class=\"cp-label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_qingliu\" checked>\n                                        <div class=\"cp-checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"cp-item-content\">\n                            <div class=\"cp-item-inner\">\n                                <div class=\"cp-item-title\">🔞 过滤未成年</div>\n                                <div class=\"cp-item-input\">\n                                    <label class=\"cp-label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_under18\">\n                                        <div class=\"cp-checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                        \n                        <div class=\"cp-item-content\">\n                            <div class=\"cp-item-inner\">\n                                <div class=\"cp-item-title\">🚫 启用黑名单</div>\n                                <div class=\"cp-item-input\">\n                                    <label class=\"cp-label-switch\">\n                                        <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_blacklist\" checked>\n                                        <div class=\"cp-checkbox\"></div>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            \n            <div class=\"btn-group\">\n                <button class=\"contact-btn\" id=\"btn_contact\">📲 发送联系方式</button>\n                <button class=\"contact-btn\" id=\"btn_vip_card\">💳 VIP卡包</button>\n            </div>\n            \n            <div class=\"btn-group\">\n                <button class=\"contact-btn\" id=\"btn_blacklist_add\" style=\"background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); box-shadow: 0 4px 12px rgba(255, 59, 48, 0.2);\">🔒 拉黑对方</button>\n                <button class=\"contact-btn\" id=\"btn_blacklist_manage\" style=\"background: linear-gradient(135deg, #5856d6 0%, #af52de 100%); box-shadow: 0 4px 12px rgba(88, 86, 214, 0.2);\">📋 管理黑名单</button>\n            </div>\n            \n            <div class=\"panel-footer\">\n                <span>© 驭师69号</span>\n                <span>V1.0.4 Pro</span>\n            </div>\n        ";
-    const _0x4341c6 = document.createElement("div");
-    _0x4341c6.className = "toast-container";
-    _0x4341c6.id = "toastContainer";
-    const _0xa27fb9 = document.createElement("div");
-    _0xa27fb9.className = "bl-overlay";
-    _0xa27fb9.id = "blOverlay";
-    const _0x4f1e01 = document.createElement("div");
-    _0x4f1e01.className = "blacklist-modal";
-    _0x4f1e01.id = "blacklistModal";
-    _0x4f1e01.innerHTML = "\n        <div class=\"bl-header\">\n            <div class=\"bl-title\">📋 黑名单管理</div>\n            <button class=\"bl-close\" id=\"blClose\">×</button>\n        </div>\n        <div class=\"bl-list\" id=\"blList\"></div>\n        <div class=\"bl-footer\">\n            <div class=\"bl-count\" id=\"blCount\">共 0 人</div>\n            <div class=\"bl-actions\">\n                <button class=\"bl-btn export\" id=\"blExport\">📤 导出</button>\n                <button class=\"bl-btn import\" id=\"blImport\">📥 导入</button>\n                <button class=\"bl-btn clear\" id=\"blClear\">🗑️ 清空</button>\n            </div>\n        </div>\n    ";
-    const _0x33901f = document.createElement("div");
-    _0x33901f.className = "blacklist-confirm";
-    _0x33901f.id = "blacklistConfirm";
-    _0x33901f.innerHTML = "\n        <div class=\"bc-header\">\n            <div class=\"bc-title\">🚫 添加到黑名单</div>\n            <div class=\"bc-info\" id=\"bcInfo\">对方: 未知</div>\n        </div>\n        <div class=\"bc-body\">\n            <div class=\"bc-label\">备注原因（可选）:</div>\n            <input type=\"text\" class=\"bc-input\" id=\"bcRemark\" placeholder=\"如：广告党、骚扰者...\">\n        </div>\n        <div class=\"bc-footer\">\n            <button class=\"bc-btn\" id=\"bcCancel\">取消</button>\n            <button class=\"bc-btn\" id=\"bcConfirm\">确认拉黑</button>\n        </div>\n    ";
-    const _0x38bbc1 = document.createElement("input");
-    _0x38bbc1.type = "file";
-    _0x38bbc1.id = "blacklistFileInput";
-    _0x38bbc1.accept = ".json";
-    document.body.appendChild(_0x5a6205);
-    document.body.appendChild(_0x1eb0c8);
-    document.body.appendChild(_0x5a049a);
-    document.body.appendChild(_0x4341c6);
-    document.body.appendChild(_0xa27fb9);
-    document.body.appendChild(_0x4f1e01);
-    document.body.appendChild(_0x33901f);
-    document.body.appendChild(_0x38bbc1);
-    function _0x1b7a18() {
-      _0x5a049a.classList.toggle("show");
-      _0x1eb0c8.classList.toggle("show");
-    }
-    function _0x3e2777() {
-      _0x5a049a.classList.remove("show");
-      _0x1eb0c8.classList.remove("show");
-    }
-    _0x5a6205.addEventListener("mousedown", function (_0x45f1b8) {
-      _0x5290a5 = true;
-      _0x2d093a = false;
-      _0x2c50d4 = _0x45f1b8.clientX;
-      _0x3f3916 = _0x45f1b8.clientY;
-      const _0xbcf5c6 = _0x5a6205.getBoundingClientRect();
-      _0x4fdb3d = _0xbcf5c6.left;
-      _0x5f79ac = _0xbcf5c6.top;
-      _0x5a6205.style.cursor = "grabbing";
-      _0x5a6205.style.opacity = "0.8";
-      _0x5a6205.style.transition = "none";
-      _0x45f1b8.preventDefault();
-      _0x45f1b8.stopPropagation();
-    });
-    document.addEventListener("mousemove", function (_0x5584b8) {
-      if (!_0x5290a5) {
-        return;
-      }
-      const _0x47a89a = _0x5584b8.clientX - _0x2c50d4;
-      const _0xe94580 = _0x5584b8.clientY - _0x3f3916;
-      if (Math.abs(_0x47a89a) > 5 || Math.abs(_0xe94580) > 5) {
-        _0x2d093a = true;
-      }
-      let _0x3019c9 = _0x4fdb3d + _0x47a89a;
-      let _0x48efcf = _0x5f79ac + _0xe94580;
-      const _0x32c22e = window.innerWidth - _0x5a6205.offsetWidth;
-      const _0x38aac2 = window.innerHeight - _0x5a6205.offsetHeight;
-      _0x3019c9 = Math.max(0, Math.min(_0x3019c9, _0x32c22e));
-      _0x48efcf = Math.max(0, Math.min(_0x48efcf, _0x38aac2));
-      _0x5a6205.style.left = _0x3019c9 + "px";
-      _0x5a6205.style.top = _0x48efcf + "px";
-      _0x5a6205.style.right = "auto";
-      _0x5a6205.style.bottom = "auto";
-      _0x5584b8.preventDefault();
-    });
-    document.addEventListener("mouseup", function (_0x434dd2) {
-      if (_0x5290a5) {
-        _0x5290a5 = false;
-        _0x5a6205.style.cursor = "grab";
-        _0x5a6205.style.opacity = "1";
-        _0x5a6205.style.transition = "all 0.3s ease";
-        if (!_0x2d093a) {
-          _0x1b7a18();
+        } catch (Y) {
+          sIG(RWG, Y);
         }
       }
-    });
-    const _0x21d46f = {
-      passive: false
-    };
-    _0x5a6205.addEventListener("touchstart", function (_0x4155b9) {
-      _0x5290a5 = true;
-      _0x2d093a = false;
-      const _0x56b0c3 = _0x4155b9.touches[0];
-      _0x2c50d4 = _0x56b0c3.clientX;
-      _0x3f3916 = _0x56b0c3.clientY;
-      const _0x796fea = _0x5a6205.getBoundingClientRect();
-      _0x4fdb3d = _0x796fea.left;
-      _0x5f79ac = _0x796fea.top;
-      _0x5a6205.style.opacity = "0.8";
-      _0x5a6205.style.transition = "none";
-      _0x4155b9.preventDefault();
-    }, _0x21d46f);
-    const _0x388433 = {
-      passive: false
-    };
-    document.addEventListener("touchmove", function (_0x343f6a) {
-      if (!_0x5290a5) {
-        return;
-      }
-      const _0x29965e = _0x343f6a.touches[0];
-      const _0x164bf1 = _0x29965e.clientX - _0x2c50d4;
-      const _0x4e47fb = _0x29965e.clientY - _0x3f3916;
-      if (Math.abs(_0x164bf1) > 5 || Math.abs(_0x4e47fb) > 5) {
-        _0x2d093a = true;
-      }
-      let _0x431aa5 = _0x4fdb3d + _0x164bf1;
-      let _0xb55c51 = _0x5f79ac + _0x4e47fb;
-      const _0x2f73b3 = window.innerWidth - _0x5a6205.offsetWidth;
-      const _0x32593 = window.innerHeight - _0x5a6205.offsetHeight;
-      _0x431aa5 = Math.max(0, Math.min(_0x431aa5, _0x2f73b3));
-      _0xb55c51 = Math.max(0, Math.min(_0xb55c51, _0x32593));
-      _0x5a6205.style.left = _0x431aa5 + "px";
-      _0x5a6205.style.top = _0xb55c51 + "px";
-      _0x5a6205.style.right = "auto";
-      _0x5a6205.style.bottom = "auto";
-      _0x343f6a.preventDefault();
-    }, _0x388433);
-    document.addEventListener("touchend", function (_0x2eb7cd) {
-      if (_0x5290a5) {
-        _0x5290a5 = false;
-        _0x5a6205.style.opacity = "1";
-        _0x5a6205.style.transition = "all 0.3s ease";
-        if (!_0x2d093a) {
-          _0x1b7a18();
+      if (document[hH]($WG) && Y.e()) {
+        const Y = (document[hH]($WG)?.[T](), document[hH](bWG)?.[T](), document[hH](DWG)?.[T](), document[hH](MWG)?.[T](), document[hH](vWG));
+        if (Y) {
+          Y[T]();
         }
       }
-    });
-    _0x1eb0c8.addEventListener("click", _0x3e2777);
-    document.getElementById("panelClose").addEventListener("click", _0x3e2777);
-    document.addEventListener("keydown", function (_0x49f9ef) {
-      _0x49f9ef.key === "Escape" && _0x5a049a.classList.contains("show") && _0x3e2777();
-    });
-    function _0x138ecc(_0x58abb6, _0x44fab7 = "info", _0x480bc5 = 4000) {
-      const _0x56997d = document.createElement("div");
-      _0x56997d.className = "toast " + _0x44fab7;
-      const _0x119feb = {
-        success: "✅",
-        error: "❌",
-        warning: "⚠️",
-        info: "ℹ️"
-      };
-      _0x56997d.innerHTML = "\n        <span class=\"toast-icon\">" + (_0x119feb[_0x44fab7] || "ℹ️") + "</span>\n        <span>" + _0x58abb6 + "</span>\n      ";
-      _0x4341c6.appendChild(_0x56997d);
-      setTimeout(() => {
-        _0x56997d.classList.add("fade-out");
-        setTimeout(() => {
-          _0x56997d.parentNode && _0x56997d.parentNode.removeChild(_0x56997d);
-        }, 300);
-      }, _0x480bc5);
-      return _0x56997d;
-    }
-    document.getElementById("ckb_script").addEventListener("change", function () {
-      const _0x1a8795 = this.checked ? "开启" : "关闭";
-      chatPage.scriptIsRun = this.checked;
-      _0x138ecc("脚本" + _0x1a8795, this.checked ? "success" : "info");
-      console.log("脚本启动: " + _0x1a8795);
-    });
-    document.getElementById("ckb_match").addEventListener("change", function () {
-      const _0x18a84f = this.checked ? "女生" : "男生";
-      const _0xe14afa = this.checked ? "🚺 " : "🚹 ";
-      document.getElementById("txt_match").textContent = _0xe14afa + "仅" + _0x18a84f;
-      chatPage.MatchWho = _0x18a84f;
-      _0x138ecc("匹配模式: " + _0x18a84f, "info");
-      console.log("匹配模式: " + _0x18a84f);
-    });
-    document.getElementById("ckb_qingliu").addEventListener("change", function () {
-      const _0x5df069 = this.checked ? "开启" : "关闭";
-      filterQingliu = this.checked;
-      _0x138ecc("过滤清流标签: " + _0x5df069, this.checked ? "warning" : "info");
-      console.log("过滤清流标签: " + _0x5df069);
-    });
-    document.getElementById("ckb_under18").addEventListener("change", function () {
-      const _0x2159fc = this.checked ? "开启" : "关闭";
-      filterUnder18 = this.checked;
-      _0x138ecc("过滤18岁以下: " + _0x2159fc, this.checked ? "warning" : "info");
-      console.log("过滤18岁以下: " + _0x2159fc);
-    });
-    document.getElementById("btn_contact").addEventListener("click", function () {
-      const _0x3a7809 = this;
-      const _0x28a574 = _0x3a7809.textContent;
-      _0x3a7809.textContent = "发送中...";
-      _0x3a7809.classList.add("sending");
-      _0x138ecc("正在发送联系方式...", "info", 2000);
-      _0x5cec67();
-      setTimeout(() => {
-        _0x3a7809.textContent = _0x28a574;
-        _0x3a7809.classList.remove("sending");
-        _0x138ecc("联系方式发送成功！", "success");
-      }, 2000);
-    });
-    document.getElementById("btn_vip_card").addEventListener("click", function () {
-      openVIPCardWallet();
-      _0x138ecc("正在打开VIP卡包...", "info", 1500);
-    });
-    document.getElementById("ckb_blacklist").addEventListener("change", function () {
-      const _0x4e7726 = this.checked ? "开启" : "关闭";
-      blacklistEnabled = this.checked;
-      _0x138ecc("黑名单功能: " + _0x4e7726, this.checked ? "warning" : "info");
-      console.log("黑名单功能: " + _0x4e7726);
-    });
-    function _0x1840df() {
-      try {
-        const _0x53ac64 = localStorage.getItem("partner");
-        return _0x53ac64 ? JSON.parse(_0x53ac64) : null;
-      } catch (_0x487b01) {
-        return null;
+      const wH = document[s](DGG),
+        d = (wH[bH] = vWG, wH[qQG] = GWG, document[aWG][I](wH), document[s](A));
+      let m = (d[v] = YlG, d[bH] = $WG, d[C] = jlG, d[NlG] = zlG, !1),
+        x = n,
+        G = n,
+        r = n,
+        e = n,
+        R = !1;
+      const EH = document[s](A),
+        W = (EH[v] = bWG, EH[bH] = bWG, document[s](A)),
+        c = (W[v] = AlG, W[bH] = DWG, W[C] = qlG, document[s](A)),
+        MH = (c[v] = ClG, c[bH] = MWG, document[s](A)),
+        j = (MH[v] = ulG, MH[bH] = PlG, document[s](A)),
+        H = (j[v] = xlG, j[bH] = VlG, j[C] = XlG, document[s](A)),
+        sH = (H[v] = HlG, H[bH] = rlG, H[C] = _lG, document[s](LlG));
+      sH[YGG] = JlG;
+      sH[bH] = BlG;
+      sH[llG] = uGG;
+      document[JH][I](d);
+      document[JH][I](EH);
+      document[JH][I](W);
+      document[JH][I](c);
+      document[JH][I](MH);
+      document[JH][I](j);
+      document[JH][I](H);
+      document[JH][I](sH);
+      function U() {
+        W[SGG][OlG](iQG);
+        EH[SGG][OlG](iQG);
       }
-    }
-    function _0x5cb988(_0x1289f9) {
-      const _0x1f5785 = {
-        "1": "18岁以下",
-        "2": "18-22岁",
-        "3": "23岁以上"
-      };
-      return _0x1f5785[String(_0x1289f9)] || "";
-    }
-    function _0x43f580(_0x1f1d95) {
-      const _0x27f34b = new Date(_0x1f1d95);
-      const _0x564229 = {
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit"
-      };
-      return _0x27f34b.toLocaleDateString("zh-CN", _0x564229);
-    }
-    function _0x488b3c() {
-      const _0x465c91 = document.getElementById("blList");
-      const _0x280be0 = document.getElementById("blCount");
-      blacklist.length === 0 ? _0x465c91.innerHTML = "<div class=\"bl-empty\">🎉 黑名单为空</div>" : _0x465c91.innerHTML = blacklist.map((_0x303f4a, _0xfabcdb) => "\n          <div class=\"bl-item\" data-id=\"" + _0x303f4a.id + "\">\n            <div class=\"bl-item-header\">\n              <div class=\"bl-item-remark\">" + (_0x303f4a.remark || "未备注") + "</div>\n              <div class=\"bl-item-actions\">\n                <button class=\"bl-item-btn edit\" data-index=\"" + _0xfabcdb + "\" title=\"编辑\">✏️</button>\n                <button class=\"bl-item-btn delete\" data-index=\"" + _0xfabcdb + "\" title=\"删除\">🗑️</button>\n              </div>\n            </div>\n            <div class=\"bl-item-info\">\n              <span>" + (_0x303f4a.gender || "未知") + " " + _0x5cb988(_0x303f4a.age) + "</span>\n              <span>" + _0x43f580(_0x303f4a.addTime) + "</span>\n            </div>\n          </div>\n        ").join("");
-      _0x280be0.textContent = "共 " + blacklist.length + " 人";
-    }
-    function _0x1c28d4() {
-      _0x488b3c();
-      _0xa27fb9.classList.add("show");
-      _0x4f1e01.classList.add("show");
-    }
-    function _0x5e7953() {
-      _0xa27fb9.classList.remove("show");
-      _0x4f1e01.classList.remove("show");
-    }
-    function _0x3c1045() {
-      const _0x181450 = _0x1840df();
-      if (!_0x181450) {
-        _0x138ecc("当前没有聊天对象", "warning");
-        return;
+      function Q() {
+        W[SGG][aGG](iQG);
+        EH[SGG][aGG](iQG);
       }
-      if (!_0x181450.idEncrypted) {
-        _0x138ecc("无法获取对方信息", "error");
-        return;
-      }
-      if (isInBlacklist(_0x181450.idEncrypted)) {
-        _0x138ecc("对方已在黑名单中", "warning");
-        return;
-      }
-      document.getElementById("bcInfo").textContent = "对方: " + (_0x181450.strGender || "未知") + " " + _0x5cb988(_0x181450.strAge);
-      document.getElementById("bcRemark").value = "";
-      _0xa27fb9.classList.add("show");
-      _0x33901f.classList.add("show");
-    }
-    function _0x36b6a6() {
-      _0x33901f.classList.remove("show");
-      _0xa27fb9.classList.remove("show");
-    }
-    function _0x31ea43() {
-      const _0x3fdef2 = _0x1840df();
-      if (!_0x3fdef2 || !_0x3fdef2.idEncrypted) {
-        _0x138ecc("无法获取对方信息", "error");
-        _0x36b6a6();
-        return;
-      }
-      const _0x587293 = document.getElementById("bcRemark").value.trim();
-      const _0x483d2c = addToBlacklist(_0x3fdef2.idEncrypted, _0x587293 || "未备注", _0x3fdef2.strGender || "", _0x3fdef2.strAge || "");
-      if (_0x483d2c) {
-        _0x138ecc("已将对方加入黑名单", "success");
-        _0x36b6a6();
-        const _0xf216ab = document.querySelector("a.tab-link[href=\"#view-leave\"]");
-        if (_0xf216ab) {
-          _0xf216ab.click();
+      d[a](plG, M(b => {
+        const Y = (m = !0, R = !1, x = b[klG], G = b[glG], d[KlG]());
+        r = Y[tlG];
+        e = Y[ilG];
+        d[DGG][WlG] = UlG;
+        d[DGG][MGG] = dlG;
+        d[DGG][ylG] = GGG;
+        b[mGG]();
+        b[EGG]();
+      }, 1));
+      document[a](clG, M(M => {
+        if (!m) {
+          return;
         }
-      } else {
-        _0x138ecc("对方已在黑名单中", "warning");
-      }
-    }
-    document.getElementById("btn_blacklist_manage").addEventListener("click", function () {
-      _0x1c28d4();
-    });
-    document.getElementById("btn_blacklist_add").addEventListener("click", function () {
-      _0x3c1045();
-    });
-    document.getElementById("blClose").addEventListener("click", _0x5e7953);
-    _0xa27fb9.addEventListener("click", function () {
-      _0x5e7953();
-      _0x36b6a6();
-    });
-    document.getElementById("blList").addEventListener("click", function (_0x37da23) {
-      const _0x3548b0 = _0x37da23.target.closest(".bl-item-btn");
-      if (!_0x3548b0) {
-        return;
-      }
-      const _0x498c81 = parseInt(_0x3548b0.dataset.index);
-      const _0x1a4ec5 = blacklist[_0x498c81];
-      if (!_0x1a4ec5) {
-        return;
-      }
-      if (_0x3548b0.classList.contains("edit")) {
-        const _0x2f38fd = prompt("修改备注:", _0x1a4ec5.remark);
-        _0x2f38fd !== null && (updateBlacklistRemark(_0x1a4ec5.id, _0x2f38fd.trim() || "未备注"), _0x488b3c(), _0x138ecc("备注已更新", "success"));
-      } else {
-        _0x3548b0.classList.contains("delete") && confirm("确定要将此人从黑名单移除吗？") && (removeFromBlacklist(_0x1a4ec5.id), _0x488b3c(), _0x138ecc("已从黑名单移除", "success"));
-      }
-    });
-    document.getElementById("blExport").addEventListener("click", function () {
-      if (blacklist.length === 0) {
-        _0x138ecc("黑名单为空，无法导出", "warning");
-        return;
-      }
-      exportBlacklist();
-      _0x138ecc("黑名单已导出", "success");
-    });
-    document.getElementById("blImport").addEventListener("click", function () {
-      _0x38bbc1.click();
-    });
-    _0x38bbc1.addEventListener("change", function (_0x330375) {
-      const _0x27fb1f = _0x330375.target.files[0];
-      if (!_0x27fb1f) {
-        return;
-      }
-      importBlacklist(_0x27fb1f).then(_0x2231f8 => {
-        _0x488b3c();
-        _0x138ecc("成功导入 " + _0x2231f8 + " 人", "success");
-      }).catch(_0x135c06 => {
-        _0x138ecc("导入失败: " + _0x135c06.message, "error");
+        const s = E(M[klG], x, b(-rIG)),
+          J = E(M[glG], G, b(-rIG));
+        if (qIG(s) > nIG || qIG(J) > nIG) {
+          R = !0;
+        }
+        let Y = E(r, s, h = -XIG),
+          Z = E(e, J, b(-XIG));
+        const c = E(window[hlG], d[olG], h = -rIG),
+          w = E(window[TlG], d[nlG], b(-rIG));
+        Y = CIG(VIG, uIG(Y, c));
+        Z = CIG(VIG, uIG(Z, w));
+        d[DGG][tlG] = E(Y, ElG, b(-XIG));
+        d[DGG][ilG] = E(Z, ElG, b(-XIG));
+        d[DGG][ZlG] = mlG;
+        d[DGG][FlG] = mlG;
+        M[mGG]();
+      }, 1));
+      document[a](RlG, M(Y => {
+        if (m) {
+          m = !1;
+          d[DGG][WlG] = QlG;
+          d[DGG][MGG] = '1';
+          d[DGG][ylG] = IlG;
+          if (!R) {
+            U();
+          }
+        }
+      }, 1));
+      d[a](SlG, M(b => {
+        const h = (m = !0, R = !1, b[$lG][VIG]),
+          Y = (x = h[klG], G = h[glG], d[KlG]());
+        r = Y[tlG];
+        e = Y[ilG];
+        d[DGG][MGG] = dlG;
+        d[DGG][ylG] = GGG;
+        b[mGG]();
+      }, 1), {
+        [blG]: !1
       });
-      _0x38bbc1.value = "";
-    });
-    document.getElementById("blClear").addEventListener("click", function () {
-      if (blacklist.length === 0) {
-        _0x138ecc("黑名单已为空", "info");
-        return;
+      document[a](DlG, M(s => {
+        if (!m) {
+          return;
+        }
+        const g = s[$lG][VIG],
+          w = E(g[klG], x, h = -rIG),
+          c = E(g[glG], G, h = -rIG);
+        if ((qIG(w) > nIG || qIG(c) > nIG) && Y.g[MlG](lIG) == 'h') {
+          R = !0;
+        }
+        let M = E(r, w, b(-XIG)),
+          S = E(e, c, b(-XIG));
+        const Z = E(window[hlG], d[olG], h = -rIG),
+          J = E(window[TlG], d[nlG], h = -rIG);
+        M = CIG(VIG, uIG(M, Z));
+        S = CIG(VIG, uIG(S, J));
+        d[DGG][tlG] = E(M, ElG, b(-XIG));
+        d[DGG][ilG] = E(S, ElG, b(-XIG));
+        d[DGG][ZlG] = mlG;
+        d[DGG][FlG] = mlG;
+        s[mGG]();
+      }, 1), {
+        [blG]: !1
+      });
+      document[a](vlG, M(Y => {
+        if (m) {
+          m = !1;
+          d[DGG][MGG] = '1';
+          d[DGG][ylG] = IlG;
+          if (!R) {
+            U();
+          }
+        }
+      }, 1));
+      EH[a](N, Q);
+      document[hH](GlG)[a](N, Q);
+      document[a](elG, M(Y => {
+        if (Y[alG] === flG && W[SGG][IGG](iQG)) {
+          Q();
+        }
+      }, 1));
+      function y(message, b = AUG, Y = EIG) {
+        const M = document[jGG](fWG),
+          s = (M[slG] = E(sUG, b, h = -XIG), {
+            [ZWG]: YUG,
+            [jUG]: wUG,
+            [UWG]: NUG,
+            [AUG]: zUG
+          });
+        M[wlG] = qUG + (s[b] || zUG) + CUG + message + uUG;
+        c[eWG](M);
+        setTimeout(() => (M[SGG][fGG](PUG), setTimeout(() => (M[xUG] && M[xUG][VUG](M), 0), KIG), 0), Y);
+        return M;
       }
-      confirm("确定要清空全部 " + blacklist.length + " 人吗？此操作不可恢复！") && (clearBlacklist(), _0x488b3c(), _0x138ecc("黑名单已清空", "success"));
-    });
-    document.getElementById("bcCancel").addEventListener("click", _0x36b6a6);
-    document.getElementById("bcConfirm").addEventListener("click", _0x31ea43);
-    let _0x197ddf = null;
-    let _0x22cd94 = false;
-    function _0x298d69() {
-      if (!chatPage.scriptIsRun) {
-        return false;
+      document[hH](XUG)[a](V, function () {
+        const Y = this[rUG] ? LUG : _UG;
+        chatPage[CWG] = this[rUG];
+        y(E(JUG, Y, b(-XIG)), this[rUG] ? ZWG : AUG);
+        NIG(E(BUG, Y, b(-XIG)));
+      });
+      document[hH](lUG)[a](V, function () {
+        const M = this[rUG] ? PWG : OUG,
+          Y = this[rUG] ? kUG : pUG;
+        document[SWG](gUG)[qQG] = E(Y + KUG, M, b(-XIG));
+        chatPage[uWG] = M;
+        y(E(tUG, M, h = -XIG), AUG);
+        NIG(E(tUG, M, b(-XIG)));
+      });
+      document[hH](iUG)[a](V, function () {
+        const Y = this[rUG] ? LUG : _UG;
+        filterQingliu = this[rUG];
+        y(E(WUG, Y, h = -XIG), this[rUG] ? UWG : AUG);
+        NIG(E(WUG, Y, b(-XIG)));
+      });
+      document[hH](UUG)[a](V, function () {
+        const Y = this[rUG] ? LUG : _UG;
+        filterUnder18 = this[rUG];
+        y(E(dUG, Y, b(-XIG)), this[rUG] ? UWG : AUG);
+        NIG(E(dUG, Y, h = -XIG));
+      });
+      document[hH](yUG)[a](N, function () {
+        const Y = this,
+          b = Y[qQG];
+        Y[qQG] = cUG;
+        Y[SGG][fGG](hUG);
+        y(oUG, AUG, tIG);
+        i();
+        setTimeout(() => (Y[qQG] = b, Y[SGG][aGG](hUG), y(TUG, ZWG), 0), tIG);
+      });
+      document[hH](nUG)[a](N, M(() => {
+        openVIPCardWallet();
+        y(EUG, AUG, iIG);
+      }, 0));
+      document[hH](ZUG)[a](V, function () {
+        const Y = this[rUG] ? LUG : _UG;
+        blacklistEnabled = this[rUG];
+        y(E(mUG, Y, b(-XIG)), this[rUG] ? UWG : AUG);
+        NIG(E(mUG, Y, h = -XIG));
+      });
+      function S() {
+        try {
+          const Y = localStorage[RIG](KWG);
+          return Y ? YIG(Y) : null;
+        } catch (Y) {
+          return null;
+        }
       }
-      if (!blacklistEnabled || _0x22cd94) {
-        return false;
+      function X(Y) {
+        const b = {
+          '1': lQG,
+          '2': FUG,
+          '3': pQG
+        };
+        return b[String(Y)] || '';
       }
-      const _0x4aacde = _0x1840df();
-      if (!_0x4aacde || !_0x4aacde.idEncrypted) {
-        return false;
+      function q(b) {
+        var Y = IUG;
+        const date = new Date(b);
+        return date[RUG](QUG, {
+          [SUG]: Y,
+          [$UG]: Y,
+          [bUG]: Y,
+          [DUG]: Y
+        });
       }
-      const _0x1e99b0 = _0x4aacde.extra ? _0x4aacde.extra.chatId : null;
-      const _0x4a43c8 = _0x1e99b0 + "_" + _0x4aacde.idEncrypted;
-      if (_0x197ddf === _0x4a43c8) {
-        return false;
+      function B() {
+        const b = document[SWG](MUG),
+          Y = document[SWG](vUG);
+        if (blacklist[mIG] === VIG) {
+          b[wlG] = qKG;
+        } else {
+          b[wlG] = blacklist[oWG]((Y, index) => fUG + Y[bIG] + sKG + (Y[MIG] || eUG) + YKG + index + wKG + index + jKG + (Y[vIG] || aUG) + NKG + X(Y[GIG]) + zKG + q(Y[eIG]) + AKG)[GUG]('');
+        }
+        Y[qQG] = CKG + blacklist[mIG] + uKG;
       }
-      const _0x29da2e = isInBlacklist(_0x4aacde.idEncrypted);
-      if (_0x29da2e) {
-        _0x197ddf = _0x4a43c8;
-        _0x22cd94 = true;
-        console.log("[黑名单] 检测到黑名单用户:", _0x29da2e.remark);
-        _0x138ecc("🚫 已自动跳过黑名单用户：" + _0x29da2e.remark, "warning", 3000);
-        setTimeout(() => {
-          const _0x43f2cb = document.querySelector("a.tab-link[href=\"#view-leave\"]");
-          _0x43f2cb && _0x43f2cb.click();
+      function o() {
+        B();
+        MH[SGG][fGG](iQG);
+        j[SGG][fGG](iQG);
+      }
+      function t() {
+        MH[SGG][aGG](iQG);
+        j[SGG][aGG](iQG);
+      }
+      function u() {
+        const b = S();
+        if (!b) {
+          y(PKG, UWG);
+          return 0;
+        }
+        if (!b[tWG]) {
+          y(xKG, jUG);
+          return 0;
+        }
+        if (isInBlacklist(b[tWG]) && Y.i[iGG](lIG) == ZIG) {
+          y(VKG, UWG);
+          return 0;
+        }
+        document[SWG](XKG)[qQG] = rKG + (b[gWG] || aUG) + NKG + X(b[HKG]);
+        document[SWG](LKG)[_KG] = '';
+        MH[SGG][fGG](iQG);
+        H[SGG][fGG](iQG);
+      }
+      function l() {
+        H[SGG][aGG](iQG);
+        MH[SGG][aGG](iQG);
+      }
+      function w() {
+        const Y = S();
+        if (!Y || !Y[tWG]) {
+          y(xKG, jUG);
+          l();
+          return 0;
+        }
+        const h = document[SWG](LKG)[_KG][HWG](),
+          b = addToBlacklist(Y[tWG], h || eUG, Y[gWG] || '', Y[HKG] || '');
+        if (b) {
+          const Y = (y(JKG, ZWG), l(), document[QGG](BKG));
+          if (Y) {
+            Y[PGG]();
+          }
+        } else {
+          y(VKG, UWG);
+        }
+      }
+      let g = (document[hH](lKG)[a](N, M(() => {
+          o();
+        }, 0)), document[hH](OKG)[a](N, M(() => {
+          u();
+        }, 0)), document[hH](pKG)[a](N, t), MH[a](N, M(() => {
+          t();
+          l();
+        }, 0)), document[hH](MUG)[a](N, M(b => {
+          const h = b[HGG][kKG](gKG);
+          if (!h) {
+            return;
+          }
+          const index = PIG(h[tKG][KKG]),
+            Y = blacklist[index];
+          if (!Y) {
+            return;
+          }
+          if (h[SGG][IGG](iKG)) {
+            const b = prompt(yKG, Y[MIG]);
+            if (b !== null) {
+              updateBlacklistRemark(Y[bIG], b[HWG]() || eUG);
+              B();
+              y(cKG, ZWG);
+            }
+          } else {
+            if (h[SGG][IGG](WKG)) {
+              if (confirm(UKG)) {
+                removeFromBlacklist(Y[bIG]);
+                B();
+                y(dKG, ZWG);
+              }
+            }
+          }
+        }, 1)), document[hH](hKG)[a](N, M(() => {
+          if (blacklist[mIG] === VIG) {
+            y(oKG, UWG);
+            return 0;
+          }
+          exportBlacklist();
+          y(TKG, ZWG);
+        }, 0)), document[hH](nKG)[a](N, M(() => {
+          sH[PGG]();
+        }, 0)), sH[a](V, M(h => {
+          const Y = h[HGG][EKG][VIG];
+          if (!Y) {
+            return;
+          }
+          importBlacklist(Y)[mKG](Y => (B(), y(FKG + Y + uKG, ZWG), 0))[ZKG](Y => (y(E(RKG, Y[QKG], b(-XIG)), jUG), 0));
+          sH[_KG] = '';
+        }, 1)), document[hH](IKG)[a](N, M(() => {
+          if (blacklist[mIG] === VIG) {
+            y(SKG, AUG);
+            return 0;
+          }
+          if (confirm($KG + blacklist[mIG] + bKG)) {
+            clearBlacklist();
+            B();
+            y(DKG, ZWG);
+          }
+        }, 0)), document[hH](MKG)[a](N, l), document[hH](vKG)[a](N, w), null),
+        F = null,
+        K = !1;
+      function _H() {
+        if (!chatPage[CWG]) {
+          return !1;
+        }
+        if (!blacklistEnabled || K) {
+          return !1;
+        }
+        const M = S();
+        if (!M || !M[tWG]) {
+          return !1;
+        }
+        const s = M[GKG] ? M[GKG][RQG] : null,
+          b = E(s + '_', M[tWG], h = -XIG);
+        if (g === b) {
+          return !1;
+        }
+        const w = isInBlacklist(M[tWG]);
+        if (w) {
+          g = b;
+          K = !0;
+          NIG(eKG, w[MIG]);
+          y(WWG + w[MIG], UWG, hIG);
           setTimeout(() => {
-            _0x22cd94 = false;
-            _0x197ddf = null;
-          }, 2000);
-        }, 100);
-        return true;
+            const b = document[QGG](BKG);
+            if (b && Y.i[iGG](lIG) == ZIG) {
+              b[PGG]();
+            }
+            setTimeout(() => (K = !1, g = null, 0), tIG);
+          }, kIG);
+          return !0;
+        }
+        g = b;
+        return !1;
       }
-      _0x197ddf = _0x4a43c8;
-      return false;
+      window[aKG] = _H;
+      window[fKG] = isInBlacklist;
+      window[s_G] = S;
+      setInterval(_H, gIG);
+      setTimeout(_H, kIG);
+      document[hH](lUG)[N]();
+      y(Y_G, ZWG);
     }
-    window.checkBlacklist = _0x298d69;
-    window.isInBlacklist = isInBlacklist;
-    window.getCurrentPartner = _0x1840df;
-    setInterval(_0x298d69, 500);
-    setTimeout(_0x298d69, 100);
-    document.getElementById("ckb_match").click();
-    _0x138ecc("驭师插件，欢迎您的使用！", "success");
-  }
-  try {
-    initialized && console.log("已初始化！");
-  } catch {
-    initialized = true;
-    _0x3fa83a();
-  }
-};
-MainFunc();
+    try {
+      if (initialized) {
+        NIG(w_G);
+      }
+    } catch {
+      initialized = !0;
+      s();
+    }
+  };
+  MainFunc();
+}
+function M(h, b) {
+  var Y = function () {
+    return h(...arguments);
+  };
+  Object['defineProperty'](Y, 'length', {
+    'value': b,
+    'configurable': true
+  });
+  return Y;
+}
