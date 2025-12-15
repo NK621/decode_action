@@ -1,1322 +1,1389 @@
-//Wed Dec 03 2025 16:28:30 GMT+0000 (Coordinated Universal Time)
+//Mon Dec 15 2025 09:53:55 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-(function (O) {
-  var b, z, h, P, C, r;
-  P = i(() => {
-    var V;
-    return (V = {
-      a: 'b',
-      c: 35
-    }) && 0 || V;
-  }, 0)();
-  function X(V, B) {
-    switch (b) {
-      case 4:
-        {
-          return V + B;
-        }
-      case -34:
-        {
-          return V * B;
-        }
-      case 43:
-        {
-          return V - B;
-        }
-      case !(P.a.charCodeAt(0) == 98) ? -111 : 62:
-        {
-          return V / B;
-        }
-    }
+let QQ = "";
+let index = 0;
+let AUTO_MSG = [];
+let currentAutoIndex = 0;
+let filterQingliu = true;
+let filterUnder18 = false;
+let filterProvinceEnabled = false;
+let selectedProvinces = [];
+let filterNoRegion = false;
+const ALL_PROVINCES = ["北京", "天津", "河北", "山西", "内蒙古", "辽宁", "吉林", "黑龙江", "上海", "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南", "广东", "广西", "海南", "重庆", "四川", "贵州", "云南", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆", "香港", "澳门", "台湾"];
+let customAgeEnabled = false;
+let customAgeValue = "2";
+let waitReplyEnabled = false;
+let waitReplyTimeout = 30;
+let waitReplyTimer = null;
+let initialPartnerMsgCount = 0;
+let aiEnabled = false;
+let aiApiKey = "";
+let aiApiEndpoint = "https://api.siliconflow.cn/v1/chat/completions";
+let aiModel = "Qwen/Qwen2.5-7B-Instruct";
+let aiSystemPrompt = "你是一个友好的聊天助手，用简洁自然的语言回复，不要带句号";
+let aiChatHistory = [];
+let aiIsActive = false;
+let aiMonitorTimer = null;
+let aiLastMsgCount = 0;
+let aiWaitingReply = false;
+let aiSessionId = 0;
+function loadAIConfig() {
+  try {
+    const _0x1d5175 = localStorage.getItem("ssby_ai_enabled");
+    const _0x5da5e6 = localStorage.getItem("ssby_ai_apikey");
+    const _0x52139b = localStorage.getItem("ssby_ai_model");
+    const _0x1ad5f8 = localStorage.getItem("ssby_ai_prompt");
+    const _0x348361 = localStorage.getItem("ssby_ai_endpoint");
+    aiEnabled = _0x1d5175 === "true";
+    aiApiKey = _0x5da5e6 || "";
+    aiModel = _0x52139b || "Qwen/Qwen2.5-7B-Instruct";
+    aiSystemPrompt = _0x1ad5f8 || "你是一个友好的聊天助手，用简洁自然的语言回复，不要带句号";
+    aiApiEndpoint = _0x348361 || "https://api.siliconflow.cn/v1/chat/completions";
+  } catch (_0x4527ef) {
+    console.error("[AI托管] 加载配置失败:", _0x4527ef);
   }
-  function F(V) {
-    V = b + (b = V, 0);
-    return V;
+}
+function saveAIConfig() {
+  try {
+    localStorage.setItem("ssby_ai_enabled", String(aiEnabled));
+    localStorage.setItem("ssby_ai_apikey", aiApiKey);
+    localStorage.setItem("ssby_ai_model", aiModel);
+    localStorage.setItem("ssby_ai_prompt", aiSystemPrompt);
+    localStorage.setItem("ssby_ai_endpoint", aiApiEndpoint);
+  } catch (_0x3944fc) {
+    console.error("[AI托管] 保存配置失败:", _0x3944fc);
   }
-  function Y(V, B) {
-    return V << B;
+}
+loadAIConfig();
+function resetAIChat() {
+  aiChatHistory = [];
+  aiLastMsgCount = 0;
+  aiWaitingReply = false;
+  aiSessionId++;
+  console.log("[AI托管] 对话历史已重置, sessionId:", aiSessionId);
+}
+function startAIChat() {
+  if (!aiEnabled || !aiApiKey) {
+    console.log("[AI托管] 未启用或未配置API Key");
+    return false;
   }
-  function u(V, B) {
-    return V >> B;
+  aiIsActive = true;
+  aiLastMsgCount = document.querySelectorAll(".message.left").length;
+  if (aiMonitorTimer) {
+    clearInterval(aiMonitorTimer);
   }
-  function c(V, B) {
-    return V <= B;
+  aiMonitorTimer = setInterval(checkAINewMessage, 500);
+  console.log("[AI托管] 已启动");
+  typeof window.showToast === "function" && window.showToast("🤖 AI托管已启动，监听中...", "success", 2000);
+  return true;
+}
+function stopAIChat() {
+  aiIsActive = false;
+  aiMonitorTimer && (clearInterval(aiMonitorTimer), aiMonitorTimer = null);
+  console.log("[AI托管] 已停止");
+}
+function checkAINewMessage() {
+  if (!aiIsActive || aiWaitingReply) {
+    return;
   }
-  function Z(V, B) {
-    return V % B;
+  const _0x115320 = document.querySelectorAll(".message.left .message-text");
+  if (_0x115320.length > aiLastMsgCount) {
+    const _0x30762c = _0x115320[_0x115320.length - 1]?.["textContent"]?.["trim"]();
+    aiLastMsgCount = _0x115320.length;
+    _0x30762c && !_0x30762c.startsWith("对方信息") && !_0x30762c.includes("绿色聊天") && (console.log("[AI托管] 检测到新消息:", _0x30762c), typeof window.showToast === "function" && window.showToast("💬 检测到对方消息，正在调用AI...", "info", 2000), handleAIMessage(_0x30762c));
   }
-  function l(V, B) {
-    return X(V, B, F(-34));
-  }
-  function H(V, B) {
-    return X(V, B, F(4));
-  }
-  function R(V, B) {
-    return X(V, B, F(43));
-  }
-  function U(V, B) {
-    return X(V, B, b = 62);
-  }
-  function f(V, B) {
-    return V < B;
-  }
-  function o(V, B) {
-    return V > B;
-  }
-  function B(V, B) {
-    return V >= B;
-  }
-  function D(V, B, z) {
-    V[B] = z;
-    return V;
-  }
-  C = D;
-  let q = (() => [10, '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', 'fromCharCode', 'object', 'ct', 'd', 'StringExtract', 0, '_$a'])();
-  (z = Object.assign) && false || (r = O[q[0]]);
-  let x = [q[1]],
-    K,
-    k = String[q[2]],
-    v = Uint8Array,
-    a = Uint16Array,
-    L = Uint32Array;
-  h = typeof window === q[3] && window || typeof self === H('obje', 'ct') && self || exports || typeof globalThis === H('obje', q[4]) && globalThis || typeof global === 'object' && global;
-  let V = (i(V => {
-    var z, L, x, F, B;
-    x = D;
-    function u() {
-      return ['ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'];
-    }
-    let X = u();
-    ((((B = X[0]) || '1') && (z = i(k => {
-      var F, B, V;
-      const z = [0, 'th'];
-      for (((V = {}) && 0 || (B = z[0]) || '1') && (F = k[H('leng', z[1])]); f(B, F); B++) V[k[H('char', 'At')](B)] = B;
-      return V;
-    }, 1)(B)) || 6) && (F = i(u => {
-      var F, X, B, x;
-      function V() {
-        return [4, 0, 1, 12, 2, 6, 3, 'charAt', 16, 'length', ''];
-      }
-      const L = V();
-      return (B = u.length) && 0 || (X = Z(B, L[0]), x = (o(B, 0) ? Y(z[u.charAt(L[1])], 18) : 0) | (o(B, L[2]) ? Y(z[u.charAt(L[2])], L[3]) : L[1]) | (o(B, 2) ? Y(z[u.charAt(L[4])], L[5]) : L[1]) | (o(B, L[6]) ? z[u[L[7]](L[6])] : L[1]), F = [k(x >>> L[8]), k(x >>> 8 & 255), k(x & 255)], F[L[9]] -= [0, L[1], 2, 1][X], F.join(L[10]));
-    }, 1)) || 9) && (L = i(B => {
-      const V = x({}, 'V', 'replace');
-      return B[V.V](/\S{1,4}/g, F);
-    }, 1)) && 0 || x(V, 'atob', i(V => {
-      return L(String(V)[H('repl', 'ace')](/[^A-Za-z0-9\+\/]/g, ''));
-    }, 1));
-  }, 1)(h), function (h) {
-    var O, s, q, e, t, Q, F, G, d, A, VX, j, b, z, S, g, K, T, I, V, E, n, M, BX, r;
-    let W = [8, !0, 0, 'type', 1, 'prototype', 'I', 'J', 7, 9, 6, 5, 4, 13, 2, 14, 15, 10, 11, 17, 19, 23, 31, 43, 51, 59, 83, 99, 115, 163, 227, 258, 49, 65, 97, 385, 513, 3073, 0x2001, 0x6001, 3, 12, 288, 'length', 143, 255, 279, 30, 'd'];
-    if ((E = W[0]) && 0 || (G = W[1]) || '0') {
-      z = W[2];
-    }
-    function m(V) {
-      throw V;
-    }
-    function w(B, u) {
-      var z, F, V, X;
-      X = D;
-      let k = 'c|verify|N|err:|B|index|Size|bufferType|resize'.split('|');
-      V = this;
-      z = 0;
-      X(X(V, 'input', B), k[0], 0);
-      if (u || !(u = {})) {
-        u.index && (V.c = u.index) && 0 || u[k[1]] && (V[k[2]] = u[k[1]]);
-      }
-      (F = B[V[k[0]]++]) && 0 || (z = B[V[k[0]]++]);
-      switch (F & 15) {
-        case E:
-          {
-            V.method = E;
-          }
-      }
-      if (0 !== Z(H(Y(F, 8), z), 31) && m(Error(H(k[3], Z(H(Y(F, 8), z), 31)))) && 0 || z & 32 && m(Error('not')) || 1) {
-        X(V, k[4], new J(B, X(X(X(X({}, k[5], V[k[0]]), 'bufferSize', u[H('buffer', k[6])]), k[7], u.bufferType), k[8], u.resize)));
-      }
-    }
-    (M = (w[H('proto', W[3])].p = function () {
-      var k, z, V, u, B;
-      u = D;
-      function F() {
-        return ['ut', 0, 'B', 16];
-      }
-      const X = F();
-      return ((V = this) || true) && (B = V[H('inp', X[0])]) && 0 || (k = X[1], z = X[1], k = V[X[2]].p(), u(V, 'c', V.B.c), V.N && (z = (Y(B[V.c++], 24) | Y(B[V.c++], X[3]) | Y(B[V.c++], 8) | B[V.c++]) >>> X[1], z !== jb(k) && m(Error('i32c'))), k);
-    }, 0)) && 0 || (T = W[4]);
-    function J(z, k) {
-      var B, F;
-      F = D;
-      function u() {
-        return 'l|g|c|q|ut|s|n|ex|bufferSize|Type|bufferType|C|resize|m|f|I|J|imd'.split('|');
-      }
-      const V = u();
-      B = this;
-      F(F(F(F(F(F(F(B, V[0], []), 'm', 0x8000), 'e', B[V[1]] = B[V[2]] = B[V[3]] = 0), H('inp', V[4]), r ? new v(z) : z), V[5], !1), V[6], T), 'C', !1);
-      if (k || !(k = {})) {
-        ((k[H('ind', V[7])] && (B[V[2]] = k[H('ind', 'ex')]) && 0 || k.bufferSize && (B.m = k[V[8]])) && 0 || k[H('buffer', V[9])] && (B[V[6]] = k[V[10]])) && 0 || k.resize && (B[V[11]] = k[V[12]]);
-      }
-      switch (B.n) {
-        case M:
-          {
-            B.b = 0x8000;
-            B.a = new (r ? v : Array)(H(H(0x8000, B[V[13]]), 258));
-            break;
-          }
-        case T:
-          {
-            B.b = 0;
-            B.a = new (r ? v : Array)(B[V[13]]);
-            B[V[14]] = B.K;
-            B.t = B[V[15]];
-            B.o = B[V[16]];
-            break;
-          }
-        default:
-          {
-            m(Error(V[17]));
-          }
-      }
-    }
-    if (((J[W[5]].K = function (u) {
-      var V, Z, z, B, k, X, F, L;
-      const x = (() => 'input|c|ut|number|v|G|th|u|length|a'.split('|'))();
-      return (k = this) && 0 || (z = H(U(k[x[0]][H('leng', 'th')], k[x[1]]), 1) | 0, V = 0, X = 0, Z = 0, B = k[H('inp', x[2])], F = k.a, u && (x[3] === typeof u[x[4]] && (z = u.v), x[3] === typeof u.G && (z += u[x[5]])), o(2, z) ? (V = U(R(B.length, k.c), k[x[7]][2]), Z = l(258, U(V, 2)) | 0, f(Z, F[x[8]]) ? X = H(F[H('leng', x[6])], Z) : X = Y(F.length, 1)) : X = l(F[H('leng', x[6])], z), r ? (L = new v(X), L.set(F)) : L = F, k[x[9]] = L);
-    }) || 1) && (J[W[5]][W[6]] = function () {
-      var B, k, z;
-      function F() {
-        return ['length', 'a', 'th', 0];
-      }
-      let V = F();
-      return (B = this) && 0 || (k = B.b, r ? B.C ? (z = new v(k), z.set(B.a[H('subar', 'ray')](V[3], k))) : z = B.a.subarray(V[3], k) : (o(B[V[1]][V[0]], k) && (B.a[H('leng', V[2])] = k), z = B[V[1]]), B.buffer = z);
-    }) || true) {
-      J[H('proto', W[3])][W[7]] = function (l, U) {
-        var z, k, q, h, u, Z, x, a, X;
-        q = D;
-        const L = ['a', 'b', 'u', 256, 257, 0, 'length', 'f', 8, 'e'];
-        for (((((u = this) && 0 || (X = u[L[0]])) && 0 || (z = u[L[1]]) || 2) && q(u, L[2], l) || true) && (Z = X[H('leng', 'th')]); L[3] !== (h = $(u, l));) if (o(L[3], h)) {
-          B(z, Z) && (X = u[L[7]](), Z = X[L[6]]) && 0 || (X[z++] = h);
-        } else {
-          for (((((((k = R(h, L[4])) && 0 || (a = F[k])) && 0 || f(L[5], j[k]) && (a += y(u, j[k]))) && 0 || (h = $(u, U))) && 0 || (x = V[h]) || true) && f(0, b[h]) && (x += y(u, b[h])) || 1) && o(H(z, a), Z) && (X = u.f(), Z = X[L[6]]); a--;) X[z] = X[R(z++, x)];
-        }
-        for (; c(L[8], u[L[9]]);) {
-          u[L[9]] -= L[8];
-          u.c--;
-        }
-        q(u, 'b', z);
-      };
-    }
-    function X(k) {
-      var V, z, X, x, R, B, u, p, l, a, U, Z, F;
-      let q = 'POSITIVE_INFINITY'.split('|');
-      ((x = k.length) && 0 || (z = 0)) && 0 || (l = Number[q[0]]);
-      for (a = 0; f(a, x); ++a) {
-        o(k[a], z) && (z = k[a]);
-        f(k[a], l) && (l = k[a]);
-      }
-      for (u = (F = Y(1, z), R = new (r ? L : Array)(F), B = 1, U = 0, 2); c(B, z);) {
-        for (a = 0; f(a, x); ++a) if (k[a] === B) {
-          for (p = (X = 0, V = U, 0); f(p, B); ++p) {
-            X = Y(X, 1) | V & 1;
-            V >>= 1;
-          }
-          for (p = (Z = Y(B, 16) | a, X); f(p, F); p += u) R[p] = Z;
-          ++U;
-        }
-        (++B && 0 || (U <<= 1)) && null || (u <<= 1);
-      }
-      return [R, z, l];
-    }
-    function $(a, l) {
-      var X, q, V, U, Z, L, b, F, k, z;
-      b = D;
-      const x = ['e', 1, 16];
-      for ((((((k = a.g) || 6) && (Z = a[x[0]]) && 0 || (z = a[H('inp', 'ut')]) || 5) && (q = a.c) && 0 || (V = z[H('leng', 'th')])) && 0 || (X = l[0]) || 1) && (U = l[1]); f(Z, U) && !B(q, V);) {
-        k |= Y(z[q++], Z);
-        Z += 8;
-      }
-      L = X[k & R(Y(x[1], U), x[1])];
-      F = L >>> x[2];
-      b(b(b(a, 'g', u(k, F)), 'e', R(Z, F)), 'c', q);
-      return L & 0xffff;
-    }
-    function x(z) {
-      var R, l, Z, V, B, k, U, F, L;
-      U = D;
-      function x() {
-        return U(U(U(U(U(U(U(U({}, 'V', 5), 'T', 4), 'n', 'leng'), 'g', 'th'), 'z', 0), 'L', 'z'), '$', 'o'), 'N', 'call');
-      }
-      let a = x();
-      function u(X, u, k) {
-        var z, V, x, F, L, B;
-        if (((x = D) || 4) && (z = this) || 4) {
-          V = z.z;
-        }
-        for (B = 0; f(B, X);) switch (F = $(z, u), F) {
-          case 16:
-            {
-              for (L = H(3, y(z, 2)); L--;) k[B++] = V;
-              break;
-            }
-          case 17:
-            {
-              for (L = H(3, y(z, 3)); L--;) k[B++] = 0;
-              V = 0;
-              break;
-            }
-          case 18:
-            {
-              for (L = H(11, y(z, 7)); L--;) k[B++] = 0;
-              V = 0;
-              break;
-            }
-          default:
-            {
-              V = k[B++] = F;
-            }
-        }
-        x(z, 'z', V);
-        return k;
-      }
-      if ((((B = H(y(z, a.V), 257)) && 0 || (R = H(y(z, 5), 1)) || 7) && (k = H(y(z, a.T), 4)) && 0 || (L = new (r ? v : Array)(K[H(a.n, a.g)]))) && 0 || (Z = 0) || 4) {
-        F = a.z;
-      }
-      for (l = a.z; f(l, k); ++l) L[K[l]] = y(z, 3);
-      if (!r) {
-        for (k = (l = k, L[H('leng', 'th')]); f(l, k); ++l) L[K[l]] = a.z;
-      }
-      if ((((V = X(L)) && 0 || (Z = new (r ? v : Array)(B))) && 0 || (F = new (r ? v : Array)(R))) && false || U(z, a.L, a.z) || '0') {
-        z[a.$](X(u.call(z, B, V, Z)), X(u[a.N](z, R, V, F)));
-      }
-    }
-    function y(X, L) {
-      var z, l, Z, V, F, u, x;
-      l = D;
-      const k = 'g|input|th|e|c'.split('|');
-      for (((((F = X[k[0]]) || 8) && (V = X.e) && 0 || (x = X[k[1]]) || 7) && (Z = X.c) || 6) && (z = x[H('leng', k[2])]); f(V, L);) {
-        B(Z, z) && m(Error('bk'));
-        F |= Y(x[Z++], V);
-        V += 8;
-      }
-      u = F & R(Y(1, L), 1);
-      l(l(l(X, k[0], F >>> L), k[3], R(V, L)), k[4], Z);
-      return u;
-    }
-    ((((((O = (J[H('proto', 'type')].p = function () {
-      var Z, l, a, k, F, u, U, h, L, X, V;
-      const q = C(C(C(C(C(C(C(C(C(C(C(C(C(C({}, 'V', 3), 'T', 1), 'n', 's'), 'g', 'b'), 'z', 'leng'), 'L', 'th'), '$', 'length'), 'N', 0), 'r', 'subarray'), 'Z', 'f'), 'Q', 'v'), 'o', 'im'), '_', 'c'), 'l', 2);
-      for (u = this; !u.s;) {
-        ((l = y(u, q.V)) && null || l & q.T && (u[q.n] = G)) && 0 || (l >>>= q.T);
-        switch (l) {
-          case q.N:
-            {
-              U = u.input;
-              X = u.c;
-              V = u.a;
-              Z = u[q.g];
-              h = U[H(q.z, q.L)];
-              k = z;
-              L = z;
-              a = V[q.$];
-              F = z;
-              u.e = u.g = q.N;
-              if (B(H(X, 1), h)) {
-                m(Error('iL'));
-              }
-              k = U[X++] | Y(U[X++], 8);
-              if (B(H(X, 1), h)) {
-                m(Error('iN'));
-              }
-              L = U[X++] | Y(U[X++], 8);
-              if (k === ~L) {
-                m(Error('ih'));
-              }
-              if (o(H(X, k), U[H('leng', 'th')])) {
-                m(Error('ib'));
-              }
-              switch (u.n) {
-                case M:
-                  {
-                    for (; o(H(Z, k), V[H(q.z, 'th')]);) {
-                      F = R(a, Z);
-                      k -= F;
-                      if (r) {
-                        (V.set(U[q.r](X, H(X, F)), Z) && 0 || (Z += F)) && 0 || (X += F);
-                      } else {
-                        for (; F--;) V[Z++] = U[X++];
-                      }
-                      ((u[q.g] = Z) || '1') && (V = u[q.Z]()) && false || (Z = u.b);
-                    }
-                    break;
-                  }
-                case T:
-                  {
-                    for (; o(H(Z, k), V[q.$]);) V = u.f(C({}, q.Q, 2));
-                    break;
-                  }
-                default:
-                  {
-                    m(Error(q.o));
-                  }
-              }
-              if (r) {
-                (V.set(U.subarray(X, H(X, k)), Z) && null || (Z += k)) && 0 || (X += k);
-              } else {
-                for (; k--;) V[Z++] = U[X++];
-              }
-              u[q._] = X;
-              u[q.g] = Z;
-              u.a = V;
-              break;
-            }
-          case !(P.c > -74) ? null : q.T:
-            {
-              u.o(n, d);
-              break;
-            }
-          case q.l:
-            {
-              x(u);
-              break;
-            }
-          default:
-            {
-              m(Error(H('e: ', l)));
-            }
-        }
-      }
-      return N(u.t());
-    }, 'undefined')) || 1) && (r = O !== typeof v && O !== typeof a && O !== typeof L && O !== typeof DataView) && 0 || (K = (s = [16, 17, 18, 0, W[0], W[8], W[9], W[10], 10, W[11], 11, W[12], 12, 3, W[13], W[14], W[15], W[4], W[16]], r ? new a(s) : s))) && null || (F = (q = [3, W[12], W[11], 6, W[8], W[0], 9, W[17], W[18], 13, W[16], W[19], W[20], W[21], 27, W[22], 35, W[23], W[24], W[25], 67, W[26], W[27], W[28], 131, W[29], 195, W[30], 258, 258, W[31]], r ? new a(q) : q)) || 7) && (j = (g = [W[2], 0, 0, 0, W[2], 0, W[2], W[2], 1, W[4], 1, 1, 2, W[14], W[14], W[14], 3, 3, 3, 3, W[12], 4, W[12], 4, 5, 5, W[11], 5, W[2], 0, 0], r ? new v(g) : g)) && null || (V = (A = [1, 2, 3, 4, 5, 7, 9, W[13], W[19], 25, 33, W[32], W[33], W[34], 129, 193, 257, W[35], W[36], 769, 1025, 1537, 2049, W[37], 0x1001, 0x1801, W[38], 0x3001, 0x4001, W[39]], r ? new a(A) : A))) && 0 || (b = (VX = [0, 0, 0, W[2], 1, 1, 2, 2, W[40], 3, W[12], W[12], 5, W[11], 6, 6, 7, 7, W[0], W[0], 9, 9, W[17], W[17], 11, W[18], 12, W[41], W[13], W[13]], r ? new v(VX) : VX))) && 0 || (Q = new (r ? v : Array)(W[42]));
-    for (t = (t = W[2], e = 0, Q[W[43]]); f(e, t); ++e) B(W[44], e) ? Q[e] = 8 : B(W[45], e) ? Q[e] = W[9] : B(W[46], e) ? Q[e] = 7 : Q[e] = 8;
-    (n = X(Q)) && 0 || (BX = new (r ? v : Array)(W[47]));
-    for (I = (I = 0, S = 0, BX[W[43]]); f(S, I); ++S) BX[S] = W[11];
-    d = X(BX);
-    function N(z) {
-      var B, X, V, F, L, R;
-      let x = [0, 'th', 2, 31, 13, 63, 6, 4];
-      if (((X = x[0]) || 6) && (V = '') && 0 || (X = z[H('leng', x[1])]) || 7) {
-        B = x[0];
-      }
-      while (f(B, X)) {
-        L = z[B++];
-        switch (u(L, x[7])) {
-          case !(P.c > -74) ? 0 : x[0]:
-            {}
-          case 1:
-            {}
-          case x[2]:
-            {}
-          case 3:
-            {}
-          case P.c > -74 ? 4 : -209:
-            {}
-          case 5:
-            {}
-          case 6:
-            {}
-          case 7:
-            {
-              V += k(L);
-              break;
-            }
-          case P.c > -74 ? 12 : -18:
-            {}
-          case x[4]:
-            {
-              R = z[B++];
-              V += k(Y(L & x[3], 6) | R & 63);
-              break;
-            }
-          case 14:
-            {
-              R = z[B++];
-              F = z[B++];
-              V += k(Y(L & 15, 12) | Y(R & x[5], x[6]) | Y(F & x[5], x[0]));
-            }
-        }
-      }
-      return V;
-    }
-    h[W[48]] = i(V => {
-      let k = (() => C(C(C({}, 'V', 'map'), 'T', 'it'), 'n', 'atob'))(),
-        B = new w(new v(h[k.n](V)[H('spl', k.T)]('')[k.V](V => {
-          let B = ['charCodeAt', 0];
-          return V[B[0]](B[1]);
-        })), {}),
-        z = B.p();
-      return z;
-    }, 1);
-  }(h), K = typeof globalThis === 'object' && globalThis || typeof window === H('obje', q[4]) && window || typeof self === q[3] && self || typeof global === H('obje', q[4]) && global, !0);
-  for (let B of x) (B = h[q[5]](B), B = r(B), V) ? z(K, B) : (K[q[6]] = B) && 0 || z(K, B);
-  for (let V = q[7]; f(V, O.length) && P.c > -74; V++) if (K[H(q[8], V)]) {
-    z(K, C({}, K[H(q[8], V)], O[V]));
-  }
-  function i(z, B) {
-    var V = function () {
-      return z(...arguments);
-    };
-    return Object['defineProperty'](V, 'length', {
-      'value': B,
-      'configurable': true
-    }) && 0 || V;
-  }
-})([(z, E) => {
-  return E;
-}, '', console.error, Date.now, () => {
-  return null;
-}, false, Math.abs, Math.min, Math.floor, 81, JSON.parse, Math.max, '', 41, console.log, 14, (C, t) => {
-  return t;
-}, JSON.stringify, parseInt, Math.random]);
-var Y, h;
-Y = M(() => {
-  var b;
-  b = {
-    a: 'b',
-    c: 'd',
-    f: [],
-    e: function (b = mIG) {
-      if (!Y.f[VIG]) {
-        Y.f.push(xIG);
-      }
-      return Y.f[b];
-    },
-    g: 'h',
-    i: 'j'
+}
+async function handleAIMessage(_0x5e1630) {
+  console.log("[AI托管] 收到消息:", _0x5e1630);
+  const _0x3cc0f7 = aiSessionId;
+  aiWaitingReply = true;
+  const _0x461225 = {
+    role: "user",
+    content: _0x5e1630
   };
-  return b;
-}, 0)();
-function E(Y, b) {
-  switch (h) {
-    case -XIG:
-      {
-        return Y + b;
+  aiChatHistory.push(_0x461225);
+  while (aiChatHistory.length > 20) {
+    aiChatHistory.shift();
+  }
+  try {
+    const _0x39e0a1 = await callAIAPI();
+    if (_0x3cc0f7 !== aiSessionId) {
+      console.log("[AI托管] 会话已切换，丢弃回复");
+      aiWaitingReply = false;
+      return;
+    }
+    console.log("[AI托管] AI回复:", _0x39e0a1);
+    const _0x387dfd = {
+      role: "assistant",
+      content: _0x39e0a1
+    };
+    aiChatHistory.push(_0x387dfd);
+    const _0x8b8f89 = Math.floor(Math.random() * 500) + 500;
+    typeof window.showToast === "function" && window.showToast("✅ AI回复中...", "success", 1000);
+    setTimeout(() => {
+      if (_0x3cc0f7 !== aiSessionId) {
+        console.log("[AI托管] 会话已切换，取消发送");
+        return;
       }
-    case HIG:
-      {
-        return Y * b;
-      }
-    case -rIG:
-      {
-        return Y - b;
-      }
+      aiIsActive && typeof window.sendChatMessage === "function" && (window.sendChatMessage(_0x39e0a1), console.log("[AI托管] 已发送消息"), typeof window.showToast === "function" && window.showToast("📤 已发送", "info", 1000));
+      aiWaitingReply = false;
+    }, _0x8b8f89);
+  } catch (_0x2d1f29) {
+    console.error("[AI托管] 调用失败:", _0x2d1f29);
+    typeof window.showToast === "function" && window.showToast("❌ AI调用失败", "error", 2000);
+    aiWaitingReply = false;
   }
 }
-function b(Y) {
-  Y = h + (h = Y, VIG);
-  return Y;
+async function callAIAPI() {
+  const _0x30471d = {
+    role: "system",
+    content: aiSystemPrompt
+  };
+  const _0x523af2 = [_0x30471d, ...aiChatHistory];
+  const _0xce9b70 = {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + aiApiKey
+  };
+  const _0x3821f5 = {
+    model: aiModel,
+    messages: _0x523af2,
+    max_tokens: 100,
+    temperature: 0.8,
+    stream: false
+  };
+  const _0x5b97ec = await fetch(aiApiEndpoint, {
+    method: "POST",
+    headers: _0xce9b70,
+    body: JSON.stringify(_0x3821f5)
+  });
+  if (!_0x5b97ec.ok) {
+    throw new Error("API错误: " + _0x5b97ec.status);
+  }
+  const _0x449514 = await _0x5b97ec.json();
+  return _0x449514.choices[0].message.content.trim();
 }
-let QQ = '',
-  index = VIG,
-  AUTO_MSG = [],
-  currentAutoIndex = VIG,
-  filterQingliu = !0,
-  filterUnder18 = !1,
-  blacklistEnabled = !0,
-  blacklist = [];
+function loadWaitReplyConfig() {
+  try {
+    {
+      const _0x9bd384 = localStorage.getItem("ssby_wait_reply_enabled");
+      const _0x58d32a = localStorage.getItem("ssby_wait_reply_timeout");
+      waitReplyEnabled = _0x9bd384 === "true";
+      waitReplyTimeout = _0x58d32a ? parseInt(_0x58d32a) : 30;
+      if (waitReplyTimeout < 10) {
+        waitReplyTimeout = 10;
+      }
+      if (waitReplyTimeout > 120) {
+        waitReplyTimeout = 120;
+      }
+    }
+  } catch (_0x1ae22c) {
+    console.error("[等待回复] 加载配置失败:", _0x1ae22c);
+  }
+}
+function saveWaitReplyConfig() {
+  try {
+    localStorage.setItem("ssby_wait_reply_enabled", String(waitReplyEnabled));
+    localStorage.setItem("ssby_wait_reply_timeout", String(waitReplyTimeout));
+  } catch (_0x1007c1) {
+    console.error("[等待回复] 保存配置失败:", _0x1007c1);
+  }
+}
+loadWaitReplyConfig();
+let waitReplyCheckInterval = null;
+function startWaitReplyTimer() {
+  if (!waitReplyEnabled) {
+    return;
+  }
+  initialPartnerMsgCount = document.querySelectorAll(".message.left").length;
+  cancelWaitReplyTimer();
+  console.log("[等待回复] 开始计时，超时时间:", waitReplyTimeout + "秒");
+  waitReplyCheckInterval = setInterval(function () {
+    const _0x4d6f47 = document.querySelectorAll(".message.left").length;
+    if (_0x4d6f47 > initialPartnerMsgCount) {
+      console.log("[等待回复] 检测到对方回复，取消超时");
+      cancelWaitReplyTimer();
+      aiEnabled && aiApiKey && !aiIsActive && (console.log("[等待回复] 对方已回复，启动AI托管"), startAIChat());
+    }
+  }, 500);
+  waitReplyTimer = setTimeout(function () {
+    const _0x4e4157 = document.querySelectorAll(".message.left").length;
+    _0x4e4157 <= initialPartnerMsgCount ? (console.log("[等待回复] 超时未回复，自动离开"), showToast("对方" + waitReplyTimeout + "秒未回复，自动重新匹配", "warning", 2000), cancelWaitReplyTimer(), endCurrentChat(), reconnectOrNewChat()) : cancelWaitReplyTimer();
+  }, waitReplyTimeout * 1000);
+}
+function cancelWaitReplyTimer() {
+  waitReplyTimer && (clearTimeout(waitReplyTimer), waitReplyTimer = null);
+  waitReplyCheckInterval && (clearInterval(waitReplyCheckInterval), waitReplyCheckInterval = null);
+}
+function loadCustomAgeConfig() {
+  try {
+    const _0x18050f = localStorage.getItem("ssby_custom_age_enabled");
+    const _0x44aa09 = localStorage.getItem("ssby_custom_age_value");
+    customAgeEnabled = _0x18050f === "true";
+    customAgeValue = _0x44aa09 === "3" ? "3" : "2";
+  } catch (_0x4c9516) {
+    console.error("[自定义年龄] 加载配置失败:", _0x4c9516);
+  }
+}
+function saveCustomAgeConfig() {
+  try {
+    localStorage.setItem("ssby_custom_age_enabled", String(customAgeEnabled));
+    localStorage.setItem("ssby_custom_age_value", customAgeValue);
+  } catch (_0x4cacd0) {
+    console.error("[自定义年龄] 保存配置失败:", _0x4cacd0);
+  }
+}
+loadCustomAgeConfig();
+let ageResetBlocked = false;
+function removeTeenagerTag() {
+  const _0x696484 = document.querySelector("#btnTabChange1 img[src*=\"cancel\"]");
+  if (_0x696484) {
+    _0x696484.click();
+    console.log("[自定义年龄] 已移除青少年标签");
+    return true;
+  }
+  return false;
+}
+setInterval(function () {
+  if (!customAgeEnabled) {
+    return;
+  }
+  const _0x11eb41 = document.querySelector("#btnTabChange1 span");
+  _0x11eb41 && _0x11eb41.textContent.includes("青少年") && removeTeenagerTag();
+  const _0x15ab80 = document.querySelectorAll(".van-dialog");
+  _0x15ab80.forEach(function (_0x488a8a) {
+    const _0x5d3fd1 = _0x488a8a.textContent || "";
+    if (_0x5d3fd1.includes("年龄被重置") || _0x5d3fd1.includes("已被系统重置")) {
+      {
+        _0x488a8a.parentNode && _0x488a8a.parentNode.removeChild(_0x488a8a);
+        document.querySelectorAll(".van-overlay").forEach(function (_0x5e2468) {
+          if (_0x5e2468.parentNode) {
+            _0x5e2468.parentNode.removeChild(_0x5e2468);
+          }
+        });
+        !ageResetBlocked && (ageResetBlocked = true, console.log("[自定义年龄] 已拦截年龄重置弹窗"), setTimeout(function () {
+          ageResetBlocked = false;
+        }, 3000));
+      }
+    }
+  });
+}, 100);
+let blacklistEnabled = true;
+let blacklist = [];
 function loadBlacklist() {
   try {
-    const Y = localStorage[RIG](QIG);
-    Y ? blacklist = YIG(Y) : blacklist = [];
-  } catch (Y) {
-    sIG(FIG, Y);
+    const _0x446d42 = localStorage.getItem("ssby_blacklist");
+    blacklist = _0x446d42 ? JSON.parse(_0x446d42) : [];
+  } catch (_0x44208b) {
+    console.error("[黑名单] 加载失败:", _0x44208b);
     blacklist = [];
   }
   return blacklist;
 }
 function saveBlacklist() {
   try {
-    localStorage[SIG](QIG, wIG(blacklist));
-  } catch (Y) {
-    sIG(IIG, Y);
+    localStorage.setItem("ssby_blacklist", JSON.stringify(blacklist));
+  } catch (_0x22f11a) {
+    console.error("[黑名单] 保存失败:", _0x22f11a);
   }
 }
-function addToBlacklist(b, M = '', Y = '', E = '') {
-  if (!b) {
-    return !1;
+function addToBlacklist(_0x11d18e, _0x247170 = "", _0x39cdb0 = "", _0x164773 = "") {
+  if (!_0x11d18e) {
+    return false;
   }
-  const h = blacklist[$IG](Y => Y[bIG] === b);
-  if (h) {
-    return !1;
+  const _0x4372d0 = blacklist.find(_0x355a4d => _0x355a4d.id === _0x11d18e);
+  if (_0x4372d0) {
+    return false;
   }
-  blacklist[DIG]({
-    [bIG]: b,
-    [MIG]: M,
-    [vIG]: Y,
-    [GIG]: E,
-    [eIG]: jIG()
+  blacklist.push({
+    id: _0x11d18e,
+    remark: _0x247170,
+    gender: _0x39cdb0,
+    age: _0x164773,
+    addTime: Date.now()
   });
   saveBlacklist();
-  return !0;
+  return true;
 }
-function removeFromBlacklist(Y) {
-  const index = blacklist[aIG](b => b[bIG] === Y);
-  if (index > -_IG) {
-    blacklist[fIG](index, _IG);
+function removeFromBlacklist(_0x2da139) {
+  const _0x5266e2 = blacklist.findIndex(_0x34fe5f => _0x34fe5f.id === _0x2da139);
+  if (_0x5266e2 > -1) {
+    blacklist.splice(_0x5266e2, 1);
     saveBlacklist();
-    return !0;
+    return true;
   }
-  return !1;
+  return false;
 }
 function clearBlacklist() {
   blacklist = [];
   saveBlacklist();
 }
-function updateBlacklistRemark(h, b) {
-  const Y = blacklist[$IG](Y => Y[bIG] === h);
-  if (Y) {
-    Y[MIG] = b;
+function updateBlacklistRemark(_0x491ceb, _0x489417) {
+  const _0xd630f4 = blacklist.find(_0x236cc0 => _0x236cc0.id === _0x491ceb);
+  if (_0xd630f4) {
+    _0xd630f4.remark = _0x489417;
     saveBlacklist();
-    return !0;
+    return true;
   }
-  return !1;
+  return false;
 }
-function isInBlacklist(Y) {
-  return blacklist[$IG](b => b[bIG] === Y);
+function isInBlacklist(_0x2c0bc0) {
+  return blacklist.find(_0x2501cc => _0x2501cc.id === _0x2c0bc0);
 }
 function exportBlacklist() {
-  const h = wIG(blacklist, null, LIG),
-    b = new Blob([h], {
-      [YGG]: sGG
-    }),
-    M = URL[wGG](b),
-    Y = document[jGG]('a');
-  Y[NGG] = M;
-  Y[zGG] = CGG + new Date()[qGG]()[AGG](VIG, JIG) + uGG;
-  Y[PGG]();
-  URL[xGG](M);
+  const _0xbf241b = JSON.stringify(blacklist, null, 2);
+  const _0x41d7f6 = {
+    type: "application/json"
+  };
+  const _0x49ccf2 = new Blob([_0xbf241b], _0x41d7f6);
+  const _0x53df4b = URL.createObjectURL(_0x49ccf2);
+  const _0x4ae123 = document.createElement("a");
+  _0x4ae123.href = _0x53df4b;
+  _0x4ae123.download = "ssby_blacklist_" + new Date().toISOString().slice(0, 10) + ".json";
+  _0x4ae123.click();
+  URL.revokeObjectURL(_0x53df4b);
 }
-function importBlacklist(Y) {
-  return new Promise((resolve, reject) => {
-    const b = new FileReader();
-    b[VGG] = Y => {
+function importBlacklist(_0x5787ce) {
+  return new Promise((_0x8e0d0c, _0x926a60) => {
+    const _0x2415ee = new FileReader();
+    _0x2415ee.onload = _0x2afb37 => {
       try {
-        const h = YIG(Y[HGG][XGG]);
-        if (Array[rGG](h)) {
-          let Y = VIG;
-          h[LGG](b => {
-            if (b[bIG] && !blacklist[$IG](Y => Y[bIG] === b[bIG])) {
-              blacklist[DIG]({
-                [bIG]: b[bIG],
-                [MIG]: b[MIG] || '',
-                [vIG]: b[vIG] || '',
-                [GIG]: b[GIG] || '',
-                [eIG]: b[eIG] || jIG()
-              });
-              Y++;
-            }
+        const _0x1c7547 = JSON.parse(_0x2afb37.target.result);
+        if (Array.isArray(_0x1c7547)) {
+          let _0x38a72e = 0;
+          _0x1c7547.forEach(_0x4dab87 => {
+            _0x4dab87.id && !blacklist.find(_0x2d2e3a => _0x2d2e3a.id === _0x4dab87.id) && (blacklist.push({
+              id: _0x4dab87.id,
+              remark: _0x4dab87.remark || "",
+              gender: _0x4dab87.gender || "",
+              age: _0x4dab87.age || "",
+              addTime: _0x4dab87.addTime || Date.now()
+            }), _0x38a72e++);
           });
           saveBlacklist();
-          resolve(Y);
+          _0x8e0d0c(_0x38a72e);
         } else {
-          reject(new Error(_GG));
+          _0x926a60(new Error("无效的黑名单格式"));
         }
-      } catch (b) {
-        reject(b);
+      } catch (_0x37ef88) {
+        _0x926a60(_0x37ef88);
       }
     };
-    b[JGG] = () => reject(new Error(BGG));
-    b[lGG](Y);
+    _0x2415ee.onerror = () => _0x926a60(new Error("读取文件失败"));
+    _0x2415ee.readAsText(_0x5787ce);
   });
 }
-let vipCardAllowed = (loadBlacklist(), setData = M((h, b, ...Y) => {
-  QQ = h;
-  index = b;
-  AUTO_MSG = Y;
-}, 2), setData(OGG, VIG, pGG, kGG), !1);
+loadBlacklist();
+setData = function (_0x4ac977, _0x139eff, ..._0x2ae804) {
+  QQ = _0x4ac977;
+  index = _0x139eff;
+  AUTO_MSG = _0x2ae804;
+};
+setData("123456789", 0, "你好|hello", "很高兴认识你|nice to meet you");
+let vipCardAllowed = false;
 function openVIPCardWallet() {
-  if ((vipCardAllowed = !0, NIG(gGG), window[KGG] && window[KGG][tGG]) && Y.a[iGG](lIG) == BIG) {
-    window[KGG][tGG]();
-  }
-  if (typeof $ !== WGG && $[UGG]) {
-    $[UGG](dGG);
-  }
-  setTimeout(() => (vipCardAllowed = !1, 0), OIG);
+  vipCardAllowed = true;
+  console.log("[脚本] 通过面板按钮打开VIP卡包");
+  window.popupVIPCardWallet && window.popupVIPCardWallet.fetchCards && window.popupVIPCardWallet.fetchCards();
+  typeof $ !== "undefined" && $.popup && $.popup("#popupVIPCardWallet");
+  setTimeout(() => {
+    vipCardAllowed = false;
+  }, 5000);
 }
-{
-  document[yGG](PGG, M(b => {
-    let h = b[HGG];
-    while (h && h !== document[cGG]) {
-      const onclick = h[hGG](oGG) || '';
-      if ((onclick[TGG](KGG) || onclick[TGG](nGG)) && Y.c[iGG](lIG) == pIG) {
-        b[EGG]();
-        b[ZGG]();
-        b[mGG]();
-        NIG(FGG);
-        return !1;
-      }
-      h = h[RGG];
+document.addEventListener("click", function (_0x339783) {
+  let _0x192605 = _0x339783.target;
+  while (_0x192605 && _0x192605 !== document.body) {
+    const _0x2a2e12 = _0x192605.getAttribute("onclick") || "";
+    if (_0x2a2e12.includes("popupVIPCardWallet") || _0x2a2e12.includes("VIPCardWallet")) {
+      _0x339783.stopPropagation();
+      _0x339783.stopImmediatePropagation();
+      _0x339783.preventDefault();
+      console.log("[脚本] 已阻止网站VIP卡包按钮点击");
+      return false;
     }
-  }, 1), !0);
-  setInterval(M(() => {
-    const b = document[QGG](dGG);
-    if (!b && Y.c[iGG](lIG) == pIG) {
-      return;
+    _0x192605 = _0x192605.parentElement;
+  }
+}, true);
+setInterval(function () {
+  const _0x26c155 = document.querySelector("#popupVIPCardWallet");
+  if (!_0x26c155) {
+    return;
+  }
+  const _0x3bce89 = _0x26c155.classList.contains("modal-in");
+  if (_0x3bce89 && !vipCardAllowed) {
+    _0x26c155.style.display = "none";
+    _0x26c155.style.opacity = "0";
+    _0x26c155.style.visibility = "hidden";
+    _0x26c155.classList.remove("modal-in");
+    _0x26c155.classList.add("modal-out");
+    const _0x1ddfe9 = document.querySelector(".popup-overlay.modal-overlay-visible");
+    _0x1ddfe9 && (_0x1ddfe9.classList.remove("modal-overlay-visible"), _0x1ddfe9.style.display = "none");
+  } else {
+    if (!_0x3bce89) {
+      _0x26c155.style.display = "";
+      _0x26c155.style.opacity = "";
+      _0x26c155.style.visibility = "";
+      vipCardAllowed = false;
     }
-    const h = b[SGG][IGG]($GG);
-    if (h && !vipCardAllowed) {
-      const Y = (b[DGG][bGG] = GGG, b[DGG][MGG] = '0', b[DGG][vGG] = eGG, b[SGG][aGG]($GG), b[SGG][fGG](sQG), document[QGG](YQG));
-      if (Y) {
-        Y[SGG][aGG](wQG);
-        Y[DGG][bGG] = GGG;
-      }
-    } else {
-      if (!h) {
-        b[DGG][bGG] = '';
-        b[DGG][MGG] = '';
-        b[DGG][vGG] = '';
-        vipCardAllowed = !1;
-      }
-    }
-  }, 0), kIG);
-  MainFunc = () => {
-    function s() {
-      var T = aGG,
-        bH = bIG,
-        JH = cGG,
-        v = slG,
-        C = wlG,
-        a = yGG,
-        N = PGG,
-        A = fWG,
-        s = jGG,
-        V = HUG,
-        hH = SWG,
-        I = eWG,
-        n = VIG;
-      var P = M(() => {
-        const Y = document[QGG](jQG);
-        if (Y) {
-          const b = Y[NQG](zQG);
-          b[LGG](Y => {
-            const text = Y[AQG] || Y[qQG] || '';
-            if (text[TGG](CQG) && text[TGG](uQG)) {
-              Y[aGG]();
-              NIG(PQG);
-            }
+  }
+}, 100);
+MainFunc = () => {
+  function _0x153982() {
+    function _0x5975c7() {
+      {
+        const _0x544b18 = document.querySelector(".toasted-container");
+        if (_0x544b18) {
+          const _0x4c8ec2 = _0x544b18.querySelectorAll(".toasted");
+          _0x4c8ec2.forEach(_0x4499f5 => {
+            const _0xec4ecc = _0x4499f5.innerText || _0x4499f5.textContent || "";
+            _0xec4ecc.includes("VIP") && _0xec4ecc.includes("激活") && (_0x4499f5.remove(), console.log("[脚本] 已移除VIP激活提示"));
           });
         }
-      }, 0);
-      const k = new MutationObserver(Y => {
-          for (const b of Y) for (const Y of b[xQG]) if (Y[VQG] === _IG && Y[SGG]?.[IGG](XQG)) {
-            const text = Y[AQG] || Y[qQG] || '';
-            if (text[TGG](CQG) && text[TGG](uQG)) {
-              Y[aGG]();
-              NIG(HQG);
-            }
-          }
-        }),
-        $ = setInterval(() => {
-          const Y = document[QGG](jQG);
-          if (Y) {
-            k[rQG](Y, {
-              [_QG]: !0,
-              [LQG]: !0
-            });
-            clearInterval($);
-            NIG(JQG);
-          }
-        }, gIG);
-      setInterval(P, KIG);
-      function J() {
-        let M = '',
-          h = '';
-        const b = document[QGG](BQG);
-        if (b) {
-          const text = b[AQG] || b[qQG] || '';
-          if (text[TGG](lQG)) {
-            M = lQG;
-          } else {
-            if (text[TGG](OQG)) {
-              M = OQG;
-            } else {
-              if (text[TGG](pQG)) {
-                M = pQG;
-              }
-            }
+      }
+    }
+    const _0x380307 = new MutationObserver(_0x5f063d => {
+      for (const _0x26e29f of _0x5f063d) {
+        for (const _0x429137 of _0x26e29f.addedNodes) {
+          if (_0x429137.nodeType === 1 && _0x429137.classList?.["contains"]("toasted")) {
+            const _0x316cfd = _0x429137.innerText || _0x429137.textContent || "";
+            _0x316cfd.includes("VIP") && _0x316cfd.includes("激活") && (_0x429137.remove(), console.log("[脚本] 已拦截VIP激活提示"));
           }
         }
-        const E = document[QGG](kQG);
-        if (E && Y.c[iGG](lIG) == pIG) {
-          h = E[AQG] || E[qQG] || '';
-        }
-        return {
-          [gQG]: M,
-          [KQG]: h
+      }
+    });
+    const _0x1dcbf = setInterval(() => {
+      const _0x1febeb = document.querySelector(".toasted-container");
+      if (_0x1febeb) {
+        const _0x4ac33b = {
+          childList: true,
+          subtree: true
         };
+        _0x380307.observe(_0x1febeb, _0x4ac33b);
+        clearInterval(_0x1dcbf);
+        console.log("[脚本] 已开始监听VIP激活提示");
       }
-      function O() {
-        return J()[gQG] === lQG;
-      }
-      function YH() {
-        return (J()[KQG] || '')[TGG](tQG);
-      }
-      function Z(message, Y = cQG) {
-        vue[XQG][iQG](message, {
-          [yQG]: {
-            [WQG]: Y,
-            [dQG]: (Y, b) => (b[UQG](VIG), 0)
+    }, 500);
+    setInterval(_0x5975c7, 300);
+    function _0x2f2459() {
+      {
+        let _0x1d999b = "";
+        let _0x1ba212 = "";
+        let _0x4eb25c = "";
+        const _0x1bcf9f = document.querySelector("#partnerInfoText");
+        if (_0x1bcf9f) {
+          const _0x31229b = _0x1bcf9f.innerText || _0x1bcf9f.textContent || "";
+          if (_0x31229b.includes("18岁以下")) {
+            _0x1d999b = "18岁以下";
+          } else {
+            if (_0x31229b.includes("18-23岁")) {
+              _0x1d999b = "18-23岁";
+            } else {
+              _0x31229b.includes("23岁以上") && (_0x1d999b = "23岁以上");
+            }
           }
-        });
-      }
-      function z(message) {
-        chatPage[hQG] = message;
-        chatPage[oQG]();
-      }
-      function mH() {
-        chatPage[nQG][TQG](EQG, {
-          [mQG]: ZQG,
-          [FQG]: !1,
-          [RQG]: chatPage[RQG],
-          [QQG]: !1
-        });
-        chatPage[IQG] = SQG;
-      }
-      function D() {
-        chatPage[nQG][TQG](EQG, {
-          [mQG]: $QG,
-          [vIG]: chatPage[vIG],
-          [bQG]: chatPage[bQG],
-          [GIG]: store.get(DQG),
-          [MQG]: store.get(MQG),
-          [vQG]: chatPage[vQG],
-          [GQG]: chatPage[GQG],
-          [eQG]: store.get(eQG),
-          [fQG]: chatPage[aQG],
-          [sWG]: !1,
-          [wWG]: chatPage[YWG],
-          [zWG]: store.get(chatPage[NWG][jWG]),
-          [qWG]: store.get(chatPage[NWG][AWG])
-        });
-      }
-      let f = !0;
-      chatPage[CWG] = !1;
-      chatPage[uWG] = PWG;
-      setInterval(M(() => {
-        try {
-          document[NQG](xWG)[LGG](Y => Y[aGG]());
-          document[NQG](VWG)[LGG](Y => Y[aGG]());
-          document[NQG](XWG)[LGG](b => {
-            if ((b[AQG] || '')[HWG]() === rWG && Y.c[iGG](lIG) == pIG) {
-              b[aGG]();
-            }
-          });
-          document[NQG](_WG)[LGG](Y => Y[aGG]());
-          document[NQG](LWG)[LGG](Y => {
-            const text = Y[AQG] || '';
-            if (text[TGG](JWG) || text[TGG](BWG)) {
-              Y[aGG]();
-            }
-          });
-          document[NQG](lWG)[LGG](Y => {
-            const text = Y[AQG] || '';
-            if (text[TGG](OWG)) {
-              Y[aGG]();
-            }
-          });
-          document[NQG](pWG)[LGG](Y => Y[aGG]());
-        } catch (h) {}
-        if (!chatPage[CWG]) {
-          return;
-        }
-        switch (chatPage[IQG]) {
-          case kWG:
-            {}
-          case mWG:
-            {
-              let h = chatPage[KWG][gWG];
-              if (blacklistEnabled && chatPage[KWG][tWG]) {
-                const Y = isInBlacklist(chatPage[KWG][tWG]);
-                if (Y) {
-                  NIG(iWG, Y[MIG]);
-                  y(WWG + Y[MIG], UWG, tIG);
-                  mH();
-                  D();
-                  f = !0;
-                  break;
-                }
-              }
-              if (filterUnder18 && O() && Y.c[iGG](lIG) == pIG) {
-                NIG(dWG);
-                y(yWG, UWG, iIG);
-                mH();
-                D();
-                f = !0;
-                break;
-              }
-              if (filterQingliu && YH()) {
-                NIG(cWG);
-                y(hWG, UWG, iIG);
-                mH();
-                D();
-                f = !0;
-                break;
-              }
-              if (h == chatPage[uWG]) {
-                if (f) {
-                  try {
-                    let Y = AUTO_MSG[mIG];
-                    if (Y > _IG) {
-                      const s = zIG(E(AIG(), Y, b(HIG)));
-                      let h = AUTO_MSG[s],
-                        M = h[TWG]('|')[oWG](Y => Y[HWG]());
-                      currentAutoIndex = VIG;
-                      L(M);
-                    } else {
-                      let Y = AUTO_MSG[index],
-                        b = Y[TWG]('|')[oWG](Y => Y[HWG]());
-                      currentAutoIndex = VIG;
-                      L(b);
-                    }
-                  } catch {}
-                  y(E(nWG + chatPage[uWG], EWG, b(-XIG)), ZWG, WIG);
-                  f = !1;
-                }
-                break;
-              }
-              mH();
-              D();
-              f = !0;
+          for (const _0x11d050 of ALL_PROVINCES) {
+            if (_0x31229b.includes(_0x11d050)) {
+              _0x4eb25c = _0x11d050;
               break;
             }
-          case SQG:
-            {}
-          case FWG:
-            {
-              D();
-              f = !0;
-            }
-        }
-      }, 0), UIG);
-      function L(Y) {
-        if (currentAutoIndex < Y[mIG]) {
-          z(Y[currentAutoIndex]);
-          currentAutoIndex++;
-          setTimeout(() => (L(Y), 0), tIG);
-        }
-      }
-      function i() {
-        try {
-          const qq = QQ[HWG]();
-          if (/^\d{5,12}$/[QWG](qq)) {
-            let Y = qq[mIG];
-            if (Y > dIG && Y <= JIG) {
-              if ((setTimeout(() => z(qq[IWG](VIG, yIG)), cIG), setTimeout(() => z(qq[IWG](yIG, yIG)), tIG), Y) == JIG) {
-                setTimeout(() => z(qq[IWG](dIG, yIG)), hIG);
-                setTimeout(() => z(qq[IWG](oIG)), TIG);
-              } else {
-                setTimeout(() => z(qq[IWG](dIG)), hIG);
-              }
-            } else {
-              z(qq);
-            }
-          } else {
-            z(qq);
-          }
-        } catch (Y) {
-          sIG(RWG, Y);
-        }
-      }
-      if (document[hH]($WG) && Y.e()) {
-        const Y = (document[hH]($WG)?.[T](), document[hH](bWG)?.[T](), document[hH](DWG)?.[T](), document[hH](MWG)?.[T](), document[hH](vWG));
-        if (Y) {
-          Y[T]();
-        }
-      }
-      const wH = document[s](DGG),
-        d = (wH[bH] = vWG, wH[qQG] = GWG, document[aWG][I](wH), document[s](A));
-      let m = (d[v] = YlG, d[bH] = $WG, d[C] = jlG, d[NlG] = zlG, !1),
-        x = n,
-        G = n,
-        r = n,
-        e = n,
-        R = !1;
-      const EH = document[s](A),
-        W = (EH[v] = bWG, EH[bH] = bWG, document[s](A)),
-        c = (W[v] = AlG, W[bH] = DWG, W[C] = qlG, document[s](A)),
-        MH = (c[v] = ClG, c[bH] = MWG, document[s](A)),
-        j = (MH[v] = ulG, MH[bH] = PlG, document[s](A)),
-        H = (j[v] = xlG, j[bH] = VlG, j[C] = XlG, document[s](A)),
-        sH = (H[v] = HlG, H[bH] = rlG, H[C] = _lG, document[s](LlG));
-      sH[YGG] = JlG;
-      sH[bH] = BlG;
-      sH[llG] = uGG;
-      document[JH][I](d);
-      document[JH][I](EH);
-      document[JH][I](W);
-      document[JH][I](c);
-      document[JH][I](MH);
-      document[JH][I](j);
-      document[JH][I](H);
-      document[JH][I](sH);
-      function U() {
-        W[SGG][OlG](iQG);
-        EH[SGG][OlG](iQG);
-      }
-      function Q() {
-        W[SGG][aGG](iQG);
-        EH[SGG][aGG](iQG);
-      }
-      d[a](plG, M(b => {
-        const Y = (m = !0, R = !1, x = b[klG], G = b[glG], d[KlG]());
-        r = Y[tlG];
-        e = Y[ilG];
-        d[DGG][WlG] = UlG;
-        d[DGG][MGG] = dlG;
-        d[DGG][ylG] = GGG;
-        b[mGG]();
-        b[EGG]();
-      }, 1));
-      document[a](clG, M(M => {
-        if (!m) {
-          return;
-        }
-        const s = E(M[klG], x, b(-rIG)),
-          J = E(M[glG], G, b(-rIG));
-        if (qIG(s) > nIG || qIG(J) > nIG) {
-          R = !0;
-        }
-        let Y = E(r, s, h = -XIG),
-          Z = E(e, J, b(-XIG));
-        const c = E(window[hlG], d[olG], h = -rIG),
-          w = E(window[TlG], d[nlG], b(-rIG));
-        Y = CIG(VIG, uIG(Y, c));
-        Z = CIG(VIG, uIG(Z, w));
-        d[DGG][tlG] = E(Y, ElG, b(-XIG));
-        d[DGG][ilG] = E(Z, ElG, b(-XIG));
-        d[DGG][ZlG] = mlG;
-        d[DGG][FlG] = mlG;
-        M[mGG]();
-      }, 1));
-      document[a](RlG, M(Y => {
-        if (m) {
-          m = !1;
-          d[DGG][WlG] = QlG;
-          d[DGG][MGG] = '1';
-          d[DGG][ylG] = IlG;
-          if (!R) {
-            U();
           }
         }
-      }, 1));
-      d[a](SlG, M(b => {
-        const h = (m = !0, R = !1, b[$lG][VIG]),
-          Y = (x = h[klG], G = h[glG], d[KlG]());
-        r = Y[tlG];
-        e = Y[ilG];
-        d[DGG][MGG] = dlG;
-        d[DGG][ylG] = GGG;
-        b[mGG]();
-      }, 1), {
-        [blG]: !1
-      });
-      document[a](DlG, M(s => {
-        if (!m) {
-          return;
-        }
-        const g = s[$lG][VIG],
-          w = E(g[klG], x, h = -rIG),
-          c = E(g[glG], G, h = -rIG);
-        if ((qIG(w) > nIG || qIG(c) > nIG) && Y.g[MlG](lIG) == 'h') {
-          R = !0;
-        }
-        let M = E(r, w, b(-XIG)),
-          S = E(e, c, b(-XIG));
-        const Z = E(window[hlG], d[olG], h = -rIG),
-          J = E(window[TlG], d[nlG], h = -rIG);
-        M = CIG(VIG, uIG(M, Z));
-        S = CIG(VIG, uIG(S, J));
-        d[DGG][tlG] = E(M, ElG, b(-XIG));
-        d[DGG][ilG] = E(S, ElG, b(-XIG));
-        d[DGG][ZlG] = mlG;
-        d[DGG][FlG] = mlG;
-        s[mGG]();
-      }, 1), {
-        [blG]: !1
-      });
-      document[a](vlG, M(Y => {
-        if (m) {
-          m = !1;
-          d[DGG][MGG] = '1';
-          d[DGG][ylG] = IlG;
-          if (!R) {
-            U();
-          }
-        }
-      }, 1));
-      EH[a](N, Q);
-      document[hH](GlG)[a](N, Q);
-      document[a](elG, M(Y => {
-        if (Y[alG] === flG && W[SGG][IGG](iQG)) {
-          Q();
-        }
-      }, 1));
-      function y(message, b = AUG, Y = EIG) {
-        const M = document[jGG](fWG),
-          s = (M[slG] = E(sUG, b, h = -XIG), {
-            [ZWG]: YUG,
-            [jUG]: wUG,
-            [UWG]: NUG,
-            [AUG]: zUG
-          });
-        M[wlG] = qUG + (s[b] || zUG) + CUG + message + uUG;
-        c[eWG](M);
-        setTimeout(() => (M[SGG][fGG](PUG), setTimeout(() => (M[xUG] && M[xUG][VUG](M), 0), KIG), 0), Y);
-        return M;
-      }
-      document[hH](XUG)[a](V, function () {
-        const Y = this[rUG] ? LUG : _UG;
-        chatPage[CWG] = this[rUG];
-        y(E(JUG, Y, b(-XIG)), this[rUG] ? ZWG : AUG);
-        NIG(E(BUG, Y, b(-XIG)));
-      });
-      document[hH](lUG)[a](V, function () {
-        const M = this[rUG] ? PWG : OUG,
-          Y = this[rUG] ? kUG : pUG;
-        document[SWG](gUG)[qQG] = E(Y + KUG, M, b(-XIG));
-        chatPage[uWG] = M;
-        y(E(tUG, M, h = -XIG), AUG);
-        NIG(E(tUG, M, b(-XIG)));
-      });
-      document[hH](iUG)[a](V, function () {
-        const Y = this[rUG] ? LUG : _UG;
-        filterQingliu = this[rUG];
-        y(E(WUG, Y, h = -XIG), this[rUG] ? UWG : AUG);
-        NIG(E(WUG, Y, b(-XIG)));
-      });
-      document[hH](UUG)[a](V, function () {
-        const Y = this[rUG] ? LUG : _UG;
-        filterUnder18 = this[rUG];
-        y(E(dUG, Y, b(-XIG)), this[rUG] ? UWG : AUG);
-        NIG(E(dUG, Y, h = -XIG));
-      });
-      document[hH](yUG)[a](N, function () {
-        const Y = this,
-          b = Y[qQG];
-        Y[qQG] = cUG;
-        Y[SGG][fGG](hUG);
-        y(oUG, AUG, tIG);
-        i();
-        setTimeout(() => (Y[qQG] = b, Y[SGG][aGG](hUG), y(TUG, ZWG), 0), tIG);
-      });
-      document[hH](nUG)[a](N, M(() => {
-        openVIPCardWallet();
-        y(EUG, AUG, iIG);
-      }, 0));
-      document[hH](ZUG)[a](V, function () {
-        const Y = this[rUG] ? LUG : _UG;
-        blacklistEnabled = this[rUG];
-        y(E(mUG, Y, b(-XIG)), this[rUG] ? UWG : AUG);
-        NIG(E(mUG, Y, h = -XIG));
-      });
-      function S() {
-        try {
-          const Y = localStorage[RIG](KWG);
-          return Y ? YIG(Y) : null;
-        } catch (Y) {
-          return null;
-        }
-      }
-      function X(Y) {
-        const b = {
-          '1': lQG,
-          '2': FUG,
-          '3': pQG
+        const _0x383848 = document.querySelector("#partnerLabelContainer");
+        _0x383848 && (_0x1ba212 = _0x383848.innerText || _0x383848.textContent || "");
+        const _0xc94347 = {
+          ageTag: _0x1d999b,
+          userTag: _0x1ba212,
+          region: _0x4eb25c
         };
-        return b[String(Y)] || '';
+        return _0xc94347;
       }
-      function q(b) {
-        var Y = IUG;
-        const date = new Date(b);
-        return date[RUG](QUG, {
-          [SUG]: Y,
-          [$UG]: Y,
-          [bUG]: Y,
-          [DUG]: Y
+    }
+    function _0xb8a6a3() {
+      return _0x2f2459().ageTag === "18岁以下";
+    }
+    function _0x568351() {
+      return (_0x2f2459().userTag || "").includes("清流");
+    }
+    function _0x129fb2() {
+      if (!filterProvinceEnabled || selectedProvinces.length === 0) {
+        const _0x2200cd = {
+          shouldFilter: false,
+          reason: ""
+        };
+        return _0x2200cd;
+      }
+      const _0x1e37d8 = _0x2f2459().region;
+      if (!_0x1e37d8) {
+        if (filterNoRegion) {
+          const _0x5b3b6b = {
+            shouldFilter: true,
+            reason: "对方未显示地区"
+          };
+          return _0x5b3b6b;
+        }
+        const _0xf0cef7 = {
+          shouldFilter: false,
+          reason: ""
+        };
+        return _0xf0cef7;
+      }
+      if (!selectedProvinces.includes(_0x1e37d8)) {
+        const _0x15eadd = {
+          shouldFilter: true,
+          reason: "对方地区(" + _0x1e37d8 + ")不在筛选范围"
+        };
+        return _0x15eadd;
+      }
+      const _0x204207 = {
+        shouldFilter: false,
+        reason: ""
+      };
+      return _0x204207;
+    }
+    function _0x1cba7d(_0x3aebd9, _0x59d3ae = "ok") {
+      vue.toasted.show(_0x3aebd9, {
+        action: {
+          text: _0x59d3ae,
+          onClick: (_0xc6e749, _0x179ad9) => {
+            _0x179ad9.goAway(0);
+          }
+        }
+      });
+    }
+    function _0x5b55eb(_0x3e5e7c) {
+      chatPage.msgInput = _0x3e5e7c;
+      chatPage.msgSend();
+    }
+    window.sendChatMessage = _0x5b55eb;
+    function _0x1903f6() {
+      chatPage.sockets.emit("syscmd", {
+        msg: "end",
+        countReceive: false,
+        chatId: chatPage.chatId,
+        countTalked: false
+      });
+      chatPage.chatState = "SELF_LEFT";
+    }
+    function _0x5799b2() {
+      if (!customAgeEnabled) {
+        return;
+      }
+      localStorage.setItem("ageNew", customAgeValue);
+      typeof store !== "undefined" && store.set && store.set("ageNew", customAgeValue);
+      const _0xb2f97e = customAgeValue === "2" ? "18-23岁" : "23岁以上";
+      console.log("[自定义年龄] 已重置年龄为:", _0xb2f97e);
+    }
+    function _0x4adfac() {
+      _0x5799b2();
+      chatPage.sockets.emit("syscmd", {
+        msg: "new",
+        gender: chatPage.gender,
+        vipCode: chatPage.vipCode,
+        age: store.get("ageNew"),
+        ageWant: store.get("ageWant"),
+        secretCode: chatPage.secretCode,
+        province: chatPage.province,
+        provinceWant: store.get("provinceWant"),
+        savedId: chatPage.usrId,
+        isShowLocation: false,
+        fp: chatPage.fingerPrints,
+        phoneNumber: store.get(chatPage.Config.STORE_PHONE_NUMBER),
+        userPwdEncrypted: store.get(chatPage.Config.STORE_PASSWORD_ENCRYPTED)
+      });
+    }
+    let _0x27b56b = true;
+    chatPage.scriptIsRun = false;
+    chatPage.MatchWho = "女生";
+    setInterval(function () {
+      try {
+        document.querySelectorAll("a[href=\"./lost-found\"]").forEach(_0x4da9be => _0x4da9be.remove());
+        document.querySelectorAll("a.button.button-link.button-nav.pull-right").forEach(_0x744bce => _0x744bce.remove());
+        document.querySelectorAll("header a, .bar-nav a").forEach(_0xe6a0de => {
+          (_0xe6a0de.innerText || "").trim() === "寻人" && _0xe6a0de.remove();
         });
+        document.querySelectorAll(".advert").forEach(_0x38a457 => _0x38a457.remove());
+        document.querySelectorAll(".message-text").forEach(_0x2f546d => {
+          const _0x459be3 = _0x2f546d.innerText || "";
+          (_0x459be3.includes("叔叔不约App") || _0x459be3.includes("点击获取")) && _0x2f546d.remove();
+        });
+        document.querySelectorAll(".sys-msg-chat-end > div > div").forEach(_0xfc82a => {
+          const _0x499ba0 = _0xfc82a.innerText || "";
+          _0x499ba0.includes("分区") && _0xfc82a.remove();
+        });
+        document.querySelectorAll(".leave-footer").forEach(_0x5b8376 => _0x5b8376.remove());
+      } catch (_0x15385c) {}
+      if (!chatPage.scriptIsRun) {
+        return;
       }
-      function B() {
-        const b = document[SWG](MUG),
-          Y = document[SWG](vUG);
-        if (blacklist[mIG] === VIG) {
-          b[wlG] = qKG;
-        } else {
-          b[wlG] = blacklist[oWG]((Y, index) => fUG + Y[bIG] + sKG + (Y[MIG] || eUG) + YKG + index + wKG + index + jKG + (Y[vIG] || aUG) + NKG + X(Y[GIG]) + zKG + q(Y[eIG]) + AKG)[GUG]('');
-        }
-        Y[qQG] = CKG + blacklist[mIG] + uKG;
-      }
-      function o() {
-        B();
-        MH[SGG][fGG](iQG);
-        j[SGG][fGG](iQG);
-      }
-      function t() {
-        MH[SGG][aGG](iQG);
-        j[SGG][aGG](iQG);
-      }
-      function u() {
-        const b = S();
-        if (!b) {
-          y(PKG, UWG);
-          return 0;
-        }
-        if (!b[tWG]) {
-          y(xKG, jUG);
-          return 0;
-        }
-        if (isInBlacklist(b[tWG]) && Y.i[iGG](lIG) == ZIG) {
-          y(VKG, UWG);
-          return 0;
-        }
-        document[SWG](XKG)[qQG] = rKG + (b[gWG] || aUG) + NKG + X(b[HKG]);
-        document[SWG](LKG)[_KG] = '';
-        MH[SGG][fGG](iQG);
-        H[SGG][fGG](iQG);
-      }
-      function l() {
-        H[SGG][aGG](iQG);
-        MH[SGG][aGG](iQG);
-      }
-      function w() {
-        const Y = S();
-        if (!Y || !Y[tWG]) {
-          y(xKG, jUG);
-          l();
-          return 0;
-        }
-        const h = document[SWG](LKG)[_KG][HWG](),
-          b = addToBlacklist(Y[tWG], h || eUG, Y[gWG] || '', Y[HKG] || '');
-        if (b) {
-          const Y = (y(JKG, ZWG), l(), document[QGG](BKG));
-          if (Y) {
-            Y[PGG]();
-          }
-        } else {
-          y(VKG, UWG);
-        }
-      }
-      let g = (document[hH](lKG)[a](N, M(() => {
-          o();
-        }, 0)), document[hH](OKG)[a](N, M(() => {
-          u();
-        }, 0)), document[hH](pKG)[a](N, t), MH[a](N, M(() => {
-          t();
-          l();
-        }, 0)), document[hH](MUG)[a](N, M(b => {
-          const h = b[HGG][kKG](gKG);
-          if (!h) {
-            return;
-          }
-          const index = PIG(h[tKG][KKG]),
-            Y = blacklist[index];
-          if (!Y) {
-            return;
-          }
-          if (h[SGG][IGG](iKG)) {
-            const b = prompt(yKG, Y[MIG]);
-            if (b !== null) {
-              updateBlacklistRemark(Y[bIG], b[HWG]() || eUG);
-              B();
-              y(cKG, ZWG);
-            }
-          } else {
-            if (h[SGG][IGG](WKG)) {
-              if (confirm(UKG)) {
-                removeFromBlacklist(Y[bIG]);
-                B();
-                y(dKG, ZWG);
+      switch (chatPage.chatState) {
+        case "REPAIRED":
+        case "PAIRED":
+          {
+            let _0x4d7c2d = chatPage.partner.strGender;
+            if (blacklistEnabled && chatPage.partner.idEncrypted) {
+              const _0x2f451a = isInBlacklist(chatPage.partner.idEncrypted);
+              if (_0x2f451a) {
+                console.log("[脚本] 对方在黑名单中，自动离开:", _0x2f451a.remark);
+                _0x2368e4("🚫 已自动跳过黑名单用户：" + _0x2f451a.remark, "warning", 2000);
+                _0x1903f6();
+                _0x4adfac();
+                _0x27b56b = true;
+                break;
               }
             }
-          }
-        }, 1)), document[hH](hKG)[a](N, M(() => {
-          if (blacklist[mIG] === VIG) {
-            y(oKG, UWG);
-            return 0;
-          }
-          exportBlacklist();
-          y(TKG, ZWG);
-        }, 0)), document[hH](nKG)[a](N, M(() => {
-          sH[PGG]();
-        }, 0)), sH[a](V, M(h => {
-          const Y = h[HGG][EKG][VIG];
-          if (!Y) {
-            return;
-          }
-          importBlacklist(Y)[mKG](Y => (B(), y(FKG + Y + uKG, ZWG), 0))[ZKG](Y => (y(E(RKG, Y[QKG], b(-XIG)), jUG), 0));
-          sH[_KG] = '';
-        }, 1)), document[hH](IKG)[a](N, M(() => {
-          if (blacklist[mIG] === VIG) {
-            y(SKG, AUG);
-            return 0;
-          }
-          if (confirm($KG + blacklist[mIG] + bKG)) {
-            clearBlacklist();
-            B();
-            y(DKG, ZWG);
-          }
-        }, 0)), document[hH](MKG)[a](N, l), document[hH](vKG)[a](N, w), null),
-        F = null,
-        K = !1;
-      function _H() {
-        if (!chatPage[CWG]) {
-          return !1;
-        }
-        if (!blacklistEnabled || K) {
-          return !1;
-        }
-        const M = S();
-        if (!M || !M[tWG]) {
-          return !1;
-        }
-        const s = M[GKG] ? M[GKG][RQG] : null,
-          b = E(s + '_', M[tWG], h = -XIG);
-        if (g === b) {
-          return !1;
-        }
-        const w = isInBlacklist(M[tWG]);
-        if (w) {
-          g = b;
-          K = !0;
-          NIG(eKG, w[MIG]);
-          y(WWG + w[MIG], UWG, hIG);
-          setTimeout(() => {
-            const b = document[QGG](BKG);
-            if (b && Y.i[iGG](lIG) == ZIG) {
-              b[PGG]();
+            if (filterUnder18 && _0xb8a6a3()) {
+              {
+                console.log("[脚本] 对方为18岁以下，自动离开");
+                _0x2368e4("对方为18岁以下，自动离开", "warning", 1500);
+                _0x1903f6();
+                _0x4adfac();
+                _0x27b56b = true;
+                break;
+              }
             }
-            setTimeout(() => (K = !1, g = null, 0), tIG);
-          }, kIG);
-          return !0;
+            if (filterQingliu && _0x568351()) {
+              console.log("[脚本] 对方标签包含清流，自动离开");
+              _0x2368e4("对方标签包含清流，自动离开", "warning", 1500);
+              _0x1903f6();
+              _0x4adfac();
+              _0x27b56b = true;
+              break;
+            }
+            if (_0x4d7c2d == chatPage.MatchWho) {
+              const _0x1e9efc = _0x129fb2();
+              if (_0x1e9efc.shouldFilter) {
+                console.log("[脚本] " + _0x1e9efc.reason + "，自动离开");
+                _0x2368e4(_0x1e9efc.reason + "，自动离开", "warning", 1500);
+                _0x1903f6();
+                _0x4adfac();
+                _0x27b56b = true;
+                break;
+              }
+            }
+            if (_0x4d7c2d == chatPage.MatchWho) {
+              if (_0x27b56b) {
+                try {
+                  let _0x291f50 = AUTO_MSG.length;
+                  if (_0x291f50 > 1) {
+                    {
+                      const _0x38f12d = Math.floor(Math.random() * _0x291f50);
+                      let _0x131adc = AUTO_MSG[_0x38f12d];
+                      let _0x451c77 = _0x131adc.split("|").map(_0x576398 => _0x576398.trim());
+                      currentAutoIndex = 0;
+                      _0x1db173(_0x451c77);
+                    }
+                  } else {
+                    let _0x246565 = AUTO_MSG[index];
+                    let _0xe2de5e = _0x246565.split("|").map(_0x256604 => _0x256604.trim());
+                    currentAutoIndex = 0;
+                    _0x1db173(_0xe2de5e);
+                  }
+                } catch {}
+                _0x2368e4("已匹配到" + chatPage.MatchWho + "并发送信息！", "success", 800);
+                startWaitReplyTimer();
+                aiEnabled && aiApiKey && !aiIsActive && (resetAIChat(), startAIChat());
+                _0x27b56b = false;
+              }
+              break;
+            }
+            _0x1903f6();
+            _0x4adfac();
+            _0x27b56b = true;
+            break;
+          }
+        case "SELF_LEFT":
+        case "PARTNER_LEFT":
+          cancelWaitReplyTimer();
+          stopAIChat();
+          resetAIChat();
+          _0x4adfac();
+          _0x27b56b = true;
+          break;
+      }
+    }, 450);
+    function _0x1db173(_0x4c69d2) {
+      if (currentAutoIndex < _0x4c69d2.length) {
+        {
+          _0x5b55eb(_0x4c69d2[currentAutoIndex]);
+          currentAutoIndex++;
+          setTimeout(() => {
+            _0x1db173(_0x4c69d2);
+          }, 2000);
         }
-        g = b;
-        return !1;
       }
-      window[aKG] = _H;
-      window[fKG] = isInBlacklist;
-      window[s_G] = S;
-      setInterval(_H, gIG);
-      setTimeout(_H, kIG);
-      document[hH](lUG)[N]();
-      y(Y_G, ZWG);
     }
-    try {
-      if (initialized) {
-        NIG(w_G);
+    function _0x1c6fca() {
+      try {
+        const _0x49bc5e = QQ.trim();
+        if (/^\d{5,12}$/.test(_0x49bc5e)) {
+          let _0x291e04 = _0x49bc5e.length;
+          _0x291e04 > 6 && _0x291e04 <= 10 ? (setTimeout(() => _0x5b55eb(_0x49bc5e.substr(0, 3)), 1000), setTimeout(() => _0x5b55eb(_0x49bc5e.substr(3, 3)), 2000), _0x291e04 == 10 ? (setTimeout(() => _0x5b55eb(_0x49bc5e.substr(6, 3)), 3000), setTimeout(() => _0x5b55eb(_0x49bc5e.substr(9)), 3500)) : setTimeout(() => _0x5b55eb(_0x49bc5e.substr(6)), 3000)) : _0x5b55eb(_0x49bc5e);
+        } else {
+          _0x5b55eb(_0x49bc5e);
+        }
+      } catch (_0x2e017c) {
+        console.error("发送QQ号码失败：", _0x2e017c);
       }
-    } catch {
-      initialized = !0;
-      s();
     }
-  };
-  MainFunc();
-}
-function M(h, b) {
-  var Y = function () {
-    return h(...arguments);
-  };
-  Object['defineProperty'](Y, 'length', {
-    'value': b,
-    'configurable': true
-  });
-  return Y;
-}
+    if (document.getElementById("floatingBtn")) {
+      document.getElementById("floatingBtn")?.["remove"]();
+      document.getElementById("overlay")?.["remove"]();
+      document.getElementById("controlPanel")?.["remove"]();
+      document.getElementById("toastContainer")?.["remove"]();
+      const _0x46da0a = document.getElementById("floatingPanelStyle");
+      if (_0x46da0a) {
+        _0x46da0a.remove();
+      }
+    }
+    const _0x2faa0d = document.createElement("style");
+    _0x2faa0d.id = "floatingPanelStyle";
+    _0x2faa0d.textContent = "\n            /* 悬浮按钮 */\n            .floating-btn {\n                position: fixed;\n                bottom: 15%;\n                right: 20px;\n                width: 56px;\n                height: 56px;\n                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n                border-radius: 50%;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                color: white;\n                font-size: 13px;\n                cursor: pointer;\n                box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);\n                z-index: 10000;\n                user-select: none;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                text-align: center;\n                line-height: 1.2;\n                font-weight: 600;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n                border: 2px solid rgba(255, 255, 255, 0.2);\n            }\n            \n            .floating-btn:hover {\n                transform: translateY(-2px) scale(1.05);\n                box-shadow: 0 12px 25px rgba(118, 75, 162, 0.5);\n            }\n            \n            .floating-btn:active {\n                transform: translateY(1px) scale(0.95);\n            }\n            \n            /* 控制面板 */\n            .control-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 280px;\n                background: rgba(255, 255, 255, 0.98);\n                backdrop-filter: blur(20px);\n                border-radius: 20px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);\n                z-index: 9999;\n                display: none;\n                padding: 16px;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                border: 1px solid rgba(0, 0, 0, 0.05);\n            }\n            \n            .control-panel.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            /* 面板头部 */\n            .panel-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                margin-bottom: 12px;\n                border-bottom: 1px solid rgba(0,0,0,0.05);\n                padding-bottom: 12px;\n            }\n            \n            .panel-title {\n                font-size: 17px;\n                font-weight: 700;\n                color: #1a1a1a;\n                letter-spacing: -0.5px;\n                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n                -webkit-background-clip: text;\n                -webkit-text-fill-color: transparent;\n            }\n            \n            .panel-close {\n                width: 28px;\n                height: 28px;\n                border-radius: 50%;\n                background: #f5f5f7;\n                border: none;\n                color: #888;\n                font-size: 18px;\n                cursor: pointer;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .panel-close:hover {\n                background: #eee;\n                color: #333;\n                transform: rotate(90deg);\n            }\n            \n            /* 列表项 - 增加cp-前缀防止冲突 */\n            .cp-list-block {\n                max-height: 50vh;\n                overflow-y: auto;\n            }\n            \n            .cp-list-block ul {\n                list-style: none;\n                padding: 0;\n                margin: 0;\n            }\n            \n            .cp-item-content {\n                padding: 10px 0;\n                border-bottom: 1px solid rgba(0, 0, 0, 0.04);\n                display: block; /* 确保是块级元素 */\n            }\n            \n            .cp-item-content:last-child {\n                border-bottom: none;\n            }\n            \n            .cp-item-inner {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                width: 100%;\n                position: relative; /* 防止绝对定位元素跑偏 */\n            }\n            \n            .cp-item-title {\n                font-size: 14px;\n                font-weight: 500;\n                color: #333;\n                display: flex;\n                align-items: center;\n                gap: 6px;\n                flex: 1; /* 占据剩余空间 */\n                margin-right: 12px; /* 与右侧开关保持距离 */\n                white-space: nowrap;\n                overflow: hidden;\n                text-overflow: ellipsis;\n            }\n            \n            .cp-item-input {\n                flex-shrink: 0; /* 防止被压缩 */\n            }\n            \n            /* 开关样式优化 */\n            .cp-label-switch {\n                position: relative;\n                display: inline-block;\n                width: 46px;\n                height: 26px;\n                vertical-align: middle;\n            }\n            \n            .cp-label-switch input {\n                display: none;\n            }\n            \n            .cp-checkbox {\n                width: 100%;\n                height: 100%;\n                background: #e9e9eb;\n                border-radius: 30px;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                position: relative;\n                cursor: pointer;\n                display: block;\n            }\n            \n            .cp-checkbox:before {\n                content: '';\n                position: absolute;\n                width: 22px;\n                height: 22px;\n                background: white;\n                border-radius: 50%;\n                top: 2px;\n                left: 2px;\n                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n            }\n            \n            input:checked + .cp-checkbox {\n                background: #34c759;\n            }\n            \n            input:checked + .cp-checkbox:before {\n                transform: translateX(20px);\n            }\n            \n            /* 自定义年龄单选按钮样式 */\n            .cp-age-options {\n                background: #f8f9fa;\n                border-radius: 10px;\n                margin: 4px 0;\n                padding: 8px 0 !important;\n            }\n            \n            .cp-radio-label {\n                display: flex;\n                align-items: center;\n                gap: 6px;\n                cursor: pointer;\n                font-size: 13px;\n                color: #333;\n                transition: all 0.2s;\n            }\n            \n            .cp-radio-label input[type=\"radio\"] {\n                appearance: none;\n                -webkit-appearance: none;\n                width: 18px;\n                height: 18px;\n                border: 2px solid #d1d1d6;\n                border-radius: 50%;\n                background: white;\n                cursor: pointer;\n                transition: all 0.2s;\n                position: relative;\n            }\n            \n            .cp-radio-label input[type=\"radio\"]:checked {\n                border-color: #34c759;\n                background: #34c759;\n            }\n            \n            .cp-radio-label input[type=\"radio\"]:checked::after {\n                content: '';\n                position: absolute;\n                width: 6px;\n                height: 6px;\n                background: white;\n                border-radius: 50%;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%);\n            }\n            \n            .cp-radio-label:hover input[type=\"radio\"] {\n                border-color: #34c759;\n            }\n            \n            .cp-radio-text {\n                font-weight: 500;\n            }\n            \n            /* 超时时间输入框样式 */\n            .cp-timeout-label {\n                font-size: 14px;\n                color: #666;\n            }\n            \n            .cp-timeout-input {\n                width: 60px;\n                padding: 6px 8px;\n                border: 1px solid #ddd;\n                border-radius: 6px;\n                font-size: 14px;\n                text-align: center;\n                background: #f8f8f8;\n                transition: all 0.2s;\n            }\n            \n            .cp-timeout-input:focus {\n                outline: none;\n                border-color: #007AFF;\n                background: #fff;\n            }\n            \n            .cp-wait-reply-options {\n                padding: 8px 0 !important;\n            }\n            \n            /* 选中状态高亮 */\n            .cp-radio-label input[type=\"radio\"]:checked + .cp-radio-text {\n                color: #34c759;\n                font-weight: 600;\n            }\n            \n            .cp-radio-label.active {\n                background: rgba(52, 199, 89, 0.1);\n                padding: 4px 10px;\n                border-radius: 6px;\n            }\n            \n            /* 按钮组 */\n            .btn-group {\n                display: grid;\n                grid-template-columns: 1fr 1fr;\n                gap: 8px;\n                margin-top: 12px;\n            }\n            \n            .contact-btn {\n                background: linear-gradient(135deg, #007AFF 0%, #0051D4 100%);\n                color: white;\n                border: none;\n                padding: 10px 8px;\n                border-radius: 10px;\n                font-size: 13px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.2s;\n                width: 100%;\n                box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);\n            }\n            \n            .contact-btn:hover {\n                transform: translateY(-2px);\n                box-shadow: 0 6px 16px rgba(0, 122, 255, 0.3);\n            }\n            \n            .contact-btn:active {\n                transform: translateY(0);\n            }\n            \n            #btn_vip_card {\n                background: linear-gradient(135deg, #FF9500 0%, #FF5E3A 100%);\n                box-shadow: 0 4px 12px rgba(255, 94, 58, 0.2);\n            }\n            \n            #btn_vip_card:hover {\n                box-shadow: 0 6px 16px rgba(255, 94, 58, 0.3);\n            }\n            \n            /* 底部版权 */\n            .panel-footer {\n                margin-top: 12px;\n                padding-top: 10px;\n                border-top: 1px solid rgba(0, 0, 0, 0.04);\n                font-size: 11px;\n                color: #999;\n                display: flex;\n                justify-content: space-between;\n                font-weight: 500;\n            }\n            \n            /* 遮罩层 */\n            .overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.4);\n                backdrop-filter: blur(4px);\n                z-index: 9998;\n                display: none;\n                opacity: 0;\n                transition: opacity 0.3s;\n            }\n            \n            .overlay.show {\n                display: block;\n                opacity: 1;\n            }\n            \n            /* Toast 样式 */\n            .toast-container {\n                position: fixed;\n                top: 20px;\n                right: 20px;\n                z-index: 10001;\n                display: flex;\n                flex-direction: column;\n                gap: 10px;\n            }\n            \n            .toast {\n                background: rgba(0, 0, 0, 0.8);\n                backdrop-filter: blur(10px);\n                color: white;\n                padding: 10px 14px;\n                border-radius: 12px;\n                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);\n                font-size: 13px;\n                max-width: 220px;\n                word-break: break-all;\n                overflow: hidden;\n                text-overflow: ellipsis;\n                white-space: nowrap;\n                animation: toastSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                display: flex;\n                align-items: center;\n                gap: 12px;\n                font-weight: 500;\n            }\n            \n            .toast.success { border-left: 4px solid #34c759; }\n            .toast.error { border-left: 4px solid #ff3b30; }\n            .toast.warning { border-left: 4px solid #ff9500; }\n            .toast.info { border-left: 4px solid #007aff; }\n            \n            .toast.fade-out {\n                animation: toastSlideOut 0.3s forwards;\n            }\n            \n            @keyframes toastSlideIn {\n                from { opacity: 0; transform: translateX(100px); }\n                to { opacity: 1; transform: translateX(0); }\n            }\n            \n            @keyframes toastSlideOut {\n                from { opacity: 1; transform: translateX(0); }\n                to { opacity: 0; transform: translateX(100px); }\n            }\n            \n            .toast-icon { font-size: 18px; }\n            \n            /* 黑名单弹窗样式 */\n            .blacklist-modal {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 290px;\n                max-height: 70vh;\n                background: rgba(255, 255, 255, 0.98);\n                backdrop-filter: blur(20px);\n                border-radius: 16px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);\n                z-index: 10002;\n                display: none;\n                flex-direction: column;\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n            }\n            \n            .blacklist-modal.show {\n                display: flex;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            .bl-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                padding: 14px 16px;\n                border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n            }\n            \n            .bl-title {\n                font-size: 16px;\n                font-weight: 700;\n                color: #1a1a1a;\n            }\n            \n            .bl-close {\n                width: 26px;\n                height: 26px;\n                border-radius: 50%;\n                background: #f5f5f7;\n                border: none;\n                color: #888;\n                font-size: 16px;\n                cursor: pointer;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .bl-close:hover {\n                background: #eee;\n                color: #333;\n            }\n            \n            .bl-list {\n                flex: 1;\n                overflow-y: auto;\n                padding: 8px 14px;\n                max-height: 280px;\n            }\n            \n            .bl-empty {\n                text-align: center;\n                color: #999;\n                padding: 30px 16px;\n                font-size: 13px;\n            }\n            \n            .bl-item {\n                background: #f8f8fa;\n                border-radius: 10px;\n                padding: 10px 12px;\n                margin-bottom: 8px;\n                position: relative;\n            }\n            \n            .bl-item-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: flex-start;\n                margin-bottom: 6px;\n            }\n            \n            .bl-item-remark {\n                font-size: 14px;\n                font-weight: 600;\n                color: #333;\n                flex: 1;\n                word-break: break-all;\n            }\n            \n            .bl-item-actions {\n                display: flex;\n                gap: 6px;\n                flex-shrink: 0;\n            }\n            \n            .bl-item-btn {\n                width: 24px;\n                height: 28px;\n                border-radius: 8px;\n                border: none;\n                cursor: pointer;\n                font-size: 14px;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s;\n            }\n            \n            .bl-item-btn.edit {\n                background: #e3f2fd;\n                color: #1976d2;\n            }\n            \n            .bl-item-btn.delete {\n                background: #ffebee;\n                color: #d32f2f;\n            }\n            \n            .bl-item-btn:hover {\n                transform: scale(1.1);\n            }\n            \n            .bl-item-info {\n                font-size: 11px;\n                color: #888;\n                display: flex;\n                gap: 10px;\n            }\n            \n            .bl-footer {\n                padding: 12px 14px;\n                border-top: 1px solid rgba(0, 0, 0, 0.06);\n                display: flex;\n                flex-direction: column;\n                gap: 10px;\n            }\n            \n            .bl-count {\n                font-size: 12px;\n                color: #666;\n                text-align: center;\n            }\n            \n            .bl-actions {\n                display: flex;\n                gap: 8px;\n            }\n            \n            .bl-btn {\n                flex: 1;\n                padding: 8px;\n                border-radius: 8px;\n                border: none;\n                font-size: 12px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.2s;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n            }\n            \n            .bl-btn.export {\n                background: #e8f5e9;\n                color: #2e7d32;\n            }\n            \n            .bl-btn.import {\n                background: #e3f2fd;\n                color: #1565c0;\n            }\n            \n            .bl-btn.clear {\n                background: #ffebee;\n                color: #c62828;\n            }\n            \n            .bl-btn:hover {\n                transform: translateY(-1px);\n                filter: brightness(0.95);\n            }\n            \n            /* 拉黑确认弹窗 */\n            .blacklist-confirm {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                width: 260px;\n                background: white;\n                border-radius: 14px;\n                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);\n                z-index: 10003;\n                display: none;\n                opacity: 0;\n                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);\n                font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n            }\n            \n            .blacklist-confirm.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            .bc-header {\n                padding: 16px 16px 10px;\n                text-align: center;\n            }\n            \n            .bc-title {\n                font-size: 15px;\n                font-weight: 700;\n                color: #1a1a1a;\n                margin-bottom: 6px;\n            }\n            \n            .bc-info {\n                font-size: 12px;\n                color: #666;\n            }\n            \n            .bc-body {\n                padding: 0 16px 14px;\n            }\n            \n            .bc-label {\n                font-size: 12px;\n                color: #888;\n                margin-bottom: 6px;\n            }\n            \n            .bc-input {\n                width: 100%;\n                padding: 10px;\n                border: 1px solid #e0e0e0;\n                border-radius: 8px;\n                font-size: 13px;\n                box-sizing: border-box;\n                transition: border-color 0.2s;\n            }\n            \n            .bc-input:focus {\n                outline: none;\n                border-color: #007aff;\n            }\n            \n            .bc-footer {\n                display: flex;\n                border-top: 1px solid #eee;\n            }\n            \n            .bc-btn {\n                flex: 1;\n                padding: 12px;\n                border: none;\n                background: none;\n                font-size: 14px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: background 0.2s;\n            }\n            \n            .bc-btn:first-child {\n                border-right: 1px solid #eee;\n                color: #666;\n            }\n            \n            .bc-btn:last-child {\n                color: #ff3b30;\n            }\n            \n            .bc-btn:hover {\n                background: #f5f5f5;\n            }\n            \n            /* 优化后的控制面板 */\n            .control-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.95);\n                background: #fff;\n                border-radius: 16px;\n                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);\n                z-index: 10001;\n                width: 320px;\n                max-height: 85vh;\n                overflow-y: auto;\n                display: none;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);\n            }\n            \n            .control-panel.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            /* 面板头部 */\n            .panel-header {\n                padding: 16px 20px;\n                background: linear-gradient(135deg, #f8fafc, #f1f5f9);\n                border-bottom: 1px solid #e2e8f0;\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                position: sticky;\n                top: 0;\n                z-index: 10;\n            }\n            \n            .panel-title {\n                font-size: 16px;\n                font-weight: 700;\n                color: #1e293b;\n                display: flex;\n                align-items: center;\n                gap: 6px;\n            }\n            \n            .panel-title::before {\n                content: \"🛠️\";\n                font-size: 18px;\n            }\n            \n            .panel-close {\n                background: rgba(0, 0, 0, 0.05);\n                border: none;\n                width: 28px;\n                height: 28px;\n                border-radius: 50%;\n                font-size: 18px;\n                line-height: 28px;\n                text-align: center;\n                cursor: pointer;\n                color: #64748b;\n                transition: all 0.2s;\n            }\n            \n            .panel-close:hover {\n                background: #fee2e2;\n                color: #ef4444;\n            }\n            \n            /* 列表块 */\n            .cp-list-block {\n                padding: 10px 0;\n            }\n            \n            .cp-list-block ul {\n                list-style: none;\n                padding: 0;\n                margin: 0;\n            }\n            \n            .cp-list-block li {\n                border-bottom: 1px solid #f1f5f9;\n            }\n            \n            .cp-list-block li:last-child {\n                border-bottom: none;\n            }\n            \n            /* 列表项 */\n            .cp-item-content {\n                padding: 12px 20px;\n                transition: background 0.2s;\n            }\n            \n            .cp-item-content:hover {\n                background: #f8fafc;\n            }\n            \n            .cp-item-inner {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n            }\n            \n            .cp-item-title {\n                font-size: 14px;\n                color: #334155;\n                font-weight: 500;\n                display: flex;\n                align-items: center;\n                gap: 8px;\n            }\n            \n            /* 开关样式优化 */\n            .cp-label-switch {\n                position: relative;\n                display: inline-block;\n                width: 44px;\n                height: 24px;\n            }\n            \n            .cp-label-switch input {\n                opacity: 0;\n                width: 0;\n                height: 0;\n            }\n            \n            .cp-checkbox {\n                position: absolute;\n                cursor: pointer;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background-color: #cbd5e1;\n                transition: .3s;\n                border-radius: 24px;\n            }\n            \n            .cp-checkbox:before {\n                position: absolute;\n                content: \"\";\n                height: 20px;\n                width: 20px;\n                left: 2px;\n                bottom: 2px;\n                background-color: white;\n                transition: .3s cubic-bezier(0.34, 1.56, 0.64, 1);\n                border-radius: 50%;\n                box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n            }\n            \n            input:checked + .cp-checkbox {\n                background-color: #2563eb;\n            }\n            \n            input:checked + .cp-checkbox:before {\n                transform: translateX(20px);\n            }\n            \n            /* Tab 分栏样式 */\n            .cp-tabs {\n                display: flex;\n                border-bottom: 1px solid #e2e8f0;\n                background: #f8fafc;\n            }\n            \n            .cp-tab-item {\n                flex: 1;\n                text-align: center;\n                padding: 12px 0;\n                font-size: 14px;\n                font-weight: 600;\n                color: #64748b;\n                cursor: pointer;\n                position: relative;\n                transition: all 0.3s;\n            }\n            \n            .cp-tab-item.active {\n                color: #2563eb;\n                background: #fff;\n            }\n            \n            .cp-tab-item.active::after {\n                content: '';\n                position: absolute;\n                bottom: 0;\n                left: 0;\n                width: 100%;\n                height: 2px;\n                background: #2563eb;\n            }\n            \n            .cp-tab-content {\n                display: none;\n                padding-top: 5px;\n            }\n            \n            .cp-tab-content.active {\n                display: block;\n                animation: fadeIn 0.2s ease-out;\n            }\n            \n            @keyframes fadeIn {\n                from { opacity: 0; transform: translateY(2px); }\n                to { opacity: 1; transform: translateY(0); }\n            }\n            \n            /* AI、等待回复、省份选项区域 */\n            .cp-wait-reply-options, .cp-ai-options, .cp-province-options {\n                background: #f8fafc;\n                margin: 0 10px 10px;\n                border-radius: 8px;\n                border: 1px solid #e2e8f0;\n                padding: 10px 15px !important;\n            }\n            \n            /* 输入框样式 */\n            .cp-timeout-input {\n                width: 60px;\n                padding: 4px 8px;\n                border: 1px solid #cbd5e1;\n                border-radius: 6px;\n                text-align: center;\n                font-size: 13px;\n                color: #334155;\n            }\n            \n            .cp-timeout-input:focus {\n                outline: none;\n                border-color: #2563eb;\n                box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);\n            }\n            \n            .cp-timeout-label {\n                font-size: 13px;\n                color: #64748b;\n            }\n            \n            /* 设置按钮 */\n            #btn_ai_settings {\n                width: 100%;\n                padding: 8px 0;\n                background: #fff;\n                color: #2563eb;\n                border: 1px solid #2563eb;\n                border-radius: 8px;\n                font-size: 13px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.2s;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                gap: 6px;\n            }\n            \n            #btn_ai_settings:hover {\n                background: #eff6ff;\n                transform: translateY(-1px);\n            }\n            \n            /* 黑名单遮罩 */\n            .bl-overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.5);\n                z-index: 10001;\n                display: none;\n                opacity: 0;\n                transition: opacity 0.3s;\n            }\n            \n            .bl-overlay.show {\n                display: block;\n                opacity: 1;\n            }\n            \n            /* AI设置/省份选择弹窗 */\n            .ai-settings-modal {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.9);\n                background: #fff;\n                border-radius: 16px;\n                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);\n                z-index: 10002;\n                width: 340px;\n                max-height: 80vh;\n                overflow: hidden;\n                display: none;\n                opacity: 0;\n                transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);\n            }\n            \n            .ai-settings-modal.show {\n                display: block;\n                opacity: 1;\n                transform: translate(-50%, -50%) scale(1);\n            }\n            \n            .ai-header {\n                padding: 16px 20px;\n                background: linear-gradient(135deg, #3b82f6, #2563eb);\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n            }\n            \n            .ai-title {\n                font-size: 16px;\n                font-weight: 700;\n                color: #fff;\n            }\n            \n            .ai-close {\n                background: rgba(255, 255, 255, 0.2);\n                border: none;\n                width: 28px;\n                height: 28px;\n                border-radius: 50%;\n                font-size: 18px;\n                line-height: 28px;\n                text-align: center;\n                cursor: pointer;\n                color: #fff;\n                transition: all 0.2s;\n            }\n            \n            .ai-close:hover {\n                background: rgba(255, 255, 255, 0.3);\n            }\n            \n            .ai-body {\n                padding: 20px;\n                max-height: 50vh;\n                overflow-y: auto;\n            }\n            \n            .ai-form-group {\n                margin-bottom: 16px;\n            }\n            \n            .ai-label {\n                display: block;\n                font-size: 13px;\n                font-weight: 600;\n                color: #374151;\n                margin-bottom: 6px;\n            }\n            \n            .ai-input, .ai-textarea {\n                width: 100%;\n                padding: 10px 12px;\n                border: 1px solid #e5e7eb;\n                border-radius: 8px;\n                font-size: 14px;\n                transition: border-color 0.2s;\n                box-sizing: border-box;\n            }\n            \n            .ai-input:focus, .ai-textarea:focus {\n                outline: none;\n                border-color: #3b82f6;\n            }\n            \n            .ai-textarea {\n                min-height: 100px;\n                resize: vertical;\n            }\n            \n            .ai-hint {\n                font-size: 11px;\n                color: #9ca3af;\n                margin-top: 4px;\n            }\n            \n            .ai-footer {\n                padding: 16px 20px;\n                background: #f9fafb;\n                display: flex;\n                gap: 10px;\n                border-top: 1px solid #e5e7eb;\n            }\n            \n            .ai-btn {\n                flex: 1;\n                padding: 10px 16px;\n                border: none;\n                border-radius: 8px;\n                font-size: 14px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.2s;\n            }\n            \n            .ai-btn.cancel {\n                background: #f3f4f6;\n                color: #6b7280;\n            }\n            \n            .ai-btn.cancel:hover {\n                background: #e5e7eb;\n            }\n            \n            .ai-btn.save {\n                background: linear-gradient(135deg, #3b82f6, #2563eb);\n                color: #fff;\n            }\n            \n            .ai-btn.save:hover {\n                transform: translateY(-1px);\n                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);\n            }\n            \n            /* 隐藏的文件输入 */\n            #blacklistFileInput {\n                display: none;\n            }\n        ";
+    document.head.appendChild(_0x2faa0d);
+    const _0x46fe05 = document.createElement("div");
+    _0x46fe05.className = "floating-btn";
+    _0x46fe05.id = "floatingBtn";
+    _0x46fe05.innerHTML = "控制<br>面板";
+    _0x46fe05.title = "点击打开控制面板 | 长按拖动";
+    let _0x4e25b8 = false;
+    let _0x134312 = 0;
+    let _0x1c456c = 0;
+    let _0x33f751 = 0;
+    let _0xd77646 = 0;
+    let _0x4462d6 = false;
+    const _0x5521ca = document.createElement("div");
+    _0x5521ca.className = "overlay";
+    _0x5521ca.id = "overlay";
+    const _0x5ee0cf = document.createElement("div");
+    _0x5ee0cf.className = "control-panel";
+    _0x5ee0cf.id = "controlPanel";
+    _0x5ee0cf.innerHTML = "\n            <div class=\"panel-header\">\n                <div class=\"panel-title\">脚本控制面板</div>\n                <button class=\"panel-close\" id=\"panelClose\">×</button>\n            </div>\n            \n            <div class=\"cp-list-block\">\n                <!-- Tab 导航 -->\n                <div class=\"cp-tabs\">\n                    <div class=\"cp-tab-item active\" data-tab=\"basic\">基础设置</div>\n                    <div class=\"cp-tab-item\" data-tab=\"advanced\">高级功能</div>\n                </div>\n\n                <ul>\n                    <li>\n                        <!-- 基础设置 Tab -->\n                        <div class=\"cp-tab-content active\" id=\"tab_basic\">\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">⚡ 脚本启动</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_script\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\" id=\"txt_match\">🚺 仅女生</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_match\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">🏷️ 过滤清流</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_qingliu\" checked>\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">🔞 过滤未成年</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_under18\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">🚫 启用黑名单</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_blacklist\" checked>\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <!-- 高级功能 Tab -->\n                        <div class=\"cp-tab-content\" id=\"tab_advanced\">\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">🤖 AI托管</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_ai\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"cp-item-content cp-ai-options\" id=\"ai_options\" style=\"display:none;\">\n                                <div class=\"cp-item-inner\" style=\"justify-content:center;\">\n                                    <button id=\"btn_ai_settings\" style=\"padding:8px 16px; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:#fff; border:none; border-radius:8px; font-size:13px; cursor:pointer;\">⚙️ 配置AI参数</button>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">⏱️ 等待回复</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_wait_reply\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"cp-item-content cp-wait-reply-options\" id=\"wait_reply_options\" style=\"display:none;\">\n                                <div class=\"cp-item-inner\" style=\"justify-content:center; gap:8px;\">\n                                    <span class=\"cp-timeout-label\">超时时间:</span>\n                                    <input type=\"number\" id=\"input_wait_timeout\" class=\"cp-timeout-input\" value=\"30\" min=\"10\" max=\"120\">\n                                    <span class=\"cp-timeout-label\">秒</span>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">📍 省份筛选</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_province\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"cp-item-content cp-province-options\" id=\"province_options\" style=\"display:none;\">\n                                <div style=\"padding:5px 0;\">\n                                    <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;\">\n                                        <span style=\"font-size:12px; color:#64748b;\">已选: <span id=\"province_count\">0</span> 个省份</span>\n                                        <div style=\"display:flex; gap:6px;\">\n                                            <button id=\"btn_select_all_province\" style=\"padding:4px 8px; font-size:11px; background:#eff6ff; color:#2563eb; border:1px solid #2563eb; border-radius:4px; cursor:pointer;\">全选</button>\n                                            <button id=\"btn_clear_province\" style=\"padding:4px 8px; font-size:11px; background:#fef2f2; color:#ef4444; border:1px solid #ef4444; border-radius:4px; cursor:pointer;\">清空</button>\n                                        </div>\n                                    </div>\n                                    <button id=\"btn_province_selector\" style=\"width:100%; padding:8px; background:#fff; border:1px solid #e2e8f0; border-radius:8px; font-size:13px; cursor:pointer; color:#334155;\">点击选择省份 ▼</button>\n                                    <div style=\"margin-top:10px; display:flex; align-items:center; justify-content:space-between;\">\n                                        <span style=\"font-size:12px; color:#64748b;\">过滤不显示地区</span>\n                                        <label class=\"cp-label-switch\" style=\"transform:scale(0.85);\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_no_region\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n\n                            <div class=\"cp-item-content\">\n                                <div class=\"cp-item-inner\">\n                                    <div class=\"cp-item-title\">🎂 自定义年龄</div>\n                                    <div class=\"cp-item-input\">\n                                        <label class=\"cp-label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_custom_age\">\n                                            <div class=\"cp-checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"cp-item-content cp-age-options\" id=\"custom_age_options\" style=\"display:none;\">\n                                <div class=\"cp-item-inner\" style=\"justify-content:center; gap:24px;\">\n                                    <label class=\"cp-radio-label\">\n                                        <input type=\"radio\" name=\"custom_age\" value=\"2\" checked>\n                                        <span class=\"cp-radio-text\">18-23岁</span>\n                                    </label>\n                                    <label class=\"cp-radio-label\">\n                                        <input type=\"radio\" name=\"custom_age\" value=\"3\">\n                                        <span class=\"cp-radio-text\">23岁以上</span>\n                                    </label>\n                                </div>\n                            </div>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            \n            <div class=\"btn-group\">\n                <button class=\"contact-btn\" id=\"btn_contact\">📲 发送联系方式</button>\n                <button class=\"contact-btn\" id=\"btn_vip_card\">💳 VIP卡包</button>\n            </div>\n            \n            <div class=\"btn-group\">\n                <button class=\"contact-btn\" id=\"btn_blacklist_add\" style=\"background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); box-shadow: 0 4px 12px rgba(255, 59, 48, 0.2);\">🔒 拉黑对方</button>\n                <button class=\"contact-btn\" id=\"btn_blacklist_manage\" style=\"background: linear-gradient(135deg, #5856d6 0%, #af52de 100%); box-shadow: 0 4px 12px rgba(88, 86, 214, 0.2);\">📋 管理黑名单</button>\n            </div>\n            \n            <div class=\"panel-footer\">\n                <span>© 驭师69号</span>\n                <span>V1.0.6</span>\n            </div>\n        ";
+    const _0x47a351 = document.createElement("div");
+    _0x47a351.className = "toast-container";
+    _0x47a351.id = "toastContainer";
+    const _0x55f651 = document.createElement("div");
+    _0x55f651.className = "bl-overlay";
+    _0x55f651.id = "blOverlay";
+    const _0x2843a6 = document.createElement("div");
+    _0x2843a6.className = "blacklist-modal";
+    _0x2843a6.id = "blacklistModal";
+    _0x2843a6.innerHTML = "\n        <div class=\"bl-header\">\n            <div class=\"bl-title\">📋 黑名单管理</div>\n            <button class=\"bl-close\" id=\"blClose\">×</button>\n        </div>\n        <div class=\"bl-list\" id=\"blList\"></div>\n        <div class=\"bl-footer\">\n            <div class=\"bl-count\" id=\"blCount\">共 0 人</div>\n            <div class=\"bl-actions\">\n                <button class=\"bl-btn export\" id=\"blExport\">📤 导出</button>\n                <button class=\"bl-btn import\" id=\"blImport\">📥 导入</button>\n                <button class=\"bl-btn clear\" id=\"blClear\">🗑️ 清空</button>\n            </div>\n        </div>\n    ";
+    const _0x18f6c2 = document.createElement("div");
+    _0x18f6c2.className = "blacklist-confirm";
+    _0x18f6c2.id = "blacklistConfirm";
+    _0x18f6c2.innerHTML = "\n        <div class=\"bc-header\">\n            <div class=\"bc-title\">🚫 添加到黑名单</div>\n            <div class=\"bc-info\" id=\"bcInfo\">对方: 未知</div>\n        </div>\n        <div class=\"bc-body\">\n            <div class=\"bc-label\">备注原因（可选）:</div>\n            <input type=\"text\" class=\"bc-input\" id=\"bcRemark\" placeholder=\"如：广告党、骚扰者...\">\n        </div>\n        <div class=\"bc-footer\">\n            <button class=\"bc-btn\" id=\"bcCancel\">取消</button>\n            <button class=\"bc-btn\" id=\"bcConfirm\">确认拉黑</button>\n        </div>\n    ";
+    const _0x45c833 = document.createElement("div");
+    _0x45c833.className = "ai-settings-modal";
+    _0x45c833.id = "aiSettingsModal";
+    _0x45c833.innerHTML = "\n        <div class=\"ai-header\">\n            <div class=\"ai-title\">🤖 AI设置</div>\n            <button class=\"ai-close\" id=\"aiClose\">×</button>\n        </div>\n        <div class=\"ai-body\">\n            <div class=\"ai-field\">\n                <label class=\"ai-label\">API地址</label>\n                <input type=\"text\" class=\"ai-input\" id=\"aiEndpointInput\" placeholder=\"https://api.siliconflow.cn/v1/chat/completions\">\n                <div class=\"ai-hint\">兼容OpenAI格式的API地址</div>\n            </div>\n            <div class=\"ai-field\">\n                <label class=\"ai-label\">API Key</label>\n                <input type=\"password\" class=\"ai-input\" id=\"aiKeyInput\" placeholder=\"sk-xxx...\">\n                <div class=\"ai-hint\">API密钥，将安全存储在本地</div>\n            </div>\n            <div class=\"ai-field\">\n                <label class=\"ai-label\">模型名称</label>\n                <input type=\"text\" class=\"ai-input\" id=\"aiModelInput\" placeholder=\"如: Qwen/Qwen2.5-7B-Instruct\">\n                <div class=\"ai-hint\">API支持的模型名称</div>\n            </div>\n            <div class=\"ai-field\">\n                <label class=\"ai-label\">系统提示词</label>\n                <textarea class=\"ai-textarea\" id=\"aiPromptInput\" placeholder=\"设定AI的角色和行为规则...\"></textarea>\n                <div class=\"ai-hint\">设定AI的人设、回复风格和行为准则</div>\n            </div>\n        </div>\n        <div class=\"ai-footer\">\n            <button class=\"ai-btn cancel\" id=\"aiCancel\">取消</button>\n            <button class=\"ai-btn save\" id=\"aiSave\">保存设置</button>\n        </div>\n    ";
+    const _0x1e9859 = document.createElement("div");
+    _0x1e9859.className = "ai-settings-modal";
+    _0x1e9859.id = "provinceModal";
+    _0x1e9859.innerHTML = "\n        <div class=\"ai-header\" style=\"background:linear-gradient(135deg, #10b981, #059669);\">\n            <div class=\"ai-title\">📍 选择省份</div>\n            <button class=\"ai-close\" id=\"provinceClose\">×</button>\n        </div>\n        <div class=\"ai-body\" style=\"padding:15px;\">\n            <div id=\"provinceGrid\" style=\"display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;\"></div>\n        </div>\n        <div class=\"ai-footer\">\n            <button class=\"ai-btn cancel\" id=\"provinceCancel\">取消</button>\n            <button class=\"ai-btn save\" id=\"provinceSave\" style=\"background:linear-gradient(135deg, #10b981, #059669);\">确定选择</button>\n        </div>\n    ";
+    const _0xba7c81 = document.createElement("input");
+    _0xba7c81.type = "file";
+    _0xba7c81.id = "blacklistFileInput";
+    _0xba7c81.accept = ".json";
+    document.body.appendChild(_0x46fe05);
+    document.body.appendChild(_0x5521ca);
+    document.body.appendChild(_0x5ee0cf);
+    document.body.appendChild(_0x47a351);
+    document.body.appendChild(_0x55f651);
+    document.body.appendChild(_0x2843a6);
+    document.body.appendChild(_0x18f6c2);
+    document.body.appendChild(_0x45c833);
+    document.body.appendChild(_0x1e9859);
+    document.body.appendChild(_0xba7c81);
+    function _0x2fe43a() {
+      _0x5ee0cf.classList.toggle("show");
+      _0x5521ca.classList.toggle("show");
+    }
+    function _0x97fc61() {
+      {
+        _0x5ee0cf.classList.remove("show");
+        _0x5521ca.classList.remove("show");
+      }
+    }
+    _0x46fe05.addEventListener("mousedown", function (_0x3180f4) {
+      _0x4e25b8 = true;
+      _0x4462d6 = false;
+      _0x134312 = _0x3180f4.clientX;
+      _0x1c456c = _0x3180f4.clientY;
+      const _0x289a46 = _0x46fe05.getBoundingClientRect();
+      _0x33f751 = _0x289a46.left;
+      _0xd77646 = _0x289a46.top;
+      _0x46fe05.style.cursor = "grabbing";
+      _0x46fe05.style.opacity = "0.8";
+      _0x46fe05.style.transition = "none";
+      _0x3180f4.preventDefault();
+      _0x3180f4.stopPropagation();
+    });
+    document.addEventListener("mousemove", function (_0x185655) {
+      if (!_0x4e25b8) {
+        return;
+      }
+      const _0x12dd50 = _0x185655.clientX - _0x134312;
+      const _0x3778c5 = _0x185655.clientY - _0x1c456c;
+      if (Math.abs(_0x12dd50) > 5 || Math.abs(_0x3778c5) > 5) {
+        _0x4462d6 = true;
+      }
+      let _0x2ec6fd = _0x33f751 + _0x12dd50;
+      let _0x39c48f = _0xd77646 + _0x3778c5;
+      const _0x48dc4f = window.innerWidth - _0x46fe05.offsetWidth;
+      const _0x2ee03e = window.innerHeight - _0x46fe05.offsetHeight;
+      _0x2ec6fd = Math.max(0, Math.min(_0x2ec6fd, _0x48dc4f));
+      _0x39c48f = Math.max(0, Math.min(_0x39c48f, _0x2ee03e));
+      _0x46fe05.style.left = _0x2ec6fd + "px";
+      _0x46fe05.style.top = _0x39c48f + "px";
+      _0x46fe05.style.right = "auto";
+      _0x46fe05.style.bottom = "auto";
+      _0x185655.preventDefault();
+    });
+    document.addEventListener("mouseup", function (_0x3ef069) {
+      if (_0x4e25b8) {
+        _0x4e25b8 = false;
+        _0x46fe05.style.cursor = "grab";
+        _0x46fe05.style.opacity = "1";
+        _0x46fe05.style.transition = "all 0.3s ease";
+        if (!_0x4462d6) {
+          _0x2fe43a();
+        }
+      }
+    });
+    const _0x229dda = {
+      passive: false
+    };
+    _0x46fe05.addEventListener("touchstart", function (_0x3c3fb0) {
+      _0x4e25b8 = true;
+      _0x4462d6 = false;
+      const _0x3dd3df = _0x3c3fb0.touches[0];
+      _0x134312 = _0x3dd3df.clientX;
+      _0x1c456c = _0x3dd3df.clientY;
+      const _0x4aa2dc = _0x46fe05.getBoundingClientRect();
+      _0x33f751 = _0x4aa2dc.left;
+      _0xd77646 = _0x4aa2dc.top;
+      _0x46fe05.style.opacity = "0.8";
+      _0x46fe05.style.transition = "none";
+      _0x3c3fb0.preventDefault();
+    }, _0x229dda);
+    const _0x2bf79a = {
+      passive: false
+    };
+    document.addEventListener("touchmove", function (_0x500c3a) {
+      if (!_0x4e25b8) {
+        return;
+      }
+      const _0x2a6754 = _0x500c3a.touches[0];
+      const _0x3c5ef3 = _0x2a6754.clientX - _0x134312;
+      const _0x44cdef = _0x2a6754.clientY - _0x1c456c;
+      if (Math.abs(_0x3c5ef3) > 5 || Math.abs(_0x44cdef) > 5) {
+        _0x4462d6 = true;
+      }
+      let _0x4f9161 = _0x33f751 + _0x3c5ef3;
+      let _0x2bcf6c = _0xd77646 + _0x44cdef;
+      const _0x599815 = window.innerWidth - _0x46fe05.offsetWidth;
+      const _0x5852d6 = window.innerHeight - _0x46fe05.offsetHeight;
+      _0x4f9161 = Math.max(0, Math.min(_0x4f9161, _0x599815));
+      _0x2bcf6c = Math.max(0, Math.min(_0x2bcf6c, _0x5852d6));
+      _0x46fe05.style.left = _0x4f9161 + "px";
+      _0x46fe05.style.top = _0x2bcf6c + "px";
+      _0x46fe05.style.right = "auto";
+      _0x46fe05.style.bottom = "auto";
+      _0x500c3a.preventDefault();
+    }, _0x2bf79a);
+    document.addEventListener("touchend", function (_0x45d68c) {
+      if (_0x4e25b8) {
+        _0x4e25b8 = false;
+        _0x46fe05.style.opacity = "1";
+        _0x46fe05.style.transition = "all 0.3s ease";
+        if (!_0x4462d6) {
+          _0x2fe43a();
+        }
+      }
+    });
+    document.querySelectorAll(".cp-tab-item").forEach(_0x141c4f => {
+      _0x141c4f.addEventListener("click", function () {
+        document.querySelectorAll(".cp-tab-item").forEach(_0x21c023 => _0x21c023.classList.remove("active"));
+        document.querySelectorAll(".cp-tab-content").forEach(_0x5e5101 => _0x5e5101.classList.remove("active"));
+        this.classList.add("active");
+        const _0x46ace9 = "tab_" + this.dataset.tab;
+        document.getElementById(_0x46ace9).classList.add("active");
+      });
+    });
+    _0x5521ca.addEventListener("click", _0x97fc61);
+    document.getElementById("panelClose").addEventListener("click", _0x97fc61);
+    document.addEventListener("keydown", function (_0x37cba1) {
+      {
+        _0x37cba1.key === "Escape" && _0x5ee0cf.classList.contains("show") && _0x97fc61();
+      }
+    });
+    function _0x2368e4(_0x343b0c, _0x542c20 = "info", _0x5ea786 = 4000) {
+      const _0x25ba5b = document.createElement("div");
+      _0x25ba5b.className = "toast " + _0x542c20;
+      const _0x30847e = {
+        success: "✅",
+        error: "❌",
+        warning: "⚠️",
+        info: "ℹ️"
+      };
+      _0x25ba5b.innerHTML = "\n        <span class=\"toast-icon\">" + (_0x30847e[_0x542c20] || "ℹ️") + "</span>\n        <span>" + _0x343b0c + "</span>\n      ";
+      _0x47a351.appendChild(_0x25ba5b);
+      setTimeout(() => {
+        _0x25ba5b.classList.add("fade-out");
+        setTimeout(() => {
+          _0x25ba5b.parentNode && _0x25ba5b.parentNode.removeChild(_0x25ba5b);
+        }, 300);
+      }, _0x5ea786);
+      return _0x25ba5b;
+    }
+    window.showToast = _0x2368e4;
+    document.getElementById("ckb_script").addEventListener("change", function () {
+      const _0x3b0c38 = this.checked ? "开启" : "关闭";
+      chatPage.scriptIsRun = this.checked;
+      _0x2368e4("脚本" + _0x3b0c38, this.checked ? "success" : "info");
+      console.log("脚本启动: " + _0x3b0c38);
+    });
+    document.getElementById("ckb_wait_reply").addEventListener("change", function () {
+      const _0x34273c = this.checked ? "开启" : "关闭";
+      waitReplyEnabled = this.checked;
+      document.getElementById("wait_reply_options").style.display = this.checked ? "block" : "none";
+      saveWaitReplyConfig();
+      _0x2368e4("等待回复: " + _0x34273c, this.checked ? "success" : "info");
+      console.log("等待回复: " + _0x34273c);
+    });
+    document.getElementById("input_wait_timeout").addEventListener("change", function () {
+      let _0x3ae2bc = parseInt(this.value);
+      if (isNaN(_0x3ae2bc) || _0x3ae2bc < 10) {
+        _0x3ae2bc = 10;
+      }
+      if (_0x3ae2bc > 120) {
+        _0x3ae2bc = 120;
+      }
+      this.value = _0x3ae2bc;
+      waitReplyTimeout = _0x3ae2bc;
+      saveWaitReplyConfig();
+      _0x2368e4("超时时间: " + _0x3ae2bc + "秒", "info");
+      console.log("等待回复超时时间: " + _0x3ae2bc + "秒");
+    });
+    document.getElementById("ckb_ai").addEventListener("change", function () {
+      const _0x5341de = this.checked ? "开启" : "关闭";
+      aiEnabled = this.checked;
+      document.getElementById("ai_options").style.display = this.checked ? "block" : "none";
+      !this.checked && stopAIChat();
+      saveAIConfig();
+      _0x2368e4("AI托管: " + _0x5341de, this.checked ? "success" : "info");
+      console.log("AI托管: " + _0x5341de);
+    });
+    document.getElementById("btn_ai_settings").addEventListener("click", function () {
+      document.getElementById("aiEndpointInput").value = aiApiEndpoint;
+      document.getElementById("aiKeyInput").value = aiApiKey;
+      document.getElementById("aiModelInput").value = aiModel;
+      document.getElementById("aiPromptInput").value = aiSystemPrompt;
+      _0x55f651.classList.add("show");
+      _0x45c833.classList.add("show");
+    });
+    document.getElementById("aiClose").addEventListener("click", function () {
+      _0x55f651.classList.remove("show");
+      _0x45c833.classList.remove("show");
+    });
+    document.getElementById("aiCancel").addEventListener("click", function () {
+      _0x55f651.classList.remove("show");
+      _0x45c833.classList.remove("show");
+    });
+    document.getElementById("aiSave").addEventListener("click", function () {
+      const _0x37bc10 = document.getElementById("aiEndpointInput").value.trim();
+      const _0x1676bd = document.getElementById("aiKeyInput").value.trim();
+      const _0x4e0ec9 = document.getElementById("aiModelInput").value.trim();
+      const _0x18570f = document.getElementById("aiPromptInput").value.trim();
+      if (!_0x37bc10) {
+        _0x2368e4("请输入API地址", "warning");
+        return;
+      }
+      if (!_0x1676bd) {
+        _0x2368e4("请输入API Key", "warning");
+        return;
+      }
+      if (!_0x4e0ec9) {
+        _0x2368e4("请输入模型名称", "warning");
+        return;
+      }
+      if (!_0x18570f) {
+        _0x2368e4("请输入系统提示词", "warning");
+        return;
+      }
+      aiApiEndpoint = _0x37bc10;
+      aiApiKey = _0x1676bd;
+      aiModel = _0x4e0ec9;
+      aiSystemPrompt = _0x18570f;
+      saveAIConfig();
+      _0x55f651.classList.remove("show");
+      _0x45c833.classList.remove("show");
+      _0x2368e4("AI设置已保存", "success");
+      console.log("[AI设置] API:", aiApiEndpoint, "模型:", aiModel);
+    });
+    document.getElementById("ckb_match").addEventListener("change", function () {
+      const _0x199be5 = this.checked ? "女生" : "男生";
+      const _0x37a0ec = this.checked ? "🚺 " : "🚹 ";
+      document.getElementById("txt_match").textContent = _0x37a0ec + "仅" + _0x199be5;
+      chatPage.MatchWho = _0x199be5;
+      localStorage.setItem("ssby_match_gender", _0x199be5);
+      _0x2368e4("匹配模式: " + _0x199be5, "info");
+      console.log("匹配模式: " + _0x199be5);
+    });
+    document.getElementById("ckb_qingliu").addEventListener("change", function () {
+      const _0x2a65ff = this.checked ? "开启" : "关闭";
+      filterQingliu = this.checked;
+      _0x2368e4("过滤清流标签: " + _0x2a65ff, this.checked ? "warning" : "info");
+      console.log("过滤清流标签: " + _0x2a65ff);
+    });
+    document.getElementById("ckb_under18").addEventListener("change", function () {
+      const _0x5566c3 = this.checked ? "开启" : "关闭";
+      filterUnder18 = this.checked;
+      _0x2368e4("过滤18岁以下: " + _0x5566c3, this.checked ? "warning" : "info");
+      console.log("过滤18岁以下: " + _0x5566c3);
+    });
+    let _0x33ac18 = [];
+    function _0x2fe178() {
+      document.getElementById("province_count").textContent = selectedProvinces.length;
+    }
+    function _0x14a719() {
+      const _0x260c27 = document.getElementById("provinceGrid");
+      _0x260c27.innerHTML = ALL_PROVINCES.map(_0x786d93 => "\n        <label style=\"display:flex; align-items:center; padding:6px 8px; background:" + (_0x33ac18.includes(_0x786d93) ? "#dcfce7" : "#f8fafc") + "; border:1px solid " + (_0x33ac18.includes(_0x786d93) ? "#22c55e" : "#e2e8f0") + "; border-radius:6px; cursor:pointer; font-size:12px; transition:all 0.2s;\">\n          <input type=\"checkbox\" value=\"" + _0x786d93 + "\" " + (_0x33ac18.includes(_0x786d93) ? "checked" : "") + " style=\"margin-right:4px; accent-color:#22c55e;\">\n          " + _0x786d93 + "\n        </label>\n      ").join("");
+      _0x260c27.querySelectorAll("input[type=\"checkbox\"]").forEach(_0x228560 => {
+        _0x228560.addEventListener("change", function () {
+          const _0x1971ea = this.value;
+          this.checked ? !_0x33ac18.includes(_0x1971ea) && _0x33ac18.push(_0x1971ea) : _0x33ac18 = _0x33ac18.filter(_0x17c04e => _0x17c04e !== _0x1971ea);
+          _0x14a719();
+        });
+      });
+    }
+    function _0x38dda3() {
+      try {
+        localStorage.setItem("ssby_province_enabled", String(filterProvinceEnabled));
+        localStorage.setItem("ssby_provinces", JSON.stringify(selectedProvinces));
+        localStorage.setItem("ssby_filter_no_region", String(filterNoRegion));
+      } catch (_0x1bd551) {
+        console.error("[省份筛选] 保存配置失败:", _0x1bd551);
+      }
+    }
+    function _0x25d406() {
+      try {
+        const _0x3ca05f = localStorage.getItem("ssby_province_enabled");
+        const _0x45468b = localStorage.getItem("ssby_provinces");
+        const _0x4ee212 = localStorage.getItem("ssby_filter_no_region");
+        filterProvinceEnabled = _0x3ca05f === "true";
+        selectedProvinces = _0x45468b ? JSON.parse(_0x45468b) : [];
+        filterNoRegion = _0x4ee212 === "true";
+      } catch (_0x2ffbdb) {
+        console.error("[省份筛选] 加载配置失败:", _0x2ffbdb);
+      }
+    }
+    _0x25d406();
+    document.getElementById("ckb_province").addEventListener("change", function () {
+      const _0x433016 = this.checked ? "开启" : "关闭";
+      filterProvinceEnabled = this.checked;
+      document.getElementById("province_options").style.display = this.checked ? "block" : "none";
+      _0x38dda3();
+      if (this.checked && selectedProvinces.length === 0) {
+        _0x2368e4("请至少选择一个省份", "warning", 3000);
+      } else {
+        _0x2368e4("省份筛选: " + _0x433016, this.checked ? "success" : "info");
+      }
+      console.log("省份筛选: " + _0x433016);
+    });
+    document.getElementById("ckb_no_region").addEventListener("change", function () {
+      filterNoRegion = this.checked;
+      _0x38dda3();
+      _0x2368e4(this.checked ? "将过滤不显示地区的人" : "不过滤不显示地区的人", "info");
+    });
+    document.getElementById("btn_province_selector").addEventListener("click", function () {
+      _0x33ac18 = [...selectedProvinces];
+      _0x14a719();
+      _0x55f651.classList.add("show");
+      _0x1e9859.classList.add("show");
+    });
+    document.getElementById("btn_select_all_province").addEventListener("click", function () {
+      _0x33ac18 = [...ALL_PROVINCES];
+      selectedProvinces = [...ALL_PROVINCES];
+      _0x2fe178();
+      _0x38dda3();
+      _0x2368e4("已选择全部省份", "success");
+    });
+    document.getElementById("btn_clear_province").addEventListener("click", function () {
+      _0x33ac18 = [];
+      selectedProvinces = [];
+      _0x2fe178();
+      _0x38dda3();
+      _0x2368e4("已清空选择", "info");
+    });
+    document.getElementById("provinceClose").addEventListener("click", function () {
+      _0x55f651.classList.remove("show");
+      _0x1e9859.classList.remove("show");
+    });
+    document.getElementById("provinceCancel").addEventListener("click", function () {
+      _0x55f651.classList.remove("show");
+      _0x1e9859.classList.remove("show");
+    });
+    document.getElementById("provinceSave").addEventListener("click", function () {
+      selectedProvinces = [..._0x33ac18];
+      _0x2fe178();
+      _0x38dda3();
+      _0x55f651.classList.remove("show");
+      _0x1e9859.classList.remove("show");
+      _0x2368e4("已选择 " + selectedProvinces.length + " 个省份", "success");
+    });
+    document.getElementById("ckb_custom_age").addEventListener("change", function () {
+      const _0x45b066 = this.checked ? "开启" : "关闭";
+      customAgeEnabled = this.checked;
+      document.getElementById("custom_age_options").style.display = this.checked ? "block" : "none";
+      saveCustomAgeConfig();
+      _0x2368e4("自定义年龄: " + _0x45b066, this.checked ? "success" : "info");
+      console.log("自定义年龄: " + _0x45b066);
+    });
+    function _0x1150f9() {
+      document.querySelectorAll("input[name=\"custom_age\"]").forEach(function (_0x164646) {
+        const _0x537d3d = _0x164646.parentElement;
+        _0x164646.checked ? _0x537d3d.classList.add("active") : _0x537d3d.classList.remove("active");
+      });
+    }
+    document.querySelectorAll("input[name=\"custom_age\"]").forEach(function (_0x4973d5) {
+      _0x4973d5.addEventListener("change", function () {
+        customAgeValue = this.value;
+        saveCustomAgeConfig();
+        _0x1150f9();
+        const _0x578f86 = this.value === "2" ? "18-23岁" : "23岁以上";
+        _0x2368e4("年龄设置为: " + _0x578f86, "info");
+        console.log("自定义年龄设置为: " + _0x578f86);
+      });
+    });
+    _0x1150f9();
+    document.getElementById("btn_contact").addEventListener("click", function () {
+      const _0xdd094a = this;
+      const _0x42a4b1 = _0xdd094a.textContent;
+      _0xdd094a.textContent = "发送中...";
+      _0xdd094a.classList.add("sending");
+      _0x2368e4("正在发送联系方式...", "info", 2000);
+      _0x1c6fca();
+      setTimeout(() => {
+        _0xdd094a.textContent = _0x42a4b1;
+        _0xdd094a.classList.remove("sending");
+        _0x2368e4("联系方式发送成功！", "success");
+      }, 2000);
+    });
+    document.getElementById("btn_vip_card").addEventListener("click", function () {
+      openVIPCardWallet();
+      _0x2368e4("正在打开VIP卡包...", "info", 1500);
+    });
+    document.getElementById("ckb_blacklist").addEventListener("change", function () {
+      const _0xf242f9 = this.checked ? "开启" : "关闭";
+      blacklistEnabled = this.checked;
+      _0x2368e4("黑名单功能: " + _0xf242f9, this.checked ? "warning" : "info");
+      console.log("黑名单功能: " + _0xf242f9);
+    });
+    function _0x46a062() {
+      try {
+        const _0x143159 = localStorage.getItem("partner");
+        return _0x143159 ? JSON.parse(_0x143159) : null;
+      } catch (_0x37e95a) {
+        return null;
+      }
+    }
+    function _0x58b307(_0x37cf55) {
+      const _0x418b11 = {
+        "1": "18岁以下",
+        "2": "18-22岁",
+        "3": "23岁以上"
+      };
+      return _0x418b11[String(_0x37cf55)] || "";
+    }
+    function _0x291007(_0xd6023e) {
+      const _0x352e51 = new Date(_0xd6023e);
+      const _0x2b5492 = {
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      };
+      return _0x352e51.toLocaleDateString("zh-CN", _0x2b5492);
+    }
+    function _0xb528b9() {
+      const _0x223e9 = document.getElementById("blList");
+      const _0x2cabbe = document.getElementById("blCount");
+      blacklist.length === 0 ? _0x223e9.innerHTML = "<div class=\"bl-empty\">🎉 黑名单为空</div>" : _0x223e9.innerHTML = blacklist.map((_0x53e511, _0xbc17c9) => "\n          <div class=\"bl-item\" data-id=\"" + _0x53e511.id + "\">\n            <div class=\"bl-item-header\">\n              <div class=\"bl-item-remark\">" + (_0x53e511.remark || "未备注") + "</div>\n              <div class=\"bl-item-actions\">\n                <button class=\"bl-item-btn edit\" data-index=\"" + _0xbc17c9 + "\" title=\"编辑\">✏️</button>\n                <button class=\"bl-item-btn delete\" data-index=\"" + _0xbc17c9 + "\" title=\"删除\">🗑️</button>\n              </div>\n            </div>\n            <div class=\"bl-item-info\">\n              <span>" + (_0x53e511.gender || "未知") + " " + _0x58b307(_0x53e511.age) + "</span>\n              <span>" + _0x291007(_0x53e511.addTime) + "</span>\n            </div>\n          </div>\n        ").join("");
+      _0x2cabbe.textContent = "共 " + blacklist.length + " 人";
+    }
+    function _0x172959() {
+      _0xb528b9();
+      _0x55f651.classList.add("show");
+      _0x2843a6.classList.add("show");
+    }
+    function _0xb3067b() {
+      _0x55f651.classList.remove("show");
+      _0x2843a6.classList.remove("show");
+    }
+    function _0x4ed3f3() {
+      const _0x267a05 = _0x46a062();
+      if (!_0x267a05) {
+        _0x2368e4("当前没有聊天对象", "warning");
+        return;
+      }
+      if (!_0x267a05.idEncrypted) {
+        _0x2368e4("无法获取对方信息", "error");
+        return;
+      }
+      if (isInBlacklist(_0x267a05.idEncrypted)) {
+        _0x2368e4("对方已在黑名单中", "warning");
+        return;
+      }
+      document.getElementById("bcInfo").textContent = "对方: " + (_0x267a05.strGender || "未知") + " " + _0x58b307(_0x267a05.strAge);
+      document.getElementById("bcRemark").value = "";
+      _0x55f651.classList.add("show");
+      _0x18f6c2.classList.add("show");
+    }
+    function _0x3f3165() {
+      _0x18f6c2.classList.remove("show");
+      _0x55f651.classList.remove("show");
+    }
+    function _0x470064() {
+      const _0x18b960 = _0x46a062();
+      if (!_0x18b960 || !_0x18b960.idEncrypted) {
+        _0x2368e4("无法获取对方信息", "error");
+        _0x3f3165();
+        return;
+      }
+      const _0x41e592 = document.getElementById("bcRemark").value.trim();
+      const _0x551298 = addToBlacklist(_0x18b960.idEncrypted, _0x41e592 || "未备注", _0x18b960.strGender || "", _0x18b960.strAge || "");
+      if (_0x551298) {
+        _0x2368e4("已将对方加入黑名单", "success");
+        _0x3f3165();
+        const _0x59f211 = document.querySelector("a.tab-link[href=\"#view-leave\"]");
+        if (_0x59f211) {
+          _0x59f211.click();
+        }
+      } else {
+        _0x2368e4("对方已在黑名单中", "warning");
+      }
+    }
+    document.getElementById("btn_blacklist_manage").addEventListener("click", function () {
+      _0x172959();
+    });
+    document.getElementById("btn_blacklist_add").addEventListener("click", function () {
+      _0x4ed3f3();
+    });
+    document.getElementById("blClose").addEventListener("click", _0xb3067b);
+    _0x55f651.addEventListener("click", function () {
+      _0xb3067b();
+      _0x3f3165();
+    });
+    document.getElementById("blList").addEventListener("click", function (_0x344295) {
+      const _0x5a8d11 = _0x344295.target.closest(".bl-item-btn");
+      if (!_0x5a8d11) {
+        return;
+      }
+      const _0x1cf903 = parseInt(_0x5a8d11.dataset.index);
+      const _0x133485 = blacklist[_0x1cf903];
+      if (!_0x133485) {
+        return;
+      }
+      if (_0x5a8d11.classList.contains("edit")) {
+        const _0x3e4e84 = prompt("修改备注:", _0x133485.remark);
+        _0x3e4e84 !== null && (updateBlacklistRemark(_0x133485.id, _0x3e4e84.trim() || "未备注"), _0xb528b9(), _0x2368e4("备注已更新", "success"));
+      } else {
+        _0x5a8d11.classList.contains("delete") && confirm("确定要将此人从黑名单移除吗？") && (removeFromBlacklist(_0x133485.id), _0xb528b9(), _0x2368e4("已从黑名单移除", "success"));
+      }
+    });
+    document.getElementById("blExport").addEventListener("click", function () {
+      if (blacklist.length === 0) {
+        _0x2368e4("黑名单为空，无法导出", "warning");
+        return;
+      }
+      exportBlacklist();
+      _0x2368e4("黑名单已导出", "success");
+    });
+    document.getElementById("blImport").addEventListener("click", function () {
+      _0xba7c81.click();
+    });
+    _0xba7c81.addEventListener("change", function (_0x1a2c53) {
+      const _0x3434bd = _0x1a2c53.target.files[0];
+      if (!_0x3434bd) {
+        return;
+      }
+      importBlacklist(_0x3434bd).then(_0x577b9a => {
+        _0xb528b9();
+        _0x2368e4("成功导入 " + _0x577b9a + " 人", "success");
+      }).catch(_0x56f5fc => {
+        _0x2368e4("导入失败: " + _0x56f5fc.message, "error");
+      });
+      _0xba7c81.value = "";
+    });
+    document.getElementById("blClear").addEventListener("click", function () {
+      if (blacklist.length === 0) {
+        _0x2368e4("黑名单已为空", "info");
+        return;
+      }
+      confirm("确定要清空全部 " + blacklist.length + " 人吗？此操作不可恢复！") && (clearBlacklist(), _0xb528b9(), _0x2368e4("黑名单已清空", "success"));
+    });
+    document.getElementById("bcCancel").addEventListener("click", _0x3f3165);
+    document.getElementById("bcConfirm").addEventListener("click", _0x470064);
+    let _0x1801bf = null;
+    let _0x3b0af4 = false;
+    function _0x2d5f23() {
+      if (!chatPage.scriptIsRun) {
+        return false;
+      }
+      if (!blacklistEnabled || _0x3b0af4) {
+        return false;
+      }
+      const _0x3ab3d7 = _0x46a062();
+      if (!_0x3ab3d7 || !_0x3ab3d7.idEncrypted) {
+        return false;
+      }
+      const _0x13d8ba = _0x3ab3d7.extra ? _0x3ab3d7.extra.chatId : null;
+      const _0x4feb9b = _0x13d8ba + "_" + _0x3ab3d7.idEncrypted;
+      if (_0x1801bf === _0x4feb9b) {
+        return false;
+      }
+      const _0x17a37e = isInBlacklist(_0x3ab3d7.idEncrypted);
+      if (_0x17a37e) {
+        _0x1801bf = _0x4feb9b;
+        _0x3b0af4 = true;
+        console.log("[黑名单] 检测到黑名单用户:", _0x17a37e.remark);
+        _0x2368e4("🚫 已自动跳过黑名单用户：" + _0x17a37e.remark, "warning", 3000);
+        setTimeout(() => {
+          const _0x51f20c = document.querySelector("a.tab-link[href=\"#view-leave\"]");
+          _0x51f20c && _0x51f20c.click();
+          setTimeout(() => {
+            _0x3b0af4 = false;
+            _0x1801bf = null;
+          }, 2000);
+        }, 100);
+        return true;
+      }
+      _0x1801bf = _0x4feb9b;
+      return false;
+    }
+    window.checkBlacklist = _0x2d5f23;
+    window.isInBlacklist = isInBlacklist;
+    window.getCurrentPartner = _0x46a062;
+    setInterval(_0x2d5f23, 500);
+    setTimeout(_0x2d5f23, 100);
+    const _0x59e991 = localStorage.getItem("ssby_match_gender");
+    _0x59e991 === "男生" ? (chatPage.MatchWho = "男生", document.getElementById("txt_match").textContent = "🚹 仅男生") : (document.getElementById("ckb_match").checked = true, chatPage.MatchWho = "女生", document.getElementById("txt_match").textContent = "🚺 仅女生");
+    waitReplyEnabled && (document.getElementById("ckb_wait_reply").checked = true, document.getElementById("wait_reply_options").style.display = "block");
+    document.getElementById("input_wait_timeout").value = waitReplyTimeout;
+    customAgeEnabled && (document.getElementById("ckb_custom_age").checked = true, document.getElementById("custom_age_options").style.display = "block");
+    const _0x25257e = document.querySelector("input[name=\"custom_age\"][value=\"" + customAgeValue + "\"]");
+    _0x25257e && (_0x25257e.checked = true);
+    aiEnabled && (document.getElementById("ckb_ai").checked = true, document.getElementById("ai_options").style.display = "block");
+    filterProvinceEnabled && (document.getElementById("ckb_province").checked = true, document.getElementById("province_options").style.display = "block");
+    filterNoRegion && (document.getElementById("ckb_no_region").checked = true);
+    _0x2fe178();
+    _0x2368e4("驭师插件，欢迎您的使用！", "success");
+  }
+  try {
+    initialized && console.log("已初始化！");
+  } catch {
+    initialized = true;
+    _0x153982();
+  }
+};
+MainFunc();
