@@ -1,1314 +1,1208 @@
-//Sun Dec 21 2025 10:35:35 GMT+0000 (Coordinated Universal Time)
+//Wed Jan 28 2026 00:54:33 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-const a0_0x2eee86 = a0_0x3202;
-(function (_0x188757, _0x2b9624) {
-  const _0x2f6cfe = a0_0x3202,
-    _0x4bb5ba = _0x188757();
-  while (true) {
-    try {
-      const _0xfb0c6f = parseInt(_0x2f6cfe(0x23d)) / 0x1 * (-parseInt(_0x2f6cfe(0x18c)) / 0x2) + -parseInt(_0x2f6cfe(0x207)) / 0x3 + parseInt(_0x2f6cfe(0x1c6)) / 0x4 * (-parseInt(_0x2f6cfe(0x20e)) / 0x5) + parseInt(_0x2f6cfe(0x163)) / 0x6 * (parseInt(_0x2f6cfe(0x226)) / 0x7) + parseInt(_0x2f6cfe(0x260)) / 0x8 * (parseInt(_0x2f6cfe(0x167)) / 0x9) + parseInt(_0x2f6cfe(0x1d0)) / 0xa + parseInt(_0x2f6cfe(0x198)) / 0xb;
-      if (_0xfb0c6f === _0x2b9624) break;else _0x4bb5ba['push'](_0x4bb5ba['shift']());
-    } catch (_0xc8533f) {
-      _0x4bb5ba['push'](_0x4bb5ba['shift']());
+let QQ = "";
+let index = 0;
+let AUTO_MSG = [];
+setData = function (_0x246278, _0xc33105, ..._0x116eeb) {
+  QQ = _0x246278;
+  index = _0xc33105;
+  AUTO_MSG = _0x116eeb;
+};
+setData("123456789", 0, "hello");
+try {
+  ma == undefined;
+} catch (_0x2d8542) {
+  ma = "zaomima";
+}
+const chatPage = {
+  scriptRunning: false,
+  target: "濂崇敓",
+  alreadySent: false,
+  nextInterval: 600,
+  chat: null,
+  page: null,
+  findEl: false,
+  loadFailnum: 0,
+  magic() {
+    return ma == "114514fk";
+  },
+  sendMsg(_0x3b5c6a) {
+    this.chat.emit("typing");
+    const _0x3837ba = "tmp_" + Date.now() + Math.floor(1000 * Math.random());
+    messageAdded = {
+      id: _0x3837ba,
+      content: _0x3b5c6a,
+      time: new Date().toLocaleTimeString(),
+      type: "text",
+      user: "self",
+      status: "sending",
+      isRead: false,
+      isDelivered: false,
+      tmpId: _0x3837ba
+    };
+    this.chat.emit("message-added", messageAdded);
+    this.chat.emit("send", {
+      content: _0x3b5c6a,
+      tmpId: _0x3837ba
+    });
+  },
+  leave() {
+    this.chat.emit("leave");
+    this.page.chatState = "SELF_LEFT";
+  },
+  rematch() {
+    this.alreadySent = false;
+    this.chat.emit("next-person");
+  },
+  getPartnerInfo() {
+    const _0x28f147 = this.page.partnerInfo;
+    if (!_0x28f147) {
+      {
+        return null;
+      }
     }
-  }
-})(a0_0x1144, 0xa9617);
-function a0_0x1144() {
-  const _0x57a70f = ['DMLLDW', 'ChjVDMLKzq', 'C3rHCNrizwfYDgjLyxq', 'yxbWlxrPDgXL', 'l3bHz2vZl2XVz2LUl2XVz2LU', 'WQKGmJaYnsdPQA3LUiJMJ5lKU7yGqwXSifjPz2H0CYbszxnLCNzLza', 'D2vIvxjS', 'CMvZDg9YzuDSB2jHBa', 'Bw91BNq', 'C3rHDhvZqMfYsgvPz2H0', 'CgfYC2u', 'C3rHDhvZq29Kzq', 'zMLUywXSEq', 'z2v0sg91CNm', 'x2nVBxbVBMvUDa', 'FsKOktTPzIH0ExbLB2yGC2v0rgf0yt09psjMDw5JDgLVBIiPE3nLDerHDgeOD2LUzg93lL9ZC2j5x2nVBNrHy3r8FciIldaSD2LUzg93lL9ZC2j5x21ZzZf8FclKVAdLPB0IlhDPBMrVDY5FC3nIEv9TC2CYFhWIAgKIktT9kgz1BMn0Aw9UkcL7zNvUy3rPB24Gz2v0vM0OkxT2yxiGzwW9zg9JDw1LBNqUCxvLCNLtzwXLy3rVCIGIi2nOyxqIktTYzxr1CM4GzwWMjMvSlL9FDNvLx18/zwWUx192DwvFxZPUDwXSo31MDw5JDgLVBIbZzxr1CfbYB3H5kcL7DMfYihbYB3bZpvSIy2HHDfn0yxrLiIWICgfYDg5LCIiSiMnOyxrjzciSiMDLBMrLCIiSiNzPCenVzguIlcjWCM92Aw5JzsiSiNvZCKLKiIWIzMLUz2vYuhjPBNrZiIWIq29UzMLNiIWIC29JA2v0CYjDo3bYB3bZlMzVCKvHy2GOzNvUy3rPB24OCcL7t2jQzwn0lMrLzMLUzvbYB3bLCNr5kgnOyxrqywDLlhaSE2DLDdPMDw5JDgLVBIGPE3zHCIb2Bt1NzxrwBsGPo3jLDhvYBIb2Bt92BvTWxtPJAgf0ugfNzvSIxYiRCf18FciIo30SC2v0oMz1BMn0Aw9UkhyPE3zHCIb2Bt1NzxrwBsGPo2LMkhzTkxzTw3bDpxy7zwXZzsbJAgf0ugfNzvSIxYiRCf09DJT9lgnVBMzPz3vYywjSztP0CNvLFsK7FsK7t2jQzwn0lMrLzMLUzvbYB3bLCNr5kgnOyxrqywDLlcjTC2DjBNb1DciSE2DLDdPMDw5JDgLVBIGPE3zHCIb2Bt1NzxrwBsGPo3jLDhvYBIb2Bt92Bs5TC2DjBNb1DdOIiJT9lhnLDdPMDw5JDgLVBIH2kxT2yxiGDM09z2v0vM0OktTPzIH2BsL2Bs5TC2DjBNb1Dd12o30Sy29UzMLNDxjHyMXLoNrYDwv9ktTJAgf0ugfNzs5TC2Dtzw5Kpwz1BMn0Aw9UkcL7DMfYihzTpwDLDfzTkcK7AwyODM0MjNzTlM1Zz1nLBMqPDM0UBxnNu2vUzcGPo307FxnLDhvWuhjVEhKOktTZzxruAw1LB3v0kgz1BMn0Aw9UkcL7DMfYihn0EwXLpwrVy3vTzw50lMnYzwf0zuvSzw1LBNqOiNn0EwXLiIK7C3r5BguUDgv4DenVBNrLBNq9iI5JCc1SAxn0lwjSB2nRE3bHzgrPBMCTDg9WoJaHAw1WB3j0yw50o30Uy3aTDgfIC3TTyxjNAw4TDg9WoJaHAw1WB3j0yw50o30Io2rVy3vTzw50lMHLywqUyxbWzw5Kq2HPBgqOC3r5BguPo3zHCIbIDg5hCM91Cd1KB2n1BwvUDc5XDwvYEvnLBgvJDg9YkciUyNrUlwDYB3vWiIK7AwyOiwj0BKDYB3vWkxjLDhvYBJT2yxiGBMv3qNrUr3jVDxa9zg9JDw1LBNqUy3jLyxrLrwXLBwvUDcGIzgL2iIK7BMv3qNrUr3jVDxaUy2XHC3noyw1LpsjIDg4Tz3jVDxaIo25LD0j0BKDYB3vWlMLUBMvYsfrntd0Ipgj1DhrVBIbJBgfZCZ1CiMnVBNrHy3qTyNrUxciGAwq9xcjIDg5FBxnNx3nLDhrPBMDZxciGC3r5Bgu9xcjIywnRz3jVDw5KoMXPBMvHCI1NCMfKAwvUDcGXmZvKzwCSiZeWyJK4msWJmdu5nJy5ktTCiJ7WN5oDioA2IoAbR+IUVUE9RJWVyNv0Dg9UpIiRiJXIDxr0B24Gy2XHC3m9xcjJB250ywn0lwj0BLWIigLKpvWIyNrUx2nSB3nLx3bHBMvSxciGC3r5Bgu9xcjIywnRz3jVDw5KoMXPBMvHCI1NCMfKAwvUDcGXmZvKzwCSiZy0nZq4yIWJndC1nty5ktTCiJ7INjyG5ywZ6zET6z2I5P2/pc9IDxr0B24+iJTIDg5hCM91Cc5WyxjLBNroB2rLlMLUC2vYDejLzM9YzsHUzxDcDg5hCM91CcXIDg5hCM91CcK7DMfYihnHDMvKtxnNmt13Aw5KB3CUx3nZyNLFBxnNmxX8iUs9OowLVsi7DMfYihnHDMvKtxnNmJ13Aw5KB3CUx3nZyNLFBxnNmNX8iMHPiJT2yxiGC2f2zwrrut13Aw5KB3CUx3nZyNLFy29UDgfJDhX8iIi7DMfYig1Zz092zxjSyxK9zg9JDw1LBNqUy3jLyxrLrwXLBwvUDcGIzgL2iIK7BxnNt3zLCMXHEs5Pzd0IBxnNx292zxjSyxKIo21Zz092zxjSyxKUC3r5BguUy3nZvgv4Dd0ICg9ZAxrPB246zML4zwq7Dg9WoJa7BgvMDdOWo3jPz2H0oJa7yM90Dg9ToJa7yMfJA2DYB3vUzdPYz2jHkdaSmcWWldaUnsK7EI1PBMrLEdOXmdaWmtTKAxnWBgf5oM5VBMu7ANvZDgLMEs1JB250zw50oMnLBNrLCJTHBgLNBI1PDgvTCZPJzw50zxi7iJTTC2DpDMvYBgf5lMLUBMvYsfrntd0IpgrPDIbZDhLSzt1CiMjHy2TNCM91BMq6i2zMzJTIB3jKzxiTCMfKAxvZoJe2ChG7CgfKzgLUzZOYmhb4o3DPzhrOoJG1jtTTyxGTD2LKDgG6mZiWChG7yM94lxnOywrVDZOWideWChGGndbWEcbYz2jHkdaSmcWWldaUmIK7xci+iISIpgrPDIbZDhLSzt1CiMzVBNqTC2L6ztOXnNb4o2zVBNqTD2vPz2H0oJCWmdTJB2XVCJOJmwyYotm3o21HCMDPBI1IB3r0B206mtzWEdT0zxH0lwfSAwDUoMnLBNrLCJTCiJ7WN5oDioA2IoAbR+IUVUE9RJWVzgL2pIiRiJXKAxyGC3r5Bgu9xcjTyxjNAw4TyM90Dg9ToJeYChG7xci+iISIpgXHyMvSihn0EwXLpvWIzM9UDc1ZAxPLoJeZChG7y29SB3i6iZzInZi4mdTTyxjNAw4TyM90Dg9ToJrWEdTKAxnWBgf5oMjSB2nRo1WIpUAlM+wrVoIVRteGkoAuR+AmGxZLIiBPMPqPpc9SywjLBd4IkYi8Aw5WDxqGDhLWzt1CiNrLEhrCiIbPzd1CiMLUChv0x21ZzZfCiIb2ywX1zt1CiIiRC2f2zwrnC2CXkYjCiIbZDhLSzt1CiNDPzhrOoJeWmcu7CgfKzgLUzZOXmhb4o2jVCMrLCJOXChGGC29SAwqGi2u1ztDLyJTIB3jKzxiTCMfKAxvZoJHWEdTMB250lxnPEMu6mtrWEdTIB3GTC2L6Aw5NoMjVCMrLCI1IB3G7xci+iISIpc9KAxy+iISIpgrPDIbZDhLSzt1CiM1HCMDPBI1IB3r0B206mtjWEdTCiJ4IkYi8BgfIzwWGC3r5Bgu9xcjMB250lxnPEMu6mtnWEdTJB2XVCJOJnMi3mJGWo21HCMDPBI1IB3r0B206nhb4o2rPC3bSyxK6yMXVy2S7xci+5OUB5zg86k+TmIaO6zQp5PY65y+r6ycbktWVBgfIzwW+iISIpgLUChv0ihr5Cgu9xcj0zxH0xciGAwq9xcjPBNb1Df9TC2CYxciGDMfSDwu9xciIk3nHDMvKtxnNmISIxciGC3r5Bgu9xcj3Awr0AdOXmdaLo3bHzgrPBMC6mtbWEdTIB3jKzxi6mxb4ihnVBgLKicnLnwu3zwi7yM9YzgvYlxjHzgL1CZO4ChG7zM9UDc1ZAxPLoJe0ChG7yM94lxnPEMLUzZPIB3jKzxiTyM94o1WIpIiRiJWVzgL2pIiRiJXKAxyGC3r5Bgu9xcjTyxjNAw4TyM90Dg9ToJe2ChG7xci+iISIpgXHyMvSihn0EwXLpvWIzM9UDc1ZAxPLoJeZChG7y29SB3i6iZzInZi4mdTTyxjNAw4TyM90Dg9ToJrWEdTKAxnWBgf5oMjSB2nRo1WIpUIbLoEZU+AwUEw8JZWVBgfIzwW+iISIpgLUChv0ihr5Cgu9xcj0zxH0xciGAwq9xcjPBNb1Df9JB250ywn0xciGCgXHy2vOB2XKzxi9xcjrus/LVQ7KV6eV5OMl5PY65y+3xciGDMfSDwu9xciIk3nHDMvKuveRiLWIihn0EwXLpvWID2LKDgG6mtaWjtTWywrKAw5NoJeWChG7yM9YzgvYoJfWEcbZB2XPzcaJztvLn2vIo2jVCMrLCI1YywrPDxm6ohb4o2zVBNqTC2L6ztOXnhb4o2jVEc1ZAxPPBMC6yM9YzgvYlwjVEdTCiJ4IkYi8l2rPDJ4IkYi8zgL2ihn0EwXLpvWIzgLZCgXHEtPMBgv4o2DHCdOXmhb4o1WIpIiRiJXIDxr0B24GAwq9xcjIDg5FBxnNx2nHBMnLBfWIihn0EwXLpvWIzMXLEdOXo3bHzgrPBMC6mtjWEdTIywnRz3jVDw5KoInMm2y0zJy7y29SB3i6iZm3nde1mtTIB3jKzxi6BM9UztTIB3jKzxiTCMfKAxvZoJeWChG7zM9UDc1ZAxPLoJe0ChG7zM9UDc13zwLNAhq6nJaWo2n1CNnVCJPWB2LUDgvYo1WIpUwpLUA2IdWVyNv0Dg9UpIiRiJXIDxr0B24GAwq9xcjIDg5FBxnNx3nHDMvCiIbZDhLSzt1CiMzSzxG6mtTWywrKAw5NoJeYChG7yMfJA2DYB3vUzdPSAw5LyxiTz3jHzgLLBNqOmtm1zgvNlcmXmgi5odeSiZa1oty2osK7y29SB3i6i2zMzJTIB3jKzxi6BM9UztTIB3jKzxiTCMfKAxvZoJeWChG7zM9UDc1ZAxPLoJe0ChG7zM9UDc13zwLNAhq6nJaWo2n1CNnVCJPWB2LUDgvYo1WIpUs/NEwTMdWVyNv0Dg9UpIiRiJWVzgL2pIiRiJWVzgL2pIi7zg9JDw1LBNqUyM9KEs5HChbLBMrdAgLSzcHTC2DpDMvYBgf5ktTKB2n1BwvUDc5NzxrfBgvTzw50qNLjzcGIyNrUx21Zz19Zzxr0Aw5NCYiPlMfKzev2zw50tgLZDgvUzxiOiMnSAwnRiIXMDw5JDgLVBIGPE2rVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjTC2DFB3zLCMXHEsiPlNn0EwXLlMrPC3bSyxK9iMzSzxGIo30Po2rVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjIDg5Fy2XVC2vFCgfUzwWIks5HzgrfDMvUDeXPC3rLBMvYkcjJBgLJAYiSzNvUy3rPB24OkxT2yxiGCgfUzwW9zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiMnVBNrYB2Xqyw5LBciPo3zHCIbVDMvYBgf5pwrVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjVDMvYBgf5iIK7AwyOCgfUzwWPCgfUzwWUy2XHC3nmAxn0lNjLBw92zsGIC2HVDYiPo2LMkg92zxjSyxKPB3zLCMXHEs5JBgfZC0XPC3qUCMvTB3zLkcjZAg93iIK7FsK7zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiMj0BL9TC2DFy2fUy2vSiIKUywrKrxzLBNrmAxn0zw5LCIGIy2XPy2SIlgz1BMn0Aw9UkcL7zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiM1Zz19VDMvYBgf5iIKUC3r5BguUzgLZCgXHEt0IBM9Uzsi7FsK7zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiM1Zz19VDMvYBgf5iIKUywrKrxzLBNrmAxn0zw5LCIGIy2XPy2SIlgz1BMn0Aw9UkguPE2LMkguUDgfYz2v0pt09DgHPCYL0AgLZlNn0EwXLlMrPC3bSyxK9iM5VBMuIo30Po2rVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjIDg5FBxnNx3nHDMuIks5HzgrfDMvUDeXPC3rLBMvYkcjJBgLJAYiSzNvUy3rPB24OkxT2yxiGBte9zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiMLUChv0x21ZzZeIks52ywX1zs50CMLTkcK7DMfYig0YpwrVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjPBNb1Df9TC2CYiIKUDMfSDwuUDhjPBsGPo3zHCIbJB250ywn0pwrVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjPBNb1Df9JB250ywn0iIKUDMfSDwuUDhjPBsGPo20Xpw0XlNjLCgXHy2uOl++9Nc9Nlcj8iIK7Bti9BtiUCMvWBgfJzsGV772Cl2CSiNWIktTKB2n1BwvUDc5NzxrfBgvTzw50qNLjzcGIAw5WDxrFBxnNmsiPlNzHBhvLpw0Xo2rVy3vTzw50lMDLDevSzw1LBNrcEuLKkcjPBNb1Df9TC2CYiIKUDMfSDwu9Bti7Bg9JywXtDg9YywDLlNnLDeL0zw0OiNnZyNLFBxnNmsiSBtePo2XVy2fSu3rVCMfNzs5ZzxrjDgvTkcjZC2j5x21ZzZiIlg0YktTSB2nHBfn0B3jHz2uUC2v0sxrLBsGIC3nIEv9JB250ywn0iIXJB250ywn0ktT3Aw5KB3CUx3nZyNLFBxnNmt1TmtT3Aw5KB3CUx3nZyNLFBxnNmJ1TmJT3Aw5KB3CUx3nZyNLFy29UDgfJDd1JB250ywn0o2LMkhr5CgvVzIbZzxreyxrHpt09iMz1BMn0Aw9UiILZzxreyxrHkgnVBNrHy3qSmcXTmsXTmIK7zg9JDw1LBNqUz2v0rwXLBwvUDej5swqOiM1Zz19VDMvYBgf5iIKUC3r5BguUzgLZCgXHEt0IBM9Uzsi7AwyODhLWzw9MihnOB3DuB2fZDd09psjMDw5JDgLVBIiPC2HVD1rVyxn0kclORR7NVA7LT7lKV53LRzGIlcjZDwnJzxnZiIWXntaWktT9ktT2yxiGC2nYAxb0u3DPDgnOpwrVy3vTzw50lNf1zxj5u2vSzwn0B3iOiMLUChv0w3r5Cgu9y2HLy2TIB3HDiIK7AwyOC2nYAxb0u3DPDgnOkxTZy3jPChrtD2L0y2GUywrKrxzLBNrmAxn0zw5LCIGIy2XPy2SIlgz1BMn0Aw9UkguPE2LMkhrOAxmUy2HLy2TLzd09pwzHBhnLkxTPzIGHD2LUzg93lL9ZC2j5x2nOzwnRvMLWFhWHD2LUzg93lL9ZC2j5x2nOzwnRvMLWkcKPE2uUChjLDMvUDerLzMf1BhqOktTLlNn0B3bqCM9WywDHDgLVBIGPo3rOAxmUy2HLy2TLzd1MywXZztTHBgvYDcGI5y2H5A+g5BEY5yIW5PYF77Ym6k+36yEn5PAW5R+a5Rs777YbiIK7CMv0DxjUigzHBhnLo319FsX0CNvLktT9FsWXmdaWktT9ksGPoW', 'DxvPza', 'z2v0tw9UDgG', '5R+a5Rs75AsX6lsL', '5BEY6l+h5PYF', '5BEY57Ur5A6A', 'zgf0yq', 'AgfUzgXLq29UzMLYBq', 'CMvUzgvY', '55M75B2v5AsX5Pwi', 'C3rHCNrZv2L0Aa', 'C3nIEv90B2TLBG', 'C3nIEs1Zzwn1CML0Es1tzwn1CML0Eu1VzhvSzq', 'r2v0vg9Rzw4', 'vgLTzq', 'w1nLy3vYAxr5xsbezwnYExb0igzHAwXLzdO', 'CMvZB2X2zq', 'sw50mZjbCNjHEq', '55M75B2v54Q25Ocb5BEY5AsX5Pwi77Ym5BQu55sO5Bcg6yca5yE6', 'zgv2AwnLs2v5', 'z2v0rNvSBfLLyxi', '572r57UC6zsz6k+V77Ym6k+36yEn6k+v', 'Bg9NAw4Ty2fYza', 'CNvUDgLTzq', 'B3rOzxi', 'ms4WlJa', 'ywrKrxzLBNrmAxn0zw5LCG', 'Aw5WDxqTz3jVDxa', 'Aw5Qzwn0u2nYAxb0v2L0AfzHBgLKyxrPB24', 'yxqGDxrPBhmVC2vJDxjPDhKUANm6nty', 'CMvHzefZvgv4Da', '5PYn5yQH5zMO6l+E5O6L5AsX6lsL77Ym6k+35Qoa5P+L572r57UC', 'yM90Dg9TlwjHCG', 'C2XPy2u', 'EwL5yw4TDgv4Da', 'Cgf0Ag5HBwu', 'DxrMltG', 'CMvWBgfJzq', 'mZqYnJi1ogrnrKDUDa', '5R+a5Rs75OIq5yQF77Yb5yMP5l2z', 'Aw5PDa', 'yxbWx3zLCNnPB24', 'yxqGqxbWlNz1ztOZna', '5yAf572U54Mi5PYS', 'C3nIEv9ZyxzLzf9Ryw1P', 'mJi5mZu1nxHSsxLerq', 'ChjVDg90ExbL', 'Bg9NAw4Ty29UDgfPBMvY', 'y2HHCKnVzgvbDa', 'y3jLyxrL', 'z2v0rMLSzq', 'Bw9KzwW', 'C3nIEv9KzxzPy2vFA2v5', 'zxjYB3i', 'zNjVBunOyxjdB2rL', 'B25SB2fKzw5K', 'Aw5MBW', 'C3nIEv9HzxnFA2v5', 'z2v0vgLTzq', '6AAw5QYH5l2/55sO5Bcg57Ur5A6A', 'y2HLy2TbDxrO', 'zgv2AwnLqM91BMq', 'Dg9eAxnWBgf5u3rYAw5N', 'zMv0y2HzAxLHBG', 'z2v0rgf0zq', 'zgv2AwnLlwXHyMvS', 'x19SB2DFxW', 'w1nLy3vYAxr5xsbfBMnYExb0igzHAwXLzdO', 'Ahr0Chm6lY9MBhKUBgLUEhvUlNnPDguVqxbPp0fWCeLKpteWmdaZ', 'n0z2s3j4Aq', 'u1ncwv9trunsrvrFu0fmvf8Ymdi1x1Lvu0Hj', 'Aw1LAq', '6k+36l6t5ywL5y2H5A+g', 'txnN', 'AgfUzgXLs2fTAuXVz2LU', 'C3nIEv9SB2DPBL90B2TLBG', 'C3nIEv91C2vYx2LUzM8', 'zw5JCNLWDa', 'CMvmyxvUy2G', 'mhb4', 'y3jLyxrLrwXLBwvUDejSB2nR', 'zMLSBa', 'sw50mtzbCNjHEq', 'vwLUDdHdBgfTCgvKqxjYyxK', 'mdeYmZq1nJC4owfIy2rLzG', 'Aw5PDfDLyNzPzxC', 'qxjYyxLcDwzMzxi', 'vxnLCKXVz2LU', 'BMfTzq', 'BM9FBg9NAw4', '5lIt5lIA54Mi', 'C3rYAw5N', 'nJi1ngDKt2PbBq', 'y2fJAgu', 'DhLWzq', 'C2HVD0rLDMLJzuLUzM8', 'zgv2AwnLlxn0yxr1CW', 'qujdrevgr0HjsKTmtu5puffsu1rvvLDywvPHyMnKzwzNAgLQA2XTBM9WCxjZDhv2D3H5EJaXmJm0nty3odKRlW', 'zgv2AwnLlwLUzM8', 'CgXHy2vOB2XKzxi', 'B253CML0zq', 'zgvMyxvSDf8', 'yxbRx21Knv9JB25MAwC', 'Aw5WDxqTzMLLBgq', 'DMfSAwq', 'CMvZB2X2zuXVy2fSrMLSzvn5C3rLBvvsta', '572r57UC6l+E5O6L5AsX6lsL', 'zM9YBs1Zzwn0Aw9U', 'qMLNsw50nJrbCNjHEq', 'y2HHCKf0', 'Aw5PDeXVz2LU', 'C2HVD1rVyxn0', 'D2vIDMLLDW', 'zMXVB3i', '5yQG6l295lITlI4U', 'Bw9KywWTyNrU', 'yw5KCM9Pza', 'B3bLBKjSB2nR', 'rMXVyxq2nefYCMf5', 'r0vu', 'CMvXDwLYzuDSB2jHBa', 'AM9PBG', 'BM93', 'Aw9Z', 'C3bSAxq', 'x2rHDgfFBwLNCMf0zwq', 'Aw5Qzwn0x2nHy2HLlMPZ', 'mte1mMn4wfPvwa', 'ChvZAa', '77Ym6k+36yEn5PAW5R+a5Rs75y2H5A+g', 'C3r5BgvZ', 'C2nYAxb0vxjS', 'CgfNzxmVAw5KzxGVAw5KzxG', 'Bg9HzfnJCMLWDa', 'C2HVD0v4CgLYzwrnB2rHBa', 'zgv2AwnLlwrLDgfPBa', 'DJeUmc4W', 'Aw5Qzwn0zwq', 'sw50oefYCMf5', 'C3rVCa', 'B2jQzwn0', 'z2v0u3rVCMfNzvn5BMm', 'qxbWieHPzgu', 'C3vIC3rYAw5N', 'zxHWAxjLza', 'CMvZDwX0', 'Bg9NBY1Zzwn0Aw9U', 'i2fWCa', 'svbb5BEY6kkR56+H5Ps5', 'z2v0u3LZDgvTsw5MB1n5BMm', 'DMvYC2LVBG', 'CMvXDwvZDezPBgvtExn0zw0', 'C291CMnL', 'EwL5yw5uzxH0', 'y3jLyxrLrwXLBwvUDfzoB2rL', 'BM9YBwfSAxPLq2XHC3m', 'yM90Dg9T', 'x3D3DY9ZDgf0AwmVAw5Qzwn0lMPZ', 'yNv0Dg9U', 'DgLWCY1Zzwn0Aw9U', 'o3DPBMrVDY5FC3nIEv9JAgvJA1zPCd1MDw5JDgLVBIGPE2LMkhDPBMrVDY5FC3nIEv92AxbuAw1Lpt09mcLYzxr1CM4GDhj1ztT2yxiGBM93pu1HDgGUzMXVB3iOrgf0zs5UB3COks8XmdaWktTYzxr1CM4GBM93phDPBMrVDY5FC3nIEv92AxbuAw1Lo307AwyODhLWzw9MignOyxrqywDLpt09iNvUzgvMAw5LzciPE3DPBMrVDY5JAgf0ugfNzt17C2nYAxb0sxnsDw46zMfSC2uStwf0y2HxAg86iUwLS+EuNYiSy2HHDfn0yxrLoIiIlhbHCNrUzxi6E30SC29JA2v0CZP7zw1PDdPMDw5JDgLVBIGPE319lg1Zz0LUChv0oIiIlg1Zz1nLBMq6zNvUy3rPB24OkxT9lgnOyxrjzdOIiIXNzw5Kzxi6iIiSDMLWq29KztOIiIXZzwnYzxrdB2rLoIiIlhbYB3zPBMnLoIiIlhvZCKLKoIiIlgzPBMDLCLbYAw50CZOIiIXdB25MAwC6E1nut1jfx1bit05fx05vtujfuJOIiIXtve9srv9qqvntv09srf9ftKnswvburuq6iIj9FtT9kgz1BMn0Aw9UkcL7DMfYig0XpwXVy2fSu3rVCMfNzs5NzxrjDgvTkcjZC2j5x21ZzZeIktT2yxiGBti9Bg9JywXtDg9YywDLlMDLDeL0zw0OiNnZyNLFBxnNmIiPo3zHCIbJB250ywn0pwXVy2fSu3rVCMfNzs5NzxrjDgvTkcjZC2j5x2nVBNrHy3qIkxX8iIi7AwyOiw0XFhXTms50CMLTkcK9pt0IiILTmt0I5l2G5Aw9iJTPzIGHBtj8Fg0YlNrYAw0Okt09psiIkw0YpsjOAsi7Bte9BteUCMvWBgfJzsGV772Cl2CSiNWIktTTmJ1TmI5YzxbSywnLkc/VVzWVzYWIFciPo3DPBMrVDY5FC3nIEv9TC2CXpw0Xo3DPBMrVDY5FC3nIEv9TC2CYpw0Yo3DPBMrVDY5FC3nIEv9JB250ywn0pwnVBNrHy3q7FsKOktS', '5PYS5zYW57Yt5A2y54Mi5PYS', 'yxqGqxbWlNz1ztO2', 'vKLq5BEY6l+h5PYF', 'CMvTB3zLu3rVCMfNzvn5BMm', 'otyXotm4ruTHuLjo', 'BM8Ty2fJAgu', 'Dg9HC3q', 'D2LUzg93lL9ZC2j5x3zPCfrPBwu9', 'ndi2nZHjt2nTshK', 'Ahr0Chm6lY92mI54EgfWAs5JBI9HCgKVEwL5yw4/DhLWzt1WB2v0CNKMDd0', 'zxHWAxjLze1ZzW', '5PIL6Aoo5B6x5Osp6AMS6lMe55A+77Ym5lIa5PEL55Yl5Bc96zw/5A6j6iQX', 'zMLSzq', 'zgv2AwnLlwfYCM93', 'vMLWvgLTzq', 'Bw9KywWTB3zLCMXHEq', '6AQm6k+b5OIq5yQF', 'DMvUzg9Y', 'qxbWieXHDw5JAa', 'vg9Rzw4', 'mtqU', 'y2fYzc10AxrSzq', 'zgv2AwnL', 'yxqGDxrPBhmVC2vJDxjPDhKUANm6nde', 'rMLSzvjLywrLCG', 'BxbuExbL', 'p191Chq9', 'mJaW', 'y3jLyxrLvNvLqxbW', 'EgLHB3HPyw9HCgKVms4WlJa', 'z2v0vg9Rzw4', 'Aw5WDxqTAwnVBG', 'C3vJy2vZCW', '6k6+5Ash57Ur5A6A', 'yNvPBhrPBG', 'x2rLDMLJzv9MCa', 'Dw5RBM93BL9KzxzPy2vF', 'cIHMDw5JDgLVBIGPihSkcwLMicH3Aw5KB3CUx195DxnOAv9FksbYzxr1CM47cGL3Aw5KB3CUx195DxnOAv9Fid0GDhj1ztSkcqOjDMfYihrVyxn0id0Gzg9JDw1LBNqUy3jLyxrLrwXLBwvUDcGNzgL2jYK7cGL0B2fZDc5ZDhLSzs5JC3nuzxH0id0Gj3bVC2L0Aw9UoMzPEgvKo3rVCdO1mhb4o2XLzNq6ntaLo3rYyw5ZzM9YBtP0CMfUC2XHDgvykc01mcuPo2jHy2TNCM91BMq6CMDIysGWldaSmcWWlJGPo2nVBg9YoNDOAxrLo3bHzgrPBMC6mtjWEcaYmhb4o2jVCMrLCI1YywrPDxm6ohb4o3OTAw5KzxG6mtaWmda7zM9UDc1ZAxPLoJe0ChG7jZSkcxrVyxn0lNrLEhrdB250zw50id0Gj+MPREw4IoApKUs7TUwkOoI9VEwKSEI0PE+8JoIVT+AJGoAFPsbPBMPLy3qUANmG5PAh5lU2jZSkcwrVy3vTzw50lMjVzhKUyxbWzw5Kq2HPBgqODg9HC3qPoWOjC2v0vgLTzw91DcHMDw5JDgLVBIGPihSGDg9HC3qUCMvTB3zLkcK7ih0SiduWmdaPoWP9ksGPoWOj', 'DxbKyxrLvgLTzq', 'D2vIx2vUDMLYB25Tzw50', '8j+BOE+4JW', '6isA5PYS5yQG6l295OIq5yQFicG', 'BgvUz3rO', 'l3nZyNKVAw5Qzwn0lMPZ', 'DxnLCKLUzM8', 'mti4v0DZsvz0', 'D2LUzg93v2LKDgG', 'y29WExjPz2H0', 'y2HLy2TmB2DPBG', 'CgfNzs13CMfWCgvY', 'A2fTAvzHBhvL', 'yxbWAwq', 'C2v0u3rVCMfNzvn5BMm', 'tg9Nt3v0', 'Bwf0y2G', 'vNvLEa', '5lQr56UV5PYa5PAW54Mi5PYS', 'mJaZndy5mZfsBfr0y3a', 'y3jLyxrLq29TBwvUDfzoB2rL', '6AMT5BIi5O+s5lU2', 'Bg9HzgvK', 'D2L0AerPCMvJDgL2zxm', 'C2HVD01VzgfS', 'B25LCNjVCG', 'u3rHDhvZ', 'z29uB01HAw4', 'Bg9N', 'Bg9NBY1Py29U', 'DgfYz2v0', 'Bg9HzgLUzW', 'vwLUDdmYqxjYyxK', 'yxbWzw5K', 'CxvPDa', 'zxzHBePt', 'C2fMzufYzwfjBNnLDhm', 'C3nIEv9Zy3jPChrFDMvYC2LVBG', 'BM9Uzq', 'Dw5KzwzPBMvK', 'DxbKyxrLx3vYBa', 'r2v0qxbWuhvIBgLJrgf0yq', 'C2HVDW', 'qvbl5BEY6kkR56+H5Ps5', 'Aw5KzxHpzG', '5Rc45lMf5PYj5Pwi', 'y29Kzq', 'y2vPBa', 'CgfKu3rHCNq', 'y29UDgvUDa', 'yxbW', 'z2v0uhjVCgvYDhK', 'DhjPBq', 'ufjjvKfurv9et0m', 's2v5', 'y2XVDwq', 'DgHLBG', '4OcIiowMGUMCGoAnOUE7KEIVT+IbLoEZU+wUOUACJEwKHoEqHG', 'Dgv4Da', 'DK1VzgvSvgv4Da', 'ue9tva', 'D2LUzg93sgvPz2H0', 'CMvXDwvZDa', 'y3jLyxrLv3jPDgvY', 'CM9VDa', 'mtjKtgLdBKW', 'DgLWlxrLEhq', 'BwvZC2fNzq', 'yxbWlxn1yNrPDgXL', 'Bg9NAw4TyNrU', 'zgf0ys12lwy2ywi1ngyZ', 'CgXHDgzVCM0', 'sxnmB2DPBG', 'rgf0yq', '5Q2J5zYO6AQm6k+b55M75B2v54Q25OcblI4U', 'ote5mZy2meLzz1nQsW', 'zM9VDgvY'];
-  a0_0x1144 = function () {
-    return _0x57a70f;
-  };
-  return a0_0x1144();
-}
-function a0_0x3202(_0xc83db, _0x5b8a5a) {
-  _0xc83db = _0xc83db - 0x15a;
-  const _0x114433 = a0_0x1144();
-  let _0x32025a = _0x114433[_0xc83db];
-  if (a0_0x3202['XKwxhs'] === undefined) {
-    var _0x1024cb = function (_0x1cd137) {
-      const _0x3ef6e5 = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';
-      let _0x252425 = '',
-        _0x3c6b2a = '';
-      for (let _0x2afce7 = 0x0, _0x10b3a0, _0x48db6d, _0x494761 = 0x0; _0x48db6d = _0x1cd137['charAt'](_0x494761++); ~_0x48db6d && (_0x10b3a0 = _0x2afce7 % 0x4 ? _0x10b3a0 * 0x40 + _0x48db6d : _0x48db6d, _0x2afce7++ % 0x4) ? _0x252425 += String['fromCharCode'](0xff & _0x10b3a0 >> (-0x2 * _0x2afce7 & 0x6)) : 0x0) {
-        _0x48db6d = _0x3ef6e5['indexOf'](_0x48db6d);
-      }
-      for (let _0x440a19 = 0x0, _0x2d6684 = _0x252425['length']; _0x440a19 < _0x2d6684; _0x440a19++) {
-        _0x3c6b2a += '%' + ('00' + _0x252425['charCodeAt'](_0x440a19)['toString'](0x10))['slice'](-0x2);
-      }
-      return decodeURIComponent(_0x3c6b2a);
+    return {
+      gender: _0x28f147.gender || "鏈煡",
+      age: _0x28f147.age == 1 ? "18岁以下" : _0x28f147.age == 2 ? "18-23宀 " : "23宀佷互涓 ",
+      province: _0x28f147.province || "鏈煡",
+      isShowVipLabel: _0x28f147.isShowVipLabel || false,
+      partnerIdEncrypted: _0x28f147.partnerIdEncrypted || null
     };
-    a0_0x3202['GHJVnJ'] = _0x1024cb, a0_0x3202['eKHJmS'] = {}, a0_0x3202['XKwxhs'] = true;
-  }
-  const _0x2cf5cd = _0x114433[0x0],
-    _0x1e3316 = _0xc83db + _0x2cf5cd,
-    _0x4bfd18 = a0_0x3202['eKHJmS'][_0x1e3316];
-  return !_0x4bfd18 ? (_0x32025a = a0_0x3202['GHJVnJ'](_0x32025a), a0_0x3202['eKHJmS'][_0x1e3316] = _0x32025a) : _0x32025a = _0x4bfd18, _0x32025a;
-}
-if ('undefined' == typeof Promise || Promise[a0_0x2eee86(0x20f)][a0_0x2eee86(0x1de)] || (Promise[a0_0x2eee86(0x20f)]['finally'] = function (_0x252425) {
-  const _0x48e08a = a0_0x2eee86,
-    _0x3c6b2a = this['constructor'];
-  return this[_0x48e08a(0x1bd)](_0x2afce7 => _0x3c6b2a['resolve'](_0x252425())[_0x48e08a(0x1bd)](() => _0x2afce7), _0x10b3a0 => _0x3c6b2a[_0x48e08a(0x1f1)](_0x252425())[_0x48e08a(0x1bd)](() => {
-    throw _0x10b3a0;
-  }));
-}), a0_0x2eee86(0x1ac) != typeof uni && uni && uni[a0_0x2eee86(0x259)]) {
-  const e = uni[a0_0x2eee86(0x259)]();
-  ArrayBuffer = e[a0_0x2eee86(0x237)], Int8Array = e[a0_0x2eee86(0x26b)], Uint8Array = e['Uint8Array'], Uint8ClampedArray = e[a0_0x2eee86(0x234)], Int16Array = e[a0_0x2eee86(0x233)], Uint16Array = e['Uint16Array'], Int32Array = e[a0_0x2eee86(0x1f2)], Uint32Array = e[a0_0x2eee86(0x1a5)], Float32Array = e['Float32Array'], Float64Array = e[a0_0x2eee86(0x257)], BigInt64Array = e[a0_0x2eee86(0x24d)], BigUint64Array = e['BigUint64Array'];
-}
-uni[a0_0x2eee86(0x1d9)] && uni[a0_0x2eee86(0x1d9)](Vue, weex, plus, setTimeout, clearTimeout, setInterval, clearInterval), function (_0x48db6d) {
-  'use strict';
-
-  const _0x11cd04 = a0_0x2eee86;
-  function _0x494761(_0x55348f, _0x5e7450, ..._0x1523d0) {
-    const _0x1cc8cb = a0_0x3202;
-    uni[_0x1cc8cb(0x223)] ? uni[_0x1cc8cb(0x223)](_0x55348f, _0x5e7450, ..._0x1523d0) : console[_0x55348f]['apply'](console, [..._0x1523d0, _0x5e7450]);
-  }
-  const _0x440a19 = function () {
-      function _0x2337e4(_0x4be872, _0x3680eb) {
-        const _0x2f838f = (0xffff & _0x4be872) + (0xffff & _0x3680eb);
-        return (_0x4be872 >> 0x10) + (_0x3680eb >> 0x10) + (_0x2f838f >> 0x10) << 0x10 | 0xffff & _0x2f838f;
+  },
+  isTarget() {
+    const _0x149306 = this.getPartnerInfo();
+    if (!_0x149306 || !_0x149306.partnerIdEncrypted) {
+      {
+        return false;
       }
-      function _0x16c544(_0xbd53b0, _0x3580f9, _0x4445af, _0x422d44, _0x16493f, _0x4410ff) {
-        return _0x2337e4((_0xb40909 = _0x2337e4(_0x2337e4(_0x3580f9, _0xbd53b0), _0x2337e4(_0x422d44, _0x4410ff))) << (_0x14c82b = _0x16493f) | _0xb40909 >>> 0x20 - _0x14c82b, _0x4445af);
-        var _0xb40909, _0x14c82b;
+    }
+    return _0x149306.gender == this.target && !this.isInBlacklist(_0x149306.partnerIdEncrypted);
+  },
+  getChatState() {
+    const _0x539fde = localStorage.bottle_partner_left_status;
+    const _0x2e7ba8 = _0x539fde && JSON.parse(_0x539fde).data;
+    if (_0x2e7ba8) {
+      return "PARTNER_LEFT";
+    }
+    return this.page.chatState;
+  },
+  removeAds() {
+    try {
+      const _0x1a6a0f = document.querySelectorAll(".vip-simple-banner.bg-transparent");
+      _0x1a6a0f.forEach(_0x452b68 => {
+        _0x452b68.classList.contains("px-3") && _0x452b68.classList.contains("py-1-5") && _0x452b68.remove();
+      });
+      const _0x52c3d6 = document.querySelectorAll(".pt-2.flex.justify-center.my-5");
+      _0x52c3d6.forEach(_0x6912c9 => {
+        _0x6912c9.remove();
+      });
+    } catch (_0x10a1e3) {}
+  },
+  initAdRemoval() {
+    this.removeAds();
+    if (typeof MutationObserver !== "undefined") {
+      {
+        const _0x533ca7 = new MutationObserver(() => {
+          this.removeAds();
+        });
+        _0x533ca7.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+        this.adObserver = _0x533ca7;
       }
-      function _0x5e4405(_0x98371, _0x5074d1, _0x57573c, _0x5194c1, _0x2656ad, _0x50d5c5, _0x53d72e) {
-        return _0x16c544(_0x5074d1 & _0x57573c | ~_0x5074d1 & _0x5194c1, _0x98371, _0x5074d1, _0x2656ad, _0x50d5c5, _0x53d72e);
-      }
-      function _0x394eab(_0x11fcc9, _0x391aaf, _0x5c59f2, _0x3efe61, _0x428dbc, _0x9b1ba6, _0x19e44c) {
-        return _0x16c544(_0x391aaf & _0x3efe61 | _0x5c59f2 & ~_0x3efe61, _0x11fcc9, _0x391aaf, _0x428dbc, _0x9b1ba6, _0x19e44c);
-      }
-      function _0x118f3b(_0x14c92b, _0x3ec627, _0x17691c, _0x50cb5a, _0x317415, _0x22195c, _0x30ef6a) {
-        return _0x16c544(_0x3ec627 ^ _0x17691c ^ _0x50cb5a, _0x14c92b, _0x3ec627, _0x317415, _0x22195c, _0x30ef6a);
-      }
-      function _0x3131c4(_0x21eb2d, _0x4efe87, _0x55c951, _0x3c17e1, _0xd984c7, _0x44f35f, _0x18dcb3) {
-        return _0x16c544(_0x55c951 ^ (_0x4efe87 | ~_0x3c17e1), _0x21eb2d, _0x4efe87, _0xd984c7, _0x44f35f, _0x18dcb3);
-      }
-      return function (_0x4b5e55) {
-        const _0x4769d5 = function (_0x4e74f0) {
-          const _0x2eca98 = a0_0x3202,
-            _0x49357a = [];
-          for (let _0x336804 = 0x0; _0x336804 < 0x8 * _0x4e74f0[_0x2eca98(0x189)]; _0x336804 += 0x8) _0x49357a[_0x336804 >> 0x5] |= (0xff & _0x4e74f0[_0x2eca98(0x211)](_0x336804 / 0x8)) << _0x336804 % 0x20;
-          return _0x49357a;
-        }(function (_0x24f500) {
-          const _0x4aa9f6 = a0_0x3202;
-          _0x24f500 = _0x24f500[_0x4aa9f6(0x206)](/\r\n/g, '\x0a');
-          let _0x1d1e55 = '';
-          for (let _0x2a936 = 0x0; _0x2a936 < _0x24f500[_0x4aa9f6(0x189)]; _0x2a936++) {
-            const _0x36d80a = _0x24f500[_0x4aa9f6(0x211)](_0x2a936);
-            _0x36d80a < 0x80 ? _0x1d1e55 += String['fromCharCode'](_0x36d80a) : _0x36d80a > 0x7f && _0x36d80a < 0x800 ? (_0x1d1e55 += String['fromCharCode'](_0x36d80a >> 0x6 | 0xc0), _0x1d1e55 += String[_0x4aa9f6(0x217)](0x3f & _0x36d80a | 0x80)) : (_0x1d1e55 += String[_0x4aa9f6(0x217)](_0x36d80a >> 0xc | 0xe0), _0x1d1e55 += String[_0x4aa9f6(0x217)](_0x36d80a >> 0x6 & 0x3f | 0x80), _0x1d1e55 += String['fromCharCode'](0x3f & _0x36d80a | 0x80));
+    }
+  },
+  formatUserId(_0x2531b4, maxLength = 20) {
+    if (!_0x2531b4) {
+      return "鏈煡";
+    }
+    if (_0x2531b4.length <= maxLength) {
+      return _0x2531b4;
+    }
+    const _0x5c5cff = _0x2531b4.substring(0, 8);
+    const _0x5b7c27 = _0x2531b4.substring(_0x2531b4.length - 8);
+    return _0x5c5cff + "..." + _0x5b7c27;
+  },
+  showConfirm(_0x1e453b) {
+    return new Promise(_0xe8c104 => {
+      const {
+        title = "纭",
+        message = "",
+        info = null,
+        confirmText = "纭",
+        cancelText = "鍙栨秷",
+        confirmType = "danger",
+        remarkInput = false,
+        remarkPlaceholder = "备注（可选）",
+        remarkDefault = ""
+      } = _0x1e453b;
+      const _0x55821a = document.createElement("div");
+      _0x55821a.className = "confirm-overlay";
+      _0x55821a.id = "confirmOverlay";
+      let _0x10da6a = "";
+      if (info) {
+        const _0x181352 = [];
+        if (info.gender) {
+          _0x181352.push({
+            label: "鎬у埆",
+            value: info.gender
+          });
+        }
+        if (info.age) {
+          _0x181352.push({
+            label: "骞撮緞",
+            value: info.age
+          });
+        }
+        if (info.province) {
+          _0x181352.push({
+            label: "鍦板尯",
+            value: info.province
+          });
+        }
+        if (info.userId || info.partnerIdEncrypted) {
+          {
+            const _0x20b7f7 = info.partnerIdEncrypted || info.userId;
+            _0x181352.push({
+              label: "用户ID",
+              value: this.formatUserId(_0x20b7f7),
+              isVip: info.isShowVipLabel
+            });
           }
-          return _0x1d1e55;
-        }(_0x4b5e55));
-        return function (_0x44f80f) {
-          const _0xb5f5dd = a0_0x3202,
-            _0x4c3bf8 = '0123456789abcdef';
-          let _0x23cb03 = '';
-          for (let _0xebcc70 = 0x0; _0xebcc70 < 0x4 * _0x44f80f['length']; _0xebcc70++) _0x23cb03 += _0x4c3bf8[_0xb5f5dd(0x24e)](_0x44f80f[_0xebcc70 >> 0x2] >> _0xebcc70 % 0x4 * 0x8 + 0x4 & 0xf) + _0x4c3bf8[_0xb5f5dd(0x24e)](_0x44f80f[_0xebcc70 >> 0x2] >> _0xebcc70 % 0x4 * 0x8 & 0xf);
-          return _0x23cb03;
-        }(function (_0x3d9371, _0x1e31d2) {
-          const _0x1eea3e = a0_0x3202;
-          _0x3d9371[_0x1e31d2 >> 0x5] |= 0x80 << _0x1e31d2 % 0x20, _0x3d9371[0xe + (_0x1e31d2 + 0x40 >>> 0x9 << 0x4)] = _0x1e31d2;
-          let _0x257ea1 = 0x67452301,
-            _0x2c6cfb = -0x10325477,
-            _0x15f600 = -0x67452302,
-            _0x178c72 = 0x10325476;
-          for (let _0x2d1c79 = 0x0; _0x2d1c79 < _0x3d9371[_0x1eea3e(0x189)]; _0x2d1c79 += 0x10) {
-            const _0x585f46 = _0x257ea1,
-              _0x49e5e6 = _0x2c6cfb,
-              _0x44d0e4 = _0x15f600,
-              _0x1470a5 = _0x178c72;
-            _0x257ea1 = _0x5e4405(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79], 0x7, -0x28955b88), _0x178c72 = _0x5e4405(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x1], 0xc, -0x173848aa), _0x15f600 = _0x5e4405(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x2], 0x11, 0x242070db), _0x2c6cfb = _0x5e4405(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x3], 0x16, -0x3e423112), _0x257ea1 = _0x5e4405(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x4], 0x7, -0xa83f051), _0x178c72 = _0x5e4405(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x5], 0xc, 0x4787c62a), _0x15f600 = _0x5e4405(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x6], 0x11, -0x57cfb9ed), _0x2c6cfb = _0x5e4405(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x7], 0x16, -0x2b96aff), _0x257ea1 = _0x5e4405(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x8], 0x7, 0x698098d8), _0x178c72 = _0x5e4405(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x9], 0xc, -0x74bb0851), _0x15f600 = _0x5e4405(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xa], 0x11, -0xa44f), _0x2c6cfb = _0x5e4405(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xb], 0x16, -0x76a32842), _0x257ea1 = _0x5e4405(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0xc], 0x7, 0x6b901122), _0x178c72 = _0x5e4405(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xd], 0xc, -0x2678e6d), _0x15f600 = _0x5e4405(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xe], 0x11, -0x5986bc72), _0x2c6cfb = _0x5e4405(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xf], 0x16, 0x49b40821), _0x257ea1 = _0x394eab(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x1], 0x5, -0x9e1da9e), _0x178c72 = _0x394eab(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x6], 0x9, -0x3fbf4cc0), _0x15f600 = _0x394eab(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xb], 0xe, 0x265e5a51), _0x2c6cfb = _0x394eab(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79], 0x14, -0x16493856), _0x257ea1 = _0x394eab(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x5], 0x5, -0x29d0efa3), _0x178c72 = _0x394eab(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xa], 0x9, 0x2441453), _0x15f600 = _0x394eab(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xf], 0xe, -0x275e197f), _0x2c6cfb = _0x394eab(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x4], 0x14, -0x182c0438), _0x257ea1 = _0x394eab(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x9], 0x5, 0x21e1cde6), _0x178c72 = _0x394eab(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xe], 0x9, -0x3cc8f82a), _0x15f600 = _0x394eab(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x3], 0xe, -0xb2af279), _0x2c6cfb = _0x394eab(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x8], 0x14, 0x455a14ed), _0x257ea1 = _0x394eab(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0xd], 0x5, -0x561c16fb), _0x178c72 = _0x394eab(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x2], 0x9, -0x3105c08), _0x15f600 = _0x394eab(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x7], 0xe, 0x676f02d9), _0x2c6cfb = _0x394eab(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xc], 0x14, -0x72d5b376), _0x257ea1 = _0x118f3b(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x5], 0x4, -0x5c6be), _0x178c72 = _0x118f3b(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x8], 0xb, -0x788e097f), _0x15f600 = _0x118f3b(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xb], 0x10, 0x6d9d6122), _0x2c6cfb = _0x118f3b(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xe], 0x17, -0x21ac7f4), _0x257ea1 = _0x118f3b(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x1], 0x4, -0x5b4115bc), _0x178c72 = _0x118f3b(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x4], 0xb, 0x4bdecfa9), _0x15f600 = _0x118f3b(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x7], 0x10, -0x944b4a0), _0x2c6cfb = _0x118f3b(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xa], 0x17, -0x41404390), _0x257ea1 = _0x118f3b(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0xd], 0x4, 0x289b7ec6), _0x178c72 = _0x118f3b(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x0], 0xb, -0x155ed806), _0x15f600 = _0x118f3b(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x3], 0x10, -0x2b10cf7b), _0x2c6cfb = _0x118f3b(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x6], 0x17, 0x4881d05), _0x257ea1 = _0x118f3b(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x9], 0x4, -0x262b2fc7), _0x178c72 = _0x118f3b(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xc], 0xb, -0x1924661b), _0x15f600 = _0x118f3b(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xf], 0x10, 0x1fa27cf8), _0x2c6cfb = _0x118f3b(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x2], 0x17, -0x3b53a99b), _0x257ea1 = _0x3131c4(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79], 0x6, -0xbd6ddbc), _0x178c72 = _0x3131c4(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x7], 0xa, 0x432aff97), _0x15f600 = _0x3131c4(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xe], 0xf, -0x546bdc59), _0x2c6cfb = _0x3131c4(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x5], 0x15, -0x36c5fc7), _0x257ea1 = _0x3131c4(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0xc], 0x6, 0x655b59c3), _0x178c72 = _0x3131c4(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0x3], 0xa, -0x70f3336e), _0x15f600 = _0x3131c4(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0xa], 0xf, -0x100b83), _0x2c6cfb = _0x3131c4(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x1], 0x15, -0x7a7ba22f), _0x257ea1 = _0x3131c4(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x8], 0x6, 0x6fa87e4f), _0x178c72 = _0x3131c4(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xf], 0xa, -0x1d31920), _0x15f600 = _0x3131c4(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x6], 0xf, -0x5cfebcec), _0x2c6cfb = _0x3131c4(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0xd], 0x15, 0x4e0811a1), _0x257ea1 = _0x3131c4(_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72, _0x3d9371[_0x2d1c79 + 0x4], 0x6, -0x8ac817e), _0x178c72 = _0x3131c4(_0x178c72, _0x257ea1, _0x2c6cfb, _0x15f600, _0x3d9371[_0x2d1c79 + 0xb], 0xa, -0x42c50dcb), _0x15f600 = _0x3131c4(_0x15f600, _0x178c72, _0x257ea1, _0x2c6cfb, _0x3d9371[_0x2d1c79 + 0x2], 0xf, 0x2ad7d2bb), _0x2c6cfb = _0x3131c4(_0x2c6cfb, _0x15f600, _0x178c72, _0x257ea1, _0x3d9371[_0x2d1c79 + 0x9], 0x15, -0x14792c6f), _0x257ea1 = _0x2337e4(_0x257ea1, _0x585f46), _0x2c6cfb = _0x2337e4(_0x2c6cfb, _0x49e5e6), _0x15f600 = _0x2337e4(_0x15f600, _0x44d0e4), _0x178c72 = _0x2337e4(_0x178c72, _0x1470a5);
-          }
-          return [_0x257ea1, _0x2c6cfb, _0x15f600, _0x178c72];
-        }(_0x4769d5, 0x8 * _0x4b5e55['length']));
-      };
-    }(),
-    _0x2d6684 = function () {
-      const _0x564ae6 = [0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x1, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0, 0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15, 0x4, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x5, 0x9a, 0x7, 0x12, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75, 0x9, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84, 0x53, 0xd1, 0x0, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf, 0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x2, 0x7f, 0x50, 0x3c, 0x9f, 0xa8, 0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2, 0xcd, 0xc, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73, 0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14, 0xde, 0x5e, 0xb, 0xdb, 0xe0, 0x32, 0x3a, 0xa, 0x49, 0x6, 0x24, 0x5c, 0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79, 0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x8, 0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a, 0x70, 0x3e, 0xb5, 0x66, 0x48, 0x3, 0xf6, 0xe, 0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e, 0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf, 0x8c, 0xa1, 0x89, 0xd, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0xf, 0xb0, 0x54, 0xbb, 0x16],
-        _0x23e23d = [0x52, 0x9, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb, 0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde, 0xe9, 0xcb, 0x54, 0x7b, 0x94, 0x32, 0xa6, 0xc2, 0x23, 0x3d, 0xee, 0x4c, 0x95, 0xb, 0x42, 0xfa, 0xc3, 0x4e, 0x8, 0x2e, 0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2, 0x49, 0x6d, 0x8b, 0xd1, 0x25, 0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68, 0x98, 0x16, 0xd4, 0xa4, 0x5c, 0xcc, 0x5d, 0x65, 0xb6, 0x92, 0x6c, 0x70, 0x48, 0x50, 0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15, 0x46, 0x57, 0xa7, 0x8d, 0x9d, 0x84, 0x90, 0xd8, 0xab, 0x0, 0x8c, 0xbc, 0xd3, 0xa, 0xf7, 0xe4, 0x58, 0x5, 0xb8, 0xb3, 0x45, 0x6, 0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0xf, 0x2, 0xc1, 0xaf, 0xbd, 0x3, 0x1, 0x13, 0x8a, 0x6b, 0x3a, 0x91, 0x11, 0x41, 0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf, 0xce, 0xf0, 0xb4, 0xe6, 0x73, 0x96, 0xac, 0x74, 0x22, 0xe7, 0xad, 0x35, 0x85, 0xe2, 0xf9, 0x37, 0xe8, 0x1c, 0x75, 0xdf, 0x6e, 0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89, 0x6f, 0xb7, 0x62, 0xe, 0xaa, 0x18, 0xbe, 0x1b, 0xfc, 0x56, 0x3e, 0x4b, 0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0, 0xfe, 0x78, 0xcd, 0x5a, 0xf4, 0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x7, 0xc7, 0x31, 0xb1, 0x12, 0x10, 0x59, 0x27, 0x80, 0xec, 0x5f, 0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0xd, 0x2d, 0xe5, 0x7a, 0x9f, 0x93, 0xc9, 0x9c, 0xef, 0xa0, 0xe0, 0x3b, 0x4d, 0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb, 0x3c, 0x83, 0x53, 0x99, 0x61, 0x17, 0x2b, 0x4, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63, 0x55, 0x21, 0xc, 0x7d],
-        _0x1e85ee = [0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36];
-      function _0x2a0a56(_0x564650) {
-        for (let _0x13b482 = 0x0; _0x13b482 < 0x10; _0x13b482++) _0x564650[_0x13b482] = _0x564ae6[_0x564650[_0x13b482]];
-      }
-      function _0x2aa735(_0x16f363) {
-        for (let _0x1178c6 = 0x0; _0x1178c6 < 0x10; _0x1178c6++) _0x16f363[_0x1178c6] = _0x23e23d[_0x16f363[_0x1178c6]];
-      }
-      function _0x5210e8(_0x1d5d50) {
-        const _0x120b2f = _0x1d5d50[0x1];
-        _0x1d5d50[0x1] = _0x1d5d50[0x5], _0x1d5d50[0x5] = _0x1d5d50[0x9], _0x1d5d50[0x9] = _0x1d5d50[0xd], _0x1d5d50[0xd] = _0x120b2f;
-        let _0x2f50da = _0x1d5d50[0x2],
-          _0x3a0d3b = _0x1d5d50[0x6];
-        _0x1d5d50[0x2] = _0x1d5d50[0xa], _0x1d5d50[0x6] = _0x1d5d50[0xe], _0x1d5d50[0xa] = _0x2f50da, _0x1d5d50[0xe] = _0x3a0d3b, _0x2f50da = _0x1d5d50[0xf], _0x1d5d50[0xf] = _0x1d5d50[0xb], _0x1d5d50[0xb] = _0x1d5d50[0x7], _0x1d5d50[0x7] = _0x1d5d50[0x3], _0x1d5d50[0x3] = _0x2f50da;
-      }
-      function _0x355a10(_0x434fe9) {
-        const _0x3a3b67 = _0x434fe9[0xd];
-        _0x434fe9[0xd] = _0x434fe9[0x9], _0x434fe9[0x9] = _0x434fe9[0x5], _0x434fe9[0x5] = _0x434fe9[0x1], _0x434fe9[0x1] = _0x3a3b67;
-        let _0x451b47 = _0x434fe9[0x2],
-          _0x36ce08 = _0x434fe9[0x6];
-        _0x434fe9[0x2] = _0x434fe9[0xa], _0x434fe9[0x6] = _0x434fe9[0xe], _0x434fe9[0xa] = _0x451b47, _0x434fe9[0xe] = _0x36ce08, _0x451b47 = _0x434fe9[0x3], _0x434fe9[0x3] = _0x434fe9[0x7], _0x434fe9[0x7] = _0x434fe9[0xb], _0x434fe9[0xb] = _0x434fe9[0xf], _0x434fe9[0xf] = _0x451b47;
-      }
-      function _0x4bef94(_0xaaea4) {
-        return 0xff & (_0xaaea4 << 0x1 ^ 0x1b * (_0xaaea4 >> 0x7 & 0x1));
-      }
-      function _0x541ce5(_0x4109f1) {
-        for (let _0x31a617 = 0x0; _0x31a617 < 0x4; _0x31a617++) {
-          const _0x76ba6f = _0x4109f1[0x4 * _0x31a617],
-            _0x1f17a3 = _0x4109f1[0x4 * _0x31a617 + 0x1],
-            _0x513af7 = _0x4109f1[0x4 * _0x31a617 + 0x2],
-            _0x30090b = _0x4109f1[0x4 * _0x31a617 + 0x3],
-            _0x43608f = _0x76ba6f ^ _0x1f17a3 ^ _0x513af7 ^ _0x30090b;
-          _0x4109f1[0x4 * _0x31a617] ^= _0x43608f ^ _0x4bef94(_0x76ba6f ^ _0x1f17a3), _0x4109f1[0x4 * _0x31a617 + 0x1] ^= _0x43608f ^ _0x4bef94(_0x1f17a3 ^ _0x513af7), _0x4109f1[0x4 * _0x31a617 + 0x2] ^= _0x43608f ^ _0x4bef94(_0x513af7 ^ _0x30090b), _0x4109f1[0x4 * _0x31a617 + 0x3] ^= _0x43608f ^ _0x4bef94(_0x30090b ^ _0x76ba6f);
         }
+        _0x181352.length > 0 && (_0x10da6a = "<div class=\"confirm-info\">" + _0x181352.map(_0x1feedc => "\n                            <div class=\"confirm-info-item\">\n                                <span class=\"confirm-info-label\">" + _0x1feedc.label + "</span>\n                                <span class=\"confirm-info-value\">\n                                    " + _0x1feedc.value + "\n                                    " + (_0x1feedc.isVip ? "<span class=\"confirm-info-vip\">VIP</span>" : "") + "\n                                </span>\n                            </div>\n                        ").join("") + "</div>");
       }
-      function _0x4d8fcc(_0x2fd6b0) {
-        for (let _0x343ffb = 0x0; _0x343ffb < 0x4; _0x343ffb++) {
-          const _0x5ee01b = _0x2fd6b0[0x4 * _0x343ffb],
-            _0x542ab6 = _0x2fd6b0[0x4 * _0x343ffb + 0x1],
-            _0xc146c7 = _0x2fd6b0[0x4 * _0x343ffb + 0x2],
-            _0x467159 = _0x2fd6b0[0x4 * _0x343ffb + 0x3],
-            _0x47b69d = _0x5ee01b ^ _0x542ab6 ^ _0xc146c7 ^ _0x467159,
-            _0x3b1c83 = _0x4bef94(_0x47b69d),
-            _0x411fbe = _0x4bef94(_0x4bef94(_0x3b1c83 ^ _0x5ee01b ^ _0xc146c7)) ^ _0x47b69d,
-            _0x1a860c = _0x4bef94(_0x4bef94(_0x3b1c83 ^ _0x542ab6 ^ _0x467159)) ^ _0x47b69d;
-          _0x2fd6b0[0x4 * _0x343ffb] ^= _0x411fbe ^ _0x4bef94(_0x5ee01b ^ _0x542ab6), _0x2fd6b0[0x4 * _0x343ffb + 0x1] ^= _0x1a860c ^ _0x4bef94(_0x542ab6 ^ _0xc146c7), _0x2fd6b0[0x4 * _0x343ffb + 0x2] ^= _0x411fbe ^ _0x4bef94(_0xc146c7 ^ _0x467159), _0x2fd6b0[0x4 * _0x343ffb + 0x3] ^= _0x1a860c ^ _0x4bef94(_0x467159 ^ _0x5ee01b);
+      const remarkSection = remarkInput ? "\n                <div class=\"confirm-remark\">\n                    <label class=\"confirm-remark-label\">备注</label>\n                    <input class=\"confirm-remark-input\" id=\"confirmRemarkInput\" placeholder=\"" + remarkPlaceholder + "\" value=\"" + (remarkDefault || "") + "\">\n                </div>\n            " : "";
+      const _0x18a142 = document.createElement("div");
+      _0x18a142.className = "confirm-dialog";
+      _0x18a142.innerHTML = "\n                <div class=\"confirm-header\">\n                    <div class=\"confirm-title\">" + title + "</div>\n                </div>\n                <div class=\"confirm-body\">\n                    " + (message ? "<div class=\"confirm-message\">" + message + "</div>" : "") + "\n                    " + _0x10da6a + "\n                    " + remarkSection + "\n                </div>\n                <div class=\"confirm-footer\">\n                    <button class=\"confirm-btn confirm-btn-cancel\" id=\"confirmCancel\">" + cancelText + "</button>\n                    <button class=\"confirm-btn confirm-btn-" + confirmType + "\" id=\"confirmOk\">" + confirmText + "</button>\n                </div>\n            ";
+      _0x55821a.appendChild(_0x18a142);
+      document.body.appendChild(_0x55821a);
+      setTimeout(() => {
+        {
+          _0x55821a.classList.add("show");
         }
-      }
-      function _0x3df288(_0x21f73e, _0x57108f) {
-        for (let _0x270ca9 = 0x0; _0x270ca9 < 0x10; _0x270ca9++) _0x21f73e[_0x270ca9] ^= _0x57108f[_0x270ca9];
-      }
-      function _0x218484(_0x1cad54) {
-        const _0x4f48c1 = a0_0x3202,
-          _0x103c1a = _0x1cad54[_0x4f48c1(0x189)],
-          _0x227512 = _0x103c1a / 0x4,
-          _0x451495 = _0x227512 + 0x6,
-          _0x464623 = new Array(0x10 * (_0x451495 + 0x1));
-        for (let _0x1b4acf = 0x0; _0x1b4acf < _0x103c1a; _0x1b4acf++) _0x464623[_0x1b4acf] = _0x1cad54[_0x1b4acf];
-        for (let _0x544d85 = _0x227512; _0x544d85 < 0x4 * (_0x451495 + 0x1); _0x544d85++) {
-          let _0x2b346e = _0x464623[_0x4f48c1(0x202)](0x4 * (_0x544d85 - 0x1), 0x4 * _0x544d85);
-          _0x544d85 % _0x227512 === 0x0 ? _0x2b346e = [_0x564ae6[_0x2b346e[0x1]] ^ _0x1e85ee[_0x544d85 / _0x227512 - 0x1], _0x564ae6[_0x2b346e[0x2]], _0x564ae6[_0x2b346e[0x3]], _0x564ae6[_0x2b346e[0x0]]] : _0x227512 > 0x6 && _0x544d85 % _0x227512 === 0x4 && (_0x2b346e = [_0x564ae6[_0x2b346e[0x0]], _0x564ae6[_0x2b346e[0x1]], _0x564ae6[_0x2b346e[0x2]], _0x564ae6[_0x2b346e[0x3]]]);
-          for (let _0x5beab8 = 0x0; _0x5beab8 < 0x4; _0x5beab8++) _0x464623[0x4 * _0x544d85 + _0x5beab8] = _0x464623[0x4 * (_0x544d85 - _0x227512) + _0x5beab8] ^ _0x2b346e[_0x5beab8];
-        }
-        return _0x464623;
-      }
-      function _0xe428c9(_0x1f5812, _0x12e3e1, _0x26829d) {
-        const _0x3350f6 = a0_0x3202,
-          _0x17bf4f = _0x1f5812[_0x3350f6(0x202)]();
-        _0x3df288(_0x17bf4f, _0x12e3e1[_0x3350f6(0x202)](0x0, 0x10));
-        for (let _0x553824 = 0x1; _0x553824 < _0x26829d; _0x553824++) _0x2a0a56(_0x17bf4f), _0x5210e8(_0x17bf4f), _0x541ce5(_0x17bf4f), _0x3df288(_0x17bf4f, _0x12e3e1['slice'](0x10 * _0x553824, 0x10 * (_0x553824 + 0x1)));
-        return _0x2a0a56(_0x17bf4f), _0x5210e8(_0x17bf4f), _0x3df288(_0x17bf4f, _0x12e3e1[_0x3350f6(0x202)](0x10 * _0x26829d, 0x10 * (_0x26829d + 0x1))), _0x17bf4f;
-      }
-      function _0x3adbd2(_0x558d76, _0xbf851d, _0x2ca21e) {
-        const _0x5ef377 = a0_0x3202,
-          _0x108857 = _0x558d76[_0x5ef377(0x202)]();
-        _0x3df288(_0x108857, _0xbf851d[_0x5ef377(0x202)](0x10 * _0x2ca21e, 0x10 * (_0x2ca21e + 0x1)));
-        for (let _0x1c6bd5 = _0x2ca21e - 0x1; _0x1c6bd5 > 0x0; _0x1c6bd5--) _0x355a10(_0x108857), _0x2aa735(_0x108857), _0x3df288(_0x108857, _0xbf851d[_0x5ef377(0x202)](0x10 * _0x1c6bd5, 0x10 * (_0x1c6bd5 + 0x1))), _0x4d8fcc(_0x108857);
-        return _0x355a10(_0x108857), _0x2aa735(_0x108857), _0x3df288(_0x108857, _0xbf851d[_0x5ef377(0x202)](0x0, 0x10)), _0x108857;
-      }
-      function _0x36472b(_0x487fb2) {
-        const _0x3c9714 = a0_0x3202,
-          _0x1764d1 = [];
-        for (let _0xfe6f45 = 0x0; _0xfe6f45 < _0x487fb2[_0x3c9714(0x189)]; _0xfe6f45++) {
-          const _0x23c279 = _0x487fb2[_0x3c9714(0x211)](_0xfe6f45);
-          _0x23c279 < 0x80 ? _0x1764d1[_0x3c9714(0x261)](_0x23c279) : _0x23c279 < 0x800 ? (_0x1764d1[_0x3c9714(0x261)](_0x23c279 >> 0x6 | 0xc0), _0x1764d1[_0x3c9714(0x261)](0x3f & _0x23c279 | 0x80)) : (_0x1764d1[_0x3c9714(0x261)](_0x23c279 >> 0xc | 0xe0), _0x1764d1[_0x3c9714(0x261)](_0x23c279 >> 0x6 & 0x3f | 0x80), _0x1764d1['push'](0x3f & _0x23c279 | 0x80));
-        }
-        return _0x1764d1;
-      }
-      return {
-        'encrypt'(_0x1b2661, _0x30036e) {
-          const _0x3718c2 = a0_0x3202,
-            _0x479b5d = _0x36472b(_0x30036e),
-            _0x1cd2ef = _0x479b5d['length'],
-            _0x5e4308 = 0x10 === _0x1cd2ef ? 0xa : 0x18 === _0x1cd2ef ? 0xc : 0xe,
-            _0x15920a = _0x218484(_0x479b5d),
-            _0x28a3d0 = function (_0x2249ee, _0x3e67f4) {
-              const _0xcdd644 = a0_0x3202,
-                _0x193fb5 = _0x3e67f4 - _0x2249ee[_0xcdd644(0x189)] % _0x3e67f4,
-                _0x4fdf96 = new Array(_0x2249ee[_0xcdd644(0x189)] + _0x193fb5);
-              for (let _0x47e9d9 = 0x0; _0x47e9d9 < _0x2249ee[_0xcdd644(0x189)]; _0x47e9d9++) _0x4fdf96[_0x47e9d9] = _0x2249ee[_0x47e9d9];
-              for (let _0x36e1a8 = _0x2249ee[_0xcdd644(0x189)]; _0x36e1a8 < _0x4fdf96[_0xcdd644(0x189)]; _0x36e1a8++) _0x4fdf96[_0x36e1a8] = _0x193fb5;
-              return _0x4fdf96;
-            }(_0x36472b(_0x1b2661), 0x10),
-            _0x1c52a7 = [];
-          let _0x1d8424 = new Array(0x10)[_0x3718c2(0x232)](0x0);
-          for (let _0x5c31e7 = 0x0; _0x5c31e7 < _0x28a3d0[_0x3718c2(0x189)]; _0x5c31e7 += 0x10) {
-            const _0x2f6df8 = _0x28a3d0[_0x3718c2(0x202)](_0x5c31e7, _0x5c31e7 + 0x10);
-            for (let _0x231a21 = 0x0; _0x231a21 < 0x10; _0x231a21++) _0x2f6df8[_0x231a21] ^= _0x1d8424[_0x231a21];
-            const _0x30f372 = _0xe428c9(_0x2f6df8, _0x15920a, _0x5e4308);
-            _0x1c52a7[_0x3718c2(0x261)](..._0x30f372), _0x1d8424 = _0x30f372;
-          }
-          return function (_0x5685c5) {
-            const _0x58649c = _0x3718c2,
-              _0x4bdd53 = _0x58649c(0x242);
-            let _0x5b9fb1 = '';
-            for (let _0x1a49b1 = 0x0; _0x1a49b1 < _0x5685c5[_0x58649c(0x189)]; _0x1a49b1 += 0x3) {
-              const _0x29e754 = _0x5685c5[_0x1a49b1],
-                _0x3bf196 = _0x5685c5[_0x1a49b1 + 0x1],
-                _0x5af30a = _0x5685c5[_0x1a49b1 + 0x2];
-              _0x5b9fb1 += _0x4bdd53[_0x29e754 >> 0x2], _0x5b9fb1 += _0x4bdd53[(0x3 & _0x29e754) << 0x4 | _0x3bf196 >> 0x4], _0x5b9fb1 += undefined !== _0x3bf196 ? _0x4bdd53[(0xf & _0x3bf196) << 0x2 | _0x5af30a >> 0x6] : '=', _0x5b9fb1 += undefined !== _0x5af30a ? _0x4bdd53[0x3f & _0x5af30a] : '=';
+      }, 10);
+      const _0xe1ee82 = () => {
+        {
+          _0x55821a.classList.remove("show");
+          setTimeout(() => {
+            {
+              document.body.removeChild(_0x55821a);
             }
-            return _0x5b9fb1;
-          }(_0x1c52a7);
-        },
-        'decrypt'(_0x37e06f, _0x3bc039) {
-          const _0x36a9ef = a0_0x3202,
-            _0x16425c = _0x36472b(_0x3bc039),
-            _0xaebe12 = _0x16425c[_0x36a9ef(0x189)],
-            _0x31b603 = 0x10 === _0xaebe12 ? 0xa : 0x18 === _0xaebe12 ? 0xc : 0xe,
-            _0x3c7d9a = _0x218484(_0x16425c),
-            _0x5a624c = function (_0x5aea8e) {
-              const _0x402c0a = _0x36a9ef,
-                _0x13d4ed = _0x402c0a(0x242),
-                _0x50a3fd = [];
-              for (let _0x2adf2d = 0x0; _0x2adf2d < _0x5aea8e['length']; _0x2adf2d += 0x4) {
-                const _0x3fc39f = _0x13d4ed[_0x402c0a(0x1b1)](_0x5aea8e[_0x2adf2d]),
-                  _0x25b62b = _0x13d4ed[_0x402c0a(0x1b1)](_0x5aea8e[_0x2adf2d + 0x1]),
-                  _0x49e04e = _0x13d4ed['indexOf'](_0x5aea8e[_0x2adf2d + 0x2]),
-                  _0x3556f2 = _0x13d4ed[_0x402c0a(0x1b1)](_0x5aea8e[_0x2adf2d + 0x3]);
-                _0x50a3fd[_0x402c0a(0x261)](_0x3fc39f << 0x2 | _0x25b62b >> 0x4), -0x1 !== _0x49e04e && '=' !== _0x5aea8e[_0x2adf2d + 0x2] && _0x50a3fd[_0x402c0a(0x261)]((0xf & _0x25b62b) << 0x4 | _0x49e04e >> 0x2), -0x1 !== _0x3556f2 && '=' !== _0x5aea8e[_0x2adf2d + 0x3] && _0x50a3fd[_0x402c0a(0x261)]((0x3 & _0x49e04e) << 0x6 | _0x3556f2);
-              }
-              return _0x50a3fd;
-            }(_0x37e06f),
-            _0x658170 = [];
-          let _0x2cfdec = new Array(0x10)[_0x36a9ef(0x232)](0x0);
-          for (let _0x3372cc = 0x0; _0x3372cc < _0x5a624c[_0x36a9ef(0x189)]; _0x3372cc += 0x10) {
-            const _0x10bd83 = _0x5a624c[_0x36a9ef(0x202)](_0x3372cc, _0x3372cc + 0x10),
-              _0x1484ee = _0x3adbd2(_0x10bd83, _0x3c7d9a, _0x31b603);
-            for (let _0x320317 = 0x0; _0x320317 < 0x10; _0x320317++) _0x1484ee[_0x320317] ^= _0x2cfdec[_0x320317];
-            _0x658170[_0x36a9ef(0x261)](..._0x1484ee), _0x2cfdec = _0x10bd83;
-          }
-          return function (_0x33c3ea) {
-            const _0x368974 = _0x36a9ef;
-            let _0x1ae3b7 = '',
-              _0x2e5e15 = 0x0;
-            for (; _0x2e5e15 < _0x33c3ea[_0x368974(0x189)];) {
-              const _0xcd2fda = _0x33c3ea[_0x2e5e15];
-              _0xcd2fda < 0x80 ? (_0x1ae3b7 += String[_0x368974(0x217)](_0xcd2fda), _0x2e5e15++) : _0xcd2fda > 0xbf && _0xcd2fda < 0xe0 ? (_0x1ae3b7 += String[_0x368974(0x217)]((0x1f & _0xcd2fda) << 0x6 | 0x3f & _0x33c3ea[_0x2e5e15 + 0x1]), _0x2e5e15 += 0x2) : (_0x1ae3b7 += String[_0x368974(0x217)]((0xf & _0xcd2fda) << 0xc | (0x3f & _0x33c3ea[_0x2e5e15 + 0x1]) << 0x6 | 0x3f & _0x33c3ea[_0x2e5e15 + 0x2]), _0x2e5e15 += 0x3);
-            }
-            return _0x1ae3b7;
-          }(function (_0x2aea42) {
-            const _0x4fa95f = _0x36a9ef,
-              _0x31c09a = _0x2aea42[_0x2aea42[_0x4fa95f(0x189)] - 0x1];
-            if (_0x31c09a > 0x10 || 0x0 === _0x31c09a) return _0x2aea42;
-            for (let _0x4e34eb = _0x2aea42[_0x4fa95f(0x189)] - _0x31c09a; _0x4e34eb < _0x2aea42[_0x4fa95f(0x189)]; _0x4e34eb++) if (_0x2aea42[_0x4e34eb] !== _0x31c09a) return _0x2aea42;
-            return _0x2aea42[_0x4fa95f(0x202)](0x0, _0x2aea42[_0x4fa95f(0x189)] - _0x31c09a);
-          }(_0x658170));
+          }, 300);
+          const remarkValue = remarkInput ? (document.getElementById("confirmRemarkInput")?.["value"] || "").trim() : "";
+          _0xe8c104({
+            confirmed: true,
+            remark: remarkValue
+          });
         }
       };
-    }(),
-    _0x2d315d = () => {
-      const _0x41d00a = a0_0x3202;
-      let _0x3a1d9c = uni['getStorageSync'](_0x41d00a(0x182));
-      if (_0x3a1d9c) return _0x3a1d9c;
-      try {
-        const _0x246b91 = plus[_0x41d00a(0x175)],
-          _0x2d2039 = _0x246b91[_0x41d00a(0x1e2)] || '',
-          _0x947af9 = _0x246b91[_0x41d00a(0x214)] || '',
-          _0x4e149d = _0x246b91[_0x41d00a(0x170)] || '',
-          _0x33f3f9 = _0x246b91[_0x41d00a(0x1cc)] || '';
-        _0x3a1d9c = _0x440a19(_0x2d2039 + '_' + _0x947af9 + '_' + _0x4e149d + '_' + _0x33f3f9);
-      } catch (_0x32b885) {
-        _0x3a1d9c = _0x440a19(_0x41d00a(0x246) + Date['now']());
-      }
-      return uni[_0x41d00a(0x193)]('_device_fp', _0x3a1d9c), _0x3a1d9c;
-    },
-    _0x137042 = (_0xecbeaf, _0x4146f9) => {
-      const _0x57da81 = a0_0x3202;
-      try {
-        const _0x3c2f97 = _0x2d315d(),
-          _0x100780 = JSON['stringify'](_0x4146f9),
-          _0x3ea403 = _0x2d6684[_0x57da81(0x22e)](_0x100780, _0x3c2f97);
-        return uni['setStorageSync'](_0xecbeaf, _0x3ea403), true;
-      } catch (_0x4c82f3) {
-        return _0x494761(_0x57da81(0x216), _0x57da81(0x176), _0x57da81(0x224), _0x4c82f3), false;
-      }
-    },
-    _0x471aa1 = _0x5dde2a => {
-      const _0x102e85 = a0_0x3202;
-      try {
-        const _0x4ed393 = uni['getStorageSync'](_0x5dde2a);
-        if (!_0x4ed393) return null;
-        const _0xddc547 = _0x2d315d(),
-          _0x903030 = _0x2d6684['decrypt'](_0x4ed393, _0xddc547);
-        return JSON[_0x102e85(0x1dc)](_0x903030);
-      } catch (_0xc6096b) {
-        return _0x494761(_0x102e85(0x216), _0x102e85(0x1fe), _0x102e85(0x1f0), _0xc6096b), null;
-      }
-    },
-    _0x4297de = _0x88f337 => {
-      const _0x4f709a = a0_0x3202;
-      uni[_0x4f709a(0x162)](_0x88f337);
-    },
-    _0x292a03 = _0x11cd04(0x225),
-    _0x39b166 = _0x11cd04(0x1ec),
-    _0x4bb243 = 'ssby_user_info',
-    _0x53704e = _0x11cd04(0x21a),
-    _0xd7ec27 = _0x11cd04(0x1aa),
-    _0x41be6d = () => Math[_0x11cd04(0x252)](Date[_0x11cd04(0x25b)]() / 0x3e8),
-    _0x3621f0 = () => {
-      const _0x1fe259 = _0x11cd04;
-      let _0x508125 = uni[_0x1fe259(0x26e)]('ssby_device_key');
-      if (_0x508125) return _0x508125;
-      let _0x5c85e9 = '';
-      try {
-        const _0x3f0359 = plus['device'],
-          _0x1b7855 = _0x3f0359[_0x1fe259(0x1e2)] || _0x3f0359[_0x1fe259(0x228)] || '';
-        _0x5c85e9 = _0x1b7855 + '_' + (_0x3f0359[_0x1fe259(0x214)] || '');
-      } catch (_0x1a438d) {
-        _0x5c85e9 = _0x1fe259(0x183) + Date[_0x1fe259(0x25b)]();
-      }
-      return _0x5c85e9 && uni[_0x1fe259(0x193)](_0x1fe259(0x215), _0x5c85e9), _0x5c85e9;
-    },
-    _0x583fa2 = async _0x2d41f2 => {
-      const _0x496f3c = _0x11cd04;
-      _0x2d41f2[_0x496f3c(0x1ef)] = _0x41be6d(), _0x2d41f2['Status'] = 0x2710;
-      const _0x2a65bd = _0x471aa1(_0x39b166),
-        _0x54f122 = {
-          'Content-Type': 'application/json'
-        };
-      return _0x2a65bd && (_0x54f122[_0x496f3c(0x172)] = _0x2a65bd), new Promise((_0xe816cb, _0x1ea412) => {
-        const _0x3ba800 = _0x496f3c;
-        uni[_0x3ba800(0x1c3)]({
-          'url': _0x292a03,
-          'method': _0x3ba800(0x1c1),
-          'data': _0x2d41f2,
-          'header': _0x54f122,
-          'success': _0x258eb2 => {
-            const _0x393613 = _0x3ba800;
-            _0xe816cb(_0x258eb2[_0x393613(0x1e7)]);
-          },
-          'fail': _0x5e0c92 => {
-            _0x1ea412(_0x5e0c92);
-          }
+      const _0xaba383 = () => {
+        _0x55821a.classList.remove("show");
+        setTimeout(() => {
+          document.body.removeChild(_0x55821a);
+        }, 300);
+        _0xe8c104({
+          confirmed: false,
+          remark: ""
         });
+      };
+      document.getElementById("confirmOk").addEventListener("click", _0xe1ee82);
+      document.getElementById("confirmCancel").addEventListener("click", _0xaba383);
+      _0x55821a.addEventListener("click", _0x4d9d9b => {
+        _0x4d9d9b.target === _0x55821a && _0xaba383();
       });
-    },
-    _0x33dd7e = async () => {
-      const _0x581d9e = _0x11cd04;
-      (() => {
-        const _0x52f431 = a0_0x3202;
-        try {
-          if (_0x52f431(0x269) === uni[_0x52f431(0x26e)](_0x52f431(0x25e))) return;
-          uni[_0x52f431(0x162)](_0x52f431(0x1ec)), uni[_0x52f431(0x162)](_0x52f431(0x22d)), uni[_0x52f431(0x162)](_0x52f431(0x22c)), uni[_0x52f431(0x162)](_0x52f431(0x21a)), uni[_0x52f431(0x193)](_0x52f431(0x25e), 'v1.0.0');
-        } catch (_0xaae77d) {}
-      })();
-      try {
-        _0x4297de(_0x39b166);
-        const _0x5eae8c = await _0x583fa2({
-          'Api': _0x581d9e(0x1ee)
-        });
-        return 0x2710 === _0x5eae8c['Status'] && (_0x137042(_0x39b166, _0x5eae8c['Data'][_0x581d9e(0x172)]), _0x5eae8c[_0x581d9e(0x1ce)]['CryptoKeyAes'] && _0x137042(_0x53704e, _0x5eae8c['Data']['CryptoKeyAes'])), _0x5eae8c;
-      } catch (_0x2cd91b) {
-        return {
-          'Status': -0x1,
-          'Msg': _0x581d9e(0x24b)
-        };
+      const _0x89f583 = _0x3cd4e9 => {
+        _0x3cd4e9.key === "Escape" && (_0xaba383(), document.removeEventListener("keydown", _0x89f583));
+      };
+      document.addEventListener("keydown", _0x89f583);
+    });
+  },
+  sendContactInfo(_0x320e2b) {
+    let _0xcdb81c = 0;
+    let _0x21e0e0 = "";
+    let _0x497dcb = [];
+    console.log("开始处理: \"" + _0x320e2b + "\"");
+    for (let _0x4062be = 0; _0x4062be < _0x320e2b.length; _0x4062be++) {
+      const _0x30a6d7 = _0x320e2b[_0x4062be];
+      _0x21e0e0 += _0x30a6d7;
+      if (/\d/.test(_0x30a6d7)) {
+        _0xcdb81c++;
       }
-    },
-    _0x12f5a6 = async (_0x18b6ff, _0x4e1c3a = '', _0x45e57a = false) => {
-      const _0x1faad9 = _0x11cd04,
-        _0x452b5d = _0x4e1c3a || _0x3621f0();
-      _0x471aa1(_0x39b166);
-      try {
-        const _0x52dba9 = await _0x583fa2({
-          'Api': _0x1faad9(0x238),
-          'UserOrKa': _0x18b6ff,
-          'PassWord': '',
-          'Key': _0x452b5d,
-          'Tab': 'UniApp',
-          'AppVer': '1.0.0'
-        });
-        if ((0x6d === _0x52dba9[_0x1faad9(0x19f)] || 0x6a === _0x52dba9[_0x1faad9(0x19f)]) && !_0x45e57a) {
-          if (0x2710 === (await _0x33dd7e())[_0x1faad9(0x19f)]) return _0x12f5a6(_0x18b6ff, _0x452b5d, true);
+      if (_0xcdb81c === 3 || _0x4062be === _0x320e2b.length - 1) {
+        {
+          _0x497dcb.push(_0x21e0e0);
+          _0x21e0e0 = "";
+          _0xcdb81c = 0;
         }
-        if (0xd0 === _0x52dba9[_0x1faad9(0x19f)] && !_0x45e57a) {
-          const _0x4036d9 = _0x471aa1('ssby_login_token');
-          _0x4036d9 && (_0x137042(_0x39b166, _0x4036d9), await _0x37831a());
-          if (0x2710 === (await _0x33dd7e())[_0x1faad9(0x19f)]) return _0x12f5a6(_0x18b6ff, _0x452b5d, true);
-        }
-        if (0x2710 === _0x52dba9['Status']) {
-          _0x52dba9[_0x1faad9(0x1ce)]['Key'] && uni[_0x1faad9(0x193)](_0x1faad9(0x215), _0x52dba9['Data'][_0x1faad9(0x1bb)]);
-          const _0x49b1ad = _0x471aa1(_0x39b166);
-          _0x49b1ad && _0x137042(_0x1faad9(0x22c), _0x49b1ad);
-          const _0x3c627e = {
-            ..._0x52dba9['Data'],
-            'kami': _0x18b6ff,
-            'loginTime': _0x41be6d()
-          };
-          _0x137042(_0x4bb243, _0x3c627e);
-        }
-        return _0x52dba9;
-      } catch (_0x501074) {
-        return {
-          'Status': -0x1,
-          'Msg': _0x1faad9(0x24b)
-        };
       }
-    },
-    _0x307282 = async () => {
-      const _0x441e99 = _0x11cd04;
-      try {
-        return await _0x583fa2({
-          'Api': _0x441e99(0x1cd)
-        });
-      } catch (_0x5205d8) {
-        return {
-          'Status': -0x1,
-          'Msg': _0x441e99(0x24b)
-        };
+    }
+    _0x497dcb.forEach((_0x14b3dc, _0x14ef15) => {
+      {
+        setTimeout(() => {
+          this.sendMsg(_0x14b3dc);
+        }, (_0x14ef15 + 1) * 800);
       }
-    },
-    _0x37831a = async () => {
-      const _0x3bdae2 = _0x11cd04;
-      try {
-        return await _0x583fa2({
-          'Api': _0x3bdae2(0x194)
-        });
-      } catch (_0x2afaac) {
-        return {
-          'Status': -0x1,
-          'Msg': '网络连接失败'
-        };
-      }
-    },
-    _0x3d1bcd = () => {
-      try {
-        return _0x471aa1(_0x4bb243);
-      } catch (_0x2a56d9) {
-        return null;
-      }
-    },
-    _0x34b2e0 = () => {
-      const _0x15e086 = _0x11cd04;
-      _0x4297de(_0x39b166), _0x4297de(_0x4bb243), _0x4297de(_0x15e086(0x22c)), _0x4297de(_0x15e086(0x20d));
+    });
+    return _0x497dcb;
+  },
+  blacklistData: [],
+  normalizeBlacklistItem(_0x3d6cdd) {
+    if (!_0x3d6cdd) {
+      return null;
+    }
+    const _0x135afe = _0x3d6cdd.partnerIdEncrypted || _0x3d6cdd.userId;
+    if (!_0x135afe) {
+      return null;
+    }
+    return {
+      partnerIdEncrypted: _0x135afe,
+      gender: _0x3d6cdd.gender || "鏈煡",
+      age: _0x3d6cdd.age || "鏈煡",
+      province: _0x3d6cdd.province || "鏈煡",
+      isShowVipLabel: !!_0x3d6cdd.isShowVipLabel,
+      remark: _0x3d6cdd.remark || "",
+      createTime: _0x3d6cdd.createTime || new Date().toISOString()
     };
-  let _0x5afedb = null;
-  const _0x3ce41e = () => {
-      _0x5afedb && (clearInterval(_0x5afedb), _0x5afedb = null);
-    },
-    _0x56c1b7 = async _0x289adc => {
-      const _0x2fee7b = _0x11cd04;
-      try {
-        const _0x107a22 = await (async () => {
-          const _0x32d58f = a0_0x3202;
-          try {
-            const _0x2dbe09 = await _0x583fa2({
-                'Api': 'GetAppPublicData',
-                'Name': _0x32d58f(0x1ad)
-              }),
-              _0x23c3af = await _0x583fa2({
-                'Api': _0x32d58f(0x1ae),
-                'Name': 'app_version'
-              });
-            if (0x2710 === _0x2dbe09[_0x32d58f(0x19f)] && _0x2dbe09['Data']) {
-              const _0xcd0172 = _0x2dbe09[_0x32d58f(0x1ce)][_0x32d58f(0x1ad)] || '';
-              return {
-                'version': 0x2710 === _0x23c3af['Status'] && _0x23c3af['Data'] && _0x23c3af[_0x32d58f(0x1ce)][_0x32d58f(0x20a)] || _0x32d58f(0x1fa),
-                'updateTime': Date[_0x32d58f(0x25b)](),
-                'forceUpdate': false,
-                'scriptUrl': _0xcd0172
-              };
-            }
-            return null;
-          } catch (_0x36b1eb) {
-            return null;
-          }
-        })();
-        if (!_0x107a22 || !_0x107a22[_0x2fee7b(0x264)]) return null;
-        let _0xf11fff = _0x2fee7b(0x18a);
-        try {
-          _0xf11fff = new URL(_0x107a22['scriptUrl'])[_0x2fee7b(0x204)];
-        } catch (_0xe8d254) {
-          const _0x4f1ce7 = _0x107a22[_0x2fee7b(0x264)][_0x2fee7b(0x195)](/https?:\/\/[^\/]+(\/[^\?]*)/);
-          _0x4f1ce7 && (_0xf11fff = _0x4f1ce7[0x1]);
-        }
-        const _0x1c697 = ((_0x3b97c0, _0x4ebec5, _0x5c7f1d = 0x258) => {
-            const _0x520997 = _0x2fee7b,
-              _0x86c320 = Math[_0x520997(0x252)](Date[_0x520997(0x25b)]() / 0x3e8) + _0x5c7f1d;
-            return (_0x269fd0 => {
-              const _0x415e7 = _0x520997;
-              function _0x3b854f(_0x3c6b42, _0x2ff801) {
-                var _0x311b5c = _0x3c6b42[0x0],
-                  _0x523ef6 = _0x3c6b42[0x1],
-                  _0x4cc65f = _0x3c6b42[0x2],
-                  _0x48e811 = _0x3c6b42[0x3];
-                _0x311b5c = _0x4d6170(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x0], 0x7, -0x28955b88), _0x48e811 = _0x4d6170(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x1], 0xc, -0x173848aa), _0x4cc65f = _0x4d6170(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x2], 0x11, 0x242070db), _0x523ef6 = _0x4d6170(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x3], 0x16, -0x3e423112), _0x311b5c = _0x4d6170(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x4], 0x7, -0xa83f051), _0x48e811 = _0x4d6170(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x5], 0xc, 0x4787c62a), _0x4cc65f = _0x4d6170(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x6], 0x11, -0x57cfb9ed), _0x523ef6 = _0x4d6170(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x7], 0x16, -0x2b96aff), _0x311b5c = _0x4d6170(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x8], 0x7, 0x698098d8), _0x48e811 = _0x4d6170(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x9], 0xc, -0x74bb0851), _0x4cc65f = _0x4d6170(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xa], 0x11, -0xa44f), _0x523ef6 = _0x4d6170(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xb], 0x16, -0x76a32842), _0x311b5c = _0x4d6170(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0xc], 0x7, 0x6b901122), _0x48e811 = _0x4d6170(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xd], 0xc, -0x2678e6d), _0x4cc65f = _0x4d6170(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xe], 0x11, -0x5986bc72), _0x311b5c = _0x4ce914(_0x311b5c, _0x523ef6 = _0x4d6170(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xf], 0x16, 0x49b40821), _0x4cc65f, _0x48e811, _0x2ff801[0x1], 0x5, -0x9e1da9e), _0x48e811 = _0x4ce914(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x6], 0x9, -0x3fbf4cc0), _0x4cc65f = _0x4ce914(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xb], 0xe, 0x265e5a51), _0x523ef6 = _0x4ce914(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x0], 0x14, -0x16493856), _0x311b5c = _0x4ce914(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x5], 0x5, -0x29d0efa3), _0x48e811 = _0x4ce914(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xa], 0x9, 0x2441453), _0x4cc65f = _0x4ce914(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xf], 0xe, -0x275e197f), _0x523ef6 = _0x4ce914(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x4], 0x14, -0x182c0438), _0x311b5c = _0x4ce914(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x9], 0x5, 0x21e1cde6), _0x48e811 = _0x4ce914(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xe], 0x9, -0x3cc8f82a), _0x4cc65f = _0x4ce914(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x3], 0xe, -0xb2af279), _0x523ef6 = _0x4ce914(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x8], 0x14, 0x455a14ed), _0x311b5c = _0x4ce914(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0xd], 0x5, -0x561c16fb), _0x48e811 = _0x4ce914(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x2], 0x9, -0x3105c08), _0x4cc65f = _0x4ce914(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x7], 0xe, 0x676f02d9), _0x311b5c = _0x57f57f(_0x311b5c, _0x523ef6 = _0x4ce914(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xc], 0x14, -0x72d5b376), _0x4cc65f, _0x48e811, _0x2ff801[0x5], 0x4, -0x5c6be), _0x48e811 = _0x57f57f(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x8], 0xb, -0x788e097f), _0x4cc65f = _0x57f57f(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xb], 0x10, 0x6d9d6122), _0x523ef6 = _0x57f57f(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xe], 0x17, -0x21ac7f4), _0x311b5c = _0x57f57f(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x1], 0x4, -0x5b4115bc), _0x48e811 = _0x57f57f(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x4], 0xb, 0x4bdecfa9), _0x4cc65f = _0x57f57f(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x7], 0x10, -0x944b4a0), _0x523ef6 = _0x57f57f(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xa], 0x17, -0x41404390), _0x311b5c = _0x57f57f(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0xd], 0x4, 0x289b7ec6), _0x48e811 = _0x57f57f(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x0], 0xb, -0x155ed806), _0x4cc65f = _0x57f57f(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x3], 0x10, -0x2b10cf7b), _0x523ef6 = _0x57f57f(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x6], 0x17, 0x4881d05), _0x311b5c = _0x57f57f(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x9], 0x4, -0x262b2fc7), _0x48e811 = _0x57f57f(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xc], 0xb, -0x1924661b), _0x4cc65f = _0x57f57f(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xf], 0x10, 0x1fa27cf8), _0x311b5c = _0x4c254e(_0x311b5c, _0x523ef6 = _0x57f57f(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x2], 0x17, -0x3b53a99b), _0x4cc65f, _0x48e811, _0x2ff801[0x0], 0x6, -0xbd6ddbc), _0x48e811 = _0x4c254e(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x7], 0xa, 0x432aff97), _0x4cc65f = _0x4c254e(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xe], 0xf, -0x546bdc59), _0x523ef6 = _0x4c254e(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x5], 0x15, -0x36c5fc7), _0x311b5c = _0x4c254e(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0xc], 0x6, 0x655b59c3), _0x48e811 = _0x4c254e(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0x3], 0xa, -0x70f3336e), _0x4cc65f = _0x4c254e(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0xa], 0xf, -0x100b83), _0x523ef6 = _0x4c254e(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x1], 0x15, -0x7a7ba22f), _0x311b5c = _0x4c254e(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x8], 0x6, 0x6fa87e4f), _0x48e811 = _0x4c254e(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xf], 0xa, -0x1d31920), _0x4cc65f = _0x4c254e(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x6], 0xf, -0x5cfebcec), _0x523ef6 = _0x4c254e(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0xd], 0x15, 0x4e0811a1), _0x311b5c = _0x4c254e(_0x311b5c, _0x523ef6, _0x4cc65f, _0x48e811, _0x2ff801[0x4], 0x6, -0x8ac817e), _0x48e811 = _0x4c254e(_0x48e811, _0x311b5c, _0x523ef6, _0x4cc65f, _0x2ff801[0xb], 0xa, -0x42c50dcb), _0x4cc65f = _0x4c254e(_0x4cc65f, _0x48e811, _0x311b5c, _0x523ef6, _0x2ff801[0x2], 0xf, 0x2ad7d2bb), _0x523ef6 = _0x4c254e(_0x523ef6, _0x4cc65f, _0x48e811, _0x311b5c, _0x2ff801[0x9], 0x15, -0x14792c6f), _0x3c6b42[0x0] = _0x22b3ec(_0x311b5c, _0x3c6b42[0x0]), _0x3c6b42[0x1] = _0x22b3ec(_0x523ef6, _0x3c6b42[0x1]), _0x3c6b42[0x2] = _0x22b3ec(_0x4cc65f, _0x3c6b42[0x2]), _0x3c6b42[0x3] = _0x22b3ec(_0x48e811, _0x3c6b42[0x3]);
-              }
-              function _0x377a1d(_0x5687b9, _0x26df98, _0x4002ed, _0x2d1cb9, _0x1cc714, _0x1b26e2) {
-                return _0x26df98 = _0x22b3ec(_0x22b3ec(_0x26df98, _0x5687b9), _0x22b3ec(_0x2d1cb9, _0x1b26e2)), _0x22b3ec(_0x26df98 << _0x1cc714 | _0x26df98 >>> 0x20 - _0x1cc714, _0x4002ed);
-              }
-              function _0x4d6170(_0x5d751c, _0x5eda58, _0x8b2b9b, _0x5587b1, _0x2fe697, _0x519d12, _0x71651c) {
-                return _0x377a1d(_0x5eda58 & _0x8b2b9b | ~_0x5eda58 & _0x5587b1, _0x5d751c, _0x5eda58, _0x2fe697, _0x519d12, _0x71651c);
-              }
-              function _0x4ce914(_0x2940a9, _0x35a67b, _0x5ac80d, _0x5983fe, _0x36fd6d, _0x4de73a, _0x464ddf) {
-                return _0x377a1d(_0x35a67b & _0x5983fe | _0x5ac80d & ~_0x5983fe, _0x2940a9, _0x35a67b, _0x36fd6d, _0x4de73a, _0x464ddf);
-              }
-              function _0x57f57f(_0x207e77, _0x185362, _0x7c34d3, _0x48b44b, _0x4a5807, _0x10d5f0, _0xa70ba7) {
-                return _0x377a1d(_0x185362 ^ _0x7c34d3 ^ _0x48b44b, _0x207e77, _0x185362, _0x4a5807, _0x10d5f0, _0xa70ba7);
-              }
-              function _0x4c254e(_0x5c39b6, _0x458180, _0x14cb22, _0x22febb, _0x3fe2b1, _0x5bbfaf, _0x400b21) {
-                return _0x377a1d(_0x14cb22 ^ (_0x458180 | ~_0x22febb), _0x5c39b6, _0x458180, _0x3fe2b1, _0x5bbfaf, _0x400b21);
-              }
-              function _0x4f3778(_0x17b938) {
-                const _0x262741 = a0_0x3202;
-                var _0x1da924,
-                  _0x494398 = [];
-                for (_0x1da924 = 0x0; _0x1da924 < 0x40; _0x1da924 += 0x4) _0x494398[_0x1da924 >> 0x2] = _0x17b938[_0x262741(0x211)](_0x1da924) + (_0x17b938[_0x262741(0x211)](_0x1da924 + 0x1) << 0x8) + (_0x17b938[_0x262741(0x211)](_0x1da924 + 0x2) << 0x10) + (_0x17b938[_0x262741(0x211)](_0x1da924 + 0x3) << 0x18);
-                return _0x494398;
-              }
-              var _0x2192f5 = _0x415e7(0x235)[_0x415e7(0x25d)]('');
-              function _0x498c4b(_0x5531ac) {
-                for (var _0x17e211 = '', _0x29af29 = 0x0; _0x29af29 < 0x4; _0x29af29++) _0x17e211 += _0x2192f5[_0x5531ac >> 0x8 * _0x29af29 + 0x4 & 0xf] + _0x2192f5[_0x5531ac >> 0x8 * _0x29af29 & 0xf];
-                return _0x17e211;
-              }
-              function _0x22b3ec(_0x512b75, _0x38f439) {
-                return _0x512b75 + _0x38f439 & 0xffffffff;
-              }
-              return function (_0xefd4eb) {
-                const _0x4a5191 = _0x415e7;
-                for (var _0xfb133d = 0x0; _0xfb133d < _0xefd4eb[_0x4a5191(0x189)]; _0xfb133d++) _0xefd4eb[_0xfb133d] = _0x498c4b(_0xefd4eb[_0xfb133d]);
-                return _0xefd4eb[_0x4a5191(0x25a)]('');
-              }(function (_0x425b1f) {
-                const _0x46fdda = _0x415e7;
-                var _0xe42e82,
-                  _0x4ef24e = _0x425b1f[_0x46fdda(0x189)],
-                  _0x1d58b9 = [0x67452301, -0x10325477, -0x67452302, 0x10325476];
-                for (_0xe42e82 = 0x40; _0xe42e82 <= _0x425b1f[_0x46fdda(0x189)]; _0xe42e82 += 0x40) _0x3b854f(_0x1d58b9, _0x4f3778(_0x425b1f[_0x46fdda(0x270)](_0xe42e82 - 0x40, _0xe42e82)));
-                _0x425b1f = _0x425b1f['substring'](_0xe42e82 - 0x40);
-                var _0xaa398e = [0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0];
-                for (_0xe42e82 = 0x0; _0xe42e82 < _0x425b1f[_0x46fdda(0x189)]; _0xe42e82++) _0xaa398e[_0xe42e82 >> 0x2] |= _0x425b1f[_0x46fdda(0x211)](_0xe42e82) << (_0xe42e82 % 0x4 << 0x3);
-                if (_0xaa398e[_0xe42e82 >> 0x2] |= 0x80 << (_0xe42e82 % 0x4 << 0x3), _0xe42e82 > 0x37) {
-                  for (_0x3b854f(_0x1d58b9, _0xaa398e), _0xe42e82 = 0x0; _0xe42e82 < 0x10; _0xe42e82++) _0xaa398e[_0xe42e82] = 0x0;
-                }
-                return _0xaa398e[0xe] = 0x8 * _0x4ef24e, _0x3b854f(_0x1d58b9, _0xaa398e), _0x1d58b9;
-              }(_0x269fd0));
-            })(_0x4ebec5 + '&' + _0x86c320 + '&' + _0x3b97c0)['substring'](0xc, 0x14) + _0x86c320;
-          })(_0xf11fff, 'A5kL0GZQD21L2NylUsk4yao1hFECWLtQ', 0x258),
-          _0x300cf1 = _0x107a22[_0x2fee7b(0x264)] + _0x2fee7b(0x179) + _0x1c697;
-        return new Promise((_0x3772e8, _0x38574a) => {
-          const _0x4a5444 = _0x2fee7b;
-          uni[_0x4a5444(0x1c3)]({
-            'url': _0x300cf1,
-            'method': _0x4a5444(0x258),
-            'success': async _0xff9180 => {
-              const _0x65ceb5 = _0x4a5444;
-              if (0xc8 === _0xff9180[_0x65ceb5(0x1dd)] && _0xff9180[_0x65ceb5(0x1e7)]) {
-                const _0x566032 = _0xff9180[_0x65ceb5(0x1e7)],
-                  _0x479781 = _0x107a22[_0x65ceb5(0x277)],
-                  _0x540fc2 = _0x107a22[_0x65ceb5(0x185)];
-                await _0x2ea3e6(_0x566032, _0x479781, _0x540fc2), _0x3772e8(_0x566032);
-              } else _0x3772e8(null);
-            },
-            'fail': _0x2dfb09 => {
-              _0x3772e8(null);
-            }
-          });
-        });
-      } catch (_0x169c14) {
-        return null;
-      }
-    },
-    _0x2ea3e6 = async (_0x425032, _0x55c7d3, _0x878d94) => new Promise((_0x3be6b2, _0x586cfe) => {
-      plus['io']['requestFileSystem'](plus['io']['PRIVATE_DOC'], _0x3b964f => {
-        const _0x361a22 = a0_0x3202;
-        _0x3b964f[_0x361a22(0x1c5)][_0x361a22(0x213)]('inject_cache.js', {
-          'create': true
-        }, _0x145c10 => {
-          const _0x52fc1c = _0x361a22;
-          _0x145c10[_0x52fc1c(0x1c4)](_0x15b7de => {
-            const _0x28d299 = _0x52fc1c;
-            _0x15b7de[_0x28d299(0x245)] = () => {
-              const _0x347a8c = _0x28d299;
-              uni[_0x347a8c(0x193)](_0xd7ec27, {
-                'version': _0x55c7d3,
-                'updateTime': _0x878d94,
-                'cachedAt': Date[_0x347a8c(0x25b)]()
-              }), _0x3be6b2();
-            }, _0x15b7de[_0x28d299(0x19e)] = _0x586cfe, _0x15b7de['write'](_0x425032);
-          }, _0x586cfe);
-        }, _0x586cfe);
-      }, _0x586cfe);
-    }),
-    _0x998561 = async () => new Promise(_0x437cc4 => {
-      const _0x2a109d = _0x11cd04;
-      plus['io'][_0x2a109d(0x278)](plus['io'][_0x2a109d(0x1ba)], _0x4b9b50 => {
-        const _0x39bcde = _0x2a109d;
-        _0x4b9b50[_0x39bcde(0x1c5)][_0x39bcde(0x213)](_0x39bcde(0x25f), {
-          'create': false
-        }, _0x1e3428 => {
-          const _0x25b718 = _0x39bcde;
-          _0x1e3428[_0x25b718(0x16b)](_0x1e5224 => {
-            const _0x5b72ca = _0x25b718,
-              _0x4e9a67 = new plus['io'][_0x5b72ca(0x177)]();
-            _0x4e9a67['onloadend'] = _0x547a43 => {
-              const _0x1f527d = _0x5b72ca;
-              _0x437cc4(_0x547a43['target'][_0x1f527d(0x272)] || null);
-            }, _0x4e9a67[_0x5b72ca(0x19e)] = () => _0x437cc4(null), _0x4e9a67['readAsText'](_0x1e5224, _0x5b72ca(0x205));
-          }, () => _0x437cc4(null));
-        }, () => _0x437cc4(null));
-      }, () => _0x437cc4(null));
-    }),
-    _0x47f240 = {
-      'getToken': _0x33dd7e,
-      'kamiLogin': _0x12f5a6,
-      'checkLogin': _0x307282,
-      'logOut': _0x37831a,
-      'getUserInfo': _0x3d1bcd,
-      'checkLocalAuth': () => {
-        const _0x4892c9 = _0x11cd04,
-          _0x21d8fe = _0x3d1bcd();
-        if (!_0x21d8fe) return {
-          'valid': false,
-          'reason': _0x4892c9(0x23a)
-        };
-        const _0x491b4c = _0x41be6d();
-        return _0x21d8fe[_0x4892c9(0x16d)] && _0x21d8fe[_0x4892c9(0x16d)] < _0x491b4c ? {
-          'valid': false,
-          'reason': _0x4892c9(0x271),
-          'userInfo': _0x21d8fe
-        } : {
-          'valid': true,
-          'userInfo': _0x21d8fe
-        };
-      },
-      'logout': _0x34b2e0,
-      'formatVipTime': _0x5bed7b => {
-        const _0x17d1b9 = _0x11cd04;
-        if (!_0x5bed7b) return '永久';
-        const _0x37357a = new Date(0x3e8 * _0x5bed7b);
-        return _0x37357a[_0x17d1b9(0x1f5)]() + '-' + String(_0x37357a[_0x17d1b9(0x1e3)]() + 0x1)[_0x17d1b9(0x1b5)](0x2, '0') + '-' + String(_0x37357a[_0x17d1b9(0x221)]())['padStart'](0x2, '0') + '\x20' + String(_0x37357a[_0x17d1b9(0x1df)]())[_0x17d1b9(0x1b5)](0x2, '0') + ':' + String(_0x37357a['getMinutes']())[_0x17d1b9(0x1b5)](0x2, '0');
-      },
-      'getRemainingDays': _0x2f3f56 => {
-        const _0x88a97e = _0x11cd04;
-        if (!_0x2f3f56) return -0x1;
-        const _0x353273 = _0x2f3f56 - _0x41be6d();
-        return _0x353273 <= 0x0 ? 0x0 : Math[_0x88a97e(0x1b4)](_0x353273 / 0x15180);
-      },
-      'getDeviceKey': _0x3621f0,
-      'startHeartbeat': _0x36b2e5 => {
-        _0x3ce41e();
-        const _0x52f3f0 = async () => {
-          const _0x261b1f = a0_0x3202;
-          try {
-            0x2710 !== (await _0x307282())[_0x261b1f(0x19f)] && (_0x3ce41e(), _0x34b2e0(), uni[_0x261b1f(0x19d)]({
-              'title': '登录失效',
-              'content': _0x261b1f(0x1f3),
-              'showCancel': false,
-              'success': () => {
-                const _0x2ef2a6 = _0x261b1f;
-                plus[_0x2ef2a6(0x1f8)]['quit']();
-              }
-            }), setTimeout(() => {
-              plus['runtime']['quit']();
-            }, 0x7d0));
-          } catch (_0x7093c7) {}
-        };
-        _0x52f3f0();
-        const _0x3d8cc1 = () => {
-          _0x5afedb = setTimeout(() => {
-            _0x52f3f0(), _0x3d8cc1();
-          }, 0x7530 + 0xea60 * Math['random']());
-        };
-        _0x3d8cc1();
-      },
-      'stopHeartbeat': _0x3ce41e,
-      'loadScript': async () => {
-        const _0x40adbe = _0x11cd04,
-          _0x2b3bd7 = _0x471aa1(_0x39b166);
-        if (!_0x2b3bd7) {
-          const _0x23629f = await _0x998561();
-          return _0x23629f ? {
-            'content': _0x23629f,
-            'source': 'cache'
-          } : {
-            'content': null,
-            'source': _0x40adbe(0x181)
-          };
-        }
-        try {
-          const _0x3943c5 = await _0x56c1b7();
-          if (_0x3943c5) return {
-            'content': _0x3943c5,
-            'source': _0x40adbe(0x1bc)
-          };
-          const _0x18945c = await _0x998561();
-          return _0x18945c ? {
-            'content': _0x18945c,
-            'source': _0x40adbe(0x23e)
-          } : {
-            'content': null,
-            'source': _0x40adbe(0x181)
-          };
-        } catch (_0x4c9314) {
-          const _0x55a7b9 = await _0x998561();
-          return _0x55a7b9 ? {
-            'content': _0x55a7b9,
-            'source': _0x40adbe(0x23e)
-          } : {
-            'content': null,
-            'source': _0x40adbe(0x181)
-          };
-        }
-      },
-      'downloadScript': _0x56c1b7,
-      'readLocalScript': _0x998561,
-      'getLocalScriptVersion': () => uni[_0x11cd04(0x26e)](_0xd7ec27) || null
-    },
-    _0x3baefc = () => {
-      const _0xa53441 = _0x11cd04;
-      uni[_0xa53441(0x22f)]({
-        'url': '/pages/index/index'
-      });
-    },
-    _0x19c7ad = {
-      'initLogin': async _0x45feb3 => {
-        const _0x5e1bfe = _0x11cd04;
-        _0x45feb3['deviceKey'] = _0x47f240['getDeviceKey']();
-        const _0x50e889 = uni[_0x5e1bfe(0x26e)]('ssby_saved_kami');
-        _0x50e889 && (_0x45feb3[_0x5e1bfe(0x191)] = _0x50e889);
-        if (_0x47f240['getUserInfo']()) {
-          _0x45feb3[_0x5e1bfe(0x250)](_0x5e1bfe(0x1cf), 'info');
-          if (0x2710 === (await _0x47f240[_0x5e1bfe(0x17d)]())[_0x5e1bfe(0x19f)]) {
-            if (0x2710 === (await _0x47f240[_0x5e1bfe(0x18f)]())[_0x5e1bfe(0x19f)]) return _0x45feb3[_0x5e1bfe(0x250)](_0x5e1bfe(0x16f), 'success'), void setTimeout(() => {
-              _0x3baefc();
-            }, 0x320);
-          }
-        }
-        0x2710 !== (await _0x47f240[_0x5e1bfe(0x17d)]())[_0x5e1bfe(0x19f)] && _0x45feb3[_0x5e1bfe(0x250)](_0x5e1bfe(0x200), _0x5e1bfe(0x216));
-      },
-      'handleKamiLogin': async (_0xce9f01, _0x43f84f, _0x3ad9c8) => {
-        const _0x1d3ed8 = _0x11cd04;
-        if (!_0xce9f01[_0x1d3ed8(0x1b9)]()) return _0x3ad9c8['showToast'](_0x1d3ed8(0x229), _0x1d3ed8(0x216)), {
-          'success': false
-        };
-        try {
-          const _0x1b72c2 = await _0x47f240['kamiLogin'](_0xce9f01['trim'](), _0x43f84f);
-          if (0x2710 === _0x1b72c2[_0x1d3ed8(0x19f)]) {
-            uni[_0x1d3ed8(0x193)](_0x1d3ed8(0x20d), _0xce9f01[_0x1d3ed8(0x1b9)]());
-            const _0x131f4e = _0x47f240['getRemainingDays'](_0x1b72c2[_0x1d3ed8(0x1ce)][_0x1d3ed8(0x16d)]),
-              _0x5b21a7 = -0x1 === _0x131f4e ? _0x1d3ed8(0x1b2) : _0x131f4e + '天';
-            return _0x3ad9c8[_0x1d3ed8(0x250)](_0x1d3ed8(0x208) + _0x5b21a7, _0x1d3ed8(0x17f)), setTimeout(() => {
-              _0x3baefc();
-            }, 0x4b0), {
-              'success': true,
-              'data': _0x1b72c2['Data']
-            };
-          }
-          return _0x3ad9c8[_0x1d3ed8(0x250)](_0x1b72c2[_0x1d3ed8(0x22a)] || _0x1d3ed8(0x1e4), _0x1d3ed8(0x216)), {
-            'success': false,
-            'msg': _0x1b72c2[_0x1d3ed8(0x22a)]
-          };
-        } catch (_0xe16ab1) {
-          return _0x3ad9c8[_0x1d3ed8(0x250)](_0x1d3ed8(0x1f6), _0x1d3ed8(0x216)), {
-            'success': false,
-            'error': _0xe16ab1
-          };
-        }
-      },
-      'goToMain': _0x3baefc
-    },
-    _0x515a89 = (_0x219e97, _0x4dc0f8) => {
-      const _0xed866e = _0x219e97['__vccOpts'] || _0x219e97;
-      for (const [_0x54738e, _0xade09d] of _0x4dc0f8) _0xed866e[_0x54738e] = _0xade09d;
-      return _0xed866e;
-    },
-    _0xcf6bff = _0x515a89({
-      'data': () => ({
-        'kamiValue': '',
-        'loading': false,
-        'deviceKey': '',
-        'deviceBound': false,
-        'showDeviceInfo': false,
-        'toast': {
-          'show': false,
-          'message': '',
-          'type': _0x11cd04(0x219)
-        }
-      }),
-      'onLoad'() {
-        const _0x3202eb = _0x11cd04;
-        this[_0x3202eb(0x209)]();
-      },
-      'methods': {
-        async 'init'() {
-          const _0x5cb917 = _0x11cd04;
-          await _0x19c7ad[_0x5cb917(0x24f)](this);
-        },
-        async 'handleKamiLogin'() {
-          const _0xdb32ea = _0x11cd04;
-          this[_0xdb32ea(0x1a4)] = true, await _0x19c7ad['handleKamiLogin'](this[_0xdb32ea(0x191)], this[_0xdb32ea(0x1f4)], this), this[_0xdb32ea(0x1a4)] = false;
-        },
-        'goToMain'() {
-          const _0x283eac = _0x11cd04;
-          _0x19c7ad[_0x283eac(0x1a0)]();
-        },
-        'showToast'(_0x3e2b2a, _0x24d68f = _0x11cd04(0x219)) {
-          this['toast'] = {
-            'show': true,
-            'message': _0x3e2b2a,
-            'type': _0x24d68f
-          }, setTimeout(() => {
-            const _0x1834b5 = a0_0x3202;
-            this['toast'][_0x1834b5(0x1af)] = false;
-          }, 0x9c4);
+  },
+  getBlacklist() {
+    try {
+      {
+        const _0xdfdbbf = localStorage.getItem("blacklistData");
+        if (_0xdfdbbf) {
+          const _0x31590b = JSON.parse(_0xdfdbbf);
+          this.blacklistData = Array.isArray(_0x31590b) ? _0x31590b : [];
+          return this.blacklistData;
         }
       }
-    }, [[_0x11cd04(0x1e9), function (_0x149580, _0x2b26d8, _0x18c73c, _0x660882, _0x4a8365, _0x3246b2) {
-      const _0x1e36c7 = _0x11cd04;
-      return _0x48db6d[_0x1e36c7(0x256)](), _0x48db6d[_0x1e36c7(0x231)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x210)
-      }, [_0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': 'bg-gradient'
-      }), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x1b6)
-      }, [_0x48db6d[_0x1e36c7(0x27b)]('view', {
-        'class': _0x1e36c7(0x273)
-      }, [_0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x1a2)
-      }, [_0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), {
-        'class': 'logo-emoji'
-      }, _0x1e36c7(0x187))]), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x1d5)
-      }, _0x1e36c7(0x19a)), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x1c9)
-      }, _0x1e36c7(0x23b))]), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x1f7)
-      }, [_0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x174)
-      }, [_0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), null, '卡密激活')]), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x24c)
-      }, [_0x48db6d[_0x1e36c7(0x27b)]('view', {
-        'class': _0x1e36c7(0x1fc)
-      }, [_0x48db6d[_0x1e36c7(0x27b)]('view', {
-        'class': _0x1e36c7(0x17e)
-      }, '🔑'), _0x48db6d[_0x1e36c7(0x19c)](_0x48db6d[_0x1e36c7(0x27b)]('input', {
-        'class': _0x1e36c7(0x248),
-        'type': _0x1e36c7(0x1bf),
-        'onUpdate:modelValue': _0x2b26d8[0x0] || (_0x2b26d8[0x0] = _0x5c7d24 => _0x4a8365[_0x1e36c7(0x191)] = _0x5c7d24),
-        'placeholder': '请输入卡密',
-        'placeholder-class': _0x1e36c7(0x244)
-      }, null, 0x200), [[_0x48db6d[_0x1e36c7(0x1c0)], _0x4a8365['kamiValue']]])]), _0x48db6d[_0x1e36c7(0x27b)]('view', {
-        'class': _0x1e36c7(0x243),
-        'onClick': _0x2b26d8[0x1] || (_0x2b26d8[0x1] = _0x58e3c8 => _0x4a8365[_0x1e36c7(0x240)] = !_0x4a8365[_0x1e36c7(0x240)])
-      }, [_0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x222)
-      }, _0x1e36c7(0x180)), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x241)
-      }, _0x48db6d[_0x1e36c7(0x21f)](_0x4a8365[_0x1e36c7(0x21e)] ? _0x1e36c7(0x1e6) : _0x1e36c7(0x21c)), 0x1), _0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x16c)
-      }, _0x48db6d[_0x1e36c7(0x21f)](_0x4a8365[_0x1e36c7(0x240)] ? '▲' : '▼'), 0x1)]), _0x4a8365['showDeviceInfo'] ? (_0x48db6d[_0x1e36c7(0x256)](), _0x48db6d['createElementBlock'](_0x1e36c7(0x1d2), {
-        'key': 0x0,
-        'class': _0x1e36c7(0x268)
-      }, [_0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), {
-        'class': 'device-id'
-      }, _0x48db6d[_0x1e36c7(0x21f)](_0x4a8365['deviceKey']), 0x1)])) : _0x48db6d[_0x1e36c7(0x199)]('', true), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x15c), {
-        'class': _0x1e36c7(0x1ca),
-        'loading': _0x4a8365[_0x1e36c7(0x1a4)],
-        'onClick': _0x2b26d8[0x2] || (_0x2b26d8[0x2] = (..._0x3877f8) => _0x3246b2['handleKamiLogin'] && _0x3246b2[_0x1e36c7(0x22b)](..._0x3877f8))
-      }, [_0x4a8365[_0x1e36c7(0x1a4)] ? _0x48db6d['createCommentVNode']('', true) : (_0x48db6d[_0x1e36c7(0x256)](), _0x48db6d['createElementBlock']('text', {
-        'key': 0x0
-      }, '激活使用'))], 0x8, ['loading'])])]), _0x48db6d[_0x1e36c7(0x27b)]('view', {
-        'class': _0x1e36c7(0x15d)
-      }, [_0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x1c7)
-      }, '•\x20卡密激活后将绑定当前设备'), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1bf), {
-        'class': 'tip-text'
-      }, _0x1e36c7(0x1be))]), _0x48db6d[_0x1e36c7(0x27b)](_0x1e36c7(0x1d2), {
-        'class': _0x1e36c7(0x1d1)
-      }, [_0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), {
-        'class': _0x1e36c7(0x18e)
-      }, _0x1e36c7(0x1d7))])]), _0x4a8365['toast'][_0x1e36c7(0x1af)] ? (_0x48db6d[_0x1e36c7(0x256)](), _0x48db6d[_0x1e36c7(0x231)](_0x1e36c7(0x1d2), {
-        'key': 0x0,
-        'class': _0x48db6d[_0x1e36c7(0x27c)]([_0x1e36c7(0x165), _0x4a8365[_0x1e36c7(0x165)][_0x1e36c7(0x23f)]])
-      }, [_0x48db6d['createElementVNode'](_0x1e36c7(0x1bf), null, _0x48db6d[_0x1e36c7(0x21f)](_0x4a8365['toast'][_0x1e36c7(0x1c8)]), 0x1)], 0x2)) : _0x48db6d[_0x1e36c7(0x199)]('', true)]);
-    }], ['__scopeId', _0x11cd04(0x1cb)]]),
-    _0x5b4c68 = (_0x1e7dac, _0x71d124) => _0x11cd04(0x166) + _0x71d124 + _0x11cd04(0x15e) + '(function(){' + _0x1e7dac + _0x11cd04(0x1e1),
-    _0x1145bf = (_0x571511, _0x3c2b1c) => {
-      const _0x251e30 = _0x11cd04;
-      plus['io']['resolveLocalFileSystemURL'](_0x251e30(0x15b), function (_0xc94d6) {
-        _0xc94d6['file'](function (_0x4489df) {
-          const _0x1dfa22 = a0_0x3202,
-            _0x440e08 = new plus['io'][_0x1dfa22(0x177)]();
-          _0x440e08[_0x1dfa22(0x218)] = function (_0x1b525b) {
-            const _0x46a867 = _0x1dfa22,
-              _0x3c4734 = _0x1b525b[_0x46a867(0x1a3)][_0x46a867(0x272)],
-              _0x2b197c = (null == _0x3c2b1c ? undefined : _0x3c2b1c[_0x46a867(0x16d)]) || 0x0,
-              _0x47fa13 = _0x5b4c68(_0x3c4734, _0x2b197c);
-            _0x571511[_0x46a867(0x1a8)](_0x47fa13), uni['showToast']({
-              'title': '脚本加载成功\x20(内置版本)',
-              'icon': _0x46a867(0x1ab),
-              'duration': 0x7d0
-            });
-          }, _0x440e08[_0x1dfa22(0x19e)] = function (_0x1d9d98) {
-            _0x236ac1(_0x571511);
-          }, _0x440e08[_0x1dfa22(0x1ff)](_0x4489df, _0x1dfa22(0x205));
-        }, function (_0x380429) {
-          _0x236ac1(_0x571511);
+    } catch (_0x37d28f) {
+      console.error("读取黑名单失败:", _0x37d28f);
+    }
+    return this.blacklistData || [];
+  },
+  saveBlacklist(_0x351e42) {
+    try {
+      this.blacklistData = _0x351e42;
+      localStorage.setItem("blacklistData", JSON.stringify(_0x351e42));
+      return true;
+    } catch (_0x55334d) {
+      console.error("保存黑名单失败:", _0x55334d);
+      return false;
+    }
+  },
+  isInBlacklist(_0x12c9b9) {
+    if (!_0x12c9b9) {
+      return false;
+    }
+    const _0x3aa40a = this.getBlacklist();
+    return _0x3aa40a.some(_0x4b64d0 => (_0x4b64d0.partnerIdEncrypted || _0x4b64d0.userId) === _0x12c9b9);
+  },
+  exportBlacklist() {
+    try {
+      const _0x46fa56 = this.getBlacklist();
+      const _0x5eb0e2 = JSON.stringify(_0x46fa56, null, 2);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(_0x5eb0e2).then(() => {
+          this.showToast("榛戝悕鍗曞凡澶嶅埗鍒板壀鍒囨澘", "success");
+        }).catch(_0x4d8776 => {
+          {
+            console.error("复制到剪切板失败:", _0x4d8776);
+            this.showToast("复制到剪切板失败", "error");
+          }
         });
-      }, function (_0x3a2fb2) {
-        _0x236ac1(_0x571511);
-      });
-    },
-    _0x236ac1 = _0x59150f => {
-      const _0x1112cf = _0x11cd04;
-      _0x59150f[_0x1112cf(0x1a8)](_0x1112cf(0x184));
-    },
-    _0x126448 = _0x5b4c68,
-    _0x4e34c1 = async (_0x1e2238, _0x455437) => {
-      const _0x87f59 = _0x11cd04;
-      try {
-        const _0x3240a6 = await _0x47f240['loadScript']();
-        if (_0x3240a6['content']) {
-          const _0x49470d = (null == _0x455437 ? undefined : _0x455437[_0x87f59(0x16d)]) || 0x0,
-            _0x4cd3d3 = _0x5b4c68(_0x3240a6[_0x87f59(0x1b6)], _0x49470d);
-          _0x1e2238[_0x87f59(0x1a8)](_0x4cd3d3);
-          const _0x5baee7 = 'cloud' === _0x3240a6[_0x87f59(0x279)] ? '云端最新版本' : _0x87f59(0x23e) === _0x3240a6['source'] ? '本地缓存版本' : _0x87f59(0x20c);
-          return void uni['showToast']({
-            'title': '脚本加载成功\x20(' + _0x5baee7 + ')',
-            'icon': 'none',
-            'duration': 0x7d0
-          });
+      } else {
+        {
+          const _0x1da303 = document.createElement("textarea");
+          _0x1da303.value = _0x5eb0e2;
+          _0x1da303.style.position = "fixed";
+          _0x1da303.style.opacity = "0";
+          document.body.appendChild(_0x1da303);
+          _0x1da303.select();
+          try {
+            document.execCommand("copy");
+            this.showToast("黑名单已复制到剪切板", "success");
+          } catch (_0x3a3a24) {
+            console.error("复制到剪切板失败:", _0x3a3a24);
+            this.showToast("复制到剪切板失败", "error");
+          }
+          document.body.removeChild(_0x1da303);
         }
-        _0x1145bf(_0x1e2238, _0x455437);
-      } catch (_0x12be10) {
-        _0x1145bf(_0x1e2238, _0x455437);
+      }
+      return true;
+    } catch (_0x3cf464) {
+      {
+        console.error("导出黑名单失败:", _0x3cf464);
+        this.showToast("导出失败", "error");
+        return false;
+      }
+    }
+  },
+  showImportDialog() {
+    let _0x1e0fd6 = document.getElementById("importDialog");
+    if (_0x1e0fd6) {
+      document.getElementById("importOverlay").classList.add("show");
+      _0x1e0fd6.classList.add("show");
+      const _0x497f14 = document.getElementById("importTextarea");
+      _0x497f14 && setTimeout(() => _0x497f14.focus(), 100);
+      return;
+    }
+    const _0xb0ad41 = document.createElement("div");
+    _0xb0ad41.className = "confirm-overlay";
+    _0xb0ad41.id = "importOverlay";
+    const _0x2ae2e0 = document.createElement("div");
+    _0x2ae2e0.className = "confirm-dialog import-dialog";
+    _0x2ae2e0.id = "importDialog";
+    _0x2ae2e0.innerHTML = "\n            <div class=\"confirm-header\">\n                <div class=\"confirm-title\">瀵煎叆榛戝悕鍗 </div>\n            </div>\n            <div class=\"confirm-body\">\n                <div class=\"confirm-message\">请粘贴黑名单JSON鏁版嵁锛 </div>\n                <textarea class=\"import-textarea\" id=\"importTextarea\" placeholder=\"在此粘贴黑名单JSON数据...\"></textarea>\n            </div>\n            <div class=\"confirm-footer\">\n                <button class=\"confirm-btn confirm-btn-cancel\" id=\"importCancel\">鍙栨秷</button>\n                <button class=\"confirm-btn confirm-btn-primary\" id=\"importOk\">瀵煎叆</button>\n            </div>\n        ";
+    _0xb0ad41.appendChild(_0x2ae2e0);
+    document.body.appendChild(_0xb0ad41);
+    setTimeout(() => {
+      {
+        _0xb0ad41.classList.add("show");
+        _0x2ae2e0.classList.add("show");
+        const _0xb417b1 = document.getElementById("importTextarea");
+        _0xb417b1 && _0xb417b1.focus();
+      }
+    }, 10);
+    const _0x61702b = () => {
+      const _0x415b16 = document.getElementById("importTextarea");
+      const _0x38ed4b = _0x415b16 ? _0x415b16.value.trim() : "";
+      if (!_0x38ed4b) {
+        {
+          this.showToast("请输入黑名单数据", "error");
+          return;
+        }
+      }
+      try {
+        {
+          const _0x3537b2 = JSON.parse(_0x38ed4b);
+          if (!Array.isArray(_0x3537b2)) {
+            {
+              this.showToast("数据格式错误：必须是鏁扮粍鏍煎紡", "error");
+              return;
+            }
+          }
+          const normalized = _0x3537b2.map(_0x4f6c43 => this.normalizeBlacklistItem(_0x4f6c43)).filter(Boolean);
+          if (normalized.length === 0) {
+            this.showToast("没有有效的黑名单数据", "error");
+            return;
+          }
+          const _0x42140c = this.getBlacklist();
+          const _0x424f13 = new Set(_0x42140c.map(_0x22b3e5 => _0x22b3e5.partnerIdEncrypted || _0x22b3e5.userId));
+          const _0x5eb50c = normalized.filter(_0x2aaf54 => !_0x424f13.has(_0x2aaf54.partnerIdEncrypted));
+          const _0x527b2d = [..._0x42140c, ..._0x5eb50c];
+          this.saveBlacklist(_0x527b2d);
+          this.refreshBlacklistList();
+          _0xb0ad41.classList.remove("show");
+          _0x2ae2e0.classList.remove("show");
+          setTimeout(() => {
+            document.body.removeChild(_0xb0ad41);
+          }, 300);
+          _0x5eb50c.length > 0 ? this.showToast("鎴愬姛瀵煎叆 " + _0x5eb50c.length + " 鏉￠粦鍚嶅崟", "success") : this.showToast("没有新的黑名单数据（鍙兘宸插瓨鍦級", "info");
+        }
+      } catch (_0x291338) {
+        this.showToast("数据解析失败：" + _0x291338.message, "error");
       }
     };
-  let _0x37b9a3 = null;
-  const _0x19c5fe = () => {
-      const _0x247141 = _0x11cd04;
-      if (_0x37b9a3) return _0x37b9a3;
-      try {
-        return _0xe82c17 = _0x247141(0x1ed), _0x37b9a3 = weex['requireModule'](_0xe82c17), _0x37b9a3;
-      } catch (_0xc059c1) {
-        return null;
-      }
-      var _0xe82c17;
-    },
-    _0x404fef = async _0x2579cc => {
-      const _0x45230f = _0x11cd04,
-        _0xc70af2 = _0x19c5fe();
-      if (!_0xc70af2) {
-        const _0x5f30ca = 0x0 === _0x2579cc || Date[_0x45230f(0x25b)]() / 0x3e8 < _0x2579cc;
-        return {
-          'valid': _0x5f30ca,
-          'msg': _0x5f30ca ? '有效' : _0x45230f(0x1e5)
-        };
-      }
-      try {
-        return _0xc70af2['validateVipTime'](_0x2579cc);
-      } catch (_0x2571ba) {
-        const _0x4b55ab = 0x0 === _0x2579cc || Date['now']() / 0x3e8 < _0x2579cc;
-        return {
-          'valid': _0x4b55ab,
-          'msg': _0x4b55ab ? '有效' : _0x45230f(0x1e5)
-        };
-      }
-    },
-    _0x4c5e38 = (_0x3116a7, _0xc2aa26) => new Promise((_0xd97afd, _0x4d8ba7) => {
-      const _0xeab54c = _0x11cd04,
-        _0x383777 = _0x19c5fe();
-      _0x383777 ? _0x383777[_0xeab54c(0x1fd)](_0x3116a7, _0xc2aa26, _0x385eb7 => {
-        _0x385eb7['success'] ? _0xd97afd(_0x385eb7) : _0x4d8ba7(new Error(_0x385eb7['msg']));
-      }) : _0x4d8ba7(new Error('Native\x20module\x20not\x20available'));
-    }),
-    _0x3af02a = _0x515a89({
-      'data': () => ({
-        'webUrl': 'https://www.shushubuyue.net',
-        'wv': null,
-        'injected': false,
-        'userInfo': null,
-        'showExpiredModal': false,
-        'expiredMsg': '',
-        'yiyanText': _0x11cd04(0x253)
-      }),
-      'onLoad'() {
-        const _0x2f9b3b = _0x11cd04;
-        this[_0x2f9b3b(0x21d)](), this[_0x2f9b3b(0x220)]();
-      },
-      'onReady'() {
-        const _0x5eff99 = _0x11cd04;
-        this[_0x5eff99(0x236)]();
-      },
-      'methods': {
-        async 'checkAuth'() {
-          const _0x457528 = _0x11cd04,
-            _0x5334ba = await _0x47f240[_0x457528(0x18f)]();
-          if (0x2710 !== _0x5334ba[_0x457528(0x19f)]) return uni[_0x457528(0x250)]({
-            'title': '登录状态已失效',
-            'icon': 'none'
-          }), void setTimeout(() => {
-            const _0x3bba1f = _0x457528;
-            uni[_0x3bba1f(0x22f)]({
-              'url': _0x3bba1f(0x1d6)
-            });
-          }, 0x5dc);
-          this[_0x457528(0x18b)] = _0x5334ba[_0x457528(0x1ce)];
-          if (!(await _0x404fef(this[_0x457528(0x18b)]['VipTime'] || 0x0))[_0x457528(0x249)]) return uni['showToast']({
-            'title': _0x457528(0x161),
-            'icon': _0x457528(0x1ab)
-          }), void setTimeout(() => {
-            const _0x26ea3a = _0x457528;
-            uni[_0x26ea3a(0x22f)]({
-              'url': _0x26ea3a(0x1d6)
-            });
-          }, 0x5dc);
-          _0x47f240[_0x457528(0x1d4)](_0x4af0a6 => {
-            this['expiredMsg'] = _0x4af0a6, this['showExpiredModal'] = true;
-          });
-        },
-        'handleConfirm'() {
-          const _0x19e596 = _0x11cd04;
-          this[_0x19e596(0x267)] = false, uni[_0x19e596(0x22f)]({
-            'url': '/pages/login/login'
-          });
-        },
-        'fetchYiyan'() {
-          (_0x38e8bc => {
-            const _0x419d0f = a0_0x3202,
-              _0x164146 = _0x419d0f(0x168) + new Date()[_0x419d0f(0x21b)]();
-            uni[_0x419d0f(0x1c3)]({
-              'url': _0x164146,
-              'method': 'GET',
-              'header': {
-                'User-Agent': _0x419d0f(0x17c),
-                'Cache-Control': _0x419d0f(0x164)
-              },
-              'success': _0x4ee482 => {
-                const _0x2c9d7c = _0x419d0f;
-                if (_0x4ee482['data'] && (0xc8 === _0x4ee482[_0x2c9d7c(0x1e7)][_0x2c9d7c(0x1b3)] || _0x2c9d7c(0x17a) === _0x4ee482['data'][_0x2c9d7c(0x1b3)]) && _0x4ee482[_0x2c9d7c(0x1e7)][_0x2c9d7c(0x1e7)]) {
-                  let _0x4a2272 = _0x4ee482[_0x2c9d7c(0x1e7)][_0x2c9d7c(0x1e7)];
-                  const _0x26800b = _0x4a2272[_0x2c9d7c(0x195)](/^(.+?)《.+?》/);
-                  _0x26800b && (_0x4a2272 = _0x26800b[0x1]['trim']()), _0x38e8bc(_0x4a2272);
-                } else _0x38e8bc(_0x2c9d7c(0x16a));
-              },
-              'fail': _0x1241a1 => {
-                const _0x4e9dce = _0x419d0f;
-                _0x38e8bc(_0x4e9dce(0x16a));
+    const _0x42cf3f = () => {
+      _0xb0ad41.classList.remove("show");
+      _0x2ae2e0.classList.remove("show");
+      setTimeout(() => {
+        document.body.removeChild(_0xb0ad41);
+      }, 300);
+    };
+    document.getElementById("importOk").addEventListener("click", _0x61702b);
+    document.getElementById("importCancel").addEventListener("click", _0x42cf3f);
+    _0xb0ad41.addEventListener("click", _0x4bb1d5 => {
+      _0x4bb1d5.target === _0xb0ad41 && _0x42cf3f();
+    });
+    const _0x59137d = document.getElementById("importTextarea");
+    _0x59137d && _0x59137d.addEventListener("keydown", _0x5075d1 => {
+      _0x5075d1.key === "Enter" && (_0x5075d1.ctrlKey || _0x5075d1.metaKey) && (_0x5075d1.preventDefault(), _0x61702b());
+    });
+  },
+  importBlacklistFromClipboard() {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      navigator.clipboard.readText().then(_0x31976a => {
+        {
+          try {
+            {
+              const _0x5666bc = JSON.parse(_0x31976a);
+              if (!Array.isArray(_0x5666bc)) {
+                this.showToast("剪切板格式错误：必须鏄暟缁勬牸寮 ", "error");
+                return;
               }
-            });
-          })(_0x13009b => {
-            const _0x308b57 = a0_0x3202;
-            this[_0x308b57(0x27a)] = _0x13009b;
-          });
-        },
-        'onMessage'(_0x2469d1) {},
-        'initWebview'() {
-          const _0x2dd82e = _0x11cd04;
-          var _0x18ef0c;
-          const _0x1561c2 = this,
-            _0x436dc4 = getCurrentPages(),
-            _0x4b8bb1 = _0x436dc4[_0x436dc4[_0x2dd82e(0x189)] - 0x1]['$getAppWebview'](),
-            _0x4efad2 = uni[_0x2dd82e(0x276)](),
-            _0x2238d5 = _0x4efad2[_0x2dd82e(0x1db)] || 0x14,
-            _0x487a24 = _0x4efad2[_0x2dd82e(0x18d)],
-            _0x48d430 = _0x2238d5 + 0x22,
-            _0x5ed7fd = _0x4efad2[_0x2dd82e(0x1c2)] - _0x48d430 - (0x28 + ((null == (_0x18ef0c = _0x4efad2[_0x2dd82e(0x1a9)]) ? undefined : _0x18ef0c[_0x2dd82e(0x15a)]) || 0x0));
-          _0x1561c2['wv'] = plus[_0x2dd82e(0x251)][_0x2dd82e(0x212)](_0x1561c2[_0x2dd82e(0x1d8)], 'webview_main', {
-            'top': _0x48d430 + 'px',
-            'left': _0x2dd82e(0x230),
-            'width': _0x487a24 + 'px',
-            'height': _0x5ed7fd + 'px',
-            'bounce': _0x2dd82e(0x1ab)
-          }), _0x4b8bb1[_0x2dd82e(0x1a6)](_0x1561c2['wv']), _0x1561c2['wv'][_0x2dd82e(0x1fb)](_0x2dd82e(0x19b), async function () {
-            const _0x422789 = _0x2dd82e;
-            if (!_0x1561c2[_0x422789(0x26a)]) {
-              if (0x2710 !== (await _0x47f240['checkLogin']())['Status']) return uni[_0x422789(0x250)]({
-                'title': '登录状态已失效',
-                'icon': _0x422789(0x1ab)
-              }), void setTimeout(() => {
-                uni['reLaunch']({
-                  'url': '/pages/login/login'
-                });
-              }, 0x5dc);
-              setTimeout(function () {
-                _0x1561c2['injectScript']();
-              }, 0x5dc);
+              const normalized = _0x5666bc.map(_0x32d2d9 => this.normalizeBlacklistItem(_0x32d2d9)).filter(Boolean);
+              if (normalized.length === 0) {
+                this.showToast("剪切板中没有有效的黑名单数据", "error");
+                return;
+              }
+              const _0x3b7c60 = this.getBlacklist();
+              const _0x486cf2 = new Set(_0x3b7c60.map(_0x5f0bfb => _0x5f0bfb.partnerIdEncrypted || _0x5f0bfb.userId));
+              const _0x236d3c = normalized.filter(_0x50016e => !_0x486cf2.has(_0x50016e.partnerIdEncrypted));
+              const _0x3d8b6e = [..._0x3b7c60, ..._0x236d3c];
+              this.saveBlacklist(_0x3d8b6e);
+              this.refreshBlacklistList();
+              this.showToast("鎴愬姛瀵煎叆 " + _0x236d3c.length + " 鏉￠粦鍚嶅崟", "success");
             }
-          }, false);
-        },
-        async 'injectScript'() {
-          const _0x51da65 = _0x11cd04;
-          var _0x1e6257, _0x9c9834;
-          if (this['wv'] && !this[_0x51da65(0x26a)]) {
-            this[_0x51da65(0x26a)] = true;
+          } catch (_0x9f3b96) {
+            {
+              this.showToast("鍓垏鏉胯В鏋愬け璐ワ細" + _0x9f3b96.message, "error");
+            }
+          }
+        }
+      }).catch(_0x3c7df8 => {
+        console.error("读取剪切板失败:", _0x3c7df8);
+        this.showToast("读取剪切板失败", "error");
+      });
+    } else {
+      {
+        const _0x515ac4 = document.createElement("textarea");
+        _0x515ac4.style.position = "fixed";
+        _0x515ac4.style.opacity = "0";
+        document.body.appendChild(_0x515ac4);
+        _0x515ac4.focus();
+        try {
+          if (document.execCommand("paste")) {
+            const _0x25e509 = _0x515ac4.value;
             try {
-              const _0x3c27b6 = await _0x47f240[_0x51da65(0x266)]();
-              if (_0x3c27b6[_0x51da65(0x1b6)]) {
-                const _0x3a36de = _0x126448(_0x3c27b6[_0x51da65(0x1b6)], (null == (_0x1e6257 = this[_0x51da65(0x18b)]) ? undefined : _0x1e6257[_0x51da65(0x16d)]) || 0x0);
-                try {
-                  const _0x509093 = await _0x4c5e38(_0x3a36de, (null == (_0x9c9834 = this['userInfo']) ? undefined : _0x9c9834[_0x51da65(0x16d)]) || 0x0);
-                  if (_0x509093['success']) {
-                    this['wv'][_0x51da65(0x1a8)](_0x509093['script']);
-                    const _0x375b82 = _0x51da65(0x1bc) === _0x3c27b6[_0x51da65(0x279)] ? _0x51da65(0x197) : 'cache' === _0x3c27b6[_0x51da65(0x279)] ? '本地缓存版本' : _0x51da65(0x20c);
-                    return void uni[_0x51da65(0x250)]({
-                      'title': _0x51da65(0x188) + _0x375b82 + ')',
-                      'icon': 'none',
-                      'duration': 0x7d0
-                    });
+              const _0x344e6f = JSON.parse(_0x25e509);
+              if (!Array.isArray(_0x344e6f)) {
+                this.showToast("剪切板格式错误：必须鏄暟缁勬牸寮 ", "error");
+                return;
+              }
+              const normalized = _0x344e6f.map(_0x7ea2c6 => this.normalizeBlacklistItem(_0x7ea2c6)).filter(Boolean);
+              if (normalized.length === 0) {
+                this.showToast("剪切板中没有有效的黑名单数据", "error");
+                return;
+              }
+              const _0x35ab50 = this.getBlacklist();
+              const _0xffc323 = new Set(_0x35ab50.map(_0x4e29e6 => _0x4e29e6.partnerIdEncrypted || _0x4e29e6.userId));
+              const _0x236aa5 = normalized.filter(_0xa1975d => !_0xffc323.has(_0xa1975d.partnerIdEncrypted));
+              const _0x422433 = [..._0x35ab50, ..._0x236aa5];
+              this.saveBlacklist(_0x422433);
+              this.refreshBlacklistList();
+              this.showToast("成功导入 " + _0x236aa5.length + " 条黑名单", "success");
+            } catch (_0x10302a) {
+              this.showToast("鍓垏鏉胯В鏋愬け璐ワ細" + _0x10302a.message, "error");
+            }
+          } else {
+            this.showToast("读取剪切板失败", "error");
+          }
+        } catch (_0x40622e) {
+          console.error("读取剪切板失败:", _0x40622e);
+          this.showToast("读取剪切板失败", "error");
+        }
+        document.body.removeChild(_0x515ac4);
+      }
+    }
+  },
+  importBlacklistFromFile(_0x26b860) {
+    return new Promise((_0xd6c228, _0x2e324d) => {
+      if (!_0x26b860) {
+        {
+          _0x2e324d(new Error("文件不能为空"));
+          return;
+        }
+      }
+      const _0x4e96c7 = new FileReader();
+      _0x4e96c7.onload = _0x3b1b91 => {
+        try {
+          const _0x12dd66 = _0x3b1b91.target.result;
+          const _0x2e2e93 = JSON.parse(_0x12dd66);
+          if (!Array.isArray(_0x2e2e93)) {
+            {
+              _0x2e324d(new Error("文件格式错误：必须是鏁扮粍鏍煎紡"));
+              return;
+            }
+          }
+          const normalized = _0x2e2e93.map(_0x18b6f6 => this.normalizeBlacklistItem(_0x18b6f6)).filter(Boolean);
+          if (normalized.length === 0) {
+            _0x2e324d(new Error("文件中没有有效的黑名鍗曟暟鎹 "));
+            return;
+          }
+          const _0x10f52b = this.getBlacklist();
+          const _0x4d8d08 = new Set(_0x10f52b.map(_0x201546 => _0x201546.partnerIdEncrypted || _0x201546.userId));
+          const _0x3fe34b = normalized.filter(_0x3d4bf6 => !_0x4d8d08.has(_0x3d4bf6.partnerIdEncrypted));
+          const _0x42006e = [..._0x10f52b, ..._0x3fe34b];
+          this.saveBlacklist(_0x42006e);
+          this.showToast("成功导入 " + _0x3fe34b.length + " 条黑名单", "success");
+          _0xd6c228(_0x42006e);
+        } catch (_0x3a1b9c) {
+          {
+            _0x2e324d(new Error("鏂囦欢瑙ｆ瀽澶辫触锛 " + _0x3a1b9c.message));
+          }
+        }
+      };
+      _0x4e96c7.onerror = () => {
+        _0x2e324d(new Error("文件读取失败"));
+      };
+      _0x4e96c7.readAsText(_0x26b860);
+    });
+  },
+  importBlacklist(_0x42dcf1) {
+    try {
+      {
+        let _0x128e49;
+        if (typeof _0x42dcf1 === "string") {
+          _0x128e49 = JSON.parse(_0x42dcf1);
+        } else {
+          if (Array.isArray(_0x42dcf1)) {
+            _0x128e49 = _0x42dcf1;
+          } else {
+            throw new Error("数据格式错误：必须是鏁扮粍鎴朖SON瀛楃涓 ");
+          }
+        }
+        if (!Array.isArray(_0x128e49)) {
+          {
+            throw new Error("数据格式错误：必须是数组格式");
+          }
+        }
+        const _0x27703f = _0x128e49.map(_0x4c1339 => this.normalizeBlacklistItem(_0x4c1339)).filter(Boolean);
+        if (_0x27703f.length === 0) {
+          throw new Error("没有有效的黑名单数据");
+        }
+        const _0x44e028 = this.getBlacklist();
+        const _0x5afc4d = new Set(_0x44e028.map(_0xf236c0 => _0xf236c0.partnerIdEncrypted || _0xf236c0.userId));
+        const _0x4888e4 = _0x27703f.filter(_0x57449c => !_0x5afc4d.has(_0x57449c.partnerIdEncrypted));
+        const _0x15f4a0 = [..._0x44e028, ..._0x4888e4];
+        this.saveBlacklist(_0x15f4a0);
+        this.showToast("成功导入 " + _0x4888e4.length + " 条黑名单", "success");
+        document.getElementById("blacklistPanel") && this.refreshBlacklistList();
+        return _0x15f4a0;
+      }
+    } catch (_0x49e975) {
+      console.error("导入黑名单失败:", _0x49e975);
+      this.showToast("导入失败：" + _0x49e975.message, "error");
+      throw _0x49e975;
+    }
+  },
+  addToBlacklist(_0x317c3a, remark = "") {
+    const _0x3ee36b = this.getBlacklist();
+    const _0x1dd9ea = _0x317c3a.partnerIdEncrypted || _0x317c3a.userId;
+    if (_0x3ee36b.some(_0xc469e3 => (_0xc469e3.partnerIdEncrypted || _0xc469e3.userId) === _0x1dd9ea)) {
+      this.showToast("该用户已在黑名单中", "warning");
+      return false;
+    }
+    const normalized = this.normalizeBlacklistItem({
+      partnerIdEncrypted: _0x1dd9ea,
+      gender: _0x317c3a.gender,
+      age: _0x317c3a.age,
+      province: _0x317c3a.province,
+      isShowVipLabel: _0x317c3a.isShowVipLabel || false,
+      remark: remark,
+      createTime: new Date().toISOString()
+    });
+    if (!normalized) {
+      return false;
+    }
+    _0x3ee36b.push(normalized);
+    if (this.saveBlacklist(_0x3ee36b)) {
+      this.showToast("已添加到黑名单", "success");
+      return true;
+    }
+    return false;
+  },
+  removeFromBlacklist(_0x55bba3) {
+    const _0x4a581d = this.getBlacklist();
+    const _0x597f7c = _0x4a581d.filter(_0x4017bc => (_0x4017bc.partnerIdEncrypted || _0x4017bc.userId) !== _0x55bba3);
+    if (this.saveBlacklist(_0x597f7c)) {
+      this.showToast("已从黑名单移除", "success");
+      return true;
+    }
+    return false;
+  },
+  updateBlacklistRemark(_0x54b238, remark) {
+    const _0x14e9f7 = this.getBlacklist();
+    const _0x174a2f = _0x14e9f7.find(_0x5936fe => (_0x5936fe.partnerIdEncrypted || _0x5936fe.userId) === _0x54b238);
+    if (_0x174a2f) {
+      _0x174a2f.remark = remark;
+      if (this.saveBlacklist(_0x14e9f7)) {
+        this.showToast("备注已更新", "success");
+        return true;
+      }
+    }
+    return false;
+  },
+  blockUser() {
+    try {
+      const _0x3c1e42 = this.getPartnerInfo();
+      if (!_0x3c1e42 || !_0x3c1e42.partnerIdEncrypted) {
+        this.showToast("无法获取对方信息", "error");
+        console.error("无法获取对方信息");
+        return;
+      }
+      this.showConfirm({
+        title: "纭鎷夐粦",
+        message: "确定要拉黑以下用户吗锛 ",
+        info: _0x3c1e42,
+        confirmText: "鎷夐粦",
+        cancelText: "鍙栨秷",
+        confirmType: "danger",
+        remarkInput: true,
+        remarkPlaceholder: "备注（可选）",
+        remarkDefault: ""
+      }).then(_0x51e475 => {
+        _0x51e475.confirmed && (this.addToBlacklist(_0x3c1e42, _0x51e475.remark || ""), console.log("鎷夐粦鐢ㄦ埛:", _0x3c1e42));
+      });
+    } catch (_0xc26cc5) {
+      console.error("鎷夐粦鐢ㄦ埛澶辫触:", _0xc26cc5);
+      this.showToast("拉黑失败：" + _0xc26cc5.message, "error");
+    }
+  },
+  showBlacklistPanel() {
+    let _0x40cf76 = document.getElementById("blacklistPanel");
+    if (_0x40cf76) {
+      _0x40cf76.classList.add("show");
+      document.getElementById("blacklistOverlay").classList.add("show");
+      this.refreshBlacklistList();
+      this.updateCurrentPartnerIdDisplay();
+      return;
+    }
+    const _0x352d2c = document.createElement("div");
+    _0x352d2c.className = "blacklist-overlay";
+    _0x352d2c.id = "blacklistOverlay";
+    _0x40cf76 = document.createElement("div");
+    _0x40cf76.className = "blacklist-panel";
+    _0x40cf76.id = "blacklistPanel";
+    _0x40cf76.innerHTML = "\n            <div class=\"blacklist-header\">\n                <div class=\"blacklist-title\">黑名单管理</div>\n                <div class=\"blacklist-header-actions\">\n                    <div class=\"blacklist-count\" id=\"blacklistCount\">0 人</div>\n                    <button class=\"blacklist-close\" id=\"blacklistClose\">脳</button>\n                </div>\n            </div>\n            <div class=\"blacklist-body\">\n                <div class=\"blacklist-toolbar\">\n                    <div class=\"blacklist-current\">\n                        <div class=\"blacklist-current-label\">当前用户ID（自鍔ㄨ幏鍙栵級</div>\n                        <div class=\"blacklist-current-value\" id=\"blacklistCurrentId\">鏈幏鍙 </div>\n                    </div>\n                    <input type=\"text\" class=\"blacklist-input\" id=\"blacklistRemarkInput\" placeholder=\"备注（可选锛塡x22>\n                    <button class=\"blacklist-add-btn\" id=\"blacklistAddBtn\">添鍔犲綋鍓嶇敤鎴 </button>\n                </div>\n                <div class=\"blacklist-list\" id=\"blacklistList\">\n                    <!-- 榛戝悕鍗 列表将在这里动态生成 -->\n                </div>\n                <div class=\"blacklist-footer-actions\">\n                    <button class=\"blacklist-clear-btn\" id=\"blacklistClearBtn\">娓呯┖</button>\n                    <div class=\"blacklist-import-export-group\">\n                        <button class=\"blacklist-import-btn\" id=\"blacklistImportBtn\">导入</button>\n                        <button class=\"blacklist-export-btn\" id=\"blacklistExportBtn\">导出</button>\n                    </div>\n                </div>\n            </div>\n        ";
+    document.body.appendChild(_0x352d2c);
+    document.body.appendChild(_0x40cf76);
+    _0x352d2c.addEventListener("click", () => this.closeBlacklistPanel());
+    document.getElementById("blacklistClose").addEventListener("click", () => this.closeBlacklistPanel());
+    document.getElementById("blacklistAddBtn").addEventListener("click", () => this.handleAddBlacklist());
+    document.getElementById("blacklistExportBtn").addEventListener("click", () => this.exportBlacklist());
+    document.getElementById("blacklistImportBtn").addEventListener("click", () => {
+      this.showImportDialog();
+    });
+    document.getElementById("blacklistClearBtn").addEventListener("click", () => {
+      this.showConfirm({
+        title: "清空黑名单",
+        message: "确定要清空所有黑名单璁板綍鍚楋紵姝ゆ搷浣滀笉鍙仮澶嶃€ ",
+        confirmText: "娓呯┖",
+        cancelText: "鍙栨秷",
+        confirmType: "delete"
+      }).then(_0x46950e => {
+        _0x46950e.confirmed && (this.saveBlacklist([]), this.refreshBlacklistList(), this.showToast("宸叉竻绌洪粦鍚嶅崟", "success"));
+      });
+    });
+    document.getElementById("blacklistRemarkInput").addEventListener("keypress", _0x213b3d => {
+      {
+        if (_0x213b3d.key === "Enter") {
+          this.handleAddBlacklist();
+        }
+      }
+    });
+    setTimeout(() => {
+      _0x40cf76.classList.add("show");
+      _0x352d2c.classList.add("show");
+    }, 10);
+    this.refreshBlacklistList();
+    this.updateCurrentPartnerIdDisplay();
+  },
+  closeBlacklistPanel() {
+    const _0x5948e7 = document.getElementById("blacklistPanel");
+    const _0x205e8c = document.getElementById("blacklistOverlay");
+    _0x5948e7 && (_0x5948e7.classList.remove("show"), _0x205e8c.classList.remove("show"));
+  },
+  handleAddBlacklist() {
+    const remarkInput = document.getElementById("blacklistRemarkInput");
+    const remark = remarkInput.value.trim();
+    const _0x19e726 = this.getPartnerInfo && this.getPartnerInfo();
+    if (!_0x19e726 || !_0x19e726.partnerIdEncrypted) {
+      {
+        this.showToast("鏈幏鍙栧埌褰撳墠鐢ㄦ埛锛屾棤娉曟坊鍔 ", "warning");
+        return;
+      }
+    }
+    this.updateCurrentPartnerIdDisplay();
+    const _0x2161c9 = _0x19e726.partnerIdEncrypted;
+    const _0x27abf4 = this.getBlacklist();
+    if (_0x27abf4.some(_0x1dac9f => (_0x1dac9f.partnerIdEncrypted || _0x1dac9f.userId) === _0x2161c9)) {
+      {
+        this.showToast("该用户已在黑名单中", "warning");
+        return;
+      }
+    }
+    this.addToBlacklist(_0x19e726, remark) && (remarkInput.value = "", this.refreshBlacklistList());
+  },
+  updateCurrentPartnerIdDisplay() {
+    const _0x42437a = document.getElementById("blacklistCurrentId");
+    if (!_0x42437a) {
+      return;
+    }
+    const _0x35cc25 = this.getPartnerInfo && this.getPartnerInfo();
+    if (_0x35cc25 && _0x35cc25.partnerIdEncrypted) {
+      {
+        _0x42437a.textContent = this.formatUserId(_0x35cc25.partnerIdEncrypted);
+      }
+    } else {
+      _0x42437a.textContent = "未获取";
+    }
+  },
+  refreshBlacklistList() {
+    const _0x1942fa = document.getElementById("blacklistList");
+    if (!_0x1942fa) {
+      return;
+    }
+    const _0x2545a5 = this.getBlacklist();
+    const _0x5b228e = document.getElementById("blacklistCount");
+    _0x5b228e && (_0x5b228e.textContent = _0x2545a5.length + " 浜 ");
+    if (_0x2545a5.length === 0) {
+      _0x1942fa.innerHTML = "\n                <div class=\"blacklist-empty\">\n                    <div class=\"blacklist-empty-text\">黑名单为空</div>\n                </div>\n            ";
+      return;
+    }
+    _0x1942fa.innerHTML = _0x2545a5.map((_0x2f2f00, _0x40775b) => {
+      const _0x4b171e = new Date(_0x2f2f00.createTime);
+      const _0x2ec130 = _0x4b171e.toLocaleDateString() + " " + _0x4b171e.toLocaleTimeString().slice(0, 5);
+      const _0x170ef8 = _0x2f2f00.partnerIdEncrypted || _0x2f2f00.userId;
+      const formattedUserId = this.formatUserId(_0x170ef8);
+      const _0x25c285 = _0x2f2f00.isShowVipLabel ? "<span class=\"blacklist-vip-badge\">VIP</span>" : "";
+      return "\n                <div class=\"blacklist-item\" data-user-id=\"" + _0x170ef8 + "\">\n                    <div class=\"blacklist-item-content\">\n                        <div class=\"blacklist-item-info\">\n                            <div class=\"blacklist-item-header\">\n                                <div class=\"blacklist-item-id\">" + formattedUserId + " " + _0x25c285 + "</div>\n                            </div>\n                            <div class=\"blacklist-item-details\">\n                                <span class=\"blacklist-item-detail\">" + (_0x2f2f00.gender || "鏈煡") + "</span>\n                                <span class=\"blacklist-item-detail\">" + (_0x2f2f00.age || "鏈煡") + "</span>\n                                <span class=\"blacklist-item-detail\">" + (_0x2f2f00.province || "鏈煡") + "</span>\n                            </div>\n                            <div class=\"blacklist-item-remark\" data-edit=\"false\">" + (_0x2f2f00.remark || "鏃犲娉 ") + "</div>\n                            <div class=\"blacklist-item-time\">" + _0x2ec130 + "</div>\n                        </div>\n                        <div class=\"blacklist-item-actions\">\n                            <button class=\"blacklist-edit-btn\" data-index=\"" + _0x40775b + "\">编辑</button>\n                            <button class=\"blacklist-delete-btn\" data-index=\"" + _0x40775b + "\">删除</button>\n                        </div>\n                    </div>\n                    <div class=\"blacklist-edit-form\" style=\"display: none;\">\n                        <input type=\"text\" class=\"blacklist-edit-input\" value=\"" + (_0x2f2f00.remark || "") + "\" placeholder=\"杈撳叆澶囨敞\">\n                        <div class=\"blacklist-edit-actions\">\n                            <button class=\"blacklist-save-btn\" data-index=\"" + _0x40775b + "\">保存</button>\n                            <button class=\"blacklist-cancel-btn\" data-index=\"" + _0x40775b + "\">鍙栨秷</button>\n                        </div>\n                    </div>\n                </div>\n            ";
+    }).join("");
+    _0x1942fa.querySelectorAll(".blacklist-edit-btn").forEach(_0x5adb9c => {
+      _0x5adb9c.addEventListener("click", _0x3a3863 => {
+        {
+          const _0x19ac92 = parseInt(_0x3a3863.target.dataset.index);
+          this.showEditForm(_0x19ac92);
+        }
+      });
+    });
+    _0x1942fa.querySelectorAll(".blacklist-delete-btn").forEach(_0x429870 => {
+      _0x429870.addEventListener("click", _0x4e1ce0 => {
+        const _0x115a3c = parseInt(_0x4e1ce0.target.dataset.index);
+        this.handleDeleteBlacklist(_0x115a3c);
+      });
+    });
+    _0x1942fa.querySelectorAll(".blacklist-save-btn").forEach(_0x4067bb => {
+      {
+        _0x4067bb.addEventListener("click", _0x30fb7b => {
+          const _0xa670d2 = parseInt(_0x30fb7b.target.dataset.index);
+          this.handleSaveEdit(_0xa670d2);
+        });
+      }
+    });
+    _0x1942fa.querySelectorAll(".blacklist-cancel-btn").forEach(_0x1c913a => {
+      _0x1c913a.addEventListener("click", _0x2f2f89 => {
+        const _0xd0d498 = parseInt(_0x2f2f89.target.dataset.index);
+        this.hideEditForm(_0xd0d498);
+      });
+    });
+    _0x1942fa.querySelectorAll(".blacklist-edit-input").forEach(_0x5d2dba => {
+      _0x5d2dba.addEventListener("keypress", _0x15775b => {
+        if (_0x15775b.key === "Enter") {
+          {
+            const _0x496bef = parseInt(_0x15775b.target.closest(".blacklist-item").querySelector(".blacklist-save-btn").dataset.index);
+            this.handleSaveEdit(_0x496bef);
+          }
+        }
+      });
+    });
+  },
+  showEditForm(_0x30f9af) {
+    const _0xb9cc29 = this.getBlacklist();
+    const _0x77302d = _0xb9cc29[_0x30f9af];
+    if (!_0x77302d) {
+      return;
+    }
+    const _0x5e2b45 = _0x77302d.partnerIdEncrypted || _0x77302d.userId;
+    const _0x32fcfb = document.querySelector(".blacklist-item[data-user-id=\"" + _0x5e2b45 + "\"]");
+    if (!_0x32fcfb) {
+      return;
+    }
+    const _0x52571c = _0x32fcfb.querySelector(".blacklist-item-content");
+    const _0x13fc1d = _0x32fcfb.querySelector(".blacklist-edit-form");
+    const _0x12255f = _0x13fc1d.querySelector(".blacklist-edit-input");
+    _0x52571c.style.display = "none";
+    _0x13fc1d.style.display = "block";
+    const _0x2bbb3f = document.querySelector(".blacklist-footer-actions");
+    _0x2bbb3f && _0x2bbb3f.classList.add("hide-on-edit");
+    const _0x2716c6 = () => {
+      {
+        const _0x2f9cf4 = document.getElementById("blacklistList");
+        if (!_0x2f9cf4) {
+          return;
+        }
+        const _0x16cf91 = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        const _0x22c93a = _0x12255f.getBoundingClientRect();
+        const _0x2f4f0d = _0x2f9cf4.getBoundingClientRect();
+        const _0x224324 = _0x22c93a.top - _0x2f4f0d.top + _0x2f9cf4.scrollTop;
+        const _0x267d8b = _0x224324 + _0x22c93a.height;
+        const _0x3e18b2 = _0x2f9cf4.scrollTop;
+        const _0x4775a4 = _0x2f9cf4.scrollTop + _0x16cf91 - 30;
+        if (_0x224324 < _0x3e18b2 || _0x267d8b > _0x4775a4) {
+          const _0x3b59a9 = _0x224324 - _0x16cf91 / 3;
+          _0x2f9cf4.scrollTo({
+            top: Math.max(0, _0x3b59a9),
+            behavior: "smooth"
+          });
+        }
+      }
+    };
+    setTimeout(() => {
+      _0x2716c6();
+      _0x12255f.focus();
+      _0x12255f.setSelectionRange ? _0x12255f.setSelectionRange(0, _0x12255f.value.length) : _0x12255f.select();
+      if (window.visualViewport) {
+        const _0x532ba0 = () => {
+          setTimeout(_0x2716c6, 100);
+        };
+        window.visualViewport.addEventListener("resize", _0x532ba0);
+        window.visualViewport.addEventListener("scroll", _0x532ba0);
+        _0x12255f._viewportHandlers = _0x532ba0;
+      } else {
+        const _0x47fd5c = () => {
+          setTimeout(_0x2716c6, 100);
+        };
+        window.addEventListener("resize", _0x47fd5c);
+        _0x12255f._resizeHandler = _0x47fd5c;
+      }
+      const _0x533f24 = () => {
+        window.visualViewport && _0x12255f._viewportHandlers && (window.visualViewport.removeEventListener("resize", _0x12255f._viewportHandlers), window.visualViewport.removeEventListener("scroll", _0x12255f._viewportHandlers), delete _0x12255f._viewportHandlers);
+        _0x12255f._resizeHandler && (window.removeEventListener("resize", _0x12255f._resizeHandler), delete _0x12255f._resizeHandler);
+        _0x12255f.removeEventListener("blur", _0x533f24);
+      };
+      _0x12255f.addEventListener("blur", _0x533f24);
+    }, 100);
+  },
+  hideEditForm(_0x125805) {
+    const _0x487972 = this.getBlacklist();
+    const _0x2c5b46 = _0x487972[_0x125805];
+    if (!_0x2c5b46) {
+      return;
+    }
+    const _0x276683 = _0x2c5b46.partnerIdEncrypted || _0x2c5b46.userId;
+    const _0x1faad0 = document.querySelector(".blacklist-item[data-user-id=\"" + _0x276683 + "\"]");
+    if (!_0x1faad0) {
+      return;
+    }
+    const _0x479571 = _0x1faad0.querySelector(".blacklist-item-content");
+    const _0x48179b = _0x1faad0.querySelector(".blacklist-edit-form");
+    const _0x52aa44 = _0x48179b.querySelector(".blacklist-edit-input");
+    window.visualViewport && _0x52aa44._viewportHandlers && (window.visualViewport.removeEventListener("resize", _0x52aa44._viewportHandlers), window.visualViewport.removeEventListener("scroll", _0x52aa44._viewportHandlers), delete _0x52aa44._viewportHandlers);
+    _0x52aa44._resizeHandler && (window.removeEventListener("resize", _0x52aa44._resizeHandler), delete _0x52aa44._resizeHandler);
+    _0x52aa44.value = _0x2c5b46.remark || "";
+    _0x52aa44.blur();
+    _0x479571.style.display = "flex";
+    _0x48179b.style.display = "none";
+    const _0x13bd67 = document.querySelector(".blacklist-footer-actions");
+    _0x13bd67 && _0x13bd67.classList.remove("hide-on-edit");
+  },
+  handleSaveEdit(_0x489eec) {
+    const _0x51fb42 = this.getBlacklist();
+    const _0x4d3863 = _0x51fb42[_0x489eec];
+    if (!_0x4d3863) {
+      return;
+    }
+    const _0x5c9d3f = _0x4d3863.partnerIdEncrypted || _0x4d3863.userId;
+    const _0x133989 = document.querySelector(".blacklist-item[data-user-id=\"" + _0x5c9d3f + "\"]");
+    if (!_0x133989) {
+      return;
+    }
+    const _0x184036 = _0x133989.querySelector(".blacklist-edit-input");
+    const newRemark = _0x184036.value.trim();
+    this.updateBlacklistRemark(_0x5c9d3f, newRemark) && this.refreshBlacklistList();
+  },
+  handleDeleteBlacklist(_0x4a8c05) {
+    const _0xf3c20e = this.getBlacklist();
+    const _0x1c3b5f = _0xf3c20e[_0x4a8c05];
+    if (!_0x1c3b5f) {
+      return;
+    }
+    const _0xfcf0a9 = _0x1c3b5f.partnerIdEncrypted || _0x1c3b5f.userId;
+    this.showConfirm({
+      title: "确认删除",
+      message: "确定要从黑名单中删除此用户吗？",
+      info: _0x1c3b5f,
+      confirmText: "鍒犻櫎",
+      cancelText: "鍙栨秷",
+      confirmType: "delete"
+    }).then(_0x54f6ee => {
+      _0x54f6ee.confirmed && this.removeFromBlacklist(_0xfcf0a9) && this.refreshBlacklistList();
+    });
+  },
+  initialize() {
+    if (document.getElementById("floatingBtn")) {
+      console.log("鎮诞闈㈡澘宸插瓨鍦紝姝ｅ湪绉婚櫎...");
+      document.getElementById("floatingBtn")?.["remove"]();
+      document.getElementById("overlay")?.["remove"]();
+      document.getElementById("controlPanel")?.["remove"]();
+      const _0x554b04 = document.getElementById("floatingPanelStyle");
+      if (_0x554b04) {
+        _0x554b04.remove();
+      }
+    }
+    const _0x5f38c0 = document.createElement("style");
+    _0x5f38c0.id = "floatingPanelStyle";
+    _0x5f38c0.textContent = "\n            * {\n                box-sizing: border-box;\n            }\n            \n            .floating-btn {\n                position: fixed;\n                bottom: 300px;\n                right: 30px;\n                width: 56px;\n                height: 56px;\n                background: #1f1f1f;\n                border: 1px solid #2a2a2a;\n                border-radius: 50%;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                color: #e5e5e5;\n                font-size: 20px;\n                font-weight: 500;\n                cursor: grab;\n                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);\n                z-index: 10000;\n                user-select: none;\n                transition: box-shadow 0.3s ease, background 0.3s ease;\n                text-align: center;\n                line-height: 1.3;\n                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;\n                backdrop-filter: blur(10px);\n            }\n            \n            .floating-btn:hover {\n                background: #2a2a2a;\n                border-color: #3a3a3a;\n                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);\n            }\n            \n            .floating-btn:active {\n                cursor: grabbing;\n                transform: scale(0.95);\n            }\n            \n            .floating-btn.dragging {\n                cursor: grabbing;\n                transition: none;\n                box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);\n            }\n            \n            .control-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%);\n                width: 360px;\n                max-width: 90vw;\n                max-height: 80vh;\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                backdrop-filter: blur(20px);\n                border-radius: 16px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);\n                z-index: 9999;\n                display: none;\n                padding: 0;\n                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;\n                overflow: hidden;\n            }\n            \n            .control-panel.show {\n                display: block;\n                animation: panelSlideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);\n            }\n            \n            @keyframes panelSlideUp {\n                from {\n                    opacity: 0;\n                    transform: translate(-50%, -50%) scale(0.9);\n                }\n                to {\n                    opacity: 1;\n                    transform: translate(-50%, -50%) scale(1);\n                }\n            }\n            \n            .panel-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                padding: 24px 24px 20px;\n                background: #1f1f1f;\n                color: #e5e5e5;\n                position: relative;\n                border-bottom: 1px solid #2a2a2a;\n            }\n            \n            .panel-title {\n                font-size: 18px;\n                font-weight: 600;\n                letter-spacing: -0.3px;\n                color: #e5e5e5;\n                display: flex;\n                align-items: center;\n                gap: 10px;\n            }\n            \n            .panel-title-badge {\n                display: inline-block;\n                padding: 4px 12px;\n                background: linear-gradient(135deg, #10b981 0%, #059669 100%);\n                color: white;\n                font-size: 12px;\n                font-weight: 700;\n                border-radius: 6px;\n                box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);\n                animation: pulse 2s ease-in-out infinite;\n            }\n            \n            @keyframes pulse {\n                0%, 100% {\n                    opacity: 1;\n                    transform: scale(1);\n                }\n                50% {\n                    opacity: 0.9;\n                    transform: scale(1.02);\n                }\n            }\n            \n            .panel-close {\n                background: #2a2a2a;\n                border: none;\n                width: 32px;\n                height: 32px;\n                border-radius: 8px;\n                font-size: 20px;\n                cursor: pointer;\n                color: #9ca3af;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s ease;\n                padding: 0;\n                line-height: 1;\n            }\n            \n            .panel-close:hover {\n                background: #3a3a3a;\n                color: #e5e5e5;\n                transform: rotate(90deg);\n            }\n            \n            .panel-body {\n                padding: 20px 24px 24px;\n                max-height: 70vh;\n                overflow-y: auto;\n                background: #1a1a1a;\n            }\n            \n            .panel-body::-webkit-scrollbar {\n                width: 6px;\n            }\n            \n            .panel-body::-webkit-scrollbar-track {\n                background: transparent;\n            }\n            \n            .panel-body::-webkit-scrollbar-thumb {\n                background: #3a3a3a;\n                border-radius: 3px;\n            }\n            \n            .panel-body::-webkit-scrollbar-thumb:hover {\n                background: #4a4a4a;\n            }\n            \n            .list-block {\n                margin: 0;\n            }\n            \n            .list-block ul {\n                list-style: none;\n                padding: 0;\n                margin: 0;\n            }\n            \n            .list-block li {\n                margin-bottom: 12px;\n            }\n            \n            .list-block li:last-child {\n                margin-bottom: 0;\n            }\n            \n            .item-content {\n                display: flex;\n                align-items: center;\n                padding: 16px;\n                background: #1f1f1f;\n                border-radius: 12px;\n                transition: all 0.2s ease;\n                border: 1px solid #2a2a2a;\n            }\n            \n            .item-content:hover {\n                background: #252525;\n                border-color: #3a3a3a;\n            }\n            \n            .item-inner {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                width: 100%;\n                gap: 16px;\n            }\n            \n            .item-title {\n                font-size: 15px;\n                color: #e5e5e5;\n                font-weight: 500;\n                flex: 1;\n                letter-spacing: -0.2px;\n            }\n            \n            .item-input {\n                flex-shrink: 0;\n                display: flex;\n                align-items: center;\n            }\n            \n            .label-switch {\n                position: relative;\n                display: inline-block;\n            }\n            \n            .label-switch input {\n                display: none;\n            }\n            \n            .checkbox {\n                width: 48px;\n                height: 28px;\n                background: #2a2a2a;\n                border-radius: 14px;\n                position: relative;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                cursor: pointer;\n            }\n            \n            .checkbox:before {\n                content: '';\n                position: absolute;\n                width: 24px;\n                height: 24px;\n                background: #4a4a4a;\n                border-radius: 50%;\n                top: 2px;\n                left: 2px;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);\n            }\n            \n            input:checked + .checkbox {\n                background: #3b82f6;\n            }\n            \n            input:checked + .checkbox:before {\n                background: #ffffff;\n                transform: translateX(20px);\n            }\n            \n            .action-btn {\n                background: #3b82f6;\n                color: white;\n                padding: 10px 20px;\n                border-radius: 10px;\n                text-align: center;\n                cursor: pointer;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                font-size: 14px;\n                font-weight: 500;\n                border: none;\n                width: 100%;\n                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);\n                letter-spacing: -0.2px;\n            }\n            \n            .action-btn:hover {\n                background: #2563eb;\n                transform: translateY(-2px);\n                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);\n            }\n            \n            .action-btn:active {\n                transform: translateY(0);\n            }\n            \n            .action-btn.sending {\n                background: #4a4a4a;\n                cursor: not-allowed;\n                box-shadow: none;\n            }\n            \n            .action-btn.sending:hover {\n                transform: none;\n                background: #4a4a4a;\n            }\n            \n            .action-btn.danger {\n                background: #ef4444;\n                box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);\n            }\n            \n            .action-btn.danger:hover {\n                background: #dc2626;\n                box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);\n            }\n            \n            .action-btn.secondary {\n                background: #6b7280;\n                box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);\n            }\n            \n            .action-btn.secondary:hover {\n                background: #4b5563;\n                box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4);\n            }\n            \n            .overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.6);\n                backdrop-filter: blur(4px);\n                z-index: 9998;\n                display: none;\n                animation: fadeIn 0.3s ease;\n            }\n            \n            .overlay.show {\n                display: block;\n            }\n            \n            @keyframes fadeIn {\n                from {\n                    opacity: 0;\n                }\n                to {\n                    opacity: 1;\n                }\n            }\n            \n            /* Toast 样寮廫x20*/\n            .toast-container {\n                position: fixed;\n                top: 24px;\n                right: 24px;\n                z-index: 10005;\n                display: flex;\n                flex-direction: column;\n                gap: 12px;\n            }\n            \n            .toast {\n                background: #1f1f1f;\n                backdrop-filter: blur(20px);\n                color: #e5e5e5;\n                padding: 14px 20px;\n                border-radius: 12px;\n                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);\n                font-size: 14px;\n                max-width: 320px;\n                animation: toastSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);\n                display: flex;\n                align-items: center;\n                gap: 10px;\n                font-weight: 500;\n                border: 1px solid #2a2a2a;\n            }\n            \n            .toast.success {\n                background: #1f1f1f;\n                border-color: #10b981;\n            }\n            \n            .toast.error {\n                background: #1f1f1f;\n                border-color: #ef4444;\n            }\n            \n            .toast.warning {\n                background: #1f1f1f;\n                border-color: #f59e0b;\n            }\n            \n            .toast.info {\n                background: #1f1f1f;\n                border-color: #3b82f6;\n            }\n            \n            .toast.fade-out {\n                animation: toastSlideOut 0.3s ease forwards;\n            }\n            \n            @keyframes toastSlideIn {\n                from {\n                    opacity: 0;\n                    transform: translateX(120px) scale(0.9);\n                }\n                to {\n                    opacity: 1;\n                    transform: translateX(0) scale(1);\n                }\n            }\n            \n            @keyframes toastSlideOut {\n                from {\n                    opacity: 1;\n                    transform: translateX(0) scale(1);\n                }\n                to {\n                    opacity: 0;\n                    transform: translateX(120px) scale(0.9);\n                }\n            }\n            \n            .toast-icon {\n                font-size: 18px;\n                flex-shrink: 0;\n            }\n            \n            .panel-footer {\n                padding: 16px 24px;\n                border-top: 1px solid #2a2a2a;\n                background: #1f1f1f;\n                text-align: center;\n            }\n            \n            .panel-footer-text {\n                font-size: 12px;\n                color: #6b7280;\n                letter-spacing: -0.1px;\n            }\n            \n            /* 自定义确认对话框样寮廫x20*/\n            .confirm-overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.7);\n                backdrop-filter: blur(4px);\n                z-index: 10004;\n                display: none;\n                align-items: center;\n                justify-content: center;\n                animation: fadeIn 0.3s ease;\n            }\n            \n            .confirm-overlay.show {\n                display: flex;\n            }\n            \n            .confirm-dialog {\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                border-radius: 16px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);\n                width: 420px;\n                max-width: 90vw;\n                max-height: 80vh;\n                overflow: hidden;\n                animation: confirmSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);\n                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;\n            }\n            \n            @keyframes confirmSlideIn {\n                from {\n                    opacity: 0;\n                    transform: scale(0.9) translateY(-20px);\n                }\n                to {\n                    opacity: 1;\n                    transform: scale(1) translateY(0);\n                }\n            }\n            \n            .confirm-header {\n                padding: 24px 24px 20px;\n                background: #1f1f1f;\n                border-bottom: 1px solid #2a2a2a;\n            }\n            \n            .confirm-title {\n                font-size: 18px;\n                font-weight: 600;\n                color: #e5e5e5;\n                letter-spacing: -0.3px;\n            }\n            \n            .confirm-body {\n                padding: 24px;\n                max-height: 60vh;\n                overflow-y: auto;\n            }\n            \n            .confirm-body::-webkit-scrollbar {\n                width: 6px;\n            }\n            \n            .confirm-body::-webkit-scrollbar-track {\n                background: transparent;\n            }\n            \n            .confirm-body::-webkit-scrollbar-thumb {\n                background: #3a3a3a;\n                border-radius: 3px;\n            }\n            \n            .confirm-body::-webkit-scrollbar-thumb:hover {\n                background: #4a4a4a;\n            }\n            \n            .confirm-message {\n                font-size: 15px;\n                color: #e5e5e5;\n                line-height: 1.6;\n                margin-bottom: 20px;\n                white-space: pre-line;\n            }\n            \n            .confirm-info {\n                background: #1f1f1f;\n                border: 1px solid #2a2a2a;\n                border-radius: 12px;\n                padding: 16px;\n                margin-bottom: 20px;\n            }\n            \n            .confirm-info-item {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                padding: 8px 0;\n                border-bottom: 1px solid #2a2a2a;\n            }\n            \n            .confirm-info-item:last-child {\n                border-bottom: none;\n            }\n            \n            .confirm-info-label {\n                font-size: 14px;\n                color: #9ca3af;\n            }\n            \n            .confirm-info-value {\n                font-size: 14px;\n                color: #e5e5e5;\n                font-weight: 500;\n                text-align: right;\n            }\n            \n            .confirm-info-vip {\n                display: inline-block;\n                padding: 2px 8px;\n                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);\n                color: white;\n                font-size: 11px;\n                font-weight: 600;\n                border-radius: 4px;\n                margin-left: 8px;\n            }\n            \n            .confirm-remark {\n                margin-top: 12px;\n                display: flex;\n                flex-direction: column;\n                gap: 6px;\n            }\n            \n            .confirm-remark-label {\n                font-size: 13px;\n                color: #9ca3af;\n            }\n            \n            .confirm-remark-input {\n                width: 100%;\n                padding: 10px 12px;\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                border-radius: 10px;\n                color: #e5e5e5;\n                font-size: 14px;\n            }\n            \n            .confirm-remark-input:focus {\n                outline: none;\n                border-color: #3b82f6;\n                background: #252525;\n            }\n            \n            /* 导入对话框文本区域 */\n            .import-dialog {\n                width: 500px;\n                max-width: 95vw;\n            }\n            \n            .import-textarea {\n                width: 100%;\n                min-height: 200px;\n                max-height: 400px;\n                padding: 12px 16px;\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                border-radius: 10px;\n                color: #e5e5e5;\n                font-size: 14px;\n                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;\n                line-height: 1.6;\n                resize: vertical;\n                box-sizing: border-box;\n                -webkit-appearance: none;\n                appearance: none;\n            }\n            \n            .import-textarea:focus {\n                outline: none;\n                border-color: #3b82f6;\n                background: #252525;\n            }\n            \n            .import-textarea::placeholder {\n                color: #6b7280;\n            }\n            \n            .confirm-footer {\n                padding: 16px 24px 24px;\n                display: flex;\n                gap: 12px;\n                justify-content: flex-end;\n            }\n            \n            .confirm-btn {\n                padding: 10px 20px;\n                border: none;\n                border-radius: 12px;\n                font-size: 14px;\n                font-weight: 600;\n                cursor: pointer;\n                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n                min-width: 96px;\n                letter-spacing: 0.2px;\n            }\n            \n            .confirm-btn-cancel {\n                background: #2a2a2a;\n                color: #9ca3af;\n            }\n            \n            .confirm-btn-cancel:hover {\n                background: #3a3a3a;\n                color: #e5e5e5;\n            }\n            \n            /* 主操作按钮：红色渐变，醒目 */\n            .confirm-btn-confirm,\n            .confirm-btn-danger,\n            .confirm-btn-delete {\n                background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);\n                color: white;\n                box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);\n                border: 1px solid rgba(255, 255, 255, 0.06);\n            }\n            \n            .confirm-btn-confirm:hover,\n            .confirm-btn-danger:hover,\n            .confirm-btn-delete:hover {\n                background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);\n                transform: translateY(-1px);\n                box-shadow: 0 10px 28px rgba(239, 68, 68, 0.45);\n            }\n            \n            .confirm-btn-confirm:active,\n            .confirm-btn-danger:active,\n            .confirm-btn-delete:active {\n                transform: translateY(0);\n                box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35);\n            }\n            \n            /* 瀵煎叆鎸夐挳锛氳摑鑹叉笎鍙 ，醒目 */\n            .confirm-btn-primary {\n                background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);\n                color: white;\n                box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);\n                border: 1px solid rgba(255, 255, 255, 0.1);\n                font-weight: 700;\n            }\n            \n            .confirm-btn-primary:hover {\n                background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);\n                transform: translateY(-1px);\n                box-shadow: 0 12px 32px rgba(59, 130, 246, 0.5);\n            }\n            \n            .confirm-btn-primary:active {\n                transform: translateY(0);\n                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);\n            }\n            \n            /* 榛戝悕鍗曠鐞嗛潰鏉 鏍峰紡 */\n            .blacklist-overlay {\n                position: fixed;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                background: rgba(0, 0, 0, 0.7);\n                backdrop-filter: blur(4px);\n                z-index: 10002;\n                display: none;\n                animation: fadeIn 0.3s ease;\n            }\n            \n            .blacklist-overlay.show {\n                display: block;\n            }\n            \n            .blacklist-panel {\n                position: fixed;\n                top: 50%;\n                left: 50%;\n                transform: translate(-50%, -50%) scale(0.95);\n                width: 600px;\n                max-width: 90vw;\n                max-height: 80vh;\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                border-radius: 16px;\n                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);\n                z-index: 10003;\n                display: none;\n                overflow: hidden;\n                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;\n            }\n            \n            .blacklist-panel.show {\n                display: block;\n                animation: blacklistPanelSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;\n            }\n            \n            @keyframes blacklistPanelSlide {\n                from {\n                    opacity: 0;\n                    transform: translate(-50%, -50%) scale(0.9);\n                }\n                to {\n                    opacity: 1;\n                    transform: translate(-50%, -50%) scale(1);\n                }\n            }\n            \n            .blacklist-header {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                padding: 24px;\n                background: #1f1f1f;\n                border-bottom: 1px solid #2a2a2a;\n            }\n            \n            .blacklist-header-actions {\n                display: flex;\n                align-items: center;\n                gap: 8px;\n                flex-wrap: wrap;\n            }\n            \n            .blacklist-count {\n                padding: 6px 10px;\n                background: #2a2a2a;\n                color: #e5e5e5;\n                border-radius: 8px;\n                font-size: 13px;\n                border: 1px solid #3a3a3a;\n            }\n            \n            .blacklist-clear-btn {\n                padding: 6px 14px;\n                border: none;\n                border-radius: 8px;\n                font-size: 13px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.2s ease;\n                background: #ef4444;\n                color: white;\n                box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);\n            }\n            \n            .blacklist-clear-btn:hover {\n                background: #dc2626;\n                box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);\n                transform: translateY(-1px);\n            }\n            \n            .blacklist-title {\n                font-size: 20px;\n                font-weight: 600;\n                color: #e5e5e5;\n                letter-spacing: -0.3px;\n            }\n            \n            .blacklist-header-actions {\n                display: flex;\n                align-items: center;\n                gap: 8px;\n            }\n            \n            .blacklist-import-btn,\n            .blacklist-export-btn {\n                padding: 6px 14px;\n                border: none;\n                border-radius: 8px;\n                font-size: 13px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.2s ease;\n                background: #2a2a2a;\n                color: #e5e5e5;\n            }\n            \n            .blacklist-import-btn:hover {\n                background: #3b82f6;\n                color: white;\n            }\n            \n            .blacklist-export-btn:hover {\n                background: #10b981;\n                color: white;\n            }\n            \n            .blacklist-close {\n                background: #2a2a2a;\n                border: none;\n                width: 32px;\n                height: 32px;\n                border-radius: 8px;\n                font-size: 20px;\n                cursor: pointer;\n                color: #9ca3af;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: all 0.2s ease;\n                padding: 0;\n                line-height: 1;\n            }\n            \n            .blacklist-close:hover {\n                background: #3a3a3a;\n                color: #e5e5e5;\n                transform: rotate(90deg);\n            }\n            \n            .blacklist-body {\n                padding: 24px;\n                max-height: calc(80vh - 80px);\n                display: flex;\n                flex-direction: column;\n                overflow: hidden;\n            }\n            \n            .blacklist-list {\n                flex: 1;\n                overflow-y: auto;\n                min-height: 0;\n            }\n            \n            .blacklist-list::-webkit-scrollbar {\n                width: 6px;\n            }\n            \n            .blacklist-list::-webkit-scrollbar-track {\n                background: transparent;\n            }\n            \n            .blacklist-list::-webkit-scrollbar-thumb {\n                background: #3a3a3a;\n                border-radius: 3px;\n            }\n            \n            .blacklist-list::-webkit-scrollbar-thumb:hover {\n                background: #4a4a4a;\n            }\n            \n            .blacklist-toolbar {\n                display: flex;\n                gap: 12px;\n                margin-bottom: 20px;\n                flex-wrap: wrap;\n            }\n            \n            .blacklist-current {\n                display: flex;\n                align-items: center;\n                gap: 10px;\n                background: #1f1f1f;\n                border: 1px solid #2a2a2a;\n                border-radius: 10px;\n                padding: 10px 12px;\n                flex-shrink: 0;\n            }\n            \n            .blacklist-current-label {\n                font-size: 12px;\n                color: #9ca3af;\n                white-space: nowrap;\n            }\n            \n            .blacklist-current-value {\n                font-size: 13px;\n                color: #e5e5e5;\n                font-weight: 600;\n                overflow: hidden;\n                text-overflow: ellipsis;\n                white-space: nowrap;\n                flex: 1;\n                min-width: 0;\n            }\n            \n            .blacklist-input {\n                flex: 1;\n                min-width: 150px;\n                padding: 10px 14px;\n                background: #1f1f1f;\n                border: 1px solid #2a2a2a;\n                border-radius: 10px;\n                color: #e5e5e5;\n                font-size: 14px;\n                transition: all 0.2s ease;\n                font-family: inherit;\n            }\n            \n            .blacklist-input:focus {\n                outline: none;\n                border-color: #3b82f6;\n                background: #252525;\n            }\n            \n            .blacklist-input::placeholder {\n                color: #6b7280;\n            }\n            \n            .blacklist-add-btn {\n                padding: 10px 20px;\n                background: #3b82f6;\n                color: white;\n                border: none;\n                border-radius: 10px;\n                font-size: 14px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.3s ease;\n                white-space: nowrap;\n            }\n            \n            .blacklist-add-btn:hover {\n                background: #2563eb;\n                transform: translateY(-1px);\n            }\n            \n            .blacklist-list {\n                display: flex;\n                flex-direction: column;\n                gap: 12px;\n            }\n            \n            .blacklist-empty {\n                text-align: center;\n                padding: 60px 20px;\n                color: #6b7280;\n            }\n            \n            .blacklist-empty-text {\n                font-size: 14px;\n            }\n            \n            .blacklist-item {\n                background: #1f1f1f;\n                border: 1px solid #2a2a2a;\n                border-radius: 12px;\n                padding: 16px;\n                transition: all 0.2s ease;\n            }\n            \n            .blacklist-item:hover {\n                background: #252525;\n                border-color: #3a3a3a;\n            }\n            \n            .blacklist-item-content {\n                display: flex;\n                justify-content: space-between;\n                align-items: center;\n                gap: 16px;\n            }\n            \n            .blacklist-item-info {\n                flex: 1;\n                min-width: 0;\n            }\n            \n            .blacklist-item-header {\n                display: flex;\n                align-items: center;\n                gap: 8px;\n                margin-bottom: 8px;\n            }\n            \n            .blacklist-item-id {\n                font-size: 15px;\n                font-weight: 600;\n                color: #e5e5e5;\n                word-break: break-all;\n                flex: 1;\n            }\n            \n            .blacklist-vip-badge {\n                display: inline-block;\n                padding: 2px 8px;\n                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);\n                color: white;\n                font-size: 11px;\n                font-weight: 600;\n                border-radius: 4px;\n                margin-left: 6px;\n                letter-spacing: 0.5px;\n                box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);\n            }\n            \n            .blacklist-item-details {\n                display: flex;\n                gap: 12px;\n                margin-bottom: 8px;\n                flex-wrap: wrap;\n            }\n            \n            .blacklist-item-detail {\n                font-size: 13px;\n                color: #9ca3af;\n                padding: 4px 8px;\n                background: #2a2a2a;\n                border-radius: 6px;\n            }\n            \n            .blacklist-item-remark {\n                font-size: 13px;\n                color: #9ca3af;\n                margin-bottom: 4px;\n            }\n            \n            .blacklist-item-time {\n                font-size: 12px;\n                color: #6b7280;\n            }\n            \n            .blacklist-item-actions {\n                display: flex;\n                gap: 8px;\n                flex-shrink: 0;\n            }\n            \n            .blacklist-edit-btn,\n            .blacklist-delete-btn {\n                padding: 6px 14px;\n                border: none;\n                border-radius: 8px;\n                font-size: 13px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.2s ease;\n            }\n            \n            .blacklist-edit-btn {\n                background: #3b82f6;\n                color: white;\n            }\n            \n            .blacklist-edit-btn:hover {\n                background: #2563eb;\n            }\n            \n            .blacklist-delete-btn {\n                background: #ef4444;\n                color: white;\n            }\n            \n            .blacklist-delete-btn:hover {\n                background: #dc2626;\n            }\n            \n            .blacklist-edit-form {\n                margin-top: 12px;\n                padding-top: 12px;\n                border-top: 1px solid #2a2a2a;\n                width: 100%;\n                box-sizing: border-box;\n            }\n            \n            .blacklist-edit-input {\n                width: 100%;\n                padding: 10px 14px;\n                background: #1a1a1a;\n                border: 1px solid #2a2a2a;\n                border-radius: 10px;\n                color: #e5e5e5;\n                font-size: 14px;\n                margin-bottom: 12px;\n                font-family: inherit;\n                box-sizing: border-box;\n                -webkit-appearance: none;\n                appearance: none;\n            }\n            \n            .blacklist-edit-input:focus {\n                outline: none;\n                border-color: #3b82f6;\n                background: #252525;\n            }\n            \n            .blacklist-edit-actions {\n                display: flex;\n                gap: 8px;\n                justify-content: flex-end;\n                width: 100%;\n            }\n            \n            .blacklist-save-btn,\n            .blacklist-cancel-btn {\n                padding: 6px 14px;\n                border: none;\n                border-radius: 8px;\n                font-size: 13px;\n                font-weight: 500;\n                cursor: pointer;\n                transition: all 0.2s ease;\n            }\n            \n            .blacklist-save-btn {\n                background: #3b82f6;\n                color: white;\n            }\n            \n            .blacklist-save-btn:hover {\n                background: #2563eb;\n            }\n            \n            .blacklist-cancel-btn {\n                background: #2a2a2a;\n                color: #9ca3af;\n            }\n            \n            .blacklist-cancel-btn:hover {\n                background: #3a3a3a;\n                color: #e5e5e5;\n            }\n            \n            .blacklist-footer-actions {\n                display: flex;\n                flex-direction: column;\n                gap: 10px;\n                padding-top: 16px;\n                margin-top: 16px;\n                border-top: 1px solid #2a2a2a;\n                position: sticky;\n                bottom: 0;\n                background: #1a1a1a;\n                z-index: 1;\n                transition: opacity 0.2s ease, transform 0.2s ease;\n            }\n            \n            .blacklist-footer-actions.hide-on-edit {\n                display: none;\n            }\n            \n            .blacklist-footer-actions .blacklist-clear-btn {\n                width: 100%;\n                padding: 10px 16px;\n                font-size: 14px;\n                font-weight: 500;\n            }\n            \n            .blacklist-import-export-group {\n                display: flex;\n                gap: 10px;\n                width: 100%;\n            }\n            \n            .blacklist-footer-actions .blacklist-import-btn,\n            .blacklist-footer-actions .blacklist-export-btn {\n                flex: 1;\n                padding: 10px 16px;\n                font-size: 14px;\n                font-weight: 500;\n            }\n            \n            /* 移动端优化 */\n            @media (max-width: 768px) {\n                /* 鎮诞鎸夐挳 */\n                .floating-btn {\n                    width: 48px;\n                    height: 48px;\n                    bottom: 30px;\n                    right: 20px;\n                    font-size: 18px;\n                }\n                \n                /* 控制面板 */\n                .control-panel {\n                    width: calc(100vw - 40px);\n                    max-width: 400px;\n                    top: 50%;\n                    left: 50%;\n                    transform: translate(-50%, -50%);\n                    right: auto;\n                    bottom: auto;\n                    margin: 0;\n                    border-radius: 12px;\n                }\n                \n                .panel-header {\n                    padding: 16px 16px 12px;\n                }\n                \n                .panel-title {\n                    font-size: 16px;\n                    flex-wrap: wrap;\n                    gap: 6px;\n                }\n                \n                .panel-title-badge {\n                    font-size: 10px;\n                    padding: 3px 8px;\n                }\n                \n                .panel-body {\n                    padding: 16px;\n                }\n                \n                .item-content {\n                    padding: 12px;\n                    margin-bottom: 8px;\n                }\n                \n                .item-title {\n                    font-size: 14px;\n                }\n                \n                .action-btn {\n                    padding: 8px 16px;\n                    font-size: 13px;\n                }\n                \n                .panel-footer {\n                    padding: 12px 16px;\n                }\n                \n                .panel-footer-text {\n                    font-size: 11px;\n                }\n                \n                /* Toast */\n                .toast-container {\n                    top: 16px;\n                    right: 16px;\n                    left: 16px;\n                    max-width: calc(100vw - 32px);\n                }\n                \n                .toast {\n                    padding: 12px 16px;\n                    font-size: 13px;\n                    max-width: 100%;\n                }\n                \n                /* 确认对话框 */\n                .confirm-dialog {\n                    width: calc(100vw - 40px);\n                    max-width: 400px;\n                    border-radius: 12px;\n                }\n                \n                .confirm-header {\n                    padding: 20px 20px 16px;\n                }\n                \n                .confirm-title {\n                    font-size: 16px;\n                }\n                \n                .confirm-body {\n                    padding: 20px;\n                }\n                \n                .confirm-message {\n                    font-size: 14px;\n                    margin-bottom: 16px;\n                }\n                \n                .confirm-info {\n                    padding: 12px;\n                    margin-bottom: 16px;\n                }\n                \n                .confirm-info-item {\n                    padding: 6px 0;\n                }\n                \n                .confirm-info-label,\n                .confirm-info-value {\n                    font-size: 13px;\n                }\n                \n                .confirm-footer {\n                    padding: 12px 20px 20px;\n                    flex-direction: column;\n                    gap: 8px;\n                }\n                \n                .confirm-btn {\n                    width: 100%;\n                    padding: 12px 20px;\n                    font-size: 14px;\n                }\n                \n                /* 导入对话框移动端优化 */\n                .import-dialog {\n                    width: calc(100vw - 40px);\n                    max-width: 500px;\n                }\n                \n                .import-textarea {\n                    min-height: 250px;\n                    max-height: 50vh;\n                    font-size: 16px; /* 移动端浣跨敤16px閬垮厤鑷姩缩放 */\n                    padding: 14px 16px;\n                }\n                \n                /* 榛戝悕鍗曢潰鏉縗x20*/\n                .blacklist-panel {\n                    width: calc(100vw - 40px);\n                    max-width: 500px;\n                    border-radius: 12px;\n                }\n                \n                .blacklist-header {\n                    padding: 20px 20px 16px;\n                }\n                \n                .blacklist-title {\n                    font-size: 18px;\n                }\n                \n                .blacklist-header-actions {\n                    gap: 6px;\n                }\n                \n                .blacklist-import-btn,\n                .blacklist-export-btn {\n                    padding: 5px 10px;\n                    font-size: 12px;\n                }\n                \n                .blacklist-close {\n                    width: 28px;\n                    height: 28px;\n                    font-size: 18px;\n                }\n                \n                .blacklist-body {\n                    padding: 20px;\n                }\n                \n                .blacklist-toolbar {\n                    flex-direction: column;\n                    gap: 10px;\n                    margin-bottom: 16px;\n                }\n                \n                .blacklist-input {\n                    width: 100%;\n                    padding: 10px 12px;\n                    font-size: 14px;\n                }\n                \n                .blacklist-add-btn {\n                    width: 100%;\n                    padding: 10px 16px;\n                    font-size: 14px;\n                }\n                \n                .blacklist-current {\n                    padding: 8px 10px;\n                    margin-bottom: 12px;\n                    gap: 8px;\n                }\n                \n                .blacklist-current-label {\n                    font-size: 11px;\n                }\n                \n                .blacklist-current-value {\n                    font-size: 12px;\n                }\n                \n                .blacklist-count {\n                    font-size: 12px;\n                    padding: 4px 8px;\n                }\n                \n                .blacklist-item {\n                    padding: 12px;\n                    margin-bottom: 10px;\n                    position: relative;\n                    overflow: visible;\n                }\n                \n                .blacklist-item-content {\n                    flex-direction: column;\n                    align-items: flex-start;\n                    gap: 12px;\n                    width: 100%;\n                }\n                \n                .blacklist-item-header {\n                    width: 100%;\n                    margin-bottom: 6px;\n                }\n                \n                .blacklist-item-id {\n                    font-size: 14px;\n                }\n                \n                .blacklist-item-details {\n                    gap: 8px;\n                    margin-bottom: 6px;\n                }\n                \n                .blacklist-item-detail {\n                    font-size: 12px;\n                    padding: 3px 6px;\n                }\n                \n                .blacklist-item-remark {\n                    font-size: 12px;\n                    margin-bottom: 4px;\n                }\n                \n                .blacklist-item-time {\n                    font-size: 11px;\n                }\n                \n                .blacklist-item-actions {\n                    width: 100%;\n                    justify-content: flex-end;\n                    gap: 6px;\n                }\n                \n                .blacklist-edit-btn,\n                .blacklist-delete-btn {\n                    padding: 6px 12px;\n                    font-size: 12px;\n                    flex: 1;\n                }\n                \n                .blacklist-edit-form {\n                    margin-top: 12px;\n                    padding-top: 12px;\n                    width: 100%;\n                    box-sizing: border-box;\n                }\n                \n                .blacklist-edit-input {\n                    padding: 12px 14px;\n                    font-size: 16px; /* 移动端使用16px避免自动缩放 */\n                    margin-bottom: 12px;\n                    width: 100%;\n                    box-sizing: border-box;\n                    -webkit-appearance: none;\n                    appearance: none;\n                }\n                \n                .blacklist-edit-actions {\n                    gap: 8px;\n                    width: 100%;\n                }\n                \n                .blacklist-save-btn,\n                .blacklist-cancel-btn {\n                    padding: 10px 16px;\n                    font-size: 14px;\n                    flex: 1;\n                    min-height: 44px; /* 移动绔渶灏忚Е鎽稿尯鍩焅x20*/\n                }\n                \n                .blacklist-footer-actions {\n                    gap: 8px;\n                    padding-top: 12px;\n                    margin-top: 12px;\n                }\n                \n                .blacklist-footer-actions .blacklist-clear-btn {\n                    width: 100%;\n                    padding: 10px 14px;\n                    font-size: 13px;\n                }\n                \n                .blacklist-import-export-group {\n                    width: 100%;\n                }\n                \n                .blacklist-footer-actions .blacklist-import-btn,\n                .blacklist-footer-actions .blacklist-export-btn {\n                    padding: 10px 14px;\n                    font-size: 13px;\n                }\n            }\n        ";
+    document.head.appendChild(_0x5f38c0);
+    const _0x5035ea = document.createElement("div");
+    _0x5035ea.className = "floating-btn";
+    _0x5035ea.id = "floatingBtn";
+    _0x5035ea.innerHTML = "鈿欙笍";
+    _0x5035ea.title = "控制面板";
+    _0x5035ea.style.top = "608.388px";
+    _0x5035ea.style.left = "288.8px";
+    _0x5035ea.style.right = "auto";
+    _0x5035ea.style.bottom = "auto";
+    const _0xbf2e65 = document.createElement("div");
+    _0xbf2e65.className = "overlay";
+    _0xbf2e65.id = "overlay";
+    const _0x12b39d = document.createElement("div");
+    _0x12b39d.className = "control-panel";
+    _0x12b39d.id = "controlPanel";
+    _0x12b39d.innerHTML = "\n            <div class=\"panel-header\">\n                <div class=\"panel-title\">\n                    <span>鎺у埗闈㈡澘</span>\n                    <span class=\"panel-title-badge\">鉁揬x20宸茶嚜鍔ㄥ幓闄ら儴鍒嗗箍鍛 </span>\n                </div>\n                <button class=\"panel-close\" id=\"panelClose\">脳</button>\n            </div>\n            <div class=\"panel-body\">\n                <div class=\"list-block\">\n                    <ul>\n                        <li>\n                            <div class=\"item-content\">\n                                <div class=\"item-inner\">\n                                    <div class=\"item-title\">鑴氭湰启动</div>\n                                    <div class=\"item-input\">\n                                        <label class=\"label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_script\">\n                                            <div class=\"checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li>\n                            <div class=\"item-content\">\n                                <div class=\"item-inner\">\n                                    <div class=\"item-title\" id=\"txt_match\">仅女生</div>\n                                    <div class=\"item-input\">\n                                        <label class=\"label-switch\">\n                                            <input tabindex=\"-1\" type=\"checkbox\" id=\"ckb_match\">\n                                            <div class=\"checkbox\"></div>\n                                        </label>\n                                    </div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li>\n                            <div class=\"item-content\">\n                                <div class=\"item-inner\">\n                                    <div class=\"item-title\">鍙 閫佽仈绯绘柟寮 </div>\n                                    <div class=\"item-input\">\n                                        <button class=\"action-btn\" id=\"btn_contact\">鍙戦€ </button>\n                                    </div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li>\n                            <div class=\"item-content\">\n                                <div class=\"item-inner\">\n                                    <div class=\"item-title\">拉黑对方</div>\n                                    <div class=\"item-input\">\n                                        <button class=\"action-btn danger\" id=\"btn_block\">鎷夐粦</button>\n                                    </div>\n                                </div>\n                            </div>\n                        </li>\n                        \n                        <li>\n                            <div class=\"item-content\">\n                                <div class=\"item-inner\">\n                                    <div class=\"item-title\">管理黑名单</div>\n                                    <div class=\"item-input\">\n                                        <button class=\"action-btn secondary\" id=\"btn_blacklist\">绠＄悊</button>\n                                    </div>\n                                </div>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"panel-footer\">\n                <div class=\"panel-footer-text\">听说 by 2025.10.13</div>\n            </div>\n        ";
+    const _0x33c855 = document.createElement("div");
+    _0x33c855.className = "toast-container";
+    _0x33c855.id = "toastContainer";
+    document.body.appendChild(_0x5035ea);
+    document.body.appendChild(_0xbf2e65);
+    document.body.appendChild(_0x12b39d);
+    document.body.appendChild(_0x33c855);
+    function _0x319044() {
+      _0x12b39d.classList.toggle("show");
+      _0xbf2e65.classList.toggle("show");
+    }
+    function _0x3e961c() {
+      {
+        _0x12b39d.classList.remove("show");
+        _0xbf2e65.classList.remove("show");
+      }
+    }
+    let _0x4948b4 = false;
+    let _0x174d8d = 0;
+    let _0x10d92d = 0;
+    let _0x47b4cd = 0;
+    let _0x168ba2 = 0;
+    let _0x31f3e = false;
+    const _0x355684 = 5;
+    _0x5035ea.addEventListener("mousedown", function (_0xc6e87d) {
+      {
+        _0x4948b4 = true;
+        _0x31f3e = false;
+        _0x5035ea.classList.add("dragging");
+        _0x174d8d = _0xc6e87d.clientX;
+        _0x10d92d = _0xc6e87d.clientY;
+        const _0x320bc3 = _0x5035ea.getBoundingClientRect();
+        _0x47b4cd = _0xc6e87d.clientX - _0x320bc3.left;
+        _0x168ba2 = _0xc6e87d.clientY - _0x320bc3.top;
+        _0xc6e87d.preventDefault();
+      }
+    });
+    document.addEventListener("mousemove", function (_0x232173) {
+      {
+        if (!_0x4948b4) {
+          return;
+        }
+        const _0x23fa97 = Math.abs(_0x232173.clientX - _0x174d8d);
+        const _0x4616e6 = Math.abs(_0x232173.clientY - _0x10d92d);
+        const _0x469e90 = Math.sqrt(_0x23fa97 * _0x23fa97 + _0x4616e6 * _0x4616e6);
+        if (_0x469e90 > _0x355684) {
+          _0x31f3e = true;
+          const _0x14c35f = _0x232173.clientX - _0x47b4cd;
+          const _0xcc1acc = _0x232173.clientY - _0x168ba2;
+          const maxX = window.innerWidth - _0x5035ea.offsetWidth;
+          const maxY = window.innerHeight - _0x5035ea.offsetHeight;
+          const _0x116229 = Math.max(0, Math.min(_0x14c35f, maxX));
+          const _0x3924fd = Math.max(0, Math.min(_0xcc1acc, maxY));
+          _0x5035ea.style.left = _0x116229 + "px";
+          _0x5035ea.style.top = _0x3924fd + "px";
+          _0x5035ea.style.right = "auto";
+          _0x5035ea.style.bottom = "auto";
+        }
+        _0x232173.preventDefault();
+      }
+    });
+    document.addEventListener("mouseup", function (_0x32cf39) {
+      _0x4948b4 && (_0x4948b4 = false, _0x5035ea.classList.remove("dragging"), !_0x31f3e && _0x319044());
+    });
+    _0x5035ea.addEventListener("touchstart", function (_0x3d91f3) {
+      _0x4948b4 = true;
+      _0x31f3e = false;
+      _0x5035ea.classList.add("dragging");
+      const _0x2313a9 = _0x3d91f3.touches[0];
+      _0x174d8d = _0x2313a9.clientX;
+      _0x10d92d = _0x2313a9.clientY;
+      const _0x1a2ddf = _0x5035ea.getBoundingClientRect();
+      _0x47b4cd = _0x2313a9.clientX - _0x1a2ddf.left;
+      _0x168ba2 = _0x2313a9.clientY - _0x1a2ddf.top;
+      _0x3d91f3.preventDefault();
+    }, {
+      passive: false
+    });
+    document.addEventListener("touchmove", function (_0x47dd99) {
+      if (!_0x4948b4) {
+        return;
+      }
+      const _0x42198e = _0x47dd99.touches[0];
+      const _0x51e0f9 = Math.abs(_0x42198e.clientX - _0x174d8d);
+      const _0x534f0e = Math.abs(_0x42198e.clientY - _0x10d92d);
+      const _0x59e8dd = Math.sqrt(_0x51e0f9 * _0x51e0f9 + _0x534f0e * _0x534f0e);
+      if (_0x59e8dd > _0x355684) {
+        _0x31f3e = true;
+        const _0x71ad02 = _0x42198e.clientX - _0x47b4cd;
+        const _0x2385c8 = _0x42198e.clientY - _0x168ba2;
+        const maxX = window.innerWidth - _0x5035ea.offsetWidth;
+        const maxY = window.innerHeight - _0x5035ea.offsetHeight;
+        const _0x136b98 = Math.max(0, Math.min(_0x71ad02, maxX));
+        const _0x583c6b = Math.max(0, Math.min(_0x2385c8, maxY));
+        _0x5035ea.style.left = _0x136b98 + "px";
+        _0x5035ea.style.top = _0x583c6b + "px";
+        _0x5035ea.style.right = "auto";
+        _0x5035ea.style.bottom = "auto";
+        _0x47dd99.preventDefault();
+      }
+    }, {
+      passive: false
+    });
+    document.addEventListener("touchend", function (_0x31a82e) {
+      _0x4948b4 && (_0x4948b4 = false, _0x5035ea.classList.remove("dragging"), !_0x31f3e && _0x319044());
+    });
+    _0xbf2e65.addEventListener("click", _0x3e961c);
+    document.getElementById("panelClose").addEventListener("click", _0x3e961c);
+    document.addEventListener("keydown", function (_0x5a1da3) {
+      if (_0x5a1da3.key === "Escape" && _0x12b39d.classList.contains("show")) {
+        {
+          _0x3e961c();
+        }
+      }
+    });
+    function _0xfac3e6(_0x477d68, _0x1e11aa = "info", _0x424393 = 4000) {
+      {
+        const _0x3a2cc4 = document.createElement("div");
+        _0x3a2cc4.className = "toast " + _0x1e11aa;
+        const _0x5884be = {
+          success: "鉁 ",
+          error: "鉂 ",
+          warning: "鈿狅笍",
+          info: "鈩癸笍"
+        };
+        _0x3a2cc4.innerHTML = "\n                <span class=\"toast-icon\">" + (_0x5884be[_0x1e11aa] || "鈩癸笍") + "</span>\n                <span>" + _0x477d68 + "</span>\n            ";
+        _0x33c855.appendChild(_0x3a2cc4);
+        setTimeout(() => {
+          _0x3a2cc4.classList.add("fade-out");
+          setTimeout(() => {
+            {
+              if (_0x3a2cc4.parentNode) {
+                _0x3a2cc4.parentNode.removeChild(_0x3a2cc4);
+              }
+            }
+          }, 300);
+        }, _0x424393);
+        return _0x3a2cc4;
+      }
+    }
+    chatPage.showToast = _0xfac3e6;
+    document.getElementById("ckb_script").addEventListener("change", function () {
+      {
+        const _0x249b60 = this.checked ? "寮€鍚 " : "鍏抽棴";
+        chatPage.scriptRunning = this.checked;
+        _0xfac3e6("鑴氭湰" + _0x249b60, this.checked ? "success" : "info");
+        console.log("脚本启动: " + _0x249b60);
+      }
+    });
+    document.getElementById("ckb_match").addEventListener("change", function () {
+      const _0x41b9e2 = this.checked ? "濂崇敓" : "鐢风敓";
+      document.getElementById("txt_match").textContent = "浠 " + _0x41b9e2;
+      chatPage.target = _0x41b9e2;
+      _0xfac3e6("匹配模式: " + _0x41b9e2, "info");
+      console.log("匹配模式: " + _0x41b9e2);
+    });
+    document.getElementById("btn_contact").addEventListener("click", function () {
+      console.log("发送联系方式按钮被点鍑 ");
+      const _0x42ee74 = this;
+      const _0x29b76b = _0x42ee74.textContent;
+      _0x42ee74.textContent = "发送中...";
+      _0x42ee74.classList.add("sending");
+      _0xfac3e6("正在发送联系方式...", "info", 2000);
+      chatPage.sendContactInfo(QQ);
+      setTimeout(() => {
+        _0x42ee74.textContent = _0x29b76b;
+        _0x42ee74.classList.remove("sending");
+        _0xfac3e6("联系方式发送成功！", "success");
+      }, 2000);
+    });
+    document.getElementById("btn_block").addEventListener("click", function () {
+      {
+        console.log("拉黑对方按钮被点击");
+        chatPage.blockUser();
+      }
+    });
+    document.getElementById("btn_blacklist").addEventListener("click", function () {
+      console.log("绠＄悊榛戝悕鍗曟寜閽鐐瑰嚮");
+      chatPage.showBlacklistPanel();
+    });
+    document.getElementById("ckb_match").click();
+    _0xfac3e6("听说内群专属，电报频道@bdsm368\r\n浠庡€掑崠鑰呭鑾峰彇鎻掍欢瀵 致无法使用我们概不负璐 ", "success");
+    this.initAdRemoval();
+  },
+  setTimer() {
+    setInterval(() => {
+      this.removeAds();
+      if (!this.findEl) {
+        {
+          const _0x251c53 = document.querySelectorAll("[data-v-d506a6c7]");
+          _0x251c53.length == 14 && _0x251c53[13].remove();
+          const _0x1f2e8f = document.querySelector(".message-controls-wrapper");
+          if (_0x1f2e8f) {
+            this.chat = _0x1f2e8f.__vueParentComponent.parent;
+          }
+          const _0x5d63ab = document.querySelector(".messages-container");
+          if (_0x5d63ab) {
+            this.page = _0x5d63ab.__vueParentComponent.parent.props;
+          }
+          if (this.chat && this.page) {
+            this.nextInterval = 600;
+            this.findEl = true;
+          } else {
+            this.nextInterval = 2000;
+            this.loadFailnum++;
+            if (this.loadFailnum % 5 == 0 && this.loadFailnum >= 5 && window.location.hash.includes("/chat")) {
+              this.showToast("正在尝试加载, 云端鍙兘闇€瑕佹洿鏂 ...", "warning", this.nextInterval);
+            }
+          }
+        }
+      }
+      if (!this.scriptRunning) {
+        return;
+      }
+      switch (this.getChatState()) {
+        case "REPAIRED":
+        case "PAIRED":
+          {
+            {
+              if (this.isTarget()) {
+                if (!this.alreadySent) {
+                  this.alreadySent = true;
+                  this.showToast("已匹配到: " + this.target + "锛 ", "success", 1000);
+                  if (AUTO_MSG.length > 0) {
+                    {
+                      let _0x29a219 = AUTO_MSG[index];
+                      index++;
+                      if (index >= AUTO_MSG.length) {
+                        index = 0;
+                      }
+                      this.sendMsg(_0x29a219);
+                    }
                   }
-                } catch (_0x4fb798) {
-                  this['wv']['evalJS'](_0x3a36de);
-                  const _0x8c7fe7 = _0x51da65(0x1bc) === _0x3c27b6['source'] ? '云端最新版本' : _0x51da65(0x23e) === _0x3c27b6[_0x51da65(0x279)] ? _0x51da65(0x15f) : '内置版本';
-                  uni[_0x51da65(0x250)]({
-                    'title': _0x51da65(0x188) + _0x8c7fe7 + ')',
-                    'icon': _0x51da65(0x1ab),
-                    'duration': 0x7d0
-                  });
                 }
+                break;
               }
-            } catch (_0x2ecb90) {
-              _0x4e34c1(this['wv'], this[_0x51da65(0x18b)]);
+              this.leave();
+              break;
             }
           }
-        }
+        case "PARTNER_LEFT":
+          this.leave();
+        case "FIRST":
+        case "SELF_LEFT":
+          this.rematch();
+          break;
       }
-    }, [[_0x11cd04(0x1e9), function (_0xc790b2, _0x30ef90, _0x2576e0, _0x34eb1f, _0x31ac2, _0x4de82c) {
-      const _0x924069 = _0x11cd04;
-      return _0x48db6d['openBlock'](), _0x48db6d[_0x924069(0x231)](_0x924069(0x1d2), {
-        'class': _0x924069(0x190)
-      }, [_0x48db6d[_0x924069(0x27b)](_0x924069(0x1d2), {
-        'class': 'top-bar'
-      }, [_0x48db6d[_0x924069(0x27b)]('text', {
-        'class': _0x924069(0x203)
-      }, _0x48db6d[_0x924069(0x21f)](_0x31ac2[_0x924069(0x27a)]), 0x1)]), _0x48db6d[_0x924069(0x27b)]('view', {
-        'class': 'webview-placeholder'
-      }), _0x48db6d[_0x924069(0x27b)](_0x924069(0x1d2), {
-        'class': _0x924069(0x201)
-      }, [_0x48db6d[_0x924069(0x27b)](_0x924069(0x1bf), {
-        'class': 'copyright-text'
-      }, _0x924069(0x1d7))]), _0x31ac2[_0x924069(0x267)] ? (_0x48db6d[_0x924069(0x256)](), _0x48db6d[_0x924069(0x231)](_0x924069(0x1d2), {
-        'key': 0x0,
-        'class': _0x924069(0x16e),
-        'onClick': _0x30ef90[0x2] || (_0x30ef90[0x2] = (..._0x12850d) => _0x4de82c[_0x924069(0x1e8)] && _0x4de82c['handleConfirm'](..._0x12850d))
-      }, [_0x48db6d[_0x924069(0x27b)]('view', {
-        'class': 'modal-box',
-        'onClick': _0x30ef90[0x1] || (_0x30ef90[0x1] = _0x48db6d['withModifiers'](() => {}, [_0x924069(0x26c)]))
-      }, [_0x48db6d[_0x924069(0x27b)](_0x924069(0x1d2), {
-        'class': 'modal-icon'
-      }, '⚠️'), _0x48db6d[_0x924069(0x27b)](_0x924069(0x1d2), {
-        'class': 'modal-title'
-      }, _0x924069(0x1ea)), _0x48db6d[_0x924069(0x27b)](_0x924069(0x1d2), {
-        'class': 'modal-content'
-      }, _0x48db6d[_0x924069(0x21f)](_0x31ac2[_0x924069(0x169)]) + _0x924069(0x262), 0x1), _0x48db6d[_0x924069(0x27b)](_0x924069(0x15c), {
-        'class': _0x924069(0x254),
-        'onClick': _0x30ef90[0x0] || (_0x30ef90[0x0] = (..._0x4826f6) => _0x4de82c[_0x924069(0x1e8)] && _0x4de82c[_0x924069(0x1e8)](..._0x4826f6))
-      }, '确定')])])) : _0x48db6d[_0x924069(0x199)]('', true)]);
-    }]]);
-  __definePage('pages/login/login', _0xcf6bff), __definePage(_0x11cd04(0x265), _0x3af02a);
-  const _0x2964bf = () => new Promise((_0x276458, _0x42986e) => {
-      const _0x3ec505 = _0x11cd04;
-      try {
-        plus['runtime'][_0x3ec505(0x1b8)](plus[_0x3ec505(0x1f8)][_0x3ec505(0x192)], _0x191eb1 => {
-          const _0x49c58a = _0x3ec505,
-            _0x17744c = _0x191eb1[_0x49c58a(0x192)];
-          _0x17744c ? plus['io'][_0x49c58a(0x24a)](_0x17744c, _0x1096b0 => {
-            const _0x554571 = _0x49c58a;
-            _0x1096b0[_0x554571(0x16b)](_0x3e1923 => {
-              const _0x539d35 = _0x554571,
-                _0x5bd82f = new plus['io'][_0x539d35(0x177)]();
-              _0x5bd82f['onloadend'] = _0x4af94b => {
-                const _0x3e4823 = _0x539d35;
-                try {
-                  const _0x3b3205 = _0x4af94b[_0x3e4823(0x1a3)][_0x3e4823(0x272)],
-                    _0x3cf85a = _0x440a19(_0x3b3205);
-                  _0x276458(_0x3cf85a);
-                } catch (_0x3a7069) {
-                  _0x42986e(_0x3a7069);
-                }
-              }, _0x5bd82f['onerror'] = () => _0x276458('web_environment'), _0x5bd82f[_0x539d35(0x1ff)](_0x3e1923);
-            }, () => _0x276458('web_environment'));
-          }, () => _0x276458(_0x49c58a(0x186))) : _0x276458(_0x49c58a(0x186));
-        });
-      } catch (_0xbe04cd) {
-        _0x276458(_0x3ec505(0x186));
-      }
-    }),
-    _0x37c5d3 = async () => {
-      const _0x581a63 = _0x11cd04;
-      try {
-        await _0x47f240[_0x581a63(0x17d)]();
-        const _0x27df7d = await _0x583fa2({
-          'Api': _0x581a63(0x1ae),
-          'Name': _0x581a63(0x247)
-        });
-        if (_0x27df7d && 0x2710 === _0x27df7d[_0x581a63(0x19f)] && _0x27df7d[_0x581a63(0x1ce)]) {
-          let _0x27d2bd = _0x27df7d[_0x581a63(0x1ce)][_0x581a63(0x247)];
-          if (_0x581a63(0x23c) == typeof _0x27d2bd) try {
-            _0x27d2bd = JSON[_0x581a63(0x1dc)](_0x27d2bd);
-          } catch (_0x117f40) {
-            return {};
-          } else _0x581a63(0x26d) == typeof _0x27d2bd && null !== _0x27d2bd || (_0x27d2bd = _0x27df7d['Data']);
-          return _0x27d2bd || {};
-        }
-        return {};
-      } catch (_0x1e5f09) {
-        return {};
-      }
-    },
-    _0x11100d = async _0xac93 => {
-      const _0x387b64 = _0x11cd04;
-      try {
-        const _0x28ac82 = plus[_0x387b64(0x1f8)][_0x387b64(0x277)],
-          _0x383971 = (() => {
-            const _0x577b40 = _0x387b64;
-            try {
-              const _0x3e9249 = plus['os'][_0x577b40(0x239)]['toLowerCase']();
-              return -0x1 !== _0x3e9249[_0x577b40(0x1b1)]('android') ? _0x577b40(0x255) : -0x1 !== _0x3e9249['indexOf'](_0x577b40(0x25c)) ? _0x577b40(0x25c) : _0x577b40(0x1f9);
-            } catch (_0x5e4c58) {
-              return _0x577b40(0x1f9);
-            }
-          })(),
-          _0x160a36 = (await _0x37c5d3())[_0x383971] || {},
-          _0x10ed5d = await _0x2964bf(),
-          _0x5a896e = _0x28ac82[_0x387b64(0x1eb)](_0x387b64(0x173));
-        let _0x4cebf0 = _0x160a36[_0x28ac82],
-          _0x18267e = _0x28ac82;
-        if (!_0x4cebf0) {
-          const _0x539932 = _0x387b64(0x1fa);
-          if (_0x4cebf0 = _0x160a36[_0x539932], !_0x4cebf0) return;
-          _0x18267e = _0x539932;
-        }
-        const _0x1c65c7 = ((_0x275d20, _0x32ae05) => _0x440a19(_0x275d20 + _0x387b64(0x227) + _0x32ae05))(_0x10ed5d, _0x18267e);
-        _0x1c65c7 !== _0x4cebf0 && !_0x5a896e && _0xac93 && _0xac93(_0x387b64(0x255) === _0x383971 ? _0x387b64(0x1b0) : _0x387b64(0x275));
-      } catch (_0x46c1b8) {}
-    },
-    _0x45119b = {
-      async 'onLaunch'() {
-        const _0x51b9c5 = _0x11cd04;
-        _0x494761(_0x51b9c5(0x1a1), _0x51b9c5(0x160), _0x51b9c5(0x171)), _0x11100d(_0x214acd => {
-          const _0x2f4a03 = _0x51b9c5;
-          uni[_0x2f4a03(0x19d)]({
-            'title': '安全警告',
-            'content': _0x214acd + '，应用将退出',
-            'showCancel': false,
-            'success': () => {
-              const _0x1f22f1 = _0x2f4a03;
-              plus[_0x1f22f1(0x1f8)][_0x1f22f1(0x1a7)]();
-            }
-          }), setTimeout(() => {
-            const _0x396fca = _0x2f4a03;
-            plus[_0x396fca(0x1f8)][_0x396fca(0x1a7)]();
-          }, 0x7d0);
-        }), plus[_0x51b9c5(0x261)]['getClientInfo']({
-          'success': function () {},
-          'fail': function () {}
-        });
-      },
-      'onShow': function () {
-        _0x494761('log', 'at\x20App.vue:31', 'App\x20Show');
-      },
-      'onHide': function () {
-        const _0x5d4855 = _0x11cd04;
-        _0x494761('log', _0x5d4855(0x20b), _0x5d4855(0x26f));
-      }
-    },
-    {
-      app: _0x11e026,
-      Vuex: _0x1cd2e6,
-      Pinia: _0x410e0f
-    } = {
-      'app': _0x48db6d[_0x11cd04(0x17b)](_0x45119b)
-    };
-  uni[_0x11cd04(0x196)] = _0x1cd2e6, uni['Pinia'] = _0x410e0f, _0x11e026[_0x11cd04(0x1d3)]('__globalStyles', __uniConfig[_0x11cd04(0x263)]), _0x11e026[_0x11cd04(0x1e0)][_0x11cd04(0x178)] = _0x11cd04(0x1b7), _0x11e026[_0x11cd04(0x1e0)][_0x11cd04(0x1e9)] = () => {}, _0x11e026[_0x11cd04(0x1da)](_0x11cd04(0x274));
-}(Vue);
+    }, this.nextInterval);
+  }
+};
+chatPage.magic() && (chatPage.initialize(), chatPage.setTimer());
+setData2 = chatPage.importBlacklist;
